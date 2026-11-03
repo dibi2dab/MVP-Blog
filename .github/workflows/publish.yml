@@ -14,6 +14,7 @@ on:
 
 env:
   MOCK_MODE: "${{ secrets.MOCK_MODE || 'auto' }}"
+  AI_PROVIDER: "${{ secrets.AI_PROVIDER || 'mock' }}"
   PUBLISH_BACKEND: "tistory-node"
   TISTORY_BLOG_URL: "${{ secrets.TISTORY_BLOG_URL }}"
   TISTORY_VISIBILITY: "${{ inputs.visibility || 'private' }}"
