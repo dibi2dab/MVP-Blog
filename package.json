@@ -1,0 +1,17 @@
+{
+  "name": "mvp-blog",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MVP Blog - Tistory publish engine (Node + Playwright) for the Python stock pipeline",
+  "type": "module",
+  "scripts": {
+    "login": "node src/tistoryLogin.js",
+    "publish": "node src/publishCli.js",
+    "selectors:check": "node src/selectorHealth.js check",
+    "selectors:fix": "node src/selectorHealth.js fix"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "playwright": "1.62.0"
+  }
+}

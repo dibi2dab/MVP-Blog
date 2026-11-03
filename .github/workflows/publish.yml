@@ -1,0 +1,84 @@
+name: Publish Tistory Article
+
+on:
+  workflow_dispatch:
+    inputs:
+      visibility:
+        description: "최종 공개 설정 (기본 비공개 먼저 발행 후 검증)"
+        required: false
+        default: "private"
+        type: choice
+        options:
+          - private
+          - public
+
+env:
+  MOCK_MODE: "${{ secrets.MOCK_MODE || 'auto' }}"
+  PUBLISH_BACKEND: "tistory-node"
+  TISTORY_BLOG_URL: "${{ secrets.TISTORY_BLOG_URL }}"
+  TISTORY_VISIBILITY: "${{ inputs.visibility || 'private' }}"
+  TISTORY_DRY_RUN: "${{ secrets.TISTORY_DRY_RUN || 'false' }}"
+  OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
+  ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
+  DART_API_KEY: "${{ secrets.DART_API_KEY }}"
+
+concurrency:
+  group: tistory-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Node publisher dependencies
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Restore Tistory session
+        env:
+          TISTORY_STORAGE_STATE: ${{ secrets.TISTORY_STORAGE_STATE }}
+        run: |
+          if [ -z "$TISTORY_STORAGE_STATE" ]; then
+            echo "TISTORY_STORAGE_STATE secret가 없습니다. scripts/tistory_login.py로 세션을 만들어 등록하세요." >&2
+            exit 1
+          fi
+          mkdir -p .state
+          echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.json
+
+      - name: Full pipeline (collect ~ publish)
+        run: |
+          python main.py run --retry-failed
+
+      - name: Upload error artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tistory-error-artifacts
+          path: artifacts/tistory-errors/
+          if-no-files-found: ignore
+
+      - name: Cleanup session
+        if: always()
+        run: |
+          rm -rf .state

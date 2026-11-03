@@ -1,0 +1,54 @@
+# 이벤트 감지 룰 설정.
+# 가격/거래량 판단 기준은 scoring false positives를 줄이기 위해
+# settings.yaml 의 detection 를 따르고, 여기서는 공시/뉴스 기반 이벤트 규칙을 정의한다.
+
+rules:
+  disclosure_importance:
+    VS_HIGH: 5
+    HIGH: 5
+    MEDIUM: 2
+    LOW: 0
+    IGNORE: -1
+
+  disclosure_keywords:
+    - 유상증자
+    - 무상증자
+    - 전환사채
+    - 신주인수권부사채
+    - 합병
+    - 분할
+    - 자사주
+    - 최대주주
+    - 소송
+    - 상장폐지
+    - 영업이익
+    - 매출
+    - 공급계약
+
+  news_event_keywords:
+    big:
+      - 인수
+      - 매각
+      - 합병
+      - 상장
+      - 유증
+      - 공급계약
+      - 수주
+      - 반독점
+      - 조사
+      - 검찰
+      - 사퇴
+    medium:
+      - 분기
+      - 실적
+      - 신제품
+      - 수출
+      - 증권신고서
+      - 납입
+
+  new_high_requires:
+    lookback_days: 250
+
+  deadband:
+    # 직전 종가 대비 변화율이 이 범위 안이면 이벤트로 취급하지 않음
+    max_change_between_events: 0.005

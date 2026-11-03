@@ -1,0 +1,134 @@
+name: Tistory Selector Health
+
+# 티스토리 에디터 UI가 바뀌면 src/publishTistory.js 의 SELECTORS 가 깨진다.
+# 이 워크플로는 주기적으로 실제 에디터를 열어 선택자를 검사하고,
+# 깨진 항목을 추론해 PR로 자동 수정한다. 추론 실패 시 이슈를 만든다.
+
+on:
+  schedule:
+    # 매일 06:00 KST (21:00 UTC)
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+  # 발행 워크플로가 실패하면 즉시 선택자 건강검진을 돌린다.
+  workflow_run:
+    workflows: ["Publish Tistory Article"]
+    types: [completed]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: tistory-selector-health
+  cancel-in-progress: false
+
+jobs:
+  health:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Restore Tistory session
+        env:
+          TISTORY_STORAGE_STATE: ${{ secrets.TISTORY_STORAGE_STATE }}
+        run: |
+          if [ -z "$TISTORY_STORAGE_STATE" ]; then
+            echo "::error::TISTORY_STORAGE_STATE secret가 없습니다. npm run login 으로 세션을 만드세요."
+            exit 1
+          fi
+          mkdir -p .state
+          echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.json
+
+      - name: Check selectors
+        id: check
+        continue-on-error: true
+        env:
+          TISTORY_BLOG_URL: ${{ secrets.TISTORY_BLOG_URL }}
+          TISTORY_HEADLESS: "true"
+        run: npm run selectors:check
+
+      - name: Infer fixes
+        id: fix
+        if: steps.check.outcome == 'failure'
+        continue-on-error: true
+        env:
+          TISTORY_BLOG_URL: ${{ secrets.TISTORY_BLOG_URL }}
+          TISTORY_HEADLESS: "true"
+        run: npm run selectors:fix
+
+      - name: Upload selector report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tistory-selector-report
+          path: artifacts/selector-health/
+          if-no-files-found: ignore
+
+      - name: Create selector-fix PR
+        if: steps.check.outcome == 'failure' && steps.fix.outcome == 'success'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/tistory-selector-fix
+          title: "fix(tistory): auto-update editor SELECTORS"
+          commit-message: "fix(tistory): auto-update editor SELECTORS"
+          body: |
+            티스토리 에디터 UI 변경으로 깨진 선택자를 자동 추론해 수정했습니다.
+
+            - 리포트: `artifacts/selector-health/report.json`
+            - 변경 파일: `src/publishTistory.js`
+
+            자동 생성된 PR입니다. 머지 전에 실제 발행이 되는지 확인하세요.
+          add-paths: src/publishTistory.js
+          delete-branch: true
+
+      - name: Open issue when unfixable
+        if: steps.check.outcome == 'failure' && steps.fix.outcome != 'success'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            let report = {};
+            try {
+              report = JSON.parse(fs.readFileSync('artifacts/selector-health/report.json', 'utf8'));
+            } catch (err) {
+              report = { reason: 'report_missing', broken: [] };
+            }
+            const reason = report.reason || 'unknown';
+            const broken = (report.broken || []).join(', ') || 'unknown';
+            const sessionExpired = reason === 'session_expired';
+            const title = sessionExpired
+              ? '[tistory] 로그인 세션이 만료되었습니다'
+              : '[tistory] 에디터 SELECTORS 자동 수정 실패';
+            const body = [
+              '자동 셀렉터 건강검진이 실패했습니다.',
+              '',
+              `- reason: \`${reason}\``,
+              `- broken: \`${broken}\``,
+              '',
+              '아티팩트 `tistory-selector-report` 의 `report.json` / `editor.html` / `editor.png` 를 확인하세요.',
+              '',
+              sessionExpired
+                ? '`npm run login` 으로 세션을 갱신한 뒤 GitHub Secret `TISTORY_STORAGE_STATE` 를 업데이트하세요.'
+                : '자동 추론이 실패했습니다. `editor.html` 을 보고 `src/publishTistory.js` 의 SELECTORS 를 수동으로 맞춰주세요.',
+            ].join('\n');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+              labels: ['tistory', 'automation'],
+            });

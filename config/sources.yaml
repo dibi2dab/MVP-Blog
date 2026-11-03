@@ -1,0 +1,100 @@
+# 데이터 수집 소스 설정
+# api_key_required=True 인 경우 환경 변수(GitHub Secrets)에서 조회하며
+# 키가 없으면 Mock 중단(fallback)한다.
+
+stocks:
+  universe:
+    - code: "005930"
+      name: 삼성전자
+    - code: "000660"
+      name: SK하이닉스
+    - code: "373220"
+      name: LG에너지솔루션
+    - code: "207940"
+      name: 삼성바이오로직스
+    - code: "005380"
+      name: 현대차
+    - code: "000270"
+      name: 기아
+    - code: "068270"
+      name: 셀트리온
+    - code: "005490"
+      name: POSCO홀딩스
+    - code: "035420"
+      name: NAVER
+    - code: "035720"
+      name: 카카오
+    - code: "005935"
+      name: 삼성전자우
+    - code: "012450"
+      name: 한화에어로스페이스
+    - code: "047810"
+      name: 한국항공우주
+    - code: "010130"
+      name: 고려아연
+    - code: "003670"
+      name: 포스코퓨처엠
+    - code: "028260"
+      name: 삼성물산
+    - code: "066570"
+      name: LG전자
+    - code: "051910"
+      name: LG화학
+    - code: "006400"
+      name: 삼성SDI
+    - code: "009150"
+      name: 삼성전기
+    - code: "017670"
+      name: SK텔레콤
+    - code: "036570"
+      name: 엔씨소프트
+    - code: "259960"
+      name: 크래프톤
+    - code: "042700"
+      name: 한미반도체
+    - code: "009540"
+      name: 한화솔루션
+    - code: "055550"
+      name: 신한지주
+    - code: "105560"
+      name: KB금융
+    - code: "086790"
+      name: 하나금융지주
+    - code: "138040"
+      name: 메리츠금융지주
+    - code: "329180"
+      name: HD현대중공업
+    - code: "041960"
+      name: 코미팜
+
+  price:
+    provider: naver          # naver | mock
+    endpoint: "https://api.stock.naver.com/chart/domestic/item/{code}/day"
+    period_count: 90
+    timeout_seconds: 15
+
+news:
+  provider: google_rss       # google_rss | naver | mock
+  google_rss:
+    base_url: "https://news.google.com/rss/search"
+    lang: ko
+    country: KR
+    max_items: 40
+  naver:
+    search_url: "https://search.naver.com/search.naver"
+
+disclosures:
+  provider: dart             # dart | mock
+  dart:
+    base_url: "https://opendart.fss.or.kr/api"
+    endpoint_list: "/list.json"
+    endpoint_corp: "/corpCode.xml"
+    api_key_env: DART_API_KEY
+    report_type: XBRL
+    max_items: 50
+
+economy:
+  enabled: false
+
+realestate:
+  enabled: false

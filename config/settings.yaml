@@ -1,0 +1,147 @@
+app:
+  name: finance-research-blog
+  timezone: Asia/Seoul
+  mock_mode: auto            # auto | true | false (auto => enabled when no AI key)
+  log_level: INFO
+
+storage:
+  base_dir: data
+  raw_dir: raw
+  normalized_dir: normalized
+  events_dir: events
+  research_dir: research
+  cache_dir: cache
+  processed_dir: processed
+  published_dir: published
+
+content:
+  output_dir: content
+  categories:
+    stocks: stocks
+    economy: economy
+    realestate: realestate
+    finance: finance
+
+charts:
+  output_dir: static/charts
+
+ai:
+  provider: auto             # auto | openai | anthropic | google | mock
+  model: auto                # auto => provider default
+  temperature: 0.2
+  max_tokens: 3000
+  timeout_seconds: 120
+  minimum_confidence: 0.75
+  max_claims_per_article: 30
+  cache_ttl_seconds: 3600
+
+scoring:
+  minimum_research_score: 7
+  minimum_publish_score: 8
+  minimum_confidence: 0.75
+  weights:
+    price_change_10_percent: 5
+    price_change_5_percent: 3
+    price_change_3_percent: 1
+    price_change_negative_10_percent: 5
+    price_change_negative_5_percent: 3
+    price_change_negative_3_percent: 1
+    volume_increase_300_percent: 4
+    volume_increase_100_percent: 2
+    volume_increase_50_percent: 1
+    important_disclosure: 5
+    earnings_report: 5
+    big_news: 4
+    medium_news: 2
+    new_high: 2
+    new_low: 2
+    gap_up: 2
+    gap_down: 2
+    foreign_flow_change: 3
+
+evidence:
+  # 주가/거래 움직임의 원인·배경을 설명할 근거가 있는지 점수화.
+  # Event Score(시장 변동성)와 달리 "왜 움직였는가"를 판단한다.
+  weights:
+    official_disclosure: 5      # 공식 기업 공시 확인
+    official_company_statement: 5  # 회사 공식 발표 확인
+    multiple_news_confirmation: 4  # 복수 신뢰 뉴스 동일 사건
+    industry_event: 3           # 관련 산업 이벤트
+    market_linkage: 3           # 시장 전체 이벤트와의 연관성
+    temporal_linkage: 4         # 뉴스/공시가 주가 움직임 시간과 직접 연결
+  deep_analysis_threshold: 12   # >= 이면 Type A (Deep Analysis)
+  data_brief_threshold: 5       # 이 이상 deep 미만이면 Type B (Data Brief)
+  reject_threshold: 0           # 근거가 전혀 없고 분석 가치도 낮으면 Type C (발행 안 함)
+
+detection:
+  price_change_high_threshold: 0.10
+  price_change_mid_threshold: 0.05
+  price_change_low_threshold: 0.03
+  volume_surge_high_threshold: 3.0
+  volume_surge_mid_threshold: 2.0
+  volume_surge_low_threshold: 1.5
+  min_volume_usd: 500000000   # 최소 거래대금 (KRW) 아래는 이벤트 제외
+  lookback_days: 60           # 평균 거래량 계산 기간
+  max_events_per_run: 20
+
+news:
+  max_items: 40
+  lookback_hours: 48
+  dedupe_title_similarity: 0.85
+  cluster_tolerance_minutes: 120
+
+research:
+  max_news_per_entity: 15
+  max_news_clusters: 5
+  news_days: 7
+  max_historical_cases: 5
+  max_related_entities: 5
+
+markdown:
+  include_disclaimer: true
+
+content_quality:
+  min_deep_chars: 1200        # Type A(Deep Analysis) 최소 글자수 (요구사항 13)
+  min_data_brief_chars: 700   # Type B(Data Brief) 최소 글자수
+  min_paragraph_sentences: 2  # 각 주요 섹션 최소 문단 깊이 (요구사항 6)
+  max_paragraph_sentences: 4  # 문단 최대 문장 수 (요구사항 11)
+  banned_title_phrases:
+    - "데이터로 본 주가·거래량의 실체"
+    - "오늘 무슨 일이 있었나"
+    - "주가 움직임의 비밀"
+    - "전망"
+  data_card_fields:
+    - price_change
+    - volume_change
+    - news
+    - disclosure
+  max_data_mentions: 3        # 동일 수치 최대 등장 횟수 (요구사항 10)
+
+publishing:
+  backend: tistory        # local | mock | tistory (effective_backend: env > mock모드 > publisher.type)
+  content_dir: content
+  images_base_url: /charts
+
+# 티스토리 Playwright 발행 설정 (기본 발행 백엔드)
+publisher:
+  type: tistory-node
+
+tistory:
+  blog_url: "${TISTORY_BLOG_URL}"
+  editor_url: ""           # 비우면 blog_url 기반 자동 생성
+  storage_state_path: ".state/tistory_storage_state.json"
+  headless: true
+  default_visibility: private   # private(비공개) | protected | public
+  timeout: 30000
+  screenshot_on_error: true
+  publish_delay_seconds: 2
+  max_retries: 2
+  dry_run: false
+  selectors: {}
+  # 내부 카테고리 ↔ 티스토리 메뉴명. 빈 값이면 해당 카테고리는 선택하지 않는다(기본 카테고리).
+  # 실제 메뉴(2026-09-02, eneru): 주식 / -주간 이슈 / -주식 정보 / -? 정보 / 부동산
+  category_map:
+    stocks: "주식 정보"
+    economy: ""
+    realestate: "부동산"
+    finance: ""

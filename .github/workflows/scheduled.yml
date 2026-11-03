@@ -1,0 +1,100 @@
+name: scheduled
+
+on:
+  schedule:
+    # 평일 09:00 KST (월~금) = 00:00 UTC
+    - cron: "0 0 * * 1-5"
+  workflow_dispatch:
+
+env:
+  MOCK_MODE: "${{ secrets.MOCK_MODE || 'auto' }}"
+  PUBLISH_BACKEND: "${{ secrets.PUBLISH_BACKEND || 'tistory-node' }}"
+  TISTORY_BLOG_URL: "${{ secrets.TISTORY_BLOG_URL }}"
+  TISTORY_VISIBILITY: "${{ secrets.TISTORY_VISIBILITY || 'private' }}"
+  TISTORY_DRY_RUN: "${{ secrets.TISTORY_DRY_RUN || 'false' }}"
+  OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
+  ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
+  DART_API_KEY: "${{ secrets.DART_API_KEY }}"
+
+concurrency:
+  group: finance-research
+  cancel-in-progress: false
+
+jobs:
+  full-pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Mock mode 시 캐시 초기화
+        if: env.MOCK_MODE == 'true'
+        run: rm -rf data/cache data/events data/research data/processed data/published
+
+      - name: 1) Collect
+        continue-on-error: true
+        run: python main.py collect
+
+      - name: 2) Detect
+        run: python main.py detect
+
+      - name: 3) Research
+        run: python main.py research
+
+      - name: 4) Generate (차트+기사+검수)
+        run: python main.py generate
+
+      - name: Playwright + 세션 복원 (tistory 백엔드일 때만)
+        if: env.PUBLISH_BACKEND == 'tistory' || env.PUBLISH_BACKEND == 'tistory-node'
+        env:
+          TISTORY_STORAGE_STATE: "${{ secrets.TISTORY_STORAGE_STATE }}"
+        run: |
+          if [ -z "$TISTORY_STORAGE_STATE" ]; then
+            echo "TISTORY_STORAGE_STATE secret가 없습니다. scripts/tistory_login.py 로 세션을 만드세요." >&2
+            exit 1
+          fi
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+          mkdir -p .state
+          echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.json
+
+      - name: Node 발행 엔진 설치 (tistory-node 백엔드일 때만)
+        if: env.PUBLISH_BACKEND == 'tistory-node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Node 의존성 설치
+        if: env.PUBLISH_BACKEND == 'tistory-node'
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: 5) Publish
+        run: python main.py publish --retry-failed
+
+      - name: 상태 스냅샷
+        run: python main.py status
+
+      - name: Commit 결과물
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add content static data/events data/research data/processed data/published || true
+          git diff --cached --quiet && exit 0 || true
+          git commit -m "chore: pipeline run $(date +%Y-%m-%d)" || true
+          git push || true

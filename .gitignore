@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Data (수집 데이터, 이벤트, 리서치 패킷, 캐시)
+data/raw/*
+data/normalized/*
+data/events/*
+data/research/*
+data/cache/*
+data/processed/*
+data/published/*
+!data/raw/.gitkeep
+!data/normalized/.gitkeep
+!data/events/.gitkeep
+!data/research/.gitkeep
+!data/cache/.gitkeep
+!data/processed/.gitkeep
+!data/published/.gitkeep
+
+# Generated content / charts
+content/stocks/*
+content/economy/*
+content/realestate/*
+content/finance/*
+static/charts/*.png
+static/charts/*.json
+!content/stocks/.gitkeep
+
+# 티스토리 로그인 세션 (민감. 절대 커밋 금지)
+.state/
+secrets/
+*.storage_state.json
+*.storage_state.b64
+
+# 브라우저 오류 아티팩트
+artifacts/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+
+# Node (Tistory publish engine)
+node_modules/
+npm-debug.log*
