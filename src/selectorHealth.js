@@ -159,6 +159,8 @@ async function main() {
   const context = await browser.newContext({ storageState: tistoryConfig.paths.storageState });
   const page = await context.newPage();
   page.setDefaultTimeout(tistoryConfig.timeout);
+  // 검사 후 카테고리 화면으로 이동할 때 나오는 beforeunload 확인창을 자동 수락한다.
+  page.on('dialog', (dialog) => dialog.accept().catch(() => {}));
 
   const results = [];
   let reason = '';
@@ -174,7 +176,24 @@ async function main() {
         .catch(() => {});
       await page.waitForTimeout(1000);
 
-      for (const key of ['titleInput', 'tagInput', 'categoryButton', 'completeButton', 'attachButton']) {
+      // 발행 레이어는 제목/본문이 비어 있으면 열리지 않는다.
+      // 실제 발행과 같은 상태를 만들기 위해 임시 제목/본문을 채운 뒤 검사한다.
+      const titleResult = await resolveKey(page, 'titleInput', 'exists');
+      results.push(titleResult);
+      if (titleResult.ok) {
+        await page.locator(titleResult.new).fill('__selector_health__').catch(() => {});
+      }
+      await page
+        .evaluate(() => {
+          const editor = window.tinymce?.activeEditor;
+          if (!editor) return;
+          editor.setContent('<p>selector health check</p>');
+          editor.save();
+        })
+        .catch(() => {});
+      await page.waitForTimeout(300);
+
+      for (const key of ['tagInput', 'categoryButton', 'completeButton', 'attachButton']) {
         results.push(await resolveKey(page, key, 'exists'));
       }
       results.push(await resolveKey(page, 'tinymceEditorId', 'exists'));
@@ -185,8 +204,20 @@ async function main() {
       if (complete?.ok) {
         try {
           await page.locator(complete.new).click({ timeout: 5000 });
-          await page.waitForTimeout(1200);
-          layerOpen = true;
+          // 레이어가 실제로 뜰 때까지 기다린다. (선택자가 바뀌어도 감지할 수 있게 후보를 모두 확인)
+          for (const candidate of [
+            SELECTORS.publicVisibilityRadio,
+            SELECTORS.finalPublishButton,
+            '#open0',
+            '#open15',
+            '#open20',
+            '#publish-btn',
+          ]) {
+            if (await visible(page, candidate)) {
+              layerOpen = true;
+              break;
+            }
+          }
         } catch {
           layerOpen = false;
         }
@@ -209,11 +240,21 @@ async function main() {
           waitUntil: 'domcontentloaded',
         })
         .catch(() => {});
+      // 카테고리 목록은 JS로 그려지므로 '카테고리 추가'가 나타날 때까지 기다린다.
+      await page
+        .locator(SELECTORS.addCategoryLabel)
+        .first()
+        .waitFor({ state: 'attached', timeout: 8000 })
+        .catch(() => {});
       const addLabel = await resolveKey(page, 'addCategoryLabel', 'exists');
       results.push(addLabel);
       if (addLabel.ok) {
         await page.locator(addLabel.new).first().click({ timeout: 3000 }).catch(() => {});
-        await page.waitForTimeout(600);
+        await page
+          .locator(SELECTORS.newCategoryNameInput)
+          .first()
+          .waitFor({ state: 'visible', timeout: 5000 })
+          .catch(() => {});
       }
       results.push(await resolveKey(page, 'newCategoryNameInput', 'visible'));
     }
