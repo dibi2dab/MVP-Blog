@@ -76,6 +76,15 @@ class DetectStep:
     ) -> bool:
         if event.event_score >= self.settings.scoring.minimum_research_score:
             return True
+
+        # 개별 종목이 하루에 5% 이상 움직였다면 점수 조합과 무관하게 분석 가치가 있다.
+        # (거래량 급증 없이 가격만 크게 움직인 날에도 데이터 기사가 나올 수 있도록 한다.
+        #  뉴스/공시 이벤트에는 적용하지 않아 일반 헤드라인 유입을 막는다.)
+        if event.event_type in ("stock_surge", "stock_crash", "stock_breakout", "price_event"):
+            change = (event.evidence or {}).get("latest_change_pct")
+            if change is not None and abs(float(change)) >= self.settings.detection.price_change_mid_threshold:
+                return True
+
         # disclosure 이벤트는 score < threshold 여도 중요 공시면 통과
         if event.event_type in ("disclosure", "earnings") and any(
             d.requires_deep_research for d in disclosures if d.source_id in event.related_sources or d.corp_name == event.entity.name

@@ -121,6 +121,24 @@ publishing:
   backend: tistory        # local | mock | tistory (effective_backend: env > mock모드 > publisher.type)
   content_dir: content
   images_base_url: /charts
+  # 하루 발행량과 다양성
+  daily_limit: 5
+  max_per_entity_per_day: 1
+  max_per_event_type_per_day: 2
+  # 발행 준비 조건 (하나라도 미달이면 needs_review 로 저장만 하고 발행하지 않는다)
+  min_quality_score: 0.75
+  max_article_age_days: 7
+  max_event_age_days: 7
+  min_independent_metrics: 4
+  min_sources_with_url: 1
+  max_recent_similarity: 0.55
+  require_fact_check_pass: false
+  # 공개 정책: 기본 비공개. allow_public=false 이면 TISTORY_VISIBILITY=public 이어도 비공개.
+  allow_public: false
+  public_min_quality_score: 0.85
+  # 자료 선별 기간
+  news_cause_window_days: 3
+  news_background_window_days: 90
 
 # 티스토리 Playwright 발행 설정 (기본 발행 백엔드)
 publisher:

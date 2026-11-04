@@ -49,11 +49,12 @@ $env:MOCK_MODE="true"
 | `main.py detect` | 이벤트 감지 (스코어 >= `minimum_research_score`) |
 | `main.py research` | 리서치 패킷 + AI 분석 + 팩트 검증 |
 | `main.py generate` | 차트 생성 + 기사 작성 + 품질 검수 → Markdown |
-| `main.py publish` | 게시 (Tistory / local / mock). `--retry-failed` 로 이전 실패 기사 재시도 |
+| `main.py publish` | 자동 선정된 기사만 게시 (Tistory / local / mock). `--retry-failed` 로 이전 실패 기사 재시도 |
+| `main.py review` | `needs_review` / `quality_blocked` / `publish_failed` 기사와 미충족 사유 확인 |
 | `main.py status` | 이벤트 상태 요약 |
 | `main.py run` | collect ~ publish 일괄 실행 |
 
-공통 옵션: `--config-dir DIR`, `--publish-backend NAME`, `--date YYYY-MM-DD`, `--retry-failed`
+공통 옵션: `--config-dir DIR`, `--publish-backend NAME`, `--date YYYY-MM-DD`, `--limit N`, `--retry-failed`
 
 ## 환경 변수 (`.env`)
 
@@ -68,6 +69,8 @@ $env:MOCK_MODE="true"
 - `TISTORY_BLOG_URL` — 티스토리 블로그 주소 (예: `https://myblog.tistory.com`)
 - `TISTORY_STORAGE_STATE` — 로그인 세션(Storage State) Base64 값 (GitHub Secret. 로컬에서는 파일 사용)
 - `TISTORY_VISIBILITY` — `private`(기본) | `protected` | `public`
+- `ALLOW_PUBLIC=false` — 자동 공개 허용 스위치. `false` 이면 `TISTORY_VISIBILITY=public` 이어도 비공개로 발행
+- `DAILY_PUBLISH_LIMIT=5` — 하루 최대 발행 건수 (KST 날짜 기준)
 - `TISTORY_DRY_RUN=true` — 실제 발행 없이 에디터 진입·입력만 테스트
 - `MOCK_MODE=true` — 외부 API 없이 전체 시뮬레이션
 
@@ -131,6 +134,20 @@ echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.j
 시스템 안정화 전까지는 `default_visibility: private` 으로 비공개 발행 후 URL/본문/이미지를 검증한다.
 검증이 끝난 뒤에만 `public` 으로 자동 공개한다. 오류 시 스크린샷·HTML 스냅샷이
 `artifacts/tistory-errors/` 에 저장되고 GitHub Actions Artifact로 업로드된다.
+
+#### 하루 발행 기사 선정 (최대 5건)
+
+`main.py publish` 는 모든 기사를 순서대로 올리지 않는다. `src/pipeline/publish_selector.py` 가
+아래 조건을 모두 통과한 기사만 순위대로 고른다.
+
+1. **발행 준비도** — 자체 계산 지표 4개 이상, URL 출처 1개 이상, 검색 의도 답변·시나리오·확인 조건 포함
+2. **신선도** — 이벤트 발생 후 7일 이내, 최근 발행 기사와 유사도 0.55 미만
+3. **품질** — 품질 점수 0.75 이상, 심각한 팩트체크 이슈 없음
+4. **다양성** — 종목당 1건/일, 이벤트 유형당 2건/일
+5. **한도** — `data/published/event_*.json` 의 `published_at` 을 KST 날짜로 집계해 5건까지만
+
+조건을 통과하지 못한 기사는 `needs_review` 로 저장만 하고 발행하지 않는다.
+`main.py review` 로 미충족 사유를 확인할 수 있다.
 
 - 세션 만료(`TISTORY_SESSION_EXPIRED`): 자동 재로그인하지 않고 중단. `npm run login` 으로 새 세션 생성
 - 재시도 정책: 일시적 네트워크/타임아웃만 최대 2회. 셀렉터 변경·세션 만료·이미지 실패는 재시도하지 않고 위젯/로깅으로 원인 파악

@@ -104,14 +104,17 @@ class EventScorer:
 
     def select_for_research(self, results: list[DetectionResult]) -> list[DetectionResult]:
         threshold = self.settings.scoring.minimum_research_score
+        move_threshold = self.settings.detection.price_change_mid_threshold
         min_vol = self.settings.detection.min_volume_usd
         selected = []
         for r in results:
             score = self.total_score(r)
             amount = (r.evidence.get("latest_amount") or 0)
-            if score < threshold:
+            change = r.evidence.get("latest_change_pct")
+            # 점수 조합이 낮아도 개별 종목이 5% 이상 움직이면 분석 대상으로 삼는다.
+            if score < threshold and (change is None or abs(change) < move_threshold):
                 continue
-            if r.evidence.get("latest_change_pct") is None and not r.evidence.get("volume_ratio"):
+            if change is None and not r.evidence.get("volume_ratio"):
                 continue
             if amount and amount < min_vol:
                 # 거래대금이 지나치게 낮으면 관심 이벤트 제외 (유동성 필터)

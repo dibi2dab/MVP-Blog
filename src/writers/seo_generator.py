@@ -16,39 +16,45 @@ class SeoGenerator:
         self.banned = set(banned_title_phrases or [])
 
     def title(self, event: Event, publication_type: str = "B", evidence: dict | None = None) -> str:
-        """근거 기반 제목 생성 (요구사항 1, 2).
+        """계산 지표 기반 제목 생성.
 
         규칙:
-        - 모든 제목은 '[YYYY년 M월 D일]' 정확한 날짜로 시작
-        - 종목명 + 문법에 맞는 주격 조사(은/는/이/가)
-        - 핵심 변동률, 확정된 원인일 땐 분석 주제
-        - 금지 일반 문구(데이터로 본 주가·거래량의 실체 등) 미사용
-        - 원인 미확인(Data Brief) → "왜 ...했을까?" 금지
+        - '[YYYY년 M월 D일]' 정확한 날짜로 시작
+        - 종목명 + 변동률 + 거래량 배수 + 20일선 이격을 조합
+        - '왜 …했을까?' 같은 낚시성 템플릿 금지
+        - 기사마다 숫자가 달라 제목이 자연스럽게 구분된다
         """
         name = event.entity.name or "종목"
         date_prefix = f"[{format_korean_date(event.event_date)}]"
-        pct = evidence.get("latest_change_pct") if evidence else None
-        vol = evidence.get("volume_ratio") if evidence else None
-        pct_disp = f"{abs(pct) * 100:.2f}%" if pct is not None else None
-        is_up = pct is not None and pct > 0
-        is_down = pct is not None and pct < 0
-        direction = "상승" if is_up else "하락" if is_down else "변동"
+        evidence = evidence or {}
 
-        if publication_type == "A":
-            # 원인이 확인된 경우에만 분석 주제 제목
-            cause = "왜 급등했을까? 확인된 뉴스와 데이터 분석" if is_up else \
-                    "왜 하락했을까? 확인된 뉴스와 데이터 분석" if is_down else \
-                    "시장 이벤트 심층 분석"
-            return self._clean_title(f"{date_prefix} {name}{topic_after(name)} {cause}")
+        # generate_step 은 percent 단위(예: -5.37)를 quant 에 담아 넘긴다.
+        quant = evidence.get("quant_metrics") or {}
+        pct = quant.get("change_pct")
+        vol = quant.get("volume_ratio")
+        ma20 = quant.get("distance_ma20_pct")
+        gap = quant.get("gap_pct")
 
-        # Type B (사실 기반) — 가격·거래량 중심 제목
-        if pct_disp is None:
+        if pct is None:
+            # 이전 호출 호환: fraction 단위(0.05)일 수 있다.
+            legacy = evidence.get("latest_change_pct")
+            if legacy is not None:
+                pct = float(legacy) * 100 if abs(float(legacy)) <= 1 else float(legacy)
+        if vol is None:
+            vol = evidence.get("volume_ratio")
+
+        if pct is None:
             return self._clean_title(f"{date_prefix} {name} 시장 이벤트 확인")
-        if vol is not None and vol >= 1.2:
-            return self._clean_title(
-                f"{date_prefix} {name} {pct_disp} {direction}…거래량은 평균의 {vol:.1f}배"
-            )
-        return self._clean_title(f"{date_prefix} {name} {pct_disp} {direction}…확인된 데이터 분석")
+
+        direction = "상승" if pct > 0 else "하락" if pct < 0 else "보합"
+        parts = [f"{abs(pct):.2f}% {direction}"]
+        if vol is not None:
+            parts.append(f"거래량 {vol:.2f}배")
+        if ma20 is not None:
+            parts.append(f"20일선 {ma20:+.2f}%")
+        elif gap is not None and abs(gap) >= 1.0:
+            parts.append(f"갭 {gap:+.2f}%")
+        return self._clean_title(f"{date_prefix} {name} " + "·".join(parts))
 
     def _clean_title(self, title: str) -> str:
         # 일반적/AI 느낌 문구 제거 또는 대체 (요구사항 2)
@@ -64,7 +70,17 @@ class SeoGenerator:
         s = re.sub(r"[^\w\s가-힣]", "", s)
         return re.sub(r"\s+", "-", s).strip("-").replace(" ", "-")
 
-    def description(self, event: Event, body_preview: str) -> str:
+    def description(self, event: Event, body_preview: str, quant: dict | None = None) -> str:
+        quant = quant or {}
+        bits: list[str] = []
+        if quant.get("change_pct") is not None:
+            bits.append(f"전일 대비 {quant['change_pct']:+.2f}%")
+        if quant.get("volume_ratio") is not None:
+            bits.append(f"20일 평균 거래량의 {quant['volume_ratio']:.2f}배")
+        if quant.get("distance_ma20_pct") is not None:
+            bits.append(f"20일선 대비 {quant['distance_ma20_pct']:+.2f}%")
+        if bits:
+            return f"{event.entity.name}의 {', '.join(bits)} 움직임을 자체 계산 지표와 확인된 출처로 분석한 글입니다."[:180]
         line = " ".join(body_preview.split())[:130]
         return line or f"{event.entity.name} 시장 동향을 수집된 데이터와 뉴스·공시 기반으로 정리합니다."
 

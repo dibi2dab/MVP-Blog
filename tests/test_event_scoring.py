@@ -61,9 +61,19 @@ class TestEventScoring:
         settings.scoring.minimum_research_score = 7
         settings.stocks_universe = []
         scorer = EventScorer(settings)
-        low = _make_snapshot([0.0] * 25 + [0.05], [1000] * 25 + [1600])
+        low = _make_snapshot([0.0] * 25 + [0.02], [1000] * 25 + [1600])
         high = _make_snapshot([0.0] * 25 + [0.10], [1000] * 25 + [4000])
         results = [scorer.score_snapshot(low), scorer.score_snapshot(high)]
         selected = scorer.select_for_research(results)
         assert len(selected) == 1
         assert selected[0].ticker == high.ticker
+
+    def test_five_percent_move_is_selected_even_below_score_threshold(self, settings):
+        settings.scoring.minimum_research_score = 7
+        scorer = EventScorer(settings)
+        # -7.7% 급락 + 거래량 평균 이하 => 점수는 낮지만 분석 가치는 있다.
+        moved = _make_snapshot([0.0] * 25 + [-0.077], [1000] * 25 + [800])
+
+        selected = scorer.select_for_research([scorer.score_snapshot(moved)])
+
+        assert len(selected) == 1

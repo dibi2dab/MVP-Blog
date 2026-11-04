@@ -53,8 +53,19 @@ class ResearchPacketBuilder:
             packet.market_data = snapshot
             packet.price_data = self._price_data(snapshot)
             packet.volume_data = self._volume_data(snapshot)
+            ticker = event.entity.ticker or snapshot.ticker
+            price_url = (
+                f"https://finance.naver.com/item/main.naver?code={ticker}"
+                if ticker and ticker != "@disclosure"
+                else ""
+            )
             packet.add_source(
-                Source(source_id=snapshot.source_id, name="가격/거래량 데이터", type="stock_price", url="")
+                Source(
+                    source_id=snapshot.source_id,
+                    name="가격/거래량 데이터",
+                    type="stock_price",
+                    url=price_url,
+                )
             )
 
         self._collect_news(event, packet)
@@ -146,18 +157,15 @@ class ResearchPacketBuilder:
         if isinstance(related_rcepts, str):
             related_rcepts = {related_rcepts} if related_rcepts else set()
         for d in disclosures:
-            matched = d.corp_name == event.entity.name
+            matched = bool(event.entity.name) and d.corp_name == event.entity.name
             if not matched and d.rcept_no in related_rcepts:
                 matched = True
             if not matched and d.source_id and d.source_id in event.related_sources:
                 matched = True
-            if not matched and event.ticker and d.corp_code and event.ticker in d.corp_code:
-                matched = True
             if matched:
                 related.append(d)
-        # 이벤트와 관련 공시가 없으면 최근 공시를 참고 자료로 노출 (심층조사 컨텍스트)
-        if not related:
-            related = disclosures[:3]
+        # 관련 공시가 없으면 다른 회사 공시를 채워 넣지 않는다.
+        # (다른 회사 공시가 본문에 섞이면 Source Relevance 위반)
         packet.disclosures = related[: self.settings.research.max_news_per_entity]
         for d in packet.disclosures:
             packet.add_source(

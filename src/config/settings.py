@@ -137,9 +137,37 @@ class ContentQualityConfig(BaseModel):
 
 
 class PublishingConfig(BaseModel):
+    """자동 발행 정책.
+
+    하루 발행량, 종목/이벤트 유형 다양성, 품질·신선도·출처 기준을 한 곳에서 관리한다.
+    기본값은 '비공개 자동 발행'이며, 공개는 allow_public + public_ready 를 모두 만족할 때만 허용한다.
+    """
+
     backend: str = "local"
     content_dir: str = "content"
     images_base_url: str = "/charts"
+
+    # 하루 발행량과 다양성
+    daily_limit: int = 5
+    max_per_entity_per_day: int = 1
+    max_per_event_type_per_day: int = 2
+
+    # 발행 준비 조건
+    min_quality_score: float = 0.75
+    max_article_age_days: int = 7
+    max_event_age_days: int = 7
+    min_independent_metrics: int = 4
+    min_sources_with_url: int = 1
+    max_recent_similarity: float = 0.55
+    require_fact_check_pass: bool = False
+
+    # 공개 정책: 기본 비공개. allow_public=false 이면 TISTORY_VISIBILITY=public 이어도 비공개.
+    allow_public: bool = False
+    public_min_quality_score: float = 0.85
+
+    # 자료 수집/선별 기간
+    news_cause_window_days: int = 3
+    news_background_window_days: int = 90
 
 
 class PublisherConfig(BaseModel):
@@ -225,6 +253,13 @@ class Settings(BaseModel):
             self.tistory.default_visibility = env["TISTORY_VISIBILITY"]
         if env.get("TISTORY_HEADLESS"):
             self.tistory.headless = env["TISTORY_HEADLESS"].lower() not in ("0", "false", "no")
+        if env.get("DAILY_PUBLISH_LIMIT"):
+            try:
+                self.publishing.daily_limit = max(1, int(env["DAILY_PUBLISH_LIMIT"]))
+            except ValueError:
+                pass
+        if env.get("ALLOW_PUBLIC"):
+            self.publishing.allow_public = env["ALLOW_PUBLIC"].lower() in ("1", "true", "yes")
 
         def _abs(p: str) -> str:
             path = Path(p)

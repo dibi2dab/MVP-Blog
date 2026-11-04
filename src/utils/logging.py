@@ -15,6 +15,13 @@ def setup_logging(level: str = "INFO", log_file: str | Path | None = None) -> No
     root = logging.getLogger()
     root.setLevel(level_int)
 
+    # Windows 콘솔(cp949)에서도 한글·특수문자 로그가 깨지지 않도록 UTF-8 로 맞춘다.
+    if hasattr(sys.stdout, "reconfigure"):
+        try:
+            sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+        except (AttributeError, ValueError):  # pragma: no cover - 일부 래퍼 스트림
+            pass
+
     fmt = logging.Formatter(
         fmt="[%(asctime)s] [%(levelname)s] %(name)s: %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",

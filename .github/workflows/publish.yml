@@ -18,6 +18,8 @@ env:
   PUBLISH_BACKEND: "tistory-node"
   TISTORY_BLOG_URL: "${{ secrets.TISTORY_BLOG_URL }}"
   TISTORY_VISIBILITY: "${{ inputs.visibility || 'private' }}"
+  ALLOW_PUBLIC: "${{ secrets.ALLOW_PUBLIC || 'false' }}"
+  DAILY_PUBLISH_LIMIT: "${{ secrets.DAILY_PUBLISH_LIMIT || '5' }}"
   TISTORY_DRY_RUN: "${{ secrets.TISTORY_DRY_RUN || 'false' }}"
   OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
   ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
@@ -70,6 +72,7 @@ jobs:
       - name: Full pipeline (collect ~ publish)
         run: |
           python main.py run --retry-failed
+          python main.py review
 
       - name: Upload error artifacts
         if: failure()

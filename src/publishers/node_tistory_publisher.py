@@ -127,7 +127,7 @@ class NodeTistoryPublisher(BasePublisher):
             "contentHtml": html,
             "tags": list(article.tags or []),
             "tistoryCategory": category or "",
-            "visibility": self.settings.tistory.default_visibility,
+            "visibility": article.visibility or self.settings.tistory.default_visibility,
             "blogName": self._blog_sub(),
             "imagePaths": image_paths,
             "debug": not self.settings.tistory.headless,

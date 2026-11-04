@@ -198,7 +198,7 @@ class TistoryPublisher(BasePublisher):
             adapter.set_category(category)
             if article.tags:
                 adapter.set_tags(article.tags)
-            adapter.set_visibility(self.settings.tistory.default_visibility)
+            adapter.set_visibility(article.visibility or self.settings.tistory.default_visibility)
             candidates = self._entry_slug_candidates(article)
             return adapter.publish(self.settings.tistory.publish_delay_seconds, expect_url_slugs=candidates)
         return ""

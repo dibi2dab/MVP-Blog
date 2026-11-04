@@ -27,6 +27,7 @@ from src.config.settings import load_settings
 from src.pipeline.collect_step import CollectStep
 from src.pipeline.detect_step import DetectStep
 from src.pipeline.generate_step import GenerateStep
+from src.pipeline.publish_selector import select_articles
 from src.pipeline.publish_step import PublishStep
 from src.pipeline.research_step import ResearchStep
 from src.storage.file_store import JsonStore
@@ -37,12 +38,18 @@ def main() -> int:
     parser = argparse.ArgumentParser(prog="mvp-blog")
     parser.add_argument(
         "command",
-        choices=["mock", "collect", "detect", "research", "generate", "publish", "run", "status"],
+        choices=["mock", "collect", "detect", "research", "generate", "publish", "review", "run", "status"],
         help="실행할 단계",
     )
     parser.add_argument("--config-dir", default=None, help="config 디렉토리 경로")
     parser.add_argument("--publish-backend", default=None, help="publishing backend override")
     parser.add_argument("--date", default=None, help="snapshot 날짜 (YYYY-MM-DD)")
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="이번 실행에서 발행할 최대 기사 수 (기본: publishing.daily_limit)",
+    )
     parser.add_argument(
         "--retry-failed",
         action="store_true",
@@ -112,18 +119,50 @@ def main() -> int:
         logger.info("=== generate 종료 (approved %d)", generated)
 
     if args.command in ("publish", "mock", "run"):
+        selection = select_articles(
+            settings,
+            store,
+            limit=args.limit,
+            retry_failed=args.retry_failed,
+        )
+        logger.info(
+            "=== publish 선정: 오늘 %d건 발행됨 / 한도 %d, 이번 선택 %d건",
+            selection.published_today,
+            selection.daily_limit,
+            len(selection.selected),
+        )
+        for article_id, reason in selection.skipped[:20]:
+            logger.info("=== publish 제외: %s (%s)", article_id, reason)
+
         publish = PublishStep(settings, store)
         published = []
-        allowed_statuses = {"approved"}
-        if args.retry_failed:
-            allowed_statuses.add("publish_failed")
-        for article in store.load_all_articles():
-            if article.status not in allowed_statuses:
-                continue
-            result = publish.run(article)
+        for candidate in selection.selected:
+            result = publish.run(candidate.article)
             if result and result.ok:
                 published.append(result.url)
         logger.info("=== publish 완료: %d건 게시", len(published))
+
+    if args.command == "review":
+        articles = store.load_all_articles()
+        pending = [a for a in articles if a.status in ("needs_review", "quality_blocked", "publish_failed")]
+        logger.info("=== review 대상: %d건", len(pending))
+        for article in sorted(pending, key=lambda a: a.created_at, reverse=True):
+            readiness = article.readiness or {}
+            checks = readiness.get("checks") or {}
+            failed = [name for name, ok in checks.items() if not ok]
+            logger.info(
+                "- %s [%s] quality=%.2f metrics=%d sources=%d",
+                article.article_id,
+                article.status,
+                article.quality_score,
+                len(article.data_metrics or {}),
+                sum(1 for s in article.sources if "http" in (s or "")),
+            )
+            logger.info("  title: %s", article.title)
+            if failed:
+                logger.info("  readiness 실패: %s", ", ".join(failed))
+            for note in (article.review_notes or [])[:5]:
+                logger.info("  note: %s", note)
 
     if args.command == "status":
         events = store.load_all_events()

@@ -53,6 +53,15 @@ class Article(BaseModel):
     published_url: str | None = None
     publish_backend: str | None = None
     published_message: str = ""
+    published_visibility: str = ""
+
+    # 자체 계산 지표와 발행 준비 상태. 내부 점수·가중치는 공개 본문에 쓰지 않는다.
+    visibility: str = "private"
+    quality_score: float = 0.0
+    public_ready: bool = False
+    data_metrics: dict[str, float] = Field(default_factory=dict)
+    review_notes: list[str] = Field(default_factory=list)
+    readiness: dict = Field(default_factory=dict)
 
     @property
     def full_markdown(self) -> str:

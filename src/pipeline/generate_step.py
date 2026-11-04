@@ -2,15 +2,18 @@ from __future__ import annotations
 
 from pathlib import Path
 
-from src.charts.analysis_chart_generator import AnalysisChartGenerator
-from src.charts.chart_selector import ChartSelector
+from src.analysis.quant_metrics import compute_quant_metrics
 from src.analyzers.ai_provider import ProviderFactory
 from src.analyzers.quality_checker import QualityChecker
+from src.analyzers.readiness import evaluate_readiness
+from src.charts.analysis_chart_generator import AnalysisChartGenerator
+from src.charts.chart_selector import ChartSelector
 from src.config.settings import Settings
 from src.models.analysis import AnalysisReport
 from src.models.article import Article, ArticleImage
 from src.models.event import Event
 from src.models.research_packet import ResearchPacket
+from src.publishers.visibility import resolve_visibility
 from src.scoring.evidence_scoring import EvidenceScorer, decide_publication_type
 from src.storage.file_store import JsonStore
 from src.utils.cache import DiskCache
@@ -60,7 +63,9 @@ class GenerateStep:
             evidence_score=ev_r.score,
             has_price_data=packet.market_data is not None,
             has_volume_data=packet.market_data is not None and packet.market_data.volume_ratio is not None,
-            min_event_score=self.settings.scoring.minimum_research_score,
+            # detect 단계에서 이미 분석 가치를 검증했으므로(5% 이상 단일 종목 변동 포함)
+            # 여기서 이벤트 점수를 다시 기준으로 삼아 Type C로 떨어뜨리지 않는다.
+            min_event_score=0,
         )
         event.set_evidence(ev_r.score, pub_type)
 
@@ -85,11 +90,21 @@ class GenerateStep:
             ev_r.detail,
         )
 
-        # 2) 기사 작성 (발행 유형 + 근거 반영)
-        article = self.article_writer.build(event, packet, report, publication_type=pub_type, evidence=ev_r)
+        # 2) 자체 계산 지표 + 기사 작성
+        metrics = compute_quant_metrics(packet)
+        article = self.article_writer.build(
+            event,
+            packet,
+            report,
+            publication_type=pub_type,
+            evidence=ev_r,
+            metrics=metrics,
+        )
 
-        # 3) SEO (근거 기반 제목)
+        # 3) SEO (계산 지표 기반 제목/설명)
+        quant = metrics.to_dict()
         title_evidence = {
+            "quant_metrics": quant,
             "latest_change_pct": packet.market_data.latest_change_pct if packet.market_data else None,
             "volume_ratio": packet.market_data.volume_ratio if packet.market_data else None,
         }
@@ -97,7 +112,7 @@ class GenerateStep:
         article.slug = self.seo.slug(article.title)
         article.tags = self.seo.tags(event)
         article.keywords = self.seo.keywords(event)
-        article.description = self.seo.description(event, self._preview(packet, report))
+        article.description = self.seo.description(event, self._preview(packet, report), quant=quant)
         article.frontmatter = self.seo.frontmatter(article)
 
         # 4) 차트 생성 + 본문 이미지 메타데이터 저장 (로컬 경로, 최종 URL 아님)
@@ -122,17 +137,36 @@ class GenerateStep:
 
         # 5) 품질 검수
         qc = self.quality.check(article, markdown)
+        article.quality_score = qc.score
         if report.fact_check.verdict != "pass":
             logger.warning("[generate] article %s fact-check %s", article.article_id, report.fact_check.verdict)
 
-        if qc.passed:
-            logger.info("[generate] quality passed score=%.2f", qc.score)
-            article.status = "approved"
-            event.set_status("verified")
-        else:
+        # 6) 발행 준비도 판정 (데이터 독립성·출처·신선도·최근 유사도)
+        recent = [a for a in self.store.load_all_articles() if a.article_id != article.article_id]
+        readiness = evaluate_readiness(article, report, self.settings, recent_articles=recent)
+        article.readiness = readiness.to_dict()
+        article.public_ready = readiness.public_ready
+        article.visibility = resolve_visibility(article, self.settings, public_ready=readiness.public_ready)
+        article.review_notes = list(dict.fromkeys(qc.issues + readiness.issues))
+
+        if not qc.passed:
             logger.warning("[generate] quality issues: %s", qc.issues[:5])
             article.status = "quality_blocked"
             event.set_status("failed")
+        elif not readiness.ready:
+            logger.info("[generate] needs_review %s: %s", article.article_id, readiness.issues[:5])
+            article.status = "needs_review"
+            event.set_status("verified")
+        else:
+            logger.info(
+                "[generate] approved score=%.2f metrics=%d sources=%d visibility=%s",
+                qc.score,
+                readiness.independent_metrics,
+                readiness.sources_with_url,
+                article.visibility,
+            )
+            article.status = "approved"
+            event.set_status("verified")
         report.quality_check = qc
         self.store.save_event(event)
         self.store.save_analysis(report)

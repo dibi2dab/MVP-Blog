@@ -47,7 +47,7 @@ class PublishDeduplicator:
             return True
         return False
 
-    def mark(self, article: Article, result: PublishResult) -> None:
+    def mark(self, article: Article, result: PublishResult, visibility: str = "") -> None:
         self.store.save_published_marker(
             f"event_{article.event.event_id}",
             {
@@ -59,6 +59,7 @@ class PublishDeduplicator:
                 "article_id": article.article_id,
                 "content_hash": article.content_hash,
                 "url": result.url,
+                "visibility": visibility or article.visibility,
                 "published_at": datetime.now(timezone.utc).isoformat(),
             },
         )

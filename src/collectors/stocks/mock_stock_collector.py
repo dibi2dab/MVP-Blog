@@ -19,7 +19,7 @@ class MockStockCollector(BaseCollector):
     source_name = "Mock Stock Feed"
     source_type = "stock_price"
 
-    def __init__(self, settings: Settings, seed: int | None = None) -> None:
+    def __init__(self, settings: Settings, seed: int | None = 7) -> None:
         super().__init__()
         self.settings = settings
         self.rng = random.Random(seed)
