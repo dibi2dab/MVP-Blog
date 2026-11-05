@@ -260,6 +260,13 @@ class Settings(BaseModel):
                 self.publishing.daily_limit = max(1, int(env["DAILY_PUBLISH_LIMIT"]))
             except ValueError:
                 pass
+        if env.get("MAX_PER_EVENT_TYPE_PER_DAY"):
+            try:
+                self.publishing.max_per_event_type_per_day = max(
+                    1, int(env["MAX_PER_EVENT_TYPE_PER_DAY"])
+                )
+            except ValueError:
+                pass
         if env.get("ALLOW_PUBLIC"):
             self.publishing.allow_public = env["ALLOW_PUBLIC"].lower() in ("1", "true", "yes")
 

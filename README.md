@@ -71,6 +71,7 @@ $env:MOCK_MODE="true"
 - `TISTORY_VISIBILITY` — `public`(기본) | `private` | `protected`
 - `ALLOW_PUBLIC=true` — 자동 공개 허용 스위치. `false` 이면 `TISTORY_VISIBILITY=public` 이어도 비공개로 발행
 - `DAILY_PUBLISH_LIMIT=5` — 하루 최대 발행 건수 (KST 날짜 기준)
+- `MAX_PER_EVENT_TYPE_PER_DAY=2` — 같은 이벤트 유형(급등/급락 등) 최대 발행 건수
 - `TISTORY_DRY_RUN=true` — 실제 발행 없이 에디터 진입·입력만 테스트
 - `MOCK_MODE=true` — 외부 API 없이 전체 시뮬레이션
 

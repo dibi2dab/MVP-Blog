@@ -14,6 +14,7 @@ env:
   TISTORY_VISIBILITY: "${{ secrets.TISTORY_VISIBILITY || 'public' }}"
   ALLOW_PUBLIC: "${{ secrets.ALLOW_PUBLIC || 'true' }}"
   DAILY_PUBLISH_LIMIT: "${{ secrets.DAILY_PUBLISH_LIMIT || '5' }}"
+  MAX_PER_EVENT_TYPE_PER_DAY: "${{ secrets.MAX_PER_EVENT_TYPE_PER_DAY || '2' }}"
   TISTORY_DRY_RUN: "${{ secrets.TISTORY_DRY_RUN || 'false' }}"
   TISTORY_KAKAO_ID: "${{ secrets.TISTORY_KAKAO_ID }}"
   TISTORY_KAKAO_PASSWORD: "${{ secrets.TISTORY_KAKAO_PASSWORD }}"
