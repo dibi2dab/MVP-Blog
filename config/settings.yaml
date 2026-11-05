@@ -133,8 +133,8 @@ publishing:
   min_sources_with_url: 1
   max_recent_similarity: 0.55
   require_fact_check_pass: false
-  # 공개 정책: 기본 비공개. allow_public=false 이면 TISTORY_VISIBILITY=public 이어도 비공개.
-  allow_public: false
+  # 공개 정책: 기본 공개. allow_public=false 이면 TISTORY_VISIBILITY=public 이어도 비공개.
+  allow_public: true
   public_min_quality_score: 0.85
   # 자료 선별 기간
   news_cause_window_days: 3
@@ -149,7 +149,7 @@ tistory:
   editor_url: ""           # 비우면 blog_url 기반 자동 생성
   storage_state_path: ".state/tistory_storage_state.json"
   headless: true
-  default_visibility: private   # private(비공개) | protected | public
+  default_visibility: public   # private(비공개) | protected | public
   timeout: 30000
   screenshot_on_error: true
   publish_delay_seconds: 2

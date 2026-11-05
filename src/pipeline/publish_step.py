@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from datetime import datetime, timezone
 
+from src.analyzers.readiness import evaluate_readiness
 from src.config.settings import Settings
 from src.models.article import Article
 from src.publishers.publisher import PublishDeduplicator, PublishResult
@@ -31,6 +32,22 @@ class PublishStep:
             return None
 
         # 기사별 공개 범위를 확정한다. 정책상 공개 불가면 private 으로 강제된다.
+        #
+        # 공개 정책을 켠 뒤에도, 이전 실행에서 생성된 기사는 public_ready=false 로
+        # 저장되어 있을 수 있다. 발행 직전에 준비도를 다시 계산해 최신 정책을 적용한다.
+        if self.settings.publishing.allow_public and not article.public_ready:
+            report = self.store.load_analysis(article.event.event_id)
+            if report is not None:
+                others = [
+                    a for a in self.store.load_all_articles() if a.article_id != article.article_id
+                ]
+                readiness = evaluate_readiness(
+                    article, report, self.settings, recent_articles=others
+                )
+                article.public_ready = readiness.public_ready
+                article.readiness = readiness.to_dict()
+                self.store.save_article(article)
+
         article.visibility = resolve_visibility(
             article,
             self.settings,

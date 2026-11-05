@@ -3,7 +3,7 @@ from __future__ import annotations
 from datetime import datetime
 
 from src.analyzers.readiness import evaluate_readiness
-from src.models.analysis import AnalysisReport, FactCheckResult
+from src.models.analysis import AnalysisReport, Claim, FactCheckResult
 from src.models.article import Article, ArticleSection
 from src.models.event import Event
 from src.models.source import EntityRef
@@ -99,6 +99,26 @@ class TestReadiness:
         settings.publishing.public_min_quality_score = 0.85
         assert evaluate_readiness(_article(), _report(), settings).public_ready is False
         assert evaluate_readiness(_article(quality_score=0.9), _report(), settings).public_ready is True
+
+    def test_needs_review_verdict_is_public_when_no_rejected_claims(self, settings):
+        settings.publishing.allow_public = True
+        settings.publishing.public_min_quality_score = 0.85
+
+        result = evaluate_readiness(
+            _article(quality_score=0.9), _report(verdict="needs_review"), settings
+        )
+
+        assert result.public_ready is True
+
+    def test_rejected_claims_block_public(self, settings):
+        settings.publishing.allow_public = True
+        settings.publishing.public_min_quality_score = 0.85
+        report = _report(verdict="needs_review")
+        report.fact_check.rejected_claims.append(Claim(claim="패킷에 없는 수치"))
+
+        result = evaluate_readiness(_article(quality_score=0.9), report, settings)
+
+        assert result.public_ready is False
 
 
 class TestVisibility:

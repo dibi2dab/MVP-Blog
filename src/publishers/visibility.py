@@ -2,7 +2,8 @@ from __future__ import annotations
 
 """발행 공개 범위 정책.
 
-자동 발행의 기본값은 비공개다. `publishing.allow_public=false` 이면
+`config/settings.yaml` 의 기본값은 공개(`allow_public: true`,
+`default_visibility: public`)다. `publishing.allow_public=false` 이면
 TISTORY_VISIBILITY=public 이 설정돼 있어도 절대 공개하지 않는다.
 공개는 readiness.public_ready 까지 통과한 기사에만 허용한다.
 """

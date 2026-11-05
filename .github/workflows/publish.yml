@@ -4,21 +4,21 @@ on:
   workflow_dispatch:
     inputs:
       visibility:
-        description: "최종 공개 설정 (기본 비공개 먼저 발행 후 검증)"
+        description: "최종 공개 설정 (기본 공개)"
         required: false
-        default: "private"
+        default: "public"
         type: choice
         options:
-          - private
           - public
+          - private
 
 env:
   MOCK_MODE: "${{ secrets.MOCK_MODE || 'auto' }}"
   AI_PROVIDER: "${{ secrets.AI_PROVIDER || 'mock' }}"
   PUBLISH_BACKEND: "tistory-node"
   TISTORY_BLOG_URL: "${{ secrets.TISTORY_BLOG_URL }}"
-  TISTORY_VISIBILITY: "${{ inputs.visibility || 'private' }}"
-  ALLOW_PUBLIC: "${{ secrets.ALLOW_PUBLIC || 'false' }}"
+  TISTORY_VISIBILITY: "${{ inputs.visibility || 'public' }}"
+  ALLOW_PUBLIC: "${{ secrets.ALLOW_PUBLIC || 'true' }}"
   DAILY_PUBLISH_LIMIT: "${{ secrets.DAILY_PUBLISH_LIMIT || '5' }}"
   TISTORY_DRY_RUN: "${{ secrets.TISTORY_DRY_RUN || 'false' }}"
   TISTORY_KAKAO_ID: "${{ secrets.TISTORY_KAKAO_ID }}"

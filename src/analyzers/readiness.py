@@ -99,12 +99,17 @@ def evaluate_readiness(
     if failed:
         result.issues = [f"readiness 미충족: {name}" for name in failed]
 
-    # 공개는 별도 기준을 모두 통과해야 한다. 기본값 allow_public=false 이면 항상 False.
+    # 공개는 별도 기준을 모두 통과해야 한다. allow_public=false 이면 항상 False.
+    #
+    # fact_check.verdict == "pass" 를 하드 게이트로 두지 않는다. 현재 파이프라인의
+    # fact checker 는 사람이 확인할 여지가 있으면 보수적으로 needs_review 를 내는데,
+    # rejected_claims / 심각 이슈는 이미 위 result.ready(fact_check) 에서 차단된다.
+    # 즉 "검증된 사실 + 거부된 주장 없음 + 품질 기준"을 공개 조건으로 사용한다.
     result.public_ready = bool(
         result.ready
         and cfg.allow_public
         and article.quality_score >= cfg.public_min_quality_score
         and report is not None
-        and report.fact_check.verdict == "pass"
+        and not report.fact_check.rejected_claims
     )
     return result

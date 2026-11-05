@@ -68,8 +68,8 @@ $env:MOCK_MODE="true"
 - `PUBLISH_BACKEND` — `tistory-node`(기본) | `tistory`(Python 폴백) | `local` | `mock`
 - `TISTORY_BLOG_URL` — 티스토리 블로그 주소 (예: `https://myblog.tistory.com`)
 - `TISTORY_STORAGE_STATE` — 로그인 세션(Storage State) Base64 값 (GitHub Secret. 로컬에서는 파일 사용)
-- `TISTORY_VISIBILITY` — `private`(기본) | `protected` | `public`
-- `ALLOW_PUBLIC=false` — 자동 공개 허용 스위치. `false` 이면 `TISTORY_VISIBILITY=public` 이어도 비공개로 발행
+- `TISTORY_VISIBILITY` — `public`(기본) | `private` | `protected`
+- `ALLOW_PUBLIC=true` — 자동 공개 허용 스위치. `false` 이면 `TISTORY_VISIBILITY=public` 이어도 비공개로 발행
 - `DAILY_PUBLISH_LIMIT=5` — 하루 최대 발행 건수 (KST 날짜 기준)
 - `TISTORY_DRY_RUN=true` — 실제 발행 없이 에디터 진입·입력만 테스트
 - `MOCK_MODE=true` — 외부 API 없이 전체 시뮬레이션
@@ -90,7 +90,7 @@ NodeTistoryPublisher (src/publishers/node_tistory_publisher.py)
         v
 src/publishTistory.js (Playwright)
         -> 저장된 로그인 세션 -> 글쓰기 페이지 -> 제목/이미지/본문(TinyMCE API)/태그
-        -> 비공개(private) 발행 -> 발행 URL 검증
+        -> 공개(public) 발행 -> 발행 URL 검증
 ```
 
 - 발행 백엔드: `tistory-node` (기본) / `tistory` (기존 Python Playwright 발행기, 폴백)
@@ -132,7 +132,7 @@ powershell -ExecutionPolicy Bypass -File scripts/refresh_tistory.ps1
 | `TISTORY_BLOG_URL` | 블로그 주소 (예: `https://eneru.tistory.com`) |
 | `TISTORY_KAKAO_ID` | (선택) 자동 재로그인용 카카오 계정 ID |
 | `TISTORY_KAKAO_PASSWORD` | (선택) 자동 재로그인용 카카오 계정 비밀번호 |
-| `TISTORY_VISIBILITY` | `private` (기본) / `public` |
+| `TISTORY_VISIBILITY` | `public` (기본) / `private` |
 | `TISTORY_DRY_RUN` | 디버깅 시 `true` |
 
 GitHub Actions는 아래처럼 세션을 복원하고 (.state), 파이프라인 실행 전에 `npm run session:check` 로
@@ -143,11 +143,17 @@ echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.j
 npm run session:check
 ```
 
-### 3) 발행 전략 (기본 비공개)
+### 3) 발행 전략 (기본 공개)
 
-시스템 안정화 전까지는 `default_visibility: private` 으로 비공개 발행 후 URL/본문/이미지를 검증한다.
-검증이 끝난 뒤에만 `public` 으로 자동 공개한다. 오류 시 스크린샷·HTML 스냅샷이
-`artifacts/tistory-errors/` 에 저장되고 GitHub Actions Artifact로 업로드된다.
+`config/settings.yaml` 의 `tistory.default_visibility: public` + `publishing.allow_public: true` 로
+자동 발행 글은 기본적으로 **공개**된다. 다만 다음 조건을 모두 통과한 기사만 공개되고,
+그렇지 않으면 자동으로 비공개로 내려간다.
+
+- 발행 준비도(`readiness.ready`) 통과
+- 품질 점수 `public_min_quality_score`(0.85) 이상
+- 팩트체크에서 거부된 주장(`rejected_claims`) 없음
+
+오류 시 스크린샷·HTML 스냅샷이 `artifacts/tistory-errors/` 에 저장되고 GitHub Actions Artifact로 업로드된다.
 
 #### 하루 발행 기사 선정 (최대 5건)
 

@@ -140,7 +140,8 @@ class PublishingConfig(BaseModel):
     """자동 발행 정책.
 
     하루 발행량, 종목/이벤트 유형 다양성, 품질·신선도·출처 기준을 한 곳에서 관리한다.
-    기본값은 '비공개 자동 발행'이며, 공개는 allow_public + public_ready 를 모두 만족할 때만 허용한다.
+    기본값은 config/settings.yaml 의 allow_public / tistory.default_visibility 로 결정되며,
+    공개는 allow_public + public_ready 를 모두 만족할 때만 허용한다.
     """
 
     backend: str = "local"
@@ -161,7 +162,8 @@ class PublishingConfig(BaseModel):
     max_recent_similarity: float = 0.55
     require_fact_check_pass: bool = False
 
-    # 공개 정책: 기본 비공개. allow_public=false 이면 TISTORY_VISIBILITY=public 이어도 비공개.
+    # 공개 정책: config/settings.yaml 기본값은 공개(allow_public=true).
+    # allow_public=false 이면 TISTORY_VISIBILITY=public 이어도 비공개.
     allow_public: bool = False
     public_min_quality_score: float = 0.85
 
