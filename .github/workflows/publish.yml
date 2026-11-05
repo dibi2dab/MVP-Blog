@@ -21,6 +21,8 @@ env:
   ALLOW_PUBLIC: "${{ secrets.ALLOW_PUBLIC || 'false' }}"
   DAILY_PUBLISH_LIMIT: "${{ secrets.DAILY_PUBLISH_LIMIT || '5' }}"
   TISTORY_DRY_RUN: "${{ secrets.TISTORY_DRY_RUN || 'false' }}"
+  TISTORY_KAKAO_ID: "${{ secrets.TISTORY_KAKAO_ID }}"
+  TISTORY_KAKAO_PASSWORD: "${{ secrets.TISTORY_KAKAO_PASSWORD }}"
   OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
   ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
   DART_API_KEY: "${{ secrets.DART_API_KEY }}"
@@ -68,6 +70,9 @@ jobs:
           fi
           mkdir -p .state
           echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.json
+
+      - name: Verify Tistory session (자동 재로그인 포함)
+        run: npm run session:check
 
       - name: Full pipeline (collect ~ publish)
         run: |

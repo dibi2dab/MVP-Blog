@@ -6,6 +6,8 @@
   "type": "module",
   "scripts": {
     "login": "node src/tistoryLogin.js",
+    "login:auto": "node src/tistoryLogin.js --auto",
+    "session:check": "node src/tistorySessionCheck.js",
     "publish": "node src/publishCli.js",
     "selectors:check": "node src/selectorHealth.js check",
     "selectors:fix": "node src/selectorHealth.js fix"

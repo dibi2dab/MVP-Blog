@@ -15,6 +15,8 @@ env:
   ALLOW_PUBLIC: "${{ secrets.ALLOW_PUBLIC || 'false' }}"
   DAILY_PUBLISH_LIMIT: "${{ secrets.DAILY_PUBLISH_LIMIT || '5' }}"
   TISTORY_DRY_RUN: "${{ secrets.TISTORY_DRY_RUN || 'false' }}"
+  TISTORY_KAKAO_ID: "${{ secrets.TISTORY_KAKAO_ID }}"
+  TISTORY_KAKAO_PASSWORD: "${{ secrets.TISTORY_KAKAO_PASSWORD }}"
   OPENAI_API_KEY: "${{ secrets.OPENAI_API_KEY }}"
   ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
   DART_API_KEY: "${{ secrets.DART_API_KEY }}"
@@ -41,26 +43,11 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Mock mode 시 캐시 초기화
-        if: env.MOCK_MODE == 'true'
-        run: rm -rf data/cache data/events data/research data/processed data/published
-
-      - name: 1) Collect
-        continue-on-error: true
-        run: python main.py collect
-
-      - name: 2) Detect
-        run: python main.py detect
-
-      - name: 3) Research
-        run: python main.py research
-
-      - name: 4) Generate (차트+기사+검수)
-        run: python main.py generate
-
-      - name: 4-1) Review (발행 보류 기사 점검)
-        run: python main.py review
-
+      # ---------------------------------------------------------------
+      # 발행 세션을 파이프라인보다 먼저 준비/검증한다.
+      # TSID 쿠키는 약 30분이면 만료되므로, 저장된 장기 세션 또는
+      # Secrets 의 카카오 계정으로 자동 재로그인을 시도한다.
+      # ---------------------------------------------------------------
       - name: Playwright + 세션 복원 (tistory 백엔드일 때만)
         if: env.PUBLISH_BACKEND == 'tistory' || env.PUBLISH_BACKEND == 'tistory-node'
         env:
@@ -89,6 +76,30 @@ jobs:
           npm ci
           npx playwright install --with-deps chromium
 
+      - name: 세션 검증 (자동 재로그인 포함)
+        if: env.PUBLISH_BACKEND == 'tistory-node'
+        run: npm run session:check
+
+      - name: Mock mode 시 캐시 초기화
+        if: env.MOCK_MODE == 'true'
+        run: rm -rf data/cache data/events data/research data/processed data/published
+
+      - name: 1) Collect
+        continue-on-error: true
+        run: python main.py collect
+
+      - name: 2) Detect
+        run: python main.py detect
+
+      - name: 3) Research
+        run: python main.py research
+
+      - name: 4) Generate (차트+기사+검수)
+        run: python main.py generate
+
+      - name: 4-1) Review (발행 보류 기사 점검)
+        run: python main.py review
+
       - name: 5) Publish
         run: python main.py publish --retry-failed
 
@@ -100,7 +111,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content static data/events data/research data/processed data/published || true
+          git add -f content static data/events data/research data/processed data/published || true
           git diff --cached --quiet && exit 0 || true
           git commit -m "chore: pipeline run $(date +%Y-%m-%d)" || true
           git push || true

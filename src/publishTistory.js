@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
 import { tistoryConfig } from './tistoryConfig.js';
+import { ensureSession, editorUrl } from './tistoryAuth.js';
 
 /**
  * 티스토리 웹 에디터 DOM 선택자.
@@ -232,9 +233,16 @@ export async function publishTistory({
 
   try {
     await step('로그인 확인', async () => {
-      await page.goto(`https://${blogName}.tistory.com/manage/newpost/`, {
+      await page.goto(editorUrl(blogName), {
         waitUntil: 'domcontentloaded',
       });
+      if (/auth\/login|login\.tistory|login_id/.test(page.url())) {
+        // TSID 는 약 30분이면 만료된다. 저장된 장기 세션/자격증명으로 자동 복구를 시도한다.
+        console.warn('[tistory] 세션 만료 감지 → 자동 재로그인 시도');
+        const result = await ensureSession(context);
+        console.warn(`[tistory] 세션 복구 완료 (${result.method})`);
+        await page.goto(editorUrl(blogName), { waitUntil: 'domcontentloaded' });
+      }
       if (/auth\/login|login\.tistory|login_id/.test(page.url())) {
         const err = new Error(`redirected to login page: ${page.url()}`);
         err.code = 'TISTORY_SESSION_EXPIRED';
@@ -327,20 +335,34 @@ export async function publishTistory({
       }
     });
 
+    // 발행은 이미 완료됐다. 링크를 못 찾았다고 발행 실패로 처리하면
+    // 실제로 올라간 글이 재발행(중복)될 수 있으므로 best-effort 로만 확인한다.
     const publishedUrl = await step('발행된 글 링크 확인', async () => {
-      await page.waitForURL(/\/manage\/posts\/?/, { timeout: 15000 }).catch(() => {});
-      await page.waitForTimeout(1000);
-      const titlePrefix = title.slice(0, 15);
-      const href = await page.evaluate((prefix) => {
-        const link = [...document.querySelectorAll('a')].find((a) =>
-          (a.textContent || '').includes(prefix)
-        );
-        return link ? link.href : null;
-      }, titlePrefix);
-      if (!href) {
-        throw new Error('발행은 진행됐지만 글 목록에서 링크를 찾지 못했습니다.');
+      await page
+        .waitForURL(/\/manage\/posts\/?|\/manage\/post\/\d+/, { timeout: 15000 })
+        .catch(() => {});
+      await page.waitForTimeout(1500);
+
+      // 발행 직후 수정 화면(/manage/post/{id})으로 이동한 경우 공개 URL 을 만든다.
+      const idMatch = page.url().match(/\/manage\/post\/(\d+)/);
+      if (idMatch) {
+        return `https://${blogName}.tistory.com/${idMatch[1]}`;
       }
-      return href;
+
+      const titlePrefix = title.slice(0, 15);
+      for (let attempt = 0; attempt < 3; attempt += 1) {
+        const href = await page.evaluate((prefix) => {
+          const link = [...document.querySelectorAll('a')].find((a) =>
+            (a.textContent || '').includes(prefix)
+          );
+          return link ? link.href : null;
+        }, titlePrefix);
+        if (href) return href;
+        await page.waitForTimeout(2000);
+      }
+
+      console.warn('[tistory] 발행은 완료됐지만 글 목록에서 링크를 찾지 못했습니다. URL 없이 성공 처리합니다.');
+      return '';
     });
 
     return { publishedUrl };

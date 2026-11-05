@@ -96,23 +96,33 @@ src/publishTistory.js (Playwright)
 - 발행 백엔드: `tistory-node` (기본) / `tistory` (기존 Python Playwright 발행기, 폴백)
 - 본문은 DOM 클릭 대신 **TinyMCE JS API**(`tinymce.get('editor-tistory').setContent()` + `.save()`)로 주입해 UI 변경에 더 강하다
 - 이미지 업로드도 Node 엔진이 처리한다 (`/charts/*.png` → 업로드 URL 치환)
-- 첫 로그인은 사람이 직접 수행하고 세션만 저장/재사용한다 (ID/PW를 Secret에 저장하지 않는다)
+- 첫 로그인은 사람이 직접 수행하고 세션을 저장/재사용한다.
+- 티스토리의 `TSID` 쿠키는 **약 30분**이면 만료된다. 그래서 발행 전에 세션을 검증하고,
+  저장된 장기 세션(`로그인 상태 유지`) 또는 Secrets 의 카카오 계정으로 **자동 재로그인**을 시도한다.
+- 카카오 ID/PW 를 Secret 에 저장하고 싶지 않다면, 최초 로그인 시 **"로그인 상태 유지"**를 체크하면
+  이후 실행에서 비밀번호 없이 조용히 재인증(silent SSO)될 수 있다.
 
-### 1) 최초 로그인 세션 생성
+### 1) 로그인 세션 생성/갱신
 
 ```bash
 # Node 엔진 (권장)
 npm install
 npx playwright install chromium
-npm run login          # 세션 저장 (.state/tistory_storage_state.json)
+npm run login          # 브라우저에서 직접 로그인 → 세션 저장 (.state/tistory_storage_state.json)
 
-# 기존 Python 스크립트도 동일한 세션 파일을 만든다
-python scripts/tistory_login.py
-python scripts/tistory_login.py --base64-out .state/tistory_storage_state.b64   # GitHub Secret용 Base64
+# 완전 자동 로그인 (TISTORY_KAKAO_ID / TISTORY_KAKAO_PASSWORD 필요)
+npm run login:auto
+
+# 저장된 세션이 유효한지 검사 (+ 가능하면 자동 복구)
+npm run session:check
+
+# 로그인 + GitHub Secret 갱신을 한 번에
+powershell -ExecutionPolicy Bypass -File scripts/refresh_tistory.ps1
 ```
 
-브라우저가 열리면 직접 로그인(카카오 계정 + 2차 인증) 후 Enter. 생성된 세션 파일은 민감 정보이므로
-**절대 커밋하지 않는다** (`.gitignore`에 `.state/`, `secrets/` 포함).
+브라우저가 열리면 직접 로그인(카카오 계정 + 2차 인증)한다. 스크립트가 **"로그인 상태 유지"를 자동 체크**하고,
+실제 글쓰기 화면(`/manage/newpost/`)이 열리는 것을 확인한 뒤에만 세션을 저장한다.
+생성된 세션 파일은 민감 정보이므로 **절대 커밋하지 않는다** (`.gitignore`에 `.state/`, `secrets/` 포함).
 
 ### 2) GitHub Secret 등록
 
@@ -120,13 +130,17 @@ python scripts/tistory_login.py --base64-out .state/tistory_storage_state.b64   
 | --- | --- |
 | `TISTORY_STORAGE_STATE` | 위 Base64 세션 값 |
 | `TISTORY_BLOG_URL` | 블로그 주소 (예: `https://eneru.tistory.com`) |
+| `TISTORY_KAKAO_ID` | (선택) 자동 재로그인용 카카오 계정 ID |
+| `TISTORY_KAKAO_PASSWORD` | (선택) 자동 재로그인용 카카오 계정 비밀번호 |
 | `TISTORY_VISIBILITY` | `private` (기본) / `public` |
 | `TISTORY_DRY_RUN` | 디버깅 시 `true` |
 
-GitHub Actions는 아래처럼 세션을 복원하고 (.state) 발행한다.
+GitHub Actions는 아래처럼 세션을 복원하고 (.state), 파이프라인 실행 전에 `npm run session:check` 로
+세션을 검증한다. 만료됐으면 저장된 장기 세션 → 카카오 계정 순서로 자동 재로그인을 시도한다.
 
 ```bash
 echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.json
+npm run session:check
 ```
 
 ### 3) 발행 전략 (기본 비공개)
@@ -149,7 +163,8 @@ echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.j
 조건을 통과하지 못한 기사는 `needs_review` 로 저장만 하고 발행하지 않는다.
 `main.py review` 로 미충족 사유를 확인할 수 있다.
 
-- 세션 만료(`TISTORY_SESSION_EXPIRED`): 자동 재로그인하지 않고 중단. `npm run login` 으로 새 세션 생성
+- 세션 만료(`TISTORY_SESSION_EXPIRED`): 저장된 장기 세션 → 카카오 계정 순서로 자동 재로그인을 시도하고,
+  모두 실패하면 발행 전에 명확한 오류로 중단한다. `npm run login` 으로 새 세션을 만들 수 있다.
 - 재시도 정책: 일시적 네트워크/타임아웃만 최대 2회. 셀렉터 변경·세션 만료·이미지 실패는 재시도하지 않고 위젯/로깅으로 원인 파악
 
 ### 4) 에디터 UI 변경 대응 (SELECTORS 자동 수정)
