@@ -1,0 +1,32 @@
+{
+  "event_id": "49d7a4c04200ab02",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] 아이엠스팩1호, 코스닥 상",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Wed, 04 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] 아이엠스팩1호, 코스닥 상장 첫날 14%대 급등 - Chosunbiz",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNmlXQWdzWWt3c2JROGlzQTVOcVhJNGZZWkthSV9YZWZUZjRudEtoZHhsQVNBQzdDN284M0NLZzdCVHJ6TlQ2T0k1blNha0Q1cHJaUXI1OE5fMElzb2xNVGpoRXdZT0FyWVVjYzh5MVVKNl9hYk9jaXhYNVVQc0lXa0ZYa1Fzay1P0gGcAUFVX3lxTE1Ja0FLaE52bDFWcGR6NUFfV1RCUW9peVRhS0lzWjZuQ2pkMjZ1d2k0c0NJUmhWdkJEUk5LMklBVHZGMklYUEpqSXptazY3dUpHbUdhcFgtNnh1NjJrdGc1U2E4UmtCVklscFdXekx6M2d2ejJ1X1hIWWhYTlZtYXpqcUJjQWQ3TEkxelFiTkVsS2FvYmlhYkxyUGotVw?oc=5",
+    "title": "[특징주] 아이엠스팩1호, 코스닥 상장 첫날 14%대 급등 - Chosunbiz"
+  },
+  "summary": "뉴스: [특징주] 아이엠스팩1호, 코스닥 상장 첫날 14%대 급등 - Chosunbiz"
+}

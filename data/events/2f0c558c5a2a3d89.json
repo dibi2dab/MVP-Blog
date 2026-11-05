@@ -1,0 +1,32 @@
+{
+  "event_id": "2f0c558c5a2a3d89",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오, 3조 유증 택한 이유…‘",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Thu, 03 Se",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오, 3조 유증 택한 이유…‘노사·수주’에 주가 달렸다 - Chosunbiz",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPemp4dDdscXJjMzBrT3A1NEFaT01jSTQ2UHNCYVhqZFVqQUREUFpGN1FLZzctWENtSC1PZW1yY1NvSm5kallIaW9NaEltNXVxc1NyWk5GTTlGVHhFYnZQLXdfRFZyTnpjNXVyQllCemttMDFoWTlLbWtzbUtFNHNDNzNmSjZyajDSAZsBQVVfeXFMTl8yclFBRTZSYWJ1dWVyYWl6X0F1TlBFZlZQeWRJMC14VEJGcHdxX3dMZnlKMGtNMjJQQ3Q0cnAyUGQ0QWxlUFEtZXBfaVk5THJPWDNLSG9pNHJKRV85YTI2MHZxQ1g5SFg2R3kzWTZKcTNkRUNWZnR3UFczeEZGZFFCcXBoZkVmdk1oeWV5a0VKWGhOb2M2U2hhanc?oc=5",
+    "title": "삼성바이오, 3조 유증 택한 이유…‘노사·수주’에 주가 달렸다 - Chosunbiz"
+  },
+  "summary": "뉴스: 삼성바이오, 3조 유증 택한 이유…‘노사·수주’에 주가 달렸다 - Chosunbiz"
+}

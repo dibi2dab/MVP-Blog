@@ -1,0 +1,32 @@
+{
+  "event_id": "4f50e713cff752ef",
+  "event_type": "news_event",
+  "entity": {
+    "name": "“삼성바이오로직스, 5공장 효과 본격",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Tue, 06 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: “삼성바이오로직스, 5공장 효과 본격화…유증에 목표가는 하향” 하나증권 - 매일경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE81YmlYdXBucldBU0xJX2pBS1VYSlZ0TDhnb29rNXRvLTdlaG43NXBrd3hVTE1SWEJZNjNUOWJEUHc5ZmtKLUhXZkY0dGpQYVdjTmc?oc=5",
+    "title": "“삼성바이오로직스, 5공장 효과 본격화…유증에 목표가는 하향” 하나증권 - 매일경제"
+  },
+  "summary": "뉴스: “삼성바이오로직스, 5공장 효과 본격화…유증에 목표가는 하향” 하나증권 - 매일경제"
+}

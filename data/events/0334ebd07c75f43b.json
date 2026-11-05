@@ -1,0 +1,37 @@
+{
+  "event_id": "0334ebd07c75f43b",
+  "event_type": "stock_surge",
+  "entity": {
+    "name": "크래프톤",
+    "ticker": "259960",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "2026-11-05",
+  "event_score": 5,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_up_5",
+      "label": "주가 +5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    },
+    {
+      "code": "volume_100",
+      "label": "거래량 평균 대비 100% 이상",
+      "score_contribution": 2,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": 0.057007125890736345,
+    "volume_ratio": 2.020575420616262,
+    "latest_amount": null
+  },
+  "summary": "크래프톤 주가 변동 0.057007125890736345% / 거래량 비율 2.020575420616262"
+}

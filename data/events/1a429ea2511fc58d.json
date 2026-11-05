@@ -1,0 +1,32 @@
+{
+  "event_id": "1a429ea2511fc58d",
+  "event_type": "news_event",
+  "entity": {
+    "name": "북미 최대 전기차 기업 뚫었다!…덕산",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Wed, 04 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 북미 최대 전기차 기업 뚫었다!…덕산일렉테라, 코스닥 상장 잰걸음 - 디일렉",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9kUk1TQkQtZlpSQUJCOE1melV0OTJOcDRhdzVld0pxa3NBY3F0bDdfSU91MEZweVFPd3NCR2RYbnpseENrWkc5ZUcyMERTbTVKOUl6YkN6RW44a3FzZW5VTENra3cyZw?oc=5",
+    "title": "북미 최대 전기차 기업 뚫었다!…덕산일렉테라, 코스닥 상장 잰걸음 - 디일렉"
+  },
+  "summary": "뉴스: 북미 최대 전기차 기업 뚫었다!…덕산일렉테라, 코스닥 상장 잰걸음 - 디일렉"
+}

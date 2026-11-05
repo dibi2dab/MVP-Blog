@@ -1,0 +1,32 @@
+{
+  "event_id": "4a2678e02a6c9f2e",
+  "event_type": "news_event",
+  "entity": {
+    "name": "예상 웃돈 실적에도 주가 '뚝'…삼성",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Thu, 22 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 예상 웃돈 실적에도 주가 '뚝'…삼성바이오, '수주 공백'에 발목 - 한국경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1xdFd0YkNZUDljSlJPVUd1bWkxWFRJTHJhMTZLaDZLMDFiS3ZPWVJTYVktQi1tUVA0cFQ4N0RZakNtS2xvRm5MY2VjM2M0Qy1RVmQ5MFpLUXI5QQ?oc=5",
+    "title": "예상 웃돈 실적에도 주가 '뚝'…삼성바이오, '수주 공백'에 발목 - 한국경제"
+  },
+  "summary": "뉴스: 예상 웃돈 실적에도 주가 '뚝'…삼성바이오, '수주 공백'에 발목 - 한국경제"
+}

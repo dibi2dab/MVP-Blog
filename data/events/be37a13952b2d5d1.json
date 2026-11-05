@@ -1,0 +1,37 @@
+{
+  "event_id": "be37a13952b2d5d1",
+  "event_type": "stock_surge",
+  "entity": {
+    "name": "셀트리온",
+    "ticker": "068270",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "2026-11-05",
+  "event_score": 5,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_up_5",
+      "label": "주가 +5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    },
+    {
+      "code": "volume_100",
+      "label": "거래량 평균 대비 100% 이상",
+      "score_contribution": 2,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": 0.06683168316831684,
+    "volume_ratio": 2.8404020847971183,
+    "latest_amount": null
+  },
+  "summary": "셀트리온 주가 변동 0.06683168316831684% / 거래량 비율 2.8404020847971183"
+}

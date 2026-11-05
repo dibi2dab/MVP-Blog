@@ -1,0 +1,32 @@
+{
+  "event_id": "1877e418bc084918",
+  "event_type": "news_event",
+  "entity": {
+    "name": "LG엔솔, 북미 ESS 출하 본격화…",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Wed, 04 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: LG엔솔, 북미 ESS 출하 본격화…대신證 \"2027년 수주 성과 가시화\" - 뉴스웍스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE00MGtPWEFuOE5kNFktNWNKelF6U0JpczNwOGZpakxNU0hnLWJCa0QxMC1NVEpKd1h1RUcwS0JBMWNiZEk3YnYtWmZ4Y0ZXSHd0Q3hESE9ySnlqSnI2cF9XQWFjZTZsb0lMbTBWLW5MWdIBc0FVX3lxTE9ZR3lrbmhGclBQVGUza0xSS3VrNXE3V3Blc2I0aWpQWF82VmltdVl1VDNxeFdLZ1VGYkUxSDBWN0kzbUVoQVVnQnluejlEMmQwNVlUcHdEUWpGbzZ2ZlZjTmZlaVk5Q2ktcnB3cldaWV9EVmM?oc=5",
+    "title": "LG엔솔, 북미 ESS 출하 본격화…대신證 \"2027년 수주 성과 가시화\" - 뉴스웍스"
+  },
+  "summary": "뉴스: LG엔솔, 북미 ESS 출하 본격화…대신證 \"2027년 수주 성과 가시화\" - 뉴스웍스"
+}

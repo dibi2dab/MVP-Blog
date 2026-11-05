@@ -1,0 +1,32 @@
+{
+  "event_id": "09cd404fb287cae3",
+  "event_type": "news_event",
+  "entity": {
+    "name": "NH證 “LG에너지솔루션, 빅테크 E",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Tue, 03 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: NH證 “LG에너지솔루션, 빅테크 ESS 수주 긍정적…목표가↓” - 팝콘뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTFB5Yy00U3I4TndVNGVYOWh6UExPOG9jeDNaZmVnaHRlWXFTbE9XYzlJTFZ1T00yTWpjS3BrR0pqM3hRRTlpRWZlUEZXcVBvS245aDFzVVNVNEdFTjViLWtsOTF1ZlBwSUZUVlBKd0FMZw?oc=5",
+    "title": "NH證 “LG에너지솔루션, 빅테크 ESS 수주 긍정적…목표가↓” - 팝콘뉴스"
+  },
+  "summary": "뉴스: NH證 “LG에너지솔루션, 빅테크 ESS 수주 긍정적…목표가↓” - 팝콘뉴스"
+}

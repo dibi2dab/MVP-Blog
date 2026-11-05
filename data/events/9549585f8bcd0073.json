@@ -1,0 +1,32 @@
+{
+  "event_id": "9549585f8bcd0073",
+  "event_type": "news_event",
+  "entity": {
+    "name": "\"뱅크·페이 매각 소문은 사실무근\"…",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Tue, 20 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: \"뱅크·페이 매각 소문은 사실무근\"…카카오, 주가 미 회복시 경영진 평가 연동 - 뉴시스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE01TzR2bVhJS0k5NnFpaUFQdmwyUDJWWDRiX003bjE3bG1wOFB0dEtjY252Q2kwNW1lQzNoRE5relNCNmY2ZEphS0k0bkF1OHhsR1lCQkRvSy1Ba3RSZEh4VtIBeEFVX3lxTE82NWw0cnZaZjQ4ODJBZUlQRllBb0p0MmNwc05Ba1kwQTBrQ1dDQzNzYXNFX2M4Qk1nT2Z0T2V2dmYwSDZETkIyVGVaR2Y5MzNGUTRnMDQxT1JLdW9XcC1VRGVxTHBGLTBUSUtDbVdzQWM5aUhoQlc2MQ?oc=5",
+    "title": "\"뱅크·페이 매각 소문은 사실무근\"…카카오, 주가 미 회복시 경영진 평가 연동 - 뉴시스"
+  },
+  "summary": "뉴스: \"뱅크·페이 매각 소문은 사실무근\"…카카오, 주가 미 회복시 경영진 평가 연동 - 뉴시스"
+}

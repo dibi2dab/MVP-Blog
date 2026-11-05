@@ -1,0 +1,32 @@
+{
+  "event_id": "94a25b783f959641",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스, 폴리펩타이드 기업 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Mon, 02 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스, 폴리펩타이드 기업 인수 '청신호' 켜져 - 팜뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE92ZGtsSENlVDRTeEhPTmVPR25NSkd3QVhFRUNfaFNtUWpJbEVCaE1Kbjh0enpvNVhyWEc2dmNOcExFSV9MN3gtamY0a0NQSFAzSmpIWkdMOXl1cWItbDRMVzFsMUJEdHFlcFl0Mg?oc=5",
+    "title": "삼성바이오로직스, 폴리펩타이드 기업 인수 '청신호' 켜져 - 팜뉴스"
+  },
+  "summary": "뉴스: 삼성바이오로직스, 폴리펩타이드 기업 인수 '청신호' 켜져 - 팜뉴스"
+}

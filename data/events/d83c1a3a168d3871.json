@@ -1,0 +1,32 @@
+{
+  "event_id": "d83c1a3a168d3871",
+  "event_type": "news_event",
+  "entity": {
+    "name": "주가 폭락에 '쪼개기 상장' 논란까지",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Sun, 18 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 주가 폭락에 '쪼개기 상장' 논란까지...시험대 오른 SK하이닉스 - YTN",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTE1hUjRPSHB3cUh6eDJib2RXZU9ZLTBuZWFZeTVVNVZrTGpRRnp0NUk3LVBsaGpTU29jdkhUMURLbEtKN3h3S0pNM1ctdjE2SGRuREhkanhlMmg1SnRZRnc?oc=5",
+    "title": "주가 폭락에 '쪼개기 상장' 논란까지...시험대 오른 SK하이닉스 - YTN"
+  },
+  "summary": "뉴스: 주가 폭락에 '쪼개기 상장' 논란까지...시험대 오른 SK하이닉스 - YTN"
+}

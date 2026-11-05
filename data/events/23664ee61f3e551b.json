@@ -1,0 +1,32 @@
+{
+  "event_id": "23664ee61f3e551b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스 주가 장중 4%대 올",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Fri, 23 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스 주가 장중 4%대 올라, '파업 우려 완화·수주 기대'에 강세 - 비즈니스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1BNVdCeEJfWGFyN3Njd05kaGtBTU45eUkyRnVVdlRfeTZneWtFcE9WbTZ2dURoSUlaWkVuSjlaMFdVYU56MmJoNzFhUjl5R21rVXBpTU1nbDBnYjZKbHZIYUV0OTI4ZlJkbWkxQ29NMGJuWVE?oc=5",
+    "title": "삼성바이오로직스 주가 장중 4%대 올라, '파업 우려 완화·수주 기대'에 강세 - 비즈니스포스트"
+  },
+  "summary": "뉴스: 삼성바이오로직스 주가 장중 4%대 올라, '파업 우려 완화·수주 기대'에 강세 - 비즈니스포스트"
+}

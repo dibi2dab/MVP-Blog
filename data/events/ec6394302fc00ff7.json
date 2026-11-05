@@ -1,0 +1,37 @@
+{
+  "event_id": "ec6394302fc00ff7",
+  "event_type": "stock_surge",
+  "entity": {
+    "name": "카카오",
+    "ticker": "035720",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "2026-11-05",
+  "event_score": 7,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_up_5",
+      "label": "주가 +5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    },
+    {
+      "code": "volume_300",
+      "label": "거래량 평균 대비 300% 이상",
+      "score_contribution": 4,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "published",
+  "evidence": {
+    "latest_change_pct": 0.09422750424448217,
+    "volume_ratio": 3.0886372773750765,
+    "latest_amount": null
+  },
+  "summary": "카카오 주가 변동 0.09422750424448217% / 거래량 비율 3.0886372773750765"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "9b95c4e1482bf889",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스 증자, '할인율 15",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Fri, 28 Au",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스 증자, '할인율 15%' 아쉽네...'적자 기업' 인수도 단기 부담 - 인",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNRDVNM1hvX0p2eU5qbG1ReHVWX2tzajZPakZNQ3JuT0hobTlKSFZCTmdCRnRmaHZGc3RvM0J6QV85d1YyLTdzRkZQVWh0enM3V3ZhNEVRMl9NVm1VZUJvbVI1SF9JclZ5TDZKc283bGg4bUdjMjNuZVpHek5Xd1Y2MkpiWQ?oc=5",
+    "title": "삼성바이오로직스 증자, '할인율 15%' 아쉽네...'적자 기업' 인수도 단기 부담 - 인베스트조선"
+  },
+  "summary": "뉴스: 삼성바이오로직스 증자, '할인율 15%' 아쉽네...'적자 기업' 인수도 단기 부담 - 인베스트조선"
+}

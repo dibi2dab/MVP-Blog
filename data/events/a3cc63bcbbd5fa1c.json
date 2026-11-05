@@ -1,0 +1,32 @@
+{
+  "event_id": "a3cc63bcbbd5fa1c",
+  "event_type": "news_event",
+  "entity": {
+    "name": "1.2조 쏟은 삼성의 '과학 씨앗'…",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Thu, 05 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 1.2조 쏟은 삼성의 '과학 씨앗'…코스닥 상장사 키웠다 - 비즈워치",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1ZSmxwWHI0VGdVdzRMajl0bEZsTlRkM2FRQkNXNV9DaENmZ2ZhUWRWeE9KV1pkZkh5U3JOUWZ0bEpTTDQ5ejhPQUdxT2p1N3owbUY0enJSZ2lHTzA3aVBTQ0tRTlBtRW16TkdUMw?oc=5",
+    "title": "1.2조 쏟은 삼성의 '과학 씨앗'…코스닥 상장사 키웠다 - 비즈워치"
+  },
+  "summary": "뉴스: 1.2조 쏟은 삼성의 '과학 씨앗'…코스닥 상장사 키웠다 - 비즈워치"
+}

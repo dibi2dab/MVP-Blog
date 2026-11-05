@@ -1,0 +1,32 @@
+{
+  "event_id": "bd0e68fd728472ef",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[뉴스락 주식네비] LG에너지솔루션,",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Wed, 04 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [뉴스락 주식네비] LG에너지솔루션, 내년 ESS 영업익 2.4조 전망… 빅테크 수주 '주",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9XdWI1T1NoeDF1SzU3UHQ3bzE0RUVKX29QUkk1OWFjWFl0SndtMThmQVlNZzBWQnRJZkY1OFotMHdwTDdlbmxINWRUdjI2RTM3SHZqQWZtck40dFVPZjNrTkxuREcxa01IVHdfTQ?oc=5",
+    "title": "[뉴스락 주식네비] LG에너지솔루션, 내년 ESS 영업익 2.4조 전망… 빅테크 수주 '주목' - 뉴스락"
+  },
+  "summary": "뉴스: [뉴스락 주식네비] LG에너지솔루션, 내년 ESS 영업익 2.4조 전망… 빅테크 수주 '주목' - 뉴스락"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "d2b2d5cd6631093c",
+  "event_type": "news_event",
+  "entity": {
+    "name": "포스코홀딩스, 리튬·지분매각 선언에 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Fri, 03 Ju",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 포스코홀딩스, 리튬·지분매각 선언에 증권가 “주가 재평가” - 매일경제 마켓",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBwUzg2SG9RVExiZTBuMk1EYmVjc1N2TFBZS0tvcl9WTmVJRlBldjc4b0trenNxcVdvRmgtQnZHRi15M1pQdS04SmVqdkE5NUw1cmc?oc=5",
+    "title": "포스코홀딩스, 리튬·지분매각 선언에 증권가 “주가 재평가” - 매일경제 마켓"
+  },
+  "summary": "뉴스: 포스코홀딩스, 리튬·지분매각 선언에 증권가 “주가 재평가” - 매일경제 마켓"
+}

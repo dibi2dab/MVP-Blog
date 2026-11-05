@@ -1,0 +1,32 @@
+{
+  "event_id": "1d8b5f7072e99618",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스피 상장사, 중복상장·유상증자 때",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Thu, 05 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스피 상장사, 중복상장·유상증자 때 주주보호 조치 공개 의무화 - BBS불교방송",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFAybFU3bVg5NWJWQVhEbUNUX2RIWS1JQnhEdFY3SzJ6NExLOGlzNGdrb1VnNXVfM1lmSmhfR2xFbmFOY3hna05UcHVzT1lVeW5aelIzaUZ5c3VZWV9Pdmg3cHg0VkdXWXEzMWo4?oc=5",
+    "title": "코스피 상장사, 중복상장·유상증자 때 주주보호 조치 공개 의무화 - BBS불교방송"
+  },
+  "summary": "뉴스: 코스피 상장사, 중복상장·유상증자 때 주주보호 조치 공개 의무화 - BBS불교방송"
+}

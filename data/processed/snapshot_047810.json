@@ -1,0 +1,917 @@
+{
+  "ticker": "047810",
+  "name": "한국항공우주",
+  "price_series": {
+    "ticker": "047810",
+    "name": "한국항공우주",
+    "currency": "KRW",
+    "bars": [
+      {
+        "date": "2026-06-25",
+        "open": 144800.0,
+        "high": 149500.0,
+        "low": 142100.0,
+        "close": 142200.0,
+        "volume": 430880,
+        "amount": null,
+        "change_pct": -0.63
+      },
+      {
+        "date": "2026-06-26",
+        "open": 144000.0,
+        "high": 144800.0,
+        "low": 135700.0,
+        "close": 141600.0,
+        "volume": 528708,
+        "amount": null,
+        "change_pct": -0.42
+      },
+      {
+        "date": "2026-06-29",
+        "open": 140400.0,
+        "high": 152000.0,
+        "low": 139700.0,
+        "close": 150400.0,
+        "volume": 484368,
+        "amount": null,
+        "change_pct": 6.21
+      },
+      {
+        "date": "2026-06-30",
+        "open": 151700.0,
+        "high": 153600.0,
+        "low": 146400.0,
+        "close": 146400.0,
+        "volume": 417355,
+        "amount": null,
+        "change_pct": -2.66
+      },
+      {
+        "date": "2026-07-01",
+        "open": 150000.0,
+        "high": 154900.0,
+        "low": 148100.0,
+        "close": 154200.0,
+        "volume": 361124,
+        "amount": null,
+        "change_pct": 5.33
+      },
+      {
+        "date": "2026-07-02",
+        "open": 155800.0,
+        "high": 160900.0,
+        "low": 151800.0,
+        "close": 154200.0,
+        "volume": 451640,
+        "amount": null,
+        "change_pct": 0.0
+      },
+      {
+        "date": "2026-07-03",
+        "open": 157900.0,
+        "high": 159600.0,
+        "low": 150400.0,
+        "close": 156600.0,
+        "volume": 364534,
+        "amount": null,
+        "change_pct": 1.56
+      },
+      {
+        "date": "2026-07-06",
+        "open": 161400.0,
+        "high": 166200.0,
+        "low": 156800.0,
+        "close": 161100.0,
+        "volume": 448080,
+        "amount": null,
+        "change_pct": 2.87
+      },
+      {
+        "date": "2026-07-07",
+        "open": 158600.0,
+        "high": 160200.0,
+        "low": 153000.0,
+        "close": 160200.0,
+        "volume": 379638,
+        "amount": null,
+        "change_pct": -0.56
+      },
+      {
+        "date": "2026-07-08",
+        "open": 160300.0,
+        "high": 160700.0,
+        "low": 139100.0,
+        "close": 142000.0,
+        "volume": 522043,
+        "amount": null,
+        "change_pct": -11.36
+      },
+      {
+        "date": "2026-07-09",
+        "open": 141400.0,
+        "high": 158600.0,
+        "low": 139100.0,
+        "close": 150000.0,
+        "volume": 756875,
+        "amount": null,
+        "change_pct": 5.63
+      },
+      {
+        "date": "2026-07-10",
+        "open": 150000.0,
+        "high": 151100.0,
+        "low": 144300.0,
+        "close": 144300.0,
+        "volume": 519192,
+        "amount": null,
+        "change_pct": -3.8
+      },
+      {
+        "date": "2026-07-13",
+        "open": 145500.0,
+        "high": 153900.0,
+        "low": 142100.0,
+        "close": 143500.0,
+        "volume": 426323,
+        "amount": null,
+        "change_pct": -0.55
+      },
+      {
+        "date": "2026-07-14",
+        "open": 143600.0,
+        "high": 146100.0,
+        "low": 136800.0,
+        "close": 141100.0,
+        "volume": 423471,
+        "amount": null,
+        "change_pct": -1.67
+      },
+      {
+        "date": "2026-07-15",
+        "open": 143600.0,
+        "high": 148700.0,
+        "low": 143600.0,
+        "close": 147500.0,
+        "volume": 317822,
+        "amount": null,
+        "change_pct": 4.54
+      },
+      {
+        "date": "2026-07-16",
+        "open": 147800.0,
+        "high": 152600.0,
+        "low": 146100.0,
+        "close": 149200.0,
+        "volume": 335809,
+        "amount": null,
+        "change_pct": 1.15
+      },
+      {
+        "date": "2026-07-20",
+        "open": 149500.0,
+        "high": 152000.0,
+        "low": 142000.0,
+        "close": 143900.0,
+        "volume": 444004,
+        "amount": null,
+        "change_pct": -3.55
+      },
+      {
+        "date": "2026-07-21",
+        "open": 141000.0,
+        "high": 149500.0,
+        "low": 136200.0,
+        "close": 142500.0,
+        "volume": 480033,
+        "amount": null,
+        "change_pct": -0.97
+      },
+      {
+        "date": "2026-07-22",
+        "open": 145000.0,
+        "high": 153000.0,
+        "low": 145000.0,
+        "close": 149300.0,
+        "volume": 354686,
+        "amount": null,
+        "change_pct": 4.77
+      },
+      {
+        "date": "2026-07-23",
+        "open": 149300.0,
+        "high": 164100.0,
+        "low": 149000.0,
+        "close": 164100.0,
+        "volume": 571930,
+        "amount": null,
+        "change_pct": 9.91
+      },
+      {
+        "date": "2026-07-24",
+        "open": 162100.0,
+        "high": 164900.0,
+        "low": 157100.0,
+        "close": 158100.0,
+        "volume": 410287,
+        "amount": null,
+        "change_pct": -3.66
+      },
+      {
+        "date": "2026-07-27",
+        "open": 161000.0,
+        "high": 161000.0,
+        "low": 145600.0,
+        "close": 146200.0,
+        "volume": 529723,
+        "amount": null,
+        "change_pct": -7.53
+      },
+      {
+        "date": "2026-07-28",
+        "open": 140800.0,
+        "high": 148500.0,
+        "low": 140600.0,
+        "close": 143000.0,
+        "volume": 356618,
+        "amount": null,
+        "change_pct": -2.19
+      },
+      {
+        "date": "2026-07-29",
+        "open": 142000.0,
+        "high": 143100.0,
+        "low": 113200.0,
+        "close": 117500.0,
+        "volume": 919886,
+        "amount": null,
+        "change_pct": -17.83
+      },
+      {
+        "date": "2026-07-30",
+        "open": 110000.0,
+        "high": 125600.0,
+        "low": 110000.0,
+        "close": 120700.0,
+        "volume": 487447,
+        "amount": null,
+        "change_pct": 2.72
+      },
+      {
+        "date": "2026-07-31",
+        "open": 123700.0,
+        "high": 127800.0,
+        "low": 122100.0,
+        "close": 127300.0,
+        "volume": 736956,
+        "amount": null,
+        "change_pct": 5.47
+      },
+      {
+        "date": "2026-08-03",
+        "open": 125700.0,
+        "high": 125700.0,
+        "low": 120800.0,
+        "close": 123700.0,
+        "volume": 453632,
+        "amount": null,
+        "change_pct": -2.83
+      },
+      {
+        "date": "2026-08-04",
+        "open": 123100.0,
+        "high": 139600.0,
+        "low": 122600.0,
+        "close": 137500.0,
+        "volume": 511714,
+        "amount": null,
+        "change_pct": 11.16
+      },
+      {
+        "date": "2026-08-05",
+        "open": 138000.0,
+        "high": 146500.0,
+        "low": 136600.0,
+        "close": 146500.0,
+        "volume": 423884,
+        "amount": null,
+        "change_pct": 6.55
+      },
+      {
+        "date": "2026-08-06",
+        "open": 143100.0,
+        "high": 151000.0,
+        "low": 143100.0,
+        "close": 150100.0,
+        "volume": 457171,
+        "amount": null,
+        "change_pct": 2.46
+      },
+      {
+        "date": "2026-08-07",
+        "open": 150200.0,
+        "high": 158500.0,
+        "low": 150200.0,
+        "close": 154200.0,
+        "volume": 518986,
+        "amount": null,
+        "change_pct": 2.73
+      },
+      {
+        "date": "2026-08-10",
+        "open": 155400.0,
+        "high": 156800.0,
+        "low": 149800.0,
+        "close": 154100.0,
+        "volume": 285068,
+        "amount": null,
+        "change_pct": -0.06
+      },
+      {
+        "date": "2026-08-11",
+        "open": 152800.0,
+        "high": 154300.0,
+        "low": 135200.0,
+        "close": 135500.0,
+        "volume": 656056,
+        "amount": null,
+        "change_pct": -12.07
+      },
+      {
+        "date": "2026-08-12",
+        "open": 137200.0,
+        "high": 144200.0,
+        "low": 134600.0,
+        "close": 144100.0,
+        "volume": 435234,
+        "amount": null,
+        "change_pct": 6.35
+      },
+      {
+        "date": "2026-08-13",
+        "open": 144100.0,
+        "high": 151200.0,
+        "low": 138500.0,
+        "close": 151200.0,
+        "volume": 974840,
+        "amount": null,
+        "change_pct": 4.93
+      },
+      {
+        "date": "2026-08-14",
+        "open": 149700.0,
+        "high": 150400.0,
+        "low": 145900.0,
+        "close": 146400.0,
+        "volume": 322739,
+        "amount": null,
+        "change_pct": -3.17
+      },
+      {
+        "date": "2026-08-18",
+        "open": 146100.0,
+        "high": 147500.0,
+        "low": 138500.0,
+        "close": 140000.0,
+        "volume": 315099,
+        "amount": null,
+        "change_pct": -4.37
+      },
+      {
+        "date": "2026-08-19",
+        "open": 139500.0,
+        "high": 139800.0,
+        "low": 131200.0,
+        "close": 135700.0,
+        "volume": 366811,
+        "amount": null,
+        "change_pct": -3.07
+      },
+      {
+        "date": "2026-08-20",
+        "open": 136000.0,
+        "high": 138000.0,
+        "low": 133400.0,
+        "close": 134700.0,
+        "volume": 219161,
+        "amount": null,
+        "change_pct": -0.74
+      },
+      {
+        "date": "2026-08-21",
+        "open": 132600.0,
+        "high": 132800.0,
+        "low": 129400.0,
+        "close": 130000.0,
+        "volume": 252741,
+        "amount": null,
+        "change_pct": -3.49
+      },
+      {
+        "date": "2026-08-24",
+        "open": 130200.0,
+        "high": 131500.0,
+        "low": 128300.0,
+        "close": 130700.0,
+        "volume": 235560,
+        "amount": null,
+        "change_pct": 0.54
+      },
+      {
+        "date": "2026-08-25",
+        "open": 129200.0,
+        "high": 130900.0,
+        "low": 125500.0,
+        "close": 130900.0,
+        "volume": 253981,
+        "amount": null,
+        "change_pct": 0.15
+      },
+      {
+        "date": "2026-08-26",
+        "open": 132000.0,
+        "high": 132300.0,
+        "low": 127800.0,
+        "close": 132100.0,
+        "volume": 195886,
+        "amount": null,
+        "change_pct": 0.92
+      },
+      {
+        "date": "2026-08-27",
+        "open": 133100.0,
+        "high": 137700.0,
+        "low": 133100.0,
+        "close": 137600.0,
+        "volume": 233059,
+        "amount": null,
+        "change_pct": 4.16
+      },
+      {
+        "date": "2026-08-28",
+        "open": 136000.0,
+        "high": 138000.0,
+        "low": 132100.0,
+        "close": 133100.0,
+        "volume": 237790,
+        "amount": null,
+        "change_pct": -3.27
+      },
+      {
+        "date": "2026-08-31",
+        "open": 132500.0,
+        "high": 136600.0,
+        "low": 128600.0,
+        "close": 131000.0,
+        "volume": 1159492,
+        "amount": null,
+        "change_pct": -1.58
+      },
+      {
+        "date": "2026-09-01",
+        "open": 134100.0,
+        "high": 139800.0,
+        "low": 125500.0,
+        "close": 127200.0,
+        "volume": 543734,
+        "amount": null,
+        "change_pct": -2.9
+      },
+      {
+        "date": "2026-09-02",
+        "open": 125100.0,
+        "high": 125100.0,
+        "low": 121000.0,
+        "close": 122600.0,
+        "volume": 326827,
+        "amount": null,
+        "change_pct": -3.62
+      },
+      {
+        "date": "2026-09-03",
+        "open": 123000.0,
+        "high": 126600.0,
+        "low": 121500.0,
+        "close": 125000.0,
+        "volume": 265233,
+        "amount": null,
+        "change_pct": 1.96
+      },
+      {
+        "date": "2026-09-04",
+        "open": 125900.0,
+        "high": 128300.0,
+        "low": 125100.0,
+        "close": 126500.0,
+        "volume": 140114,
+        "amount": null,
+        "change_pct": 1.2
+      },
+      {
+        "date": "2026-09-07",
+        "open": 127500.0,
+        "high": 130600.0,
+        "low": 126600.0,
+        "close": 129400.0,
+        "volume": 235919,
+        "amount": null,
+        "change_pct": 2.29
+      },
+      {
+        "date": "2026-09-08",
+        "open": 130700.0,
+        "high": 133500.0,
+        "low": 127700.0,
+        "close": 127800.0,
+        "volume": 186512,
+        "amount": null,
+        "change_pct": -1.24
+      },
+      {
+        "date": "2026-09-09",
+        "open": 128300.0,
+        "high": 130700.0,
+        "low": 127800.0,
+        "close": 129100.0,
+        "volume": 182413,
+        "amount": null,
+        "change_pct": 1.02
+      },
+      {
+        "date": "2026-09-10",
+        "open": 127700.0,
+        "high": 133600.0,
+        "low": 127600.0,
+        "close": 133100.0,
+        "volume": 341853,
+        "amount": null,
+        "change_pct": 3.1
+      },
+      {
+        "date": "2026-09-11",
+        "open": 129900.0,
+        "high": 132400.0,
+        "low": 128700.0,
+        "close": 130500.0,
+        "volume": 194091,
+        "amount": null,
+        "change_pct": -1.95
+      },
+      {
+        "date": "2026-09-14",
+        "open": 129500.0,
+        "high": 134500.0,
+        "low": 128500.0,
+        "close": 131700.0,
+        "volume": 228786,
+        "amount": null,
+        "change_pct": 0.92
+      },
+      {
+        "date": "2026-09-15",
+        "open": 130600.0,
+        "high": 132200.0,
+        "low": 128700.0,
+        "close": 129300.0,
+        "volume": 160986,
+        "amount": null,
+        "change_pct": -1.82
+      },
+      {
+        "date": "2026-09-16",
+        "open": 129000.0,
+        "high": 129100.0,
+        "low": 124300.0,
+        "close": 126000.0,
+        "volume": 220556,
+        "amount": null,
+        "change_pct": -2.55
+      },
+      {
+        "date": "2026-09-17",
+        "open": 126400.0,
+        "high": 132900.0,
+        "low": 126400.0,
+        "close": 130900.0,
+        "volume": 295948,
+        "amount": null,
+        "change_pct": 3.89
+      },
+      {
+        "date": "2026-09-18",
+        "open": 131600.0,
+        "high": 131700.0,
+        "low": 128500.0,
+        "close": 130200.0,
+        "volume": 859012,
+        "amount": null,
+        "change_pct": -0.53
+      },
+      {
+        "date": "2026-09-21",
+        "open": 131500.0,
+        "high": 132300.0,
+        "low": 129000.0,
+        "close": 130000.0,
+        "volume": 145048,
+        "amount": null,
+        "change_pct": -0.15
+      },
+      {
+        "date": "2026-09-22",
+        "open": 130200.0,
+        "high": 131500.0,
+        "low": 129300.0,
+        "close": 130100.0,
+        "volume": 127573,
+        "amount": null,
+        "change_pct": 0.08
+      },
+      {
+        "date": "2026-09-23",
+        "open": 130000.0,
+        "high": 130100.0,
+        "low": 127400.0,
+        "close": 128400.0,
+        "volume": 187480,
+        "amount": null,
+        "change_pct": -1.31
+      },
+      {
+        "date": "2026-09-28",
+        "open": 128100.0,
+        "high": 131500.0,
+        "low": 126300.0,
+        "close": 128600.0,
+        "volume": 180462,
+        "amount": null,
+        "change_pct": 0.16
+      },
+      {
+        "date": "2026-09-29",
+        "open": 129800.0,
+        "high": 130300.0,
+        "low": 125900.0,
+        "close": 127000.0,
+        "volume": 162969,
+        "amount": null,
+        "change_pct": -1.24
+      },
+      {
+        "date": "2026-09-30",
+        "open": 128300.0,
+        "high": 129400.0,
+        "low": 125700.0,
+        "close": 126700.0,
+        "volume": 172944,
+        "amount": null,
+        "change_pct": -0.24
+      },
+      {
+        "date": "2026-10-01",
+        "open": 127200.0,
+        "high": 127800.0,
+        "low": 125400.0,
+        "close": 126800.0,
+        "volume": 143180,
+        "amount": null,
+        "change_pct": 0.08
+      },
+      {
+        "date": "2026-10-02",
+        "open": 127300.0,
+        "high": 133500.0,
+        "low": 126800.0,
+        "close": 133300.0,
+        "volume": 257487,
+        "amount": null,
+        "change_pct": 5.13
+      },
+      {
+        "date": "2026-10-06",
+        "open": 134100.0,
+        "high": 134300.0,
+        "low": 128600.0,
+        "close": 129900.0,
+        "volume": 266188,
+        "amount": null,
+        "change_pct": -2.55
+      },
+      {
+        "date": "2026-10-07",
+        "open": 128600.0,
+        "high": 128800.0,
+        "low": 121300.0,
+        "close": 121300.0,
+        "volume": 436389,
+        "amount": null,
+        "change_pct": -6.62
+      },
+      {
+        "date": "2026-10-08",
+        "open": 121000.0,
+        "high": 122800.0,
+        "low": 119100.0,
+        "close": 121600.0,
+        "volume": 386250,
+        "amount": null,
+        "change_pct": 0.25
+      },
+      {
+        "date": "2026-10-12",
+        "open": 119300.0,
+        "high": 122000.0,
+        "low": 114000.0,
+        "close": 114500.0,
+        "volume": 474850,
+        "amount": null,
+        "change_pct": -5.84
+      },
+      {
+        "date": "2026-10-13",
+        "open": 110300.0,
+        "high": 113500.0,
+        "low": 108500.0,
+        "close": 111700.0,
+        "volume": 448903,
+        "amount": null,
+        "change_pct": -2.45
+      },
+      {
+        "date": "2026-10-14",
+        "open": 111200.0,
+        "high": 113200.0,
+        "low": 109500.0,
+        "close": 111100.0,
+        "volume": 242596,
+        "amount": null,
+        "change_pct": -0.54
+      },
+      {
+        "date": "2026-10-15",
+        "open": 105300.0,
+        "high": 108900.0,
+        "low": 103600.0,
+        "close": 104500.0,
+        "volume": 424168,
+        "amount": null,
+        "change_pct": -5.94
+      },
+      {
+        "date": "2026-10-16",
+        "open": 106200.0,
+        "high": 110000.0,
+        "low": 105300.0,
+        "close": 107700.0,
+        "volume": 552140,
+        "amount": null,
+        "change_pct": 3.06
+      },
+      {
+        "date": "2026-10-19",
+        "open": 105200.0,
+        "high": 116600.0,
+        "low": 104500.0,
+        "close": 115300.0,
+        "volume": 555326,
+        "amount": null,
+        "change_pct": 7.06
+      },
+      {
+        "date": "2026-10-20",
+        "open": 113800.0,
+        "high": 115500.0,
+        "low": 108100.0,
+        "close": 108100.0,
+        "volume": 289684,
+        "amount": null,
+        "change_pct": -6.24
+      },
+      {
+        "date": "2026-10-21",
+        "open": 109700.0,
+        "high": 110100.0,
+        "low": 106300.0,
+        "close": 108800.0,
+        "volume": 238364,
+        "amount": null,
+        "change_pct": 0.65
+      },
+      {
+        "date": "2026-10-22",
+        "open": 107600.0,
+        "high": 109900.0,
+        "low": 104600.0,
+        "close": 104900.0,
+        "volume": 226854,
+        "amount": null,
+        "change_pct": -3.58
+      },
+      {
+        "date": "2026-10-23",
+        "open": 104400.0,
+        "high": 104800.0,
+        "low": 100900.0,
+        "close": 101100.0,
+        "volume": 279445,
+        "amount": null,
+        "change_pct": -3.62
+      },
+      {
+        "date": "2026-10-26",
+        "open": 99500.0,
+        "high": 100000.0,
+        "low": 96000.0,
+        "close": 97000.0,
+        "volume": 399854,
+        "amount": null,
+        "change_pct": -4.06
+      },
+      {
+        "date": "2026-10-27",
+        "open": 98700.0,
+        "high": 102400.0,
+        "low": 97900.0,
+        "close": 99100.0,
+        "volume": 356521,
+        "amount": null,
+        "change_pct": 2.16
+      },
+      {
+        "date": "2026-10-28",
+        "open": 99200.0,
+        "high": 103700.0,
+        "low": 97900.0,
+        "close": 101800.0,
+        "volume": 387976,
+        "amount": null,
+        "change_pct": 2.72
+      },
+      {
+        "date": "2026-10-29",
+        "open": 100200.0,
+        "high": 101700.0,
+        "low": 97500.0,
+        "close": 100300.0,
+        "volume": 243573,
+        "amount": null,
+        "change_pct": -1.47
+      },
+      {
+        "date": "2026-10-30",
+        "open": 98900.0,
+        "high": 99500.0,
+        "low": 96400.0,
+        "close": 96400.0,
+        "volume": 338364,
+        "amount": null,
+        "change_pct": -3.89
+      },
+      {
+        "date": "2026-11-02",
+        "open": 95800.0,
+        "high": 100500.0,
+        "low": 95000.0,
+        "close": 99400.0,
+        "volume": 202805,
+        "amount": null,
+        "change_pct": 3.11
+      },
+      {
+        "date": "2026-11-03",
+        "open": 98200.0,
+        "high": 99500.0,
+        "low": 95100.0,
+        "close": 99100.0,
+        "volume": 253426,
+        "amount": null,
+        "change_pct": -0.3
+      },
+      {
+        "date": "2026-11-04",
+        "open": 99300.0,
+        "high": 112700.0,
+        "low": 99200.0,
+        "close": 109000.0,
+        "volume": 858419,
+        "amount": null,
+        "change_pct": 9.99
+      },
+      {
+        "date": "2026-11-05",
+        "open": 107600.0,
+        "high": 108500.0,
+        "low": 104200.0,
+        "close": 105000.0,
+        "volume": 252362,
+        "amount": null,
+        "change_pct": -3.67
+      }
+    ],
+    "fetched_at": "2026-11-05T05:41:49+00:00",
+    "source_id": "naver.stock"
+  },
+  "foreign_net_buy": null,
+  "institution_net_buy": null,
+  "generated_at": "2026-11-05T05:41:49+00:00",
+  "source_id": "naver.stock"
+}

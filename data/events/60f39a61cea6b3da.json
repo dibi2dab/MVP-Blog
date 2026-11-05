@@ -1,0 +1,32 @@
+{
+  "event_id": "60f39a61cea6b3da",
+  "event_type": "news_event",
+  "entity": {
+    "name": "현대차 주가 전망 : 10월 22일 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Mon, 19 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 현대차 주가 전망 : 10월 22일 실적발표 후 주가 더 상승할까? (feat. 보스턴다이",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNVXo4TEo0dXd0NllNY1ZKNHNnZTJ2UHA5N3pPOTdSUTZGaTZnMHdYVG0tQk0xVDdHMDU5WGVrZEpQb3pWZjdQOWZVMDQtbjlGR042Y1NiWkI5ajBnbnZOeFd1bHdtY2VzcHBqSUxQU2lDQ29sR1UxUmhna0Q4OXBnUnd2SQ?oc=5",
+    "title": "현대차 주가 전망 : 10월 22일 실적발표 후 주가 더 상승할까? (feat. 보스턴다이나믹스 상장, IPO) - 네이버 프리미엄콘텐츠"
+  },
+  "summary": "뉴스: 현대차 주가 전망 : 10월 22일 실적발표 후 주가 더 상승할까? (feat. 보스턴다이나믹스 상장, IPO) - 네이버 프리미엄콘텐츠"
+}

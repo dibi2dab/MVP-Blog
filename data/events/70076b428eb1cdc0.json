@@ -1,0 +1,31 @@
+{
+  "event_id": "70076b428eb1cdc0",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "삼성물산",
+    "ticker": "028260",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "2026-11-05",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": -0.08702531645569621,
+    "volume_ratio": 0.6596130921943896,
+    "latest_amount": null
+  },
+  "summary": "삼성물산 주가 변동 -0.08702531645569621% / 거래량 비율 0.6596130921943896"
+}

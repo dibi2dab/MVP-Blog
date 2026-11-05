@@ -1,0 +1,32 @@
+{
+  "event_id": "8273e0d9fbe471cf",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[LG에너지솔루션] LG에너지솔루션,",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:41:57+00:00",
+  "event_date": "Tue, 03 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [LG에너지솔루션] LG에너지솔루션, ESS 수주잔고 160GWh…AI 데이터센터가 성장 ",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeVZmMnRHOGFsTi0zeDBNd29xLVN3MHl0LWRpd05BQzNfVzNBX1ZYU2dmZWxkYUF2clZ1ajAyQjRnTGIzaTl0Y0JGME9HdDJFVDJqTTNkMGdvaFVRQmF2ajRwamZyYVVvSkRyMF9JcVFMaGUtajFYUXZmUklyRmVYcWdjTmlVemNa?oc=5",
+    "title": "[LG에너지솔루션] LG에너지솔루션, ESS 수주잔고 160GWh…AI 데이터센터가 성장 이끌까?(2026년_2Q) - 네이버 프리미엄콘텐츠"
+  },
+  "summary": "뉴스: [LG에너지솔루션] LG에너지솔루션, ESS 수주잔고 160GWh…AI 데이터센터가 성장 이끌까?(2026년_2Q) - 네이버 프리미엄콘텐츠"
+}
