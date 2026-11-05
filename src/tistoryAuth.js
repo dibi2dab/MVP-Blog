@@ -195,7 +195,13 @@ export async function loginWithCredentials(context, loginId, password) {
     await page.waitForTimeout(2000);
 
     if (isLoginUrl(page.url())) {
-      throw sessionError('카카오 자동 로그인에 실패했습니다. 계정 정보 또는 2차 인증을 확인하세요.');
+      const finalText = (await page.evaluate(() => document.body?.innerText || '')).slice(0, 3000);
+      const base = await saveLoginArtifact(page, 'login_stuck');
+      throw sessionError(
+        `카카오 자동 로그인에 실패했습니다. url=${page.url()} 화면="${pageSummary(finalText)}"` +
+          (base ? ` (artifact: ${base})` : '') +
+          ' — 계정 정보 또는 2차 인증을 확인하세요.'
+      );
     }
     return true;
   } finally {
