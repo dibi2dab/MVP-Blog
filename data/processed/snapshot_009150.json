@@ -901,17 +901,17 @@
         "open": 1067000.0,
         "high": 1073000.0,
         "low": 934000.0,
-        "close": 937000.0,
-        "volume": 1196395,
+        "close": 940000.0,
+        "volume": 1226279,
         "amount": null,
-        "change_pct": -16.26
+        "change_pct": -16.0
       }
     ],
-    "fetched_at": "2026-11-05T05:58:30+00:00",
+    "fetched_at": "2026-11-05T06:03:34+00:00",
     "source_id": "naver.stock"
   },
   "foreign_net_buy": null,
   "institution_net_buy": null,
-  "generated_at": "2026-11-05T05:58:30+00:00",
+  "generated_at": "2026-11-05T06:03:34+00:00",
   "source_id": "naver.stock"
 }
