@@ -124,3 +124,7 @@ jobs:
           git diff --cached --quiet && exit 0 || true
           git commit -m "chore: pipeline run $(date +%Y-%m-%d)" || true
           git push || true
+
+      - name: Cleanup session
+        if: always()
+        run: rm -rf .state

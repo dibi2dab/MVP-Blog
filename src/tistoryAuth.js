@@ -39,6 +39,17 @@ function sessionError(message) {
   return err;
 }
 
+/** 저장 파일/스크린샷에 계정 정보가 남지 않도록 문자열을 마스킹한다. */
+function scrubSecrets(value) {
+  let out = String(value ?? '');
+  for (const secret of [tistoryConfig.kakaoId, tistoryConfig.kakaoPassword]) {
+    if (secret && secret.length >= 3) {
+      out = out.split(secret).join('***');
+    }
+  }
+  return out;
+}
+
 /** 로그인 실패 원인을 분석할 수 있도록 스크린샷/HTML 을 남긴다. */
 async function saveLoginArtifact(page, label) {
   try {
@@ -46,10 +57,41 @@ async function saveLoginArtifact(page, label) {
     fs.mkdirSync(dir, { recursive: true });
     const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
     const base = path.join(dir, `login_${label}_${stamp}`);
+
+    // 이 저장소는 public 이고 Actions artifact 는 누구나 내려받을 수 있다.
+    // 스크린샷/HTML 에 계정 ID·비밀번호가 남지 않도록 입력값과 텍스트를 먼저 지운다.
+    await page
+      .evaluate((secrets) => {
+        const scrub = (v) => {
+          let out = String(v ?? '');
+          for (const s of secrets) {
+            if (s && s.length >= 3) out = out.split(s).join('***');
+          }
+          return out;
+        };
+        for (const el of document.querySelectorAll('input, textarea')) {
+          if (el.type === 'hidden') continue;
+          el.value = '';
+          el.setAttribute('value', '');
+        }
+        const walker = document.createTreeWalker(
+          document.body || document.documentElement,
+          NodeFilter.SHOW_TEXT
+        );
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        for (const node of nodes) {
+          const scrubbed = scrub(node.nodeValue);
+          if (scrubbed !== node.nodeValue) node.nodeValue = scrubbed;
+        }
+        document.title = scrub(document.title);
+      }, [tistoryConfig.kakaoId, tistoryConfig.kakaoPassword])
+      .catch(() => {});
+
     await page.screenshot({ path: `${base}.png`, fullPage: true }).catch(() => {});
-    const html = await page.content().catch(() => '');
+    const html = scrubSecrets(await page.content().catch(() => ''));
     fs.writeFileSync(`${base}.html`, html, 'utf8');
-    fs.writeFileSync(`${base}.txt`, `url=${page.url()}\n`, 'utf8');
+    fs.writeFileSync(`${base}.txt`, `url=${scrubSecrets(page.url())}\n`, 'utf8');
     return base;
   } catch {
     return '';
@@ -174,7 +216,7 @@ export async function loginWithCredentials(context, loginId, password) {
     if (hasVerifyInput > 0 || isTwoFactorUrl || (mentionsVerify && isLoginUrl(url))) {
       const base = await saveLoginArtifact(page, '2fa');
       throw sessionError(
-        `카카오 2차 인증이 필요합니다. url=${url} 화면="${pageSummary(text)}"` +
+        `카카오 2차 인증이 필요합니다. url=${scrubSecrets(url)} 화면="${scrubSecrets(pageSummary(text))}"` +
           (base ? ` (artifact: ${base})` : '') +
           ' — 로컬에서 npm run login 으로 세션을 갱신하세요.'
       );
@@ -184,7 +226,7 @@ export async function loginWithCredentials(context, loginId, password) {
     if (/비밀번호.{0,20}(확인|일치|틀)|계정.{0,20}(확인|없)/i.test(text) && isLoginUrl(url)) {
       const base = await saveLoginArtifact(page, 'bad_credentials');
       throw sessionError(
-        `카카오 계정 ID 또는 비밀번호가 올바르지 않습니다. 화면="${pageSummary(text)}"` +
+        `카카오 계정 ID 또는 비밀번호가 올바르지 않습니다. 화면="${scrubSecrets(pageSummary(text))}"` +
           (base ? ` (artifact: ${base})` : '')
       );
     }
@@ -198,7 +240,7 @@ export async function loginWithCredentials(context, loginId, password) {
       const finalText = (await page.evaluate(() => document.body?.innerText || '')).slice(0, 3000);
       const base = await saveLoginArtifact(page, 'login_stuck');
       throw sessionError(
-        `카카오 자동 로그인에 실패했습니다. url=${page.url()} 화면="${pageSummary(finalText)}"` +
+        `카카오 자동 로그인에 실패했습니다. url=${scrubSecrets(page.url())} 화면="${scrubSecrets(pageSummary(finalText))}"` +
           (base ? ` (artifact: ${base})` : '') +
           ' — 계정 정보 또는 2차 인증을 확인하세요.'
       );
