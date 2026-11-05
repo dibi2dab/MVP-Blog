@@ -106,6 +106,14 @@ jobs:
       - name: 상태 스냅샷
         run: python main.py status
 
+      - name: Upload error artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tistory-error-artifacts
+          path: artifacts/tistory-errors/
+          if-no-files-found: ignore
+
       - name: Commit 결과물
         if: always()
         run: |

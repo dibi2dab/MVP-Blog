@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import path from 'node:path';
 import { chromium } from 'playwright';
 import { tistoryConfig } from './tistoryConfig.js';
 
@@ -36,6 +37,27 @@ function sessionError(message) {
   const err = new Error(message);
   err.code = 'TISTORY_SESSION_EXPIRED';
   return err;
+}
+
+/** 로그인 실패 원인을 분석할 수 있도록 스크린샷/HTML 을 남긴다. */
+async function saveLoginArtifact(page, label) {
+  try {
+    const dir = tistoryConfig.paths.artifactDir;
+    fs.mkdirSync(dir, { recursive: true });
+    const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+    const base = path.join(dir, `login_${label}_${stamp}`);
+    await page.screenshot({ path: `${base}.png`, fullPage: true }).catch(() => {});
+    const html = await page.content().catch(() => '');
+    fs.writeFileSync(`${base}.html`, html, 'utf8');
+    fs.writeFileSync(`${base}.txt`, `url=${page.url()}\n`, 'utf8');
+    return base;
+  } catch {
+    return '';
+  }
+}
+
+function pageSummary(text, limit = 220) {
+  return String(text || '').replace(/\s+/g, ' ').trim().slice(0, limit);
 }
 
 /** 현재 페이지가 실제 글쓰기 화면인지 확인한다. */
@@ -139,15 +161,32 @@ export async function loginWithCredentials(context, loginId, password) {
     await page.waitForTimeout(5000);
 
     const text = (await page.evaluate(() => document.body?.innerText || '')).slice(0, 3000);
+    const url = page.url();
 
-    // 2차 인증/보안 확인 화면 감지
-    if (/2단계 인증|인증번호|보안 확인|추가 인증|captcha|자동입력 방지/i.test(text)) {
-      throw sessionError('카카오 2차 인증이 필요합니다. 로컬에서 npm run login 으로 세션을 갱신하세요.');
+    // 2차 인증/보안 확인 화면 감지 (로그인 페이지의 안내 문구 오탐을 줄이기 위해
+    // URL 패턴 또는 인증코드 입력창이 있는 경우만 2차 인증으로 본다)
+    const hasVerifyInput = await page
+      .locator('input[name*="code" i], input[name*="otp" i], input[id*="verify" i]')
+      .count()
+      .catch(() => 0);
+    const isTwoFactorUrl = /two_step|two-step|verify|verification|otp/i.test(url);
+    const mentionsVerify = /2단계 인증|인증번호(를| 입력)|보안 확인|추가 인증/.test(text);
+    if (hasVerifyInput > 0 || isTwoFactorUrl || (mentionsVerify && isLoginUrl(url))) {
+      const base = await saveLoginArtifact(page, '2fa');
+      throw sessionError(
+        `카카오 2차 인증이 필요합니다. url=${url} 화면="${pageSummary(text)}"` +
+          (base ? ` (artifact: ${base})` : '') +
+          ' — 로컬에서 npm run login 으로 세션을 갱신하세요.'
+      );
     }
 
     // 잘못된 계정/비밀번호 감지
-    if (/비밀번호.{0,20}(확인|일치|틀)|계정.{0,20}(확인|없)/i.test(text) && isLoginUrl(page.url())) {
-      throw sessionError('카카오 계정 ID 또는 비밀번호가 올바르지 않습니다.');
+    if (/비밀번호.{0,20}(확인|일치|틀)|계정.{0,20}(확인|없)/i.test(text) && isLoginUrl(url)) {
+      const base = await saveLoginArtifact(page, 'bad_credentials');
+      throw sessionError(
+        `카카오 계정 ID 또는 비밀번호가 올바르지 않습니다. 화면="${pageSummary(text)}"` +
+          (base ? ` (artifact: ${base})` : '')
+      );
     }
 
     await page
