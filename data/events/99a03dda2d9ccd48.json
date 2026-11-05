@@ -1,0 +1,32 @@
+{
+  "event_id": "99a03dda2d9ccd48",
+  "event_type": "news_event",
+  "entity": {
+    "name": "'거꾸로 가는' 삼성바이오로직스 무배",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T05:58:37+00:00",
+  "event_date": "Fri, 28 Au",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: '거꾸로 가는' 삼성바이오로직스 무배당에 유증까지...주주들 '부글부글' - 이코노미스트",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9vZHJCSkZIYmhNTGlMalhObWdjVGM5RzVEa1N2cDg2d1JzS3JSd1YweXkxZjJnd1VlOHpTeS04VU9rVVpsQk5RX2tEb1BlZU81Y3lka2w1Q0xUMGRCbVRVNk5B?oc=5",
+    "title": "'거꾸로 가는' 삼성바이오로직스 무배당에 유증까지...주주들 '부글부글' - 이코노미스트"
+  },
+  "summary": "뉴스: '거꾸로 가는' 삼성바이오로직스 무배당에 유증까지...주주들 '부글부글' - 이코노미스트"
+}
