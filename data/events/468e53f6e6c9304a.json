@@ -1,0 +1,32 @@
+{
+  "event_id": "468e53f6e6c9304a",
+  "event_type": "news_event",
+  "entity": {
+    "name": "이에스티, 코스닥 상장 첫날 33%대",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-05T06:12:58+00:00",
+  "event_date": "Wed, 04 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 이에스티, 코스닥 상장 첫날 33%대 상승 - 머니투데이 - 머니투데이",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE90RnJ2Y25yaWUyYTVQMVY0TjFDZENpQkVFTmlLVXpwbGVaZkoxWHM3bk9Pel9IM0dzdHdrTC1pUVJ4S0Z2b1A4Rms0QS1OZTJMY3VsRjdDYjRkR210SE5XUklzamNtX2wz0gFuQVVfeXFMTnVyX1RINDZoVmswV1ZxODJZcW9FRm9KUk9FclRPQlliekFaY0FSb2xJV08tSmd5Q1NRRTFSM28zODJFYVd6Znc4bnZDazdBMU5nRUo4SW1SQzFpZk9Hd1E4ZVAzb1gzS0xFZjFfcmc?oc=5",
+    "title": "이에스티, 코스닥 상장 첫날 33%대 상승 - 머니투데이 - 머니투데이"
+  },
+  "summary": "뉴스: 이에스티, 코스닥 상장 첫날 33%대 상승 - 머니투데이 - 머니투데이"
+}

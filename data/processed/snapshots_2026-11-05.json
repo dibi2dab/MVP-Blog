@@ -903,18 +903,18 @@
             "open": 213000.0,
             "high": 213500.0,
             "low": 199800.0,
-            "close": 200000.0,
-            "volume": 20440111,
+            "close": 201000.0,
+            "volume": 21034886,
             "amount": null,
-            "change_pct": -9.71
+            "change_pct": -9.26
           }
         ],
-        "fetched_at": "2026-11-05T06:03:31+00:00",
+        "fetched_at": "2026-11-05T06:12:46+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:31+00:00",
+      "generated_at": "2026-11-05T06:12:46+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -1820,18 +1820,18 @@
             "open": 1320000.0,
             "high": 1320000.0,
             "low": 1250000.0,
-            "close": 1254000.0,
-            "volume": 3443035,
+            "close": 1260000.0,
+            "volume": 3593073,
             "amount": null,
-            "change_pct": -11.69
+            "change_pct": -11.27
           }
         ],
-        "fetched_at": "2026-11-05T06:03:31+00:00",
+        "fetched_at": "2026-11-05T06:12:46+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:31+00:00",
+      "generated_at": "2026-11-05T06:12:46+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -2737,18 +2737,18 @@
             "open": 355500.0,
             "high": 357500.0,
             "low": 339000.0,
-            "close": 345500.0,
-            "volume": 412946,
+            "close": 346000.0,
+            "volume": 435026,
             "amount": null,
-            "change_pct": -3.49
+            "change_pct": -3.35
           }
         ],
-        "fetched_at": "2026-11-05T06:03:32+00:00",
+        "fetched_at": "2026-11-05T06:12:46+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:32+00:00",
+      "generated_at": "2026-11-05T06:12:46+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -3655,17 +3655,17 @@
             "high": 1575000.0,
             "low": 1512000.0,
             "close": 1520000.0,
-            "volume": 78717,
+            "volume": 81076,
             "amount": null,
             "change_pct": 1.54
           }
         ],
-        "fetched_at": "2026-11-05T06:03:32+00:00",
+        "fetched_at": "2026-11-05T06:12:46+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:32+00:00",
+      "generated_at": "2026-11-05T06:12:46+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -4571,18 +4571,18 @@
             "open": 296500.0,
             "high": 308000.0,
             "low": 289250.0,
-            "close": 291500.0,
-            "volume": 919425,
+            "close": 292500.0,
+            "volume": 954368,
             "amount": null,
-            "change_pct": 1.39
+            "change_pct": 1.74
           }
         ],
-        "fetched_at": "2026-11-05T06:03:32+00:00",
+        "fetched_at": "2026-11-05T06:12:46+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:32+00:00",
+      "generated_at": "2026-11-05T06:12:46+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -5488,18 +5488,18 @@
             "open": 98600.0,
             "high": 102000.0,
             "low": 97000.0,
-            "close": 100100.0,
-            "volume": 1292552,
+            "close": 100800.0,
+            "volume": 1335430,
             "amount": null,
-            "change_pct": 3.09
+            "change_pct": 3.81
           }
         ],
-        "fetched_at": "2026-11-05T06:03:32+00:00",
+        "fetched_at": "2026-11-05T06:12:46+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:32+00:00",
+      "generated_at": "2026-11-05T06:12:46+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -6405,18 +6405,18 @@
             "open": 207500.0,
             "high": 216000.0,
             "low": 206000.0,
-            "close": 214000.0,
-            "volume": 1716232,
+            "close": 214500.0,
+            "volume": 1791625,
             "amount": null,
-            "change_pct": 5.94
+            "change_pct": 6.19
           }
         ],
-        "fetched_at": "2026-11-05T06:03:32+00:00",
+        "fetched_at": "2026-11-05T06:12:46+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:32+00:00",
+      "generated_at": "2026-11-05T06:12:46+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -7322,18 +7322,18 @@
             "open": 277500.0,
             "high": 281500.0,
             "low": 271000.0,
-            "close": 271500.0,
-            "volume": 175034,
+            "close": 272500.0,
+            "volume": 186384,
             "amount": null,
-            "change_pct": -2.34
+            "change_pct": -1.98
           }
         ],
-        "fetched_at": "2026-11-05T06:03:32+00:00",
+        "fetched_at": "2026-11-05T06:12:47+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:32+00:00",
+      "generated_at": "2026-11-05T06:12:47+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -8239,18 +8239,18 @@
             "open": 177200.0,
             "high": 186000.0,
             "low": 177100.0,
-            "close": 183900.0,
-            "volume": 1304306,
+            "close": 184300.0,
+            "volume": 1333952,
             "amount": null,
-            "change_pct": 6.86
+            "change_pct": 7.09
           }
         ],
-        "fetched_at": "2026-11-05T06:03:33+00:00",
+        "fetched_at": "2026-11-05T06:12:47+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:33+00:00",
+      "generated_at": "2026-11-05T06:12:47+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -9157,17 +9157,17 @@
             "high": 32450.0,
             "low": 30150.0,
             "close": 32050.0,
-            "volume": 4436281,
+            "volume": 4489701,
             "amount": null,
             "change_pct": 8.83
           }
         ],
-        "fetched_at": "2026-11-05T06:03:33+00:00",
+        "fetched_at": "2026-11-05T06:12:47+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:33+00:00",
+      "generated_at": "2026-11-05T06:12:47+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -10073,18 +10073,18 @@
             "open": 167500.0,
             "high": 169900.0,
             "low": 159500.0,
-            "close": 159900.0,
-            "volume": 3415993,
+            "close": 160500.0,
+            "volume": 3498876,
             "amount": null,
-            "change_pct": -7.79
+            "change_pct": -7.44
           }
         ],
-        "fetched_at": "2026-11-05T06:03:33+00:00",
+        "fetched_at": "2026-11-05T06:12:47+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:33+00:00",
+      "generated_at": "2026-11-05T06:12:47+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -10990,18 +10990,18 @@
             "open": 740000.0,
             "high": 741000.0,
             "low": 665000.0,
-            "close": 672000.0,
-            "volume": 177048,
+            "close": 677000.0,
+            "volume": 183850,
             "amount": null,
-            "change_pct": -9.31
+            "change_pct": -8.64
           }
         ],
-        "fetched_at": "2026-11-05T06:03:33+00:00",
+        "fetched_at": "2026-11-05T06:12:47+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:33+00:00",
+      "generated_at": "2026-11-05T06:12:47+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -11907,18 +11907,18 @@
             "open": 107600.0,
             "high": 108500.0,
             "low": 104000.0,
-            "close": 104300.0,
-            "volume": 279439,
+            "close": 104800.0,
+            "volume": 290604,
             "amount": null,
-            "change_pct": -4.31
+            "change_pct": -3.85
           }
         ],
-        "fetched_at": "2026-11-05T06:03:33+00:00",
+        "fetched_at": "2026-11-05T06:12:47+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:33+00:00",
+      "generated_at": "2026-11-05T06:12:47+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -12824,18 +12824,18 @@
             "open": 924000.0,
             "high": 1013000.0,
             "low": 917000.0,
-            "close": 986000.0,
-            "volume": 50842,
+            "close": 988000.0,
+            "volume": 51776,
             "amount": null,
-            "change_pct": 8.59
+            "change_pct": 8.81
           }
         ],
-        "fetched_at": "2026-11-05T06:03:33+00:00",
+        "fetched_at": "2026-11-05T06:12:47+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:33+00:00",
+      "generated_at": "2026-11-05T06:12:47+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -13741,18 +13741,18 @@
             "open": 181300.0,
             "high": 184000.0,
             "low": 171000.0,
-            "close": 172800.0,
-            "volume": 434899,
+            "close": 174000.0,
+            "volume": 448645,
             "amount": null,
-            "change_pct": -4.69
+            "change_pct": -4.03
           }
         ],
-        "fetched_at": "2026-11-05T06:03:34+00:00",
+        "fetched_at": "2026-11-05T06:12:48+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:34+00:00",
+      "generated_at": "2026-11-05T06:12:48+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -14658,18 +14658,18 @@
             "open": 307000.0,
             "high": 307500.0,
             "low": 285000.0,
-            "close": 287000.0,
-            "volume": 273461,
+            "close": 288500.0,
+            "volume": 295521,
             "amount": null,
-            "change_pct": -9.18
+            "change_pct": -8.7
           }
         ],
-        "fetched_at": "2026-11-05T06:03:34+00:00",
+        "fetched_at": "2026-11-05T06:12:48+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:34+00:00",
+      "generated_at": "2026-11-05T06:12:48+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -15575,18 +15575,18 @@
             "open": 148700.0,
             "high": 150900.0,
             "low": 140900.0,
-            "close": 142100.0,
-            "volume": 607713,
+            "close": 142200.0,
+            "volume": 621437,
             "amount": null,
-            "change_pct": -4.44
+            "change_pct": -4.37
           }
         ],
-        "fetched_at": "2026-11-05T06:03:34+00:00",
+        "fetched_at": "2026-11-05T06:12:48+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:34+00:00",
+      "generated_at": "2026-11-05T06:12:48+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -16492,18 +16492,18 @@
             "open": 249000.0,
             "high": 253500.0,
             "low": 239000.0,
-            "close": 244000.0,
-            "volume": 185695,
+            "close": 244500.0,
+            "volume": 194696,
             "amount": null,
-            "change_pct": -1.41
+            "change_pct": -1.21
           }
         ],
-        "fetched_at": "2026-11-05T06:03:34+00:00",
+        "fetched_at": "2026-11-05T06:12:48+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:34+00:00",
+      "generated_at": "2026-11-05T06:12:48+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -17410,17 +17410,17 @@
             "high": 549000.0,
             "low": 504000.0,
             "close": 508000.0,
-            "volume": 865681,
+            "volume": 885217,
             "amount": null,
             "change_pct": -7.64
           }
         ],
-        "fetched_at": "2026-11-05T06:03:34+00:00",
+        "fetched_at": "2026-11-05T06:12:48+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:34+00:00",
+      "generated_at": "2026-11-05T06:12:48+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -18326,18 +18326,18 @@
             "open": 1067000.0,
             "high": 1073000.0,
             "low": 934000.0,
-            "close": 940000.0,
-            "volume": 1226279,
+            "close": 942000.0,
+            "volume": 1266219,
             "amount": null,
-            "change_pct": -16.0
+            "change_pct": -15.82
           }
         ],
-        "fetched_at": "2026-11-05T06:03:34+00:00",
+        "fetched_at": "2026-11-05T06:12:48+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:34+00:00",
+      "generated_at": "2026-11-05T06:12:48+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -19243,18 +19243,18 @@
             "open": 77300.0,
             "high": 79200.0,
             "low": 76100.0,
-            "close": 77000.0,
-            "volume": 662825,
+            "close": 77100.0,
+            "volume": 677480,
             "amount": null,
-            "change_pct": -1.53
+            "change_pct": -1.41
           }
         ],
-        "fetched_at": "2026-11-05T06:03:35+00:00",
+        "fetched_at": "2026-11-05T06:12:48+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:35+00:00",
+      "generated_at": "2026-11-05T06:12:48+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -20160,18 +20160,18 @@
             "open": 201500.0,
             "high": 212500.0,
             "low": 201500.0,
-            "close": 208500.0,
-            "volume": 61781,
+            "close": 207750.0,
+            "volume": 68988,
             "amount": null,
-            "change_pct": 3.73
+            "change_pct": 3.36
           }
         ],
-        "fetched_at": "2026-11-05T06:03:35+00:00",
+        "fetched_at": "2026-11-05T06:12:49+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:35+00:00",
+      "generated_at": "2026-11-05T06:12:49+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -21078,17 +21078,17 @@
             "high": 223000.0,
             "low": 209000.0,
             "close": 221000.0,
-            "volume": 189620,
+            "volume": 205531,
             "amount": null,
             "change_pct": 4.99
           }
         ],
-        "fetched_at": "2026-11-05T06:03:35+00:00",
+        "fetched_at": "2026-11-05T06:12:49+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:35+00:00",
+      "generated_at": "2026-11-05T06:12:49+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -21994,18 +21994,18 @@
             "open": 179000.0,
             "high": 179100.0,
             "low": 166900.0,
-            "close": 167800.0,
-            "volume": 653371,
+            "close": 168200.0,
+            "volume": 674659,
             "amount": null,
-            "change_pct": -10.32
+            "change_pct": -10.1
           }
         ],
-        "fetched_at": "2026-11-05T06:03:35+00:00",
+        "fetched_at": "2026-11-05T06:12:49+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:35+00:00",
+      "generated_at": "2026-11-05T06:12:49+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -22911,18 +22911,18 @@
             "open": 253000.0,
             "high": 260000.0,
             "low": 242500.0,
-            "close": 243500.0,
-            "volume": 180415,
+            "close": 245000.0,
+            "volume": 188818,
             "amount": null,
-            "change_pct": -5.62
+            "change_pct": -5.04
           }
         ],
-        "fetched_at": "2026-11-05T06:03:35+00:00",
+        "fetched_at": "2026-11-05T06:12:49+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:35+00:00",
+      "generated_at": "2026-11-05T06:12:49+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -23828,18 +23828,18 @@
             "open": 88400.0,
             "high": 90200.0,
             "low": 87700.0,
-            "close": 87900.0,
-            "volume": 825854,
+            "close": 88400.0,
+            "volume": 856221,
             "amount": null,
-            "change_pct": 0.11
+            "change_pct": 0.68
           }
         ],
-        "fetched_at": "2026-11-05T06:03:35+00:00",
+        "fetched_at": "2026-11-05T06:12:49+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:35+00:00",
+      "generated_at": "2026-11-05T06:12:49+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -24745,18 +24745,18 @@
             "open": 156700.0,
             "high": 160500.0,
             "low": 155500.0,
-            "close": 156100.0,
-            "volume": 790069,
+            "close": 156500.0,
+            "volume": 817000,
             "amount": null,
-            "change_pct": 0.9
+            "change_pct": 1.16
           }
         ],
-        "fetched_at": "2026-11-05T06:03:36+00:00",
+        "fetched_at": "2026-11-05T06:12:49+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:36+00:00",
+      "generated_at": "2026-11-05T06:12:49+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -25662,18 +25662,18 @@
             "open": 120700.0,
             "high": 124300.0,
             "low": 119800.0,
-            "close": 120200.0,
-            "volume": 557330,
+            "close": 120600.0,
+            "volume": 574204,
             "amount": null,
-            "change_pct": 0.84
+            "change_pct": 1.17
           }
         ],
-        "fetched_at": "2026-11-05T06:03:36+00:00",
+        "fetched_at": "2026-11-05T06:12:49+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:36+00:00",
+      "generated_at": "2026-11-05T06:12:49+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -26579,18 +26579,18 @@
             "open": 133200.0,
             "high": 139200.0,
             "low": 133100.0,
-            "close": 134400.0,
-            "volume": 322916,
+            "close": 134700.0,
+            "volume": 329930,
             "amount": null,
-            "change_pct": 1.2
+            "change_pct": 1.43
           }
         ],
-        "fetched_at": "2026-11-05T06:03:36+00:00",
+        "fetched_at": "2026-11-05T06:12:50+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:36+00:00",
+      "generated_at": "2026-11-05T06:12:50+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -27497,17 +27497,17 @@
             "high": 285500.0,
             "low": 266500.0,
             "close": 268500.0,
-            "volume": 236867,
+            "volume": 244398,
             "amount": null,
             "change_pct": -6.61
           }
         ],
-        "fetched_at": "2026-11-05T06:03:36+00:00",
+        "fetched_at": "2026-11-05T06:12:50+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:36+00:00",
+      "generated_at": "2026-11-05T06:12:50+00:00",
       "source_id": "naver.stock"
     },
     {
@@ -28413,20 +28413,20 @@
             "open": 9010.0,
             "high": 9180.0,
             "low": 8780.0,
-            "close": 8900.0,
-            "volume": 107637,
+            "close": 8920.0,
+            "volume": 109603,
             "amount": null,
-            "change_pct": -0.67
+            "change_pct": -0.45
           }
         ],
-        "fetched_at": "2026-11-05T06:03:36+00:00",
+        "fetched_at": "2026-11-05T06:12:50+00:00",
         "source_id": "naver.stock"
       },
       "foreign_net_buy": null,
       "institution_net_buy": null,
-      "generated_at": "2026-11-05T06:03:36+00:00",
+      "generated_at": "2026-11-05T06:12:50+00:00",
       "source_id": "naver.stock"
     }
   ],
-  "collected_at": "2026-11-05T06:03:36+00:00"
+  "collected_at": "2026-11-05T06:12:50+00:00"
 }
