@@ -53,6 +53,18 @@ jobs:
           mkdir -p .state
           echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.json
 
+      # 저장된 세션은 TSID 쿠키 만료로 대부분 무효다. 발행 파이프라인과 동일하게
+      # 카카오 계정으로 자동 재로그인해 세션을 갱신한 뒤 셀렉터를 검사한다.
+      # 여기서도 실패하면 아래 셀렉터 검사가 session_expired 로 떨어져 이슈가 생성된다.
+      - name: 세션 검증 (자동 재로그인 포함)
+        continue-on-error: true
+        env:
+          TISTORY_BLOG_URL: ${{ secrets.TISTORY_BLOG_URL }}
+          TISTORY_KAKAO_ID: ${{ secrets.TISTORY_KAKAO_ID }}
+          TISTORY_KAKAO_PASSWORD: ${{ secrets.TISTORY_KAKAO_PASSWORD }}
+          TISTORY_HEADLESS: "true"
+        run: npm run session:check
+
       - name: Check selectors
         id: check
         continue-on-error: true
@@ -125,6 +137,24 @@ jobs:
                 ? '`npm run login` 으로 세션을 갱신한 뒤 GitHub Secret `TISTORY_STORAGE_STATE` 를 업데이트하세요.'
                 : '자동 추론이 실패했습니다. `editor.html` 을 보고 `src/publishTistory.js` 의 SELECTORS 를 수동으로 맞춰주세요.',
             ].join('\n');
+            // 같은 제목의 열린 이슈가 이미 있으면 새로 만들지 않고 코멘트만 남긴다.
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              labels: 'automation',
+              per_page: 100,
+            });
+            const existing = open.data.find((issue) => issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: existing.number,
+                body: `재발생 (${new Date().toISOString()})\n\n${body}`,
+              });
+              return;
+            }
             await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
