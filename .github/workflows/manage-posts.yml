@@ -1,0 +1,60 @@
+name: Manage Tistory Posts
+
+# 일회성 운영 도구: 잘못 발행된 글을 조회/삭제한다.
+# workflow_dispatch 는 저장소 관리자만 실행할 수 있다.
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "inspect | delete"
+        required: true
+        default: "inspect"
+        type: choice
+        options:
+          - inspect
+          - delete
+      post_ids:
+        description: "공백으로 구분된 글 ID (예: 45 43)"
+        required: true
+        default: "45 43"
+
+env:
+  TISTORY_BLOG_URL: "${{ secrets.TISTORY_BLOG_URL }}"
+  TISTORY_KAKAO_ID: "${{ secrets.TISTORY_KAKAO_ID }}"
+  TISTORY_KAKAO_PASSWORD: "${{ secrets.TISTORY_KAKAO_PASSWORD }}"
+  TISTORY_HEADLESS: "true"
+
+jobs:
+  manage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        env:
+          PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
+        run: |
+          npm ci
+          npx playwright install --with-deps chromium
+
+      - name: Restore Tistory session
+        env:
+          TISTORY_STORAGE_STATE: ${{ secrets.TISTORY_STORAGE_STATE }}
+        run: |
+          mkdir -p .state
+          echo "$TISTORY_STORAGE_STATE" | base64 --decode > .state/tistory_storage_state.json
+
+      - name: 세션 검증 (자동 재로그인 포함)
+        run: npm run session:check
+
+      - name: Run manage script
+        run: node scripts/manageTistoryPosts.js "${{ inputs.mode }}" ${{ inputs.post_ids }}
+
+      - name: Cleanup session
+        if: always()
+        run: rm -rf .state
