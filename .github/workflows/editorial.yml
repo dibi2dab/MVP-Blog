@@ -64,7 +64,9 @@ jobs:
       CRYSTAL_STORAGE_STATE_PATH: ${{ secrets.CRYSTAL_STORAGE_STATE_PATH }}
       CRYSTAL_KAKAO_ID: ${{ secrets.CRYSTAL_KAKAO_ID }}
       CRYSTAL_KAKAO_PASSWORD: ${{ secrets.CRYSTAL_KAKAO_PASSWORD }}
-      CRYSTAL_VISIBILITY: ${{ secrets.CRYSTAL_VISIBILITY }}
+      # Editorial posts are public by default, independent of Obsidian's
+      # TISTORY_VISIBILITY (which may be private). Override per blog if needed.
+      CRYSTAL_VISIBILITY: ${{ secrets.CRYSTAL_VISIBILITY || 'public' }}
       CRYSTAL_TISTORY_CATEGORY: ${{ secrets.CRYSTAL_TISTORY_CATEGORY }}
       CRYSTAL_MAX_ARTICLES_PER_DAY: ${{ secrets.CRYSTAL_MAX_ARTICLES_PER_DAY }}
       CRYSTAL_MIN_QUALITY_SCORE: ${{ secrets.CRYSTAL_MIN_QUALITY_SCORE }}
@@ -75,7 +77,7 @@ jobs:
       QUARTZ_STORAGE_STATE_PATH: ${{ secrets.QUARTZ_STORAGE_STATE_PATH }}
       QUARTZ_KAKAO_ID: ${{ secrets.QUARTZ_KAKAO_ID }}
       QUARTZ_KAKAO_PASSWORD: ${{ secrets.QUARTZ_KAKAO_PASSWORD }}
-      QUARTZ_VISIBILITY: ${{ secrets.QUARTZ_VISIBILITY }}
+      QUARTZ_VISIBILITY: ${{ secrets.QUARTZ_VISIBILITY || 'public' }}
       QUARTZ_TISTORY_CATEGORY: ${{ secrets.QUARTZ_TISTORY_CATEGORY }}
       QUARTZ_MAX_ARTICLES_PER_DAY: ${{ secrets.QUARTZ_MAX_ARTICLES_PER_DAY }}
       QUARTZ_MIN_QUALITY_SCORE: ${{ secrets.QUARTZ_MIN_QUALITY_SCORE }}
@@ -83,7 +85,6 @@ jobs:
 
       TISTORY_KAKAO_ID: ${{ secrets.TISTORY_KAKAO_ID }}
       TISTORY_KAKAO_PASSWORD: ${{ secrets.TISTORY_KAKAO_PASSWORD }}
-      TISTORY_VISIBILITY: ${{ secrets.TISTORY_VISIBILITY || 'public' }}
 
     steps:
       - name: Decide whether this matrix leg should run
