@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium } from 'playwright';
-import { tistoryConfig } from './tistoryConfig.js';
+import { resolveTistoryConfig, tistoryConfig } from './tistoryConfig.js';
 import { ensureSession, editorUrl } from './tistoryAuth.js';
 
 /**
@@ -34,10 +34,10 @@ const VISIBILITY = {
 
 const DEFAULT_CATEGORY = '';
 
-function assertSession() {
-  if (!fs.existsSync(tistoryConfig.paths.storageState)) {
+function assertSession(config = tistoryConfig) {
+  if (!fs.existsSync(config.paths.storageState)) {
     const err = new Error(
-      `로그인 세션 파일이 없습니다: ${tistoryConfig.paths.storageState}\n` +
+      `로그인 세션 파일이 없습니다: ${config.paths.storageState}\n` +
         '"npm run login"으로 티스토리에 로그인하세요.'
     );
     err.code = 'TISTORY_SESSION_REQUIRED';
@@ -74,7 +74,7 @@ async function collectImgSrcs(page) {
 }
 
 /** 로컬 차트 파일을 에디터에 업로드하고 {파일명: 업로드URL} 매핑을 돌려준다. */
-async function uploadImages(page, imagePaths) {
+async function uploadImages(page, imagePaths, config = tistoryConfig) {
   if (!imagePaths.length) return {};
   const before = new Set(await collectImgSrcs(page));
 
@@ -101,7 +101,7 @@ async function uploadImages(page, imagePaths) {
     if (newSrcs[index]) map[path.basename(file)] = newSrcs[index];
   });
 
-  if (Object.keys(map).length < imagePaths.length && !tistoryConfig.allowMissingImages) {
+  if (Object.keys(map).length < imagePaths.length && !config.allowMissingImages) {
     const missing = imagePaths
       .map((file) => path.basename(file))
       .filter((name) => !map[name]);
@@ -211,9 +211,9 @@ async function setTitle(page, title) {
   return false;
 }
 
-async function saveErrorArtifacts(page, payload) {
+async function saveErrorArtifacts(page, payload, config = tistoryConfig) {
   try {
-    const dir = tistoryConfig.paths.artifactDir;
+    const dir = config.paths.artifactDir;
     fs.mkdirSync(dir, { recursive: true });
     const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
     const slug = String(payload.slug || payload.title || 'publish').replace(/[\\/:*?"<>|]/g, '-').slice(0, 60);
@@ -240,35 +240,49 @@ export async function publishTistory({
   contentHtml,
   tags = [],
   tistoryCategory = DEFAULT_CATEGORY,
-  visibility = tistoryConfig.visibility,
-  blogName = tistoryConfig.blogName,
+  visibility,
+  blogName,
   imagePaths = [],
   debug = false,
+  storageStatePath,
+  kakaoId,
+  kakaoPassword,
+  artifactDir,
+  headless,
 }) {
-  assertSession();
+  const config = resolveTistoryConfig({
+    blogName,
+    visibility,
+    storageStatePath,
+    kakaoId,
+    kakaoPassword,
+    artifactDir,
+    headless,
+  });
+  assertSession(config);
 
   const browser = await chromium.launch({
-    headless: !debug && tistoryConfig.headless,
+    headless: !debug && config.headless,
     slowMo: debug ? 250 : 0,
   });
   const context = await browser.newContext({
-    storageState: tistoryConfig.paths.storageState,
+    storageState: config.paths.storageState,
   });
   const page = await context.newPage();
-  page.setDefaultTimeout(tistoryConfig.timeout);
+  page.setDefaultTimeout(config.timeout);
   page.on('dialog', (dialog) => dialog.accept().catch(() => {}));
 
   try {
     await step('로그인 확인', async () => {
-      await page.goto(editorUrl(blogName), {
+      await page.goto(editorUrl(config.blogName), {
         waitUntil: 'domcontentloaded',
       });
       if (/auth\/login|login\.tistory|login_id/.test(page.url())) {
         // TSID 는 약 30분이면 만료된다. 저장된 장기 세션/자격증명으로 자동 복구를 시도한다.
         console.warn('[tistory] 세션 만료 감지 → 자동 재로그인 시도');
-        const result = await ensureSession(context);
+        const result = await ensureSession(context, { config });
         console.warn(`[tistory] 세션 복구 완료 (${result.method})`);
-        await page.goto(editorUrl(blogName), { waitUntil: 'domcontentloaded' });
+        await page.goto(editorUrl(config.blogName), { waitUntil: 'domcontentloaded' });
       }
       if (/auth\/login|login\.tistory|login_id/.test(page.url())) {
         const err = new Error(`redirected to login page: ${page.url()}`);
@@ -307,7 +321,9 @@ export async function publishTistory({
       });
     }
 
-    const imageMap = imagePaths.length ? await step('이미지 업로드', () => uploadImages(page, imagePaths)) : {};
+    const imageMap = imagePaths.length
+      ? await step('이미지 업로드', () => uploadImages(page, imagePaths, config))
+      : {};
     const resolvedHtml = resolveLocalImages(contentHtml, imageMap);
 
     await step('본문 입력 (TinyMCE API)', async () => {
@@ -383,7 +399,7 @@ export async function publishTistory({
     });
 
     await step('공개 발행 확정', async () => {
-      await page.waitForTimeout(tistoryConfig.publishDelayMs);
+      await page.waitForTimeout(config.publishDelayMs);
       try {
         await page.locator(SELECTORS.finalPublishButton).click({ timeout: 8000 });
       } catch {
@@ -403,7 +419,7 @@ export async function publishTistory({
       // 발행 직후 수정 화면(/manage/post/{id})으로 이동한 경우 공개 URL 을 만든다.
       const idMatch = page.url().match(/\/manage\/post\/(\d+)/);
       if (idMatch) {
-        return `https://${blogName}.tistory.com/${idMatch[1]}`;
+        return `https://${config.blogName}.tistory.com/${idMatch[1]}`;
       }
 
       const titlePrefix = title.slice(0, 15);
@@ -424,7 +440,7 @@ export async function publishTistory({
 
     return { publishedUrl };
   } catch (err) {
-    await saveErrorArtifacts(page, { title, error: err?.message });
+    await saveErrorArtifacts(page, { title, error: err?.message }, config);
     throw err;
   } finally {
     await browser.close().catch(() => {});

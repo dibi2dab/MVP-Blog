@@ -189,6 +189,103 @@ npm run selectors:fix     # 깨진 선택자 추론 후 src/publishTistory.js �
   `report.json` / `editor.html` / `editor.png` 를 아티팩트로 남긴다.
 - 수동으로 맞출 때도 `SELECTORS` 객체만 고치면 된다.
 
+## Crystal / Quartz 편집 파이프라인
+
+기존 **Obsidian(eneru)** 주식 파이프라인은 그대로 유지된다. 설정·카테고리·토픽 전략·
+`scheduled.yml` 은 변경하지 않았고, 아래 두 블로그만 별도 패키지(`src/editorial`)와
+별도 워크플로(`.github/workflows/editorial.yml`)로 운영한다.
+
+| 블로그 | 주제 | 분석 프레임워크 | 하루 |
+| --- | --- | --- | --- |
+| **Crystal** (Itmeans, `rumbell.tistory.com`) | 온라인 수익, 부업, 블로그·웹사이트 수익화, 제휴 마케팅, 디지털 상품, 사이트 운영 | **CPPI** | 1편 |
+| **Quartz** (`quar1z.tistory.com`) | AI, AI 도구·서비스, 소프트웨어 분석·비교, 디지털 상품, 개발자 도구, 자동화·생산성 | **QDVI** | 1편 |
+
+- 프롬프트는 영어로 작성하지만 **발행되는 본문·제목·표·메타데이터는 모두 한국어**다.
+- Obsidian은 기존 주식 데이터 파이프라인을 계속 사용한다. Crystal/Quartz 기사는
+  새 편집 프롬프트로 생성하지 않는다.
+
+### CPPI / QDVI
+
+**CPPI (Crystal Practical Profitability Index)** — 수익 잠재력 25%, 비용 효율 20%,
+시간 효율 20%, 실행 가능성 20%, 리스크 관리 15%.
+
+**QDVI (Quartz Digital Value Index)** — 기능 역량 25%, 사용성 20%, 가격 대비 가치 20%,
+통합·확장성 15%, 신뢰성·투명성 20%.
+
+두 프레임워크 모두 각 차원을 0~10으로 평가하고, 평가 불가능한 차원은 `unavailable` 로
+표시한 뒤 **남은 가중치를 100%로 정규화**해 재계산한다. 공식·입력값·가정·계산 단계·
+결과·해석·한계를 모두 공개하며, 모델이 제시한 최종 점수는 절대 신뢰하지 않고
+시스템이 다시 계산한다. 계산이 맞지 않으면 `계산 결과 불일치` 로 발행이 차단된다.
+
+### 품질 게이트
+
+결정론적 품질 검사(`src/editorial/quality.py`)가 모델 자기평가와 독립적으로 점수를 매긴다.
+
+| 항목 | 배점 |
+| --- | ---: |
+| 사실 정확성 | 25 |
+| 독창성 | 20 |
+| 검색 의도 충족 | 20 |
+| 출처 품질 | 15 |
+| 가독성 | 10 |
+| SEO | 10 |
+| **합계** | **100** |
+
+- **85점 이상만 `PUBLISH`**, 미만은 `REQUIRES REVISION`.
+- 다음 치명적 실패는 점수와 무관하게 `DO NOT PUBLISH`:
+  날조된 데이터·출처, 근거 없는 금융 주장, 오해를 부르는 제품 정보, 잘못된 계산,
+  중복 콘텐츠, 누락된 고지, 날조된 직접 테스트.
+- 가격·통계·수익·기능·벤치마크·리뷰·출처를 절대 창작하지 않는다. 사실/추정/가정/분석을
+  구분하고, 모든 출처는 **URL + 발행일**을 남긴다.
+- `mock` AI 결과는 절대 발행하지 않는다. Gemini는 지원하지 않는다.
+
+### CLI
+
+```bash
+# Crystal 1편 생성 + 검수 + 발행 (KST 하루 1편 제한)
+python -m src.editorial.cli --blog crystal
+
+# Quartz 1편
+python -m src.editorial.cli --blog quartz
+
+# 둘 다
+python -m src.editorial.cli --blog all
+
+# 발행 없이 생성/검수만 (draft + report 저장)
+python -m src.editorial.cli --blog quartz --dry-run
+
+# 품질 게이트 테스트용 mock 허용 (mock 은 그래도 발행되지 않음)
+python -m src.editorial.cli --blog quartz --allow-mock
+```
+
+결과물:
+
+- `data/blogs/{blog}/published.json` — 발행 이력, 중복 방지 fingerprint, KST 일일 카운트 (커밋됨)
+- `data/blogs/{blog}/runs/` — A~F 형식 실행 리포트 (gitignore, Actions artifact)
+- `data/blogs/{blog}/drafts/` — 생성된 Markdown/JSON 초안 (gitignore, Actions artifact)
+- `content/{blog}/` — 발행된 기사 아카이브
+
+### GitHub Actions
+
+`.github/workflows/editorial.yml` 이 **매일 10:00 KST** Crystal과 Quartz를 순차 실행한다
+(matrix, `max-parallel: 1`). 수동 실행 시 `blog`(all/crystal/quartz)와 `dry_run`을 선택할 수 있다.
+
+세션은 블로그별 Secret을 우선 사용하고, 없으면 기존 `TISTORY_*` 로 폴백한다.
+
+| Secret | 용도 |
+| --- | --- |
+| `CRYSTAL_STORAGE_STATE` / `QUARTZ_STORAGE_STATE` | 블로그별 Base64 세션 (없으면 `TISTORY_STORAGE_STATE`) |
+| `CRYSTAL_KAKAO_ID` / `CRYSTAL_KAKAO_PASSWORD` | Crystal 자동 재로그인 (없으면 `TISTORY_*`) |
+| `QUARTZ_KAKAO_ID` / `QUARTZ_KAKAO_PASSWORD` | Quartz 자동 재로그인 (없으면 `TISTORY_*`) |
+| `CRYSTAL_BLOG_NAME` / `QUARTZ_BLOG_NAME` | 기본값 `rumbell` / `quar1z` |
+| `CRYSTAL_VISIBILITY` / `QUARTZ_VISIBILITY` | 기본 `public` |
+| `CRYSTAL_TISTORY_CATEGORY` / `QUARTZ_TISTORY_CATEGORY` | 비우면 블로그 기본 카테고리 |
+| `EDITORIAL_AI_PROVIDER` | `auto`(기본) / `openai` / `anthropic` |
+| `OPENAI_API_KEY` 또는 `ANTHROPIC_API_KEY` | 기사 생성 |
+
+> `EDITORIAL_AI_PROVIDER` 를 지정하지 않으면 `auto` 로 동작해 OpenAI → Anthropic 순서로
+> 사용 가능한 키를 선택한다. Obsidian용 `AI_PROVIDER=mock` 설정과 분리되어 있다.
+
 ## GitHub Actions 자동화
 
 `/actions/google` 시크릿 설정 후 평일 09:00 KST 자동 실행 (`.github/workflows/scheduled.yml`):
@@ -224,21 +321,25 @@ src/
   writers/           # 기사 작성, Markdown, SEO
   renderers/         # Markdown -> Tistory 호환 HTML
   publishers/        # tistory-node(Node 브리지) / tistory(Python 폴백) / local / mock
+  editorial/         # Crystal/Quartz 편집 파이프라인 (CPPI/QDVI, 품질 게이트, 상태)
   publishTistory.js  # Node Playwright 발행 엔진 (SELECTORS 단일 소스)
   publishCli.js      # Python -> Node 발행 브리지 CLI
   selectorHealth.js  # SELECTORS 검사 + 자동 추론/패치
-  tistoryLogin.js    # Node 로그인 세션 생성
-  tistoryConfig.js   # Node 발행 설정
+  tistoryLogin.js    # Node 로그인 세션 생성 (--blog crystal|quartz)
+  tistoryConfig.js   # Node 발행 설정 (블로그별 오버라이드 지원)
   storage/ utils/    # 파일 저장소, 캐시, 로깅, 재시도
   pipeline/          # collect ~ publish 파이프라인 스텝
 scripts/             # tistory_login.py (최초 로그인 세션 생성)
 package.json         # Node 발행 엔진 의존성 (playwright, dotenv)
 data/                # 수집 원본/이벤트/패킷/게시 마커 (gitignore)
-content/stocks/*.md  # 생성 기사 (gitignore)
+data/blogs/          # Crystal/Quartz 발행 이력·실행 리포트·초안
+content/stocks/*.md  # Obsidian 생성 기사 (gitignore)
+content/crystal/     # Crystal 발행 기사 아카이브
+content/quartz/      # Quartz 발행 기사 아카이브
 static/charts/*.png  # 생성 차트 (gitignore)
 .state/              # 로그인 세션 (gitignore)
 artifacts/           # 발행 오류/셀렉터 리포트 (gitignore)
-tests/               # pytest (79 개)
+tests/               # pytest (163 개)
 ```
 
 ## 면책

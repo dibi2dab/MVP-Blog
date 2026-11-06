@@ -16,6 +16,9 @@ import { tistoryConfig } from './tistoryConfig.js';
  *   3) 그래도 안 되고 TISTORY_KAKAO_ID / TISTORY_KAKAO_PASSWORD 가 있으면
  *      카카오 계정으로 자동 로그인
  *   4) 모두 실패하면 TISTORY_SESSION_EXPIRED 로 명확히 실패
+ *
+ * 모든 함수는 선택적 `config` 를 받는다. Crystal/Quartz 는 블로그별 세션
+ * 파일과 자격증명을 넘기고, Obsidian 은 기본 `tistoryConfig` 를 그대로 쓴다.
  */
 
 const LOGIN_URL = 'https://www.tistory.com/auth/login';
@@ -25,8 +28,8 @@ export function editorUrl(blogName = tistoryConfig.blogName) {
   return `https://${blogName}.tistory.com/manage/newpost/`;
 }
 
-export function hasStorageState() {
-  return fs.existsSync(tistoryConfig.paths.storageState);
+export function hasStorageState(config = tistoryConfig) {
+  return fs.existsSync(config.paths.storageState);
 }
 
 function isLoginUrl(url) {
@@ -40,9 +43,9 @@ function sessionError(message) {
 }
 
 /** 저장 파일/스크린샷에 계정 정보가 남지 않도록 문자열을 마스킹한다. */
-function scrubSecrets(value) {
+function scrubSecrets(value, config = tistoryConfig) {
   let out = String(value ?? '');
-  for (const secret of [tistoryConfig.kakaoId, tistoryConfig.kakaoPassword]) {
+  for (const secret of [config.kakaoId, config.kakaoPassword]) {
     if (secret && secret.length >= 3) {
       out = out.split(secret).join('***');
     }
@@ -51,9 +54,9 @@ function scrubSecrets(value) {
 }
 
 /** 로그인 실패 원인을 분석할 수 있도록 스크린샷/HTML 을 남긴다. */
-async function saveLoginArtifact(page, label) {
+async function saveLoginArtifact(page, label, config = tistoryConfig) {
   try {
-    const dir = tistoryConfig.paths.artifactDir;
+    const dir = config.paths.artifactDir;
     fs.mkdirSync(dir, { recursive: true });
     const stamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
     const base = path.join(dir, `login_${label}_${stamp}`);
@@ -85,13 +88,13 @@ async function saveLoginArtifact(page, label) {
           if (scrubbed !== node.nodeValue) node.nodeValue = scrubbed;
         }
         document.title = scrub(document.title);
-      }, [tistoryConfig.kakaoId, tistoryConfig.kakaoPassword])
+      }, [config.kakaoId, config.kakaoPassword])
       .catch(() => {});
 
     await page.screenshot({ path: `${base}.png`, fullPage: true }).catch(() => {});
-    const html = scrubSecrets(await page.content().catch(() => ''));
+    const html = scrubSecrets(await page.content().catch(() => ''), config);
     fs.writeFileSync(`${base}.html`, html, 'utf8');
-    fs.writeFileSync(`${base}.txt`, `url=${scrubSecrets(page.url())}\n`, 'utf8');
+    fs.writeFileSync(`${base}.txt`, `url=${scrubSecrets(page.url(), config)}\n`, 'utf8');
     return base;
   } catch {
     return '';
@@ -108,9 +111,9 @@ export async function isEditorOpen(page) {
 }
 
 /** 글쓰기 화면을 열어 세션이 살아있는지 확인한다. */
-export async function canOpenEditor(page, timeout = 25000) {
+export async function canOpenEditor(page, timeout = 25000, config = tistoryConfig) {
   try {
-    await page.goto(editorUrl(), { waitUntil: 'domcontentloaded', timeout });
+    await page.goto(editorUrl(config.blogName), { waitUntil: 'domcontentloaded', timeout });
     await page.waitForTimeout(1500);
     return await isEditorOpen(page);
   } catch {
@@ -161,7 +164,7 @@ export async function trySilentLogin(context) {
 }
 
 /** 카카오 계정 ID/PW 로 자동 로그인한다. (2차 인증이 뜨면 실패) */
-export async function loginWithCredentials(context, loginId, password) {
+export async function loginWithCredentials(context, loginId, password, config = tistoryConfig) {
   if (!loginId || !password) {
     throw sessionError('카카오 자동 로그인 자격증명이 없습니다. TISTORY_KAKAO_ID / TISTORY_KAKAO_PASSWORD 를 설정하세요.');
   }
@@ -214,9 +217,9 @@ export async function loginWithCredentials(context, loginId, password) {
     const isTwoFactorUrl = /two_step|two-step|verify|verification|otp/i.test(url);
     const mentionsVerify = /2단계 인증|인증번호(를| 입력)|보안 확인|추가 인증/.test(text);
     if (hasVerifyInput > 0 || isTwoFactorUrl || (mentionsVerify && isLoginUrl(url))) {
-      const base = await saveLoginArtifact(page, '2fa');
+      const base = await saveLoginArtifact(page, '2fa', config);
       throw sessionError(
-        `카카오 2차 인증이 필요합니다. url=${scrubSecrets(url)} 화면="${scrubSecrets(pageSummary(text))}"` +
+        `카카오 2차 인증이 필요합니다. url=${scrubSecrets(url, config)} 화면="${scrubSecrets(pageSummary(text), config)}"` +
           (base ? ` (artifact: ${base})` : '') +
           ' — 로컬에서 npm run login 으로 세션을 갱신하세요.'
       );
@@ -224,9 +227,9 @@ export async function loginWithCredentials(context, loginId, password) {
 
     // 잘못된 계정/비밀번호 감지
     if (/비밀번호.{0,20}(확인|일치|틀)|계정.{0,20}(확인|없)/i.test(text) && isLoginUrl(url)) {
-      const base = await saveLoginArtifact(page, 'bad_credentials');
+      const base = await saveLoginArtifact(page, 'bad_credentials', config);
       throw sessionError(
-        `카카오 계정 ID 또는 비밀번호가 올바르지 않습니다. 화면="${scrubSecrets(pageSummary(text))}"` +
+        `카카오 계정 ID 또는 비밀번호가 올바르지 않습니다. 화면="${scrubSecrets(pageSummary(text), config)}"` +
           (base ? ` (artifact: ${base})` : '')
       );
     }
@@ -238,9 +241,9 @@ export async function loginWithCredentials(context, loginId, password) {
 
     if (isLoginUrl(page.url())) {
       const finalText = (await page.evaluate(() => document.body?.innerText || '')).slice(0, 3000);
-      const base = await saveLoginArtifact(page, 'login_stuck');
+      const base = await saveLoginArtifact(page, 'login_stuck', config);
       throw sessionError(
-        `카카오 자동 로그인에 실패했습니다. url=${scrubSecrets(page.url())} 화면="${scrubSecrets(pageSummary(finalText))}"` +
+        `카카오 자동 로그인에 실패했습니다. url=${scrubSecrets(page.url(), config)} 화면="${scrubSecrets(pageSummary(finalText), config)}"` +
           (base ? ` (artifact: ${base})` : '') +
           ' — 계정 정보 또는 2차 인증을 확인하세요.'
       );
@@ -252,9 +255,9 @@ export async function loginWithCredentials(context, loginId, password) {
 }
 
 /** 현재 컨텍스트의 세션을 저장한다. */
-export async function saveStorageState(context) {
-  fs.mkdirSync(tistoryConfig.paths.stateDir, { recursive: true });
-  await context.storageState({ path: tistoryConfig.paths.storageState });
+export async function saveStorageState(context, config = tistoryConfig) {
+  fs.mkdirSync(config.paths.stateDir, { recursive: true });
+  await context.storageState({ path: config.paths.storageState });
 }
 
 /**
@@ -263,24 +266,24 @@ export async function saveStorageState(context) {
  *
  * @returns {{ok: boolean, method: 'existing'|'silent'|'credentials'}}
  */
-export async function ensureSession(context, { save = true } = {}) {
+export async function ensureSession(context, { save = true, config = tistoryConfig } = {}) {
   const page = await context.newPage();
   try {
-    if (await canOpenEditor(page)) {
+    if (await canOpenEditor(page, 25000, config)) {
       return { ok: true, method: 'existing' };
     }
 
     if (await trySilentLogin(context)) {
-      if (await canOpenEditor(page)) {
-        if (save) await saveStorageState(context);
+      if (await canOpenEditor(page, 25000, config)) {
+        if (save) await saveStorageState(context, config);
         return { ok: true, method: 'silent' };
       }
     }
 
-    if (tistoryConfig.kakaoId && tistoryConfig.kakaoPassword) {
-      await loginWithCredentials(context, tistoryConfig.kakaoId, tistoryConfig.kakaoPassword);
-      if (await canOpenEditor(page)) {
-        if (save) await saveStorageState(context);
+    if (config.kakaoId && config.kakaoPassword) {
+      await loginWithCredentials(context, config.kakaoId, config.kakaoPassword, config);
+      if (await canOpenEditor(page, 25000, config)) {
+        if (save) await saveStorageState(context, config);
         return { ok: true, method: 'credentials' };
       }
     }
@@ -295,17 +298,17 @@ export async function ensureSession(context, { save = true } = {}) {
 }
 
 /** 저장된 세션만으로 브라우저를 열어 세션을 검증/복구한다. (CLI 용) */
-export async function refreshSession({ headless = true } = {}) {
-  if (!hasStorageState()) {
+export async function refreshSession({ headless = true, config = tistoryConfig } = {}) {
+  if (!hasStorageState(config)) {
     throw sessionError(
-      `로그인 세션 파일이 없습니다: ${tistoryConfig.paths.storageState}\n"npm run login" 으로 티스토리에 로그인하세요.`
+      `로그인 세션 파일이 없습니다: ${config.paths.storageState}\n"npm run login" 으로 티스토리에 로그인하세요.`
     );
   }
 
   const browser = await chromium.launch({ headless });
-  const context = await browser.newContext({ storageState: tistoryConfig.paths.storageState });
+  const context = await browser.newContext({ storageState: config.paths.storageState });
   try {
-    return await ensureSession(context);
+    return await ensureSession(context, { config });
   } finally {
     await browser.close().catch(() => {});
   }

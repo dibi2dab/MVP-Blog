@@ -1,0 +1,2 @@
+# Keeps the Crystal editorial state directory in git.
+# published.json (when it exists) is tracked; drafts/ and runs/ are ignored.

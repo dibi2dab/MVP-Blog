@@ -40,6 +40,15 @@ static/charts/*.png
 static/charts/*.json
 !content/stocks/.gitkeep
 
+# Editorial pipeline (Crystal / Quartz)
+# published.json is committed so the daily limit and dedup survive runs.
+data/blogs/*/drafts/
+data/blogs/*/runs/
+!data/blogs/*/published.json
+!data/blogs/*/.gitkeep
+!content/crystal/.gitkeep
+!content/quartz/.gitkeep
+
 # 티스토리 로그인 세션 (민감. 절대 커밋 금지)
 .state/
 secrets/

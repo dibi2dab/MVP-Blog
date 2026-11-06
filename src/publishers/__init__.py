@@ -8,7 +8,7 @@ from src.publishers.base import (
     PublishDeduplicator,
 )
 from src.publishers.tistory_publisher import TistoryPublisher
-from src.publishers.node_tistory_publisher import NodeTistoryPublisher
+from src.publishers.node_tistory_publisher import NodeTistoryPublisher, PublishTarget
 from src.storage.file_store import JsonStore
 from src.utils.logging import get_logger
 

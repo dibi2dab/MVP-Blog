@@ -235,6 +235,16 @@ class Settings(BaseModel):
             self.ai.provider = env["AI_PROVIDER"].lower()
         if env.get("AI_MODEL"):
             self.ai.model = env["AI_MODEL"]
+        if env.get("AI_MAX_TOKENS"):
+            try:
+                self.ai.max_tokens = max(1000, int(env["AI_MAX_TOKENS"]))
+            except ValueError:
+                pass
+        if env.get("AI_TIMEOUT_SECONDS"):
+            try:
+                self.ai.timeout_seconds = max(30, int(env["AI_TIMEOUT_SECONDS"]))
+            except ValueError:
+                pass
         if env.get("STOCK_PROVIDER"):
             self.sources_raw.setdefault("stocks", {}).setdefault("price", {})["provider"] = env["STOCK_PROVIDER"]
         if env.get("NEWS_PROVIDER"):

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { chromium } from 'playwright';
-import { tistoryConfig } from './tistoryConfig.js';
+import { resolveBlogConfig, resolveTistoryConfig } from './tistoryConfig.js';
 import {
   canOpenEditor,
   editorUrl,
@@ -13,8 +13,13 @@ import {
 /**
  * 티스토리 로그인 세션을 저장한다.
  *
- *   npm run login          # 브라우저 창에서 직접 로그인 (최초 1회)
- *   npm run login -- --auto # TISTORY_KAKAO_ID / TISTORY_KAKAO_PASSWORD 로 자동 로그인
+ *   npm run login                       # 브라우저 창에서 직접 로그인 (최초 1회)
+ *   npm run login -- --auto             # TISTORY_KAKAO_ID / TISTORY_KAKAO_PASSWORD 로 자동 로그인
+ *   npm run login -- --auto --blog crystal
+ *   npm run login -- --auto --blog quartz
+ *
+ * `--blog` 를 주면 CRYSTAL_* / QUARTZ_* 환경변수(없으면 TISTORY_*)로
+ * 블로그별 세션 파일과 자격증명을 해석한다.
  *
  * 브라우저에서 로그인을 마치면 실제 글쓰기 화면이 열리는지 확인한 뒤에만 저장한다.
  * "로그인 상태 유지"가 있으면 자동으로 체크해 장기 세션을 확보한다.
@@ -22,14 +27,23 @@ import {
 
 const LOGIN_TIMEOUT_MS = 8 * 60 * 1000;
 const PROBE_INTERVAL_MS = 4000;
+
+function argValue(name) {
+  const index = process.argv.indexOf(name);
+  if (index === -1) return '';
+  return process.argv[index + 1] || '';
+}
+
 const AUTO = process.argv.includes('--auto');
+const BLOG = argValue('--blog').toLowerCase();
+const config = BLOG ? resolveBlogConfig(BLOG) : resolveTistoryConfig();
 
 async function waitForRealLogin(context, timeoutMs) {
   const page = await context.newPage();
   const started = Date.now();
   try {
     while (Date.now() - started < timeoutMs) {
-      if (await canOpenEditor(page)) return true;
+      if (await canOpenEditor(page, 25000, config)) return true;
       await new Promise((resolve) => setTimeout(resolve, PROBE_INTERVAL_MS));
     }
     return false;
@@ -39,24 +53,26 @@ async function waitForRealLogin(context, timeoutMs) {
 }
 
 async function main() {
+  console.log(`로그인 대상: ${config.blogName} (${config.paths.storageState})`);
+
   if (AUTO) {
-    if (!tistoryConfig.kakaoId || !tistoryConfig.kakaoPassword) {
+    if (!config.kakaoId || !config.kakaoPassword) {
       throw new Error(
         'TISTORY_KAKAO_ID / TISTORY_KAKAO_PASSWORD 가 필요합니다. (.env 또는 GitHub Secrets)'
       );
     }
     const browser = await chromium.launch({ headless: true });
     const context = await browser.newContext(
-      hasStorageState() ? { storageState: tistoryConfig.paths.storageState } : {}
+      hasStorageState(config) ? { storageState: config.paths.storageState } : {}
     );
     try {
-      await loginWithCredentials(context, tistoryConfig.kakaoId, tistoryConfig.kakaoPassword);
+      await loginWithCredentials(context, config.kakaoId, config.kakaoPassword, config);
       const page = await context.newPage();
-      const ok = await canOpenEditor(page);
+      const ok = await canOpenEditor(page, 25000, config);
       await page.close().catch(() => {});
       if (!ok) throw new Error('자동 로그인 후에도 글쓰기 화면이 열리지 않았습니다.');
-      await saveStorageState(context);
-      console.log(`자동 로그인 세션 저장 완료: ${tistoryConfig.paths.storageState}`);
+      await saveStorageState(context, config);
+      console.log(`자동 로그인 세션 저장 완료: ${config.paths.storageState}`);
     } finally {
       await browser.close().catch(() => {});
     }
@@ -91,14 +107,16 @@ async function main() {
 
     // 마지막으로 에디터를 한 번 더 열어 localStorage 까지 채운 뒤 저장한다.
     const finalPage = await context.newPage();
-    await finalPage.goto(editorUrl(), { waitUntil: 'domcontentloaded', timeout: 20000 }).catch(() => {});
+    await finalPage
+      .goto(editorUrl(config.blogName), { waitUntil: 'domcontentloaded', timeout: 20000 })
+      .catch(() => {});
     await finalPage.waitForTimeout(1500);
     const opened = await isEditorOpen(finalPage);
     await finalPage.close().catch(() => {});
     if (!opened) throw new Error('글쓰기 화면 확인에 실패했습니다.');
 
-    await saveStorageState(context);
-    console.log(`로그인 세션 저장 완료: ${tistoryConfig.paths.storageState}`);
+    await saveStorageState(context, config);
+    console.log(`로그인 세션 저장 완료: ${config.paths.storageState}`);
   } finally {
     await browser.close().catch(() => {});
   }

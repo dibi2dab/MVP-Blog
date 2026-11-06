@@ -15,7 +15,13 @@ import { publishTistory } from './publishTistory.js';
  *   "visibility": "private",
  *   "blogName": "eneru",
  *   "imagePaths": ["C:/.../static/charts/xxx.png"],
- *   "debug": false
+ *   "debug": false,
+ *   // 선택: 블로그별 발행 엔진 오버라이드 (Crystal / Quartz)
+ *   "storageStatePath": ".state/crystal_storage_state.json",
+ *   "kakaoId": "...",
+ *   "kakaoPassword": "...",
+ *   "artifactDir": "artifacts/tistory-errors/crystal",
+ *   "headless": true
  * }
  *
  * 결과는 stdout 의 마지막 줄에 sentinel 로 출력한다:
