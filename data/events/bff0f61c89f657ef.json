@@ -1,0 +1,43 @@
+{
+  "event_id": "bff0f61c89f657ef",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "삼성전기",
+    "ticker": "009150",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-06T04:53:49+00:00",
+  "event_date": "2026-11-06",
+  "event_score": 6,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    },
+    {
+      "code": "volume_50",
+      "label": "거래량 평균 대비 50% 이상",
+      "score_contribution": 1,
+      "detail": ""
+    },
+    {
+      "code": "gap_down",
+      "label": "갭 하락 (시가 급락)",
+      "score_contribution": 2,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": -0.06947368421052631,
+    "volume_ratio": 1.56692575136719,
+    "latest_amount": null
+  },
+  "summary": "삼성전기 주가 변동 -0.06947368421052631% / 거래량 비율 1.56692575136719"
+}

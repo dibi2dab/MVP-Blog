@@ -1,0 +1,32 @@
+{
+  "event_id": "7005ecc610a54049",
+  "event_type": "news_event",
+  "entity": {
+    "name": "김동명 LG에너지솔루션 사장, ESS",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-06T04:53:49+00:00",
+  "event_date": "Fri, 06 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 김동명 LG에너지솔루션 사장, ESS 수주잔고 160GWh…LFP 전환 속도 - CEO저널",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9yVlcxZU1XcEc2Ry1iTEFWMXYxRDctSHhwekdvSVNwYm9WS3ktQ3lLekdfNzJjV1pSR1hKTXBUMlZrSlowOVcwRldwT2M3SGtfR1lHOEZlbWk3Qi03U1hTMDktWThQakXSAWtBVV95cUxOaDJqRGZpRUVUZ0JMQWJ0UTJuTGluZTJzd2thb2FONWRHY1VIU3kwN1N5eWZTQ0ZySGwxX2MyZUxqLWZwY0VmY2tfLTVKekpGXy1pU0szdGEzQ1hyUU5iRDY3MExHOVAtRWR1WQ?oc=5",
+    "title": "김동명 LG에너지솔루션 사장, ESS 수주잔고 160GWh…LFP 전환 속도 - CEO저널"
+  },
+  "summary": "뉴스: 김동명 LG에너지솔루션 사장, ESS 수주잔고 160GWh…LFP 전환 속도 - CEO저널"
+}

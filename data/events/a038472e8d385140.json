@@ -1,0 +1,32 @@
+{
+  "event_id": "a038472e8d385140",
+  "event_type": "news_event",
+  "entity": {
+    "name": "NH證 \"LG엔솔 목표가 13% 하향",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-06T04:53:49+00:00",
+  "event_date": "Wed, 04 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: NH證 \"LG엔솔 목표가 13% 하향…ESS 수주 지연 우려\" - 뉴스1",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBKSGJwWl9KLVZnSncxaWxXckxaQTU5UHNpUUdBMVZSZXU1M3ZqdmVUVHdxb2dHeDlLSld1Z0o0WXdwN01KRkZLR3ZaU0pSN2l2TUdJa2lFbGNtaFk?oc=5",
+    "title": "NH證 \"LG엔솔 목표가 13% 하향…ESS 수주 지연 우려\" - 뉴스1"
+  },
+  "summary": "뉴스: NH證 \"LG엔솔 목표가 13% 하향…ESS 수주 지연 우려\" - 뉴스1"
+}
