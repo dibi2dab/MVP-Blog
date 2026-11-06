@@ -184,6 +184,33 @@ async function setVisibility(page, visibility) {
   }
 }
 
+async function setTitle(page, title) {
+  const input = page.locator(SELECTORS.titleInput);
+  const expected = String(title || '').trim();
+  await input.waitFor({ state: 'visible', timeout: 10000 });
+
+  // 티스토리는 에디터 로드 후 임시저장 글을 비동기로 복원한다. 이때 이전 글
+  // 제목이 새 제목을 덮어쓸 수 있으므로, 입력 후 실제 값을 검증하고 재시도한다.
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    await input.click({ timeout: 5000 }).catch(() => {});
+    await page.keyboard.press('Control+A').catch(() => {});
+    await page.keyboard.press('Delete').catch(() => {});
+    await input.fill(expected).catch(() => {});
+    // React 등 프레임워크가 값 변경을 인식하도록 이벤트를 명시적으로 보낸다.
+    await input
+      .evaluate((el, value) => {
+        el.value = value;
+        el.dispatchEvent(new Event('input', { bubbles: true }));
+        el.dispatchEvent(new Event('change', { bubbles: true }));
+      }, expected)
+      .catch(() => {});
+    await page.waitForTimeout(250);
+    const current = (await input.inputValue().catch(() => '')).trim();
+    if (current === expected) return true;
+  }
+  return false;
+}
+
 async function saveErrorArtifacts(page, payload) {
   try {
     const dir = tistoryConfig.paths.artifactDir;
@@ -257,7 +284,12 @@ export async function publishTistory({
     });
 
     await step('제목 입력', async () => {
-      await page.locator(SELECTORS.titleInput).fill(title);
+      // 임시저장 글 복원이 끝난 뒤 제목을 넣는다.
+      await page.waitForLoadState('networkidle').catch(() => {});
+      await page.waitForTimeout(500);
+      if (!(await setTitle(page, title))) {
+        console.warn('[tistory] 제목 입력 검증 실패 — 발행 직전에 다시 시도합니다.');
+      }
     });
 
     if (tistoryCategory) {
@@ -311,6 +343,31 @@ export async function publishTistory({
         }
       });
     }
+
+    // 임시저장 복원이 늦게 일어나 제목/본문을 덮어쓰는 경우를 발행 직전에 바로잡는다.
+    await step('본문 재동기화', async () => {
+      await page.evaluate(
+        ({ id, html }) => {
+          const editor = window.tinymce?.get(id);
+          if (!editor) throw new Error('TinyMCE editor not found');
+          editor.setContent(html);
+          editor.save();
+        },
+        { id: SELECTORS.tinymceEditorId, html: resolvedHtml }
+      );
+    });
+
+    await step('제목 재확인', async () => {
+      const input = page.locator(SELECTORS.titleInput);
+      const current = (await input.inputValue().catch(() => '')).trim();
+      if (current !== String(title || '').trim()) {
+        console.warn(`[tistory] 제목이 덮어써졌습니다. 재입력: "${current}" → "${title}"`);
+        if (!(await setTitle(page, title))) {
+          const finalValue = (await input.inputValue().catch(() => '')).trim();
+          throw new Error(`제목 입력 실패: 기대="${title}" 실제="${finalValue}"`);
+        }
+      }
+    });
 
     await step('발행 다이얼로그 열기 + 공개 설정', async () => {
       await page.locator(SELECTORS.completeButton).click();
