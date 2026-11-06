@@ -125,6 +125,14 @@ jobs:
           npm ci
           npx playwright install --with-deps chromium
 
+      - name: Check AI credentials
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          if [ -z "$OPENAI_API_KEY" ] && [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::No AI key configured. Add OPENAI_API_KEY or ANTHROPIC_API_KEY as a repository secret."
+            exit 1
+          fi
+
       - name: Restore Tistory session
         if: steps.gate.outputs.run == 'true'
         env:
