@@ -6,11 +6,12 @@ on:
   workflow_dispatch:
     inputs:
       mode:
-        description: "inspect | delete"
+        description: "discover | inspect | delete"
         required: true
         default: "inspect"
         type: choice
         options:
+          - discover
           - inspect
           - delete
       post_ids:
