@@ -134,7 +134,9 @@ def _profile(
         kakao_id=_env(f"{prefix}_KAKAO_ID", _env("TISTORY_KAKAO_ID")),
         kakao_password=_env(f"{prefix}_KAKAO_PASSWORD", _env("TISTORY_KAKAO_PASSWORD")),
         tistory_category=_env(f"{prefix}_TISTORY_CATEGORY", ""),
-        visibility=_env(f"{prefix}_VISIBILITY", _env("TISTORY_VISIBILITY", "public")),
+        # Editorial posts are public by default. They deliberately do not inherit
+        # Obsidian's TISTORY_VISIBILITY, which may be private.
+        visibility=_env(f"{prefix}_VISIBILITY", "public"),
         max_articles_per_day=int(_env(f"{prefix}_MAX_ARTICLES_PER_DAY", "1") or 1),
         min_quality_score=float(_env(f"{prefix}_MIN_QUALITY_SCORE", "85") or 85),
         min_sources=int(_env(f"{prefix}_MIN_SOURCES", "3") or 3),

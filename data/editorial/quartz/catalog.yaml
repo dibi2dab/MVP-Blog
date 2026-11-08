@@ -1,0 +1,1142 @@
+version: 1
+blog: quartz
+entries:
+  - id: notion-plus
+    name: Notion Plus 요금제
+    category: 생산성 앱
+    title: Notion Plus 요금제, 팀 협업 도구로 가격 대비 가치가 있을까
+    meta_description: "Notion Plus 요금제를 월 14,000원, 월 200건 작업, 시간당 25,000원 인건비 가정으로 분석했습니다. 작업당 비용과 시간 절감 가치, 기능과 연동 범위, 경쟁 도구 가격 차이를 함께 정리했습니다."
+    primary_keyword: Notion
+    secondary_keywords:
+      - Notion Plus
+      - 협업 도구
+      - 생산성 앱
+    tags:
+      - Notion
+      - 생산성
+      - 협업 도구
+      - 요금제 비교
+    summary: "Notion Plus 요금제는 문서, 데이터베이스, 위키를 한 공간에서 쓰는 팀 협업 도구입니다. 월 14,000원과 월 200건 작업을 기준으로 작업당 비용과 시간 절감 가치를 계산했습니다."
+    why_now: "팀 협업 도구는 무료 플랜으로 시작하기 쉽지만, 인원이 늘면 사용자당 비용이 빠르게 커지므로 도입 전에 작업량 기준 비용을 확인해야 합니다."
+    product:
+      name: Notion
+      vendor: Notion Labs
+      plans:
+        - name: Free
+          monthly_krw: 0
+          annual_krw: 0
+          included_units: null
+          unit: ""
+          note: "개인 사용을 위한 무료 플랜"
+        - name: Plus
+          monthly_krw: 14000
+          annual_krw: 168000
+          included_units: null
+          unit: ""
+          note: "멤버당 월 14,000원, 원화 네이티브 가격"
+      selected_plan: Plus
+      tasks_per_month: 200
+      minutes_saved_per_task: 8
+      hourly_labor_cost_krw: 25000
+      features:
+        - name: 페이지와 데이터베이스
+          available: true
+          note: 문서와 표 형태 데이터를 한 공간에서 관리
+          source_ids: [S1]
+        - name: 팀 위키
+          available: true
+          note: 팀 문서를 모아 두는 위키 구성
+          source_ids: [S1]
+        - name: 템플릿
+          available: true
+          note: 공식 템플릿으로 초기 구성을 단축
+          source_ids: [S1]
+        - name: 외부 서비스 연동
+          available: true
+          note: 커넥션으로 외부 도구와 데이터 연결
+          source_ids: [S3]
+      platforms:
+        - 웹
+        - Windows
+        - macOS
+        - iOS
+        - Android
+      integrations:
+        - Slack
+        - Google Drive
+        - GitHub
+        - Figma
+        - Jira
+        - Linear
+        - Microsoft Teams
+      usage_limits: "Plus 요금제는 공식 가격표에 페이지·블록 기준 포함 사용량 수치를 명시하지 않습니다. 무제한이라는 의미가 아니므로 공식 문서에서 확인해야 합니다."
+      ratings:
+        feature_diversity:
+          score: 8.5
+          basis: "공식 가격표와 연동 목록에서 페이지, 데이터베이스, 위키, 템플릿, 외부 커넥션을 확인할 수 있습니다."
+          source_ids: [S1, S3]
+        practicality:
+          score: 8.0
+          basis: "문서와 데이터베이스를 한 곳에서 다뤄 회의록, 프로젝트 문서, 지식 베이스를 함께 관리하기 좋습니다."
+          source_ids: [S1]
+        price_value:
+          score: 7.5
+          basis: "Plus는 멤버당 월 14,000원이며 무료 플랜도 있어 소규모 팀은 낮은 비용으로 시작할 수 있습니다."
+          source_ids: [S1]
+        ease_of_use:
+          score: 8.0
+          basis: "블록 편집 방식과 공식 템플릿, 도움말 센터를 제공해 초기 구성 부담이 비교적 작습니다."
+          source_ids: [S2]
+        scalability:
+          score: 7.5
+          basis: "외부 커넥션과 팀 단위 요금제가 있어 사용 범위를 넓힐 수 있지만, 대규모 조직은 별도 요금제 검토가 필요합니다."
+          source_ids: [S1, S3]
+        stability_transparency:
+          score: 8.0
+          basis: "공식 가격표와 도움말 문서에서 가격과 기능을 확인할 수 있으며, 가격은 변경될 수 있습니다."
+          source_ids: [S1, S2]
+        fit_for_purpose:
+          score: 8.0
+          basis: "문서 중심 협업과 지식 관리에는 잘 맞지만, 복잡한 업무 흐름 자동화만을 원하는 팀에는 과할 수 있습니다."
+          source_ids: [S1]
+      notes: "Notion AI는 별도 추가 기능이므로 Plus 요금제 기본 기능으로 계산하지 않았습니다."
+    competitors:
+      - name: ClickUp Core
+        monthly_krw: 12600
+        annual_krw: null
+        feature_count: null
+        notes: "연간 결제 기준 사용자당 월 9달러를 편집상 환율 1,400원/달러로 환산한 값입니다."
+        source_ids: [S4]
+    ratings: {}
+    sources:
+      - id: S1
+        title: "Notion pricing"
+        url: https://www.notion.com/pricing
+        publisher: Notion 공식 가격표
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Notion help center"
+        url: https://www.notion.com/help
+        publisher: Notion 공식 도움말
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Notion connections and integrations"
+        url: https://www.notion.com/integrations
+        publisher: Notion 공식 연동 목록
+        accessed_at: "2026-11-07"
+      - id: S4
+        title: "ClickUp pricing"
+        url: https://clickup.com/pricing
+        publisher: ClickUp 공식 가격표
+        accessed_at: "2026-11-07"
+    sourced_inputs:
+      selected_plan: [S1]
+      platforms: [S2]
+      integrations: [S3]
+    assumptions:
+      - name: 월 작업 수
+        value: "200"
+        unit: 건
+        basis: 편집상 가정
+      - name: 작업당 절감 시간
+        value: "8"
+        unit: 분
+        basis: 편집상 가정
+      - name: 시간당 인건비
+        value: "25,000"
+        unit: 원
+        basis: 편집상 가정
+      - name: 환율
+        value: "1,400"
+        unit: 원/달러
+        basis: 편집상 가정
+    limitations:
+      - "월 작업 수, 작업당 절감 시간, 시간당 인건비는 실제 팀 성과가 아니라 계산을 위한 편집상 가정입니다."
+      - "가격과 요금제 구성은 변경될 수 있으므로 도입 전 공식 가격표를 다시 확인해야 합니다."
+    checklist:
+      - "팀이 실제로 사용할 문서와 데이터베이스 구조를 정했는가"
+      - "멤버 수를 기준으로 월 비용과 연 비용을 계산했는가"
+      - "필요한 외부 연동이 공식 목록에 있는지 확인했는가"
+      - "무료 플랜으로 먼저 검증할 기간을 정했는가"
+      - "도입 후 중단하거나 요금제를 낮출 기준을 정했는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: zapier-pro
+    name: Zapier Pro 자동화 요금제
+    category: 자동화·생산성
+    title: Zapier Pro 요금제, 월 750회 작업으로 자동화 비용을 따져보면
+    meta_description: "Zapier Pro 요금제를 월 750회 작업과 시간당 25,000원 인건비로 가정해 작업당 비용과 시간 절감 가치를 계산했습니다. 10,456개 앱 연동, 경쟁 자동화 도구 가격 차이, 도입 판단 기준을 정리했습니다."
+    primary_keyword: Zapier
+    secondary_keywords:
+      - Zapier Pro
+      - 업무 자동화
+      - 노코드 자동화
+    tags:
+      - Zapier
+      - 업무 자동화
+      - 노코드
+      - 요금제 비교
+    summary: "Zapier Pro 요금제는 앱과 앱 사이의 반복 작업을 자동화하는 도구입니다. 월 750회 작업과 시간당 25,000원 인건비를 기준으로 작업당 비용과 시간 절감 가치를 계산했습니다."
+    why_now: "자동화 도구는 작업 횟수와 연동 앱 수에 따라 비용이 달라지므로, 월 구독료만 보고 도입하면 실제 사용량에서 비용이 맞지 않을 수 있습니다."
+    product:
+      name: Zapier
+      vendor: Zapier
+      plans:
+        - name: Free
+          monthly_krw: 0
+          annual_krw: 0
+          included_units: 100
+          unit: tasks
+          note: "월 100회 작업"
+        - name: Pro
+          monthly_krw: 41986
+          annual_krw: 335832
+          included_units: 750
+          unit: tasks
+          note: "월 결제 29.99달러, 연 결제 월 19.99달러, 월 750회 작업"
+      selected_plan: Pro
+      tasks_per_month: 750
+      minutes_saved_per_task: 5
+      hourly_labor_cost_krw: 25000
+      features:
+        - name: 다단계 자동화
+          available: true
+          note: 여러 앱을 연결하는 다단계 작업 구성
+          source_ids: [S1]
+        - name: 필터와 경로 분기
+          available: true
+          note: 조건에 따라 작업 흐름을 나누는 기능
+          source_ids: [S1]
+        - name: 예약 실행
+          available: true
+          note: 정해진 주기에 맞춰 자동 실행
+          source_ids: [S1]
+        - name: 10,456개 이상 앱 연동
+          available: true
+          note: 공식 앱 디렉터리 기준
+          source_ids: [S3]
+      platforms:
+        - 웹 브라우저
+      integrations:
+        - Gmail
+        - Google Sheets
+        - Slack
+        - Notion
+        - HubSpot
+        - Salesforce
+        - Trello
+        - Asana
+        - Dropbox
+        - Microsoft Teams
+      usage_limits: "Pro 요금제는 월 750회 작업이 포함됩니다. 작업 수를 초과하면 상위 요금제나 추가 사용량이 필요합니다."
+      ratings:
+        feature_diversity:
+          score: 9.0
+          basis: "다단계 자동화, 필터, 경로 분기, 예약 실행과 10,456개 이상 앱 연동을 공식 자료에서 확인했습니다."
+          source_ids: [S1, S3]
+        practicality:
+          score: 8.5
+          basis: "반복적인 데이터 입력과 알림 전송을 코드 없이 연결할 수 있어 실무 적용 범위가 넓습니다."
+          source_ids: [S1, S3]
+        price_value:
+          score: 7.5
+          basis: "Pro는 연 결제 기준 월 19.99달러로 750회 작업을 제공하지만, 월 결제는 29.99달러로 비용 차이가 큽니다."
+          source_ids: [S1]
+        ease_of_use:
+          score: 8.0
+          basis: "공식 도움말과 앱 디렉터리를 제공해 연동 방법을 문서로 확인할 수 있습니다."
+          source_ids: [S2, S3]
+        scalability:
+          score: 8.0
+          basis: "작업 수와 앱 연동 범위를 요금제로 확장할 수 있지만, 대량 실행에는 상위 요금제가 필요합니다."
+          source_ids: [S1]
+        stability_transparency:
+          score: 8.0
+          basis: "공식 가격표에 작업 수와 가격이 명시되어 있고 도움말에서 기능을 확인할 수 있습니다."
+          source_ids: [S1, S2]
+        fit_for_purpose:
+          score: 8.5
+          basis: "정해진 반복 업무를 여러 앱에 걸쳐 자동화하려는 팀에 적합합니다."
+          source_ids: [S1]
+      notes: "작업 수는 공식 요금제에 표시된 월 750회를 그대로 사용했습니다."
+    competitors:
+      - name: n8n Starter
+        monthly_krw: 30000
+        annual_krw: null
+        feature_count: null
+        notes: "연간 결제 기준 월 20유로, 2,500회 실행. 편집상 환율 1,500원/유로로 환산했습니다."
+        source_ids: [S4]
+    ratings: {}
+    sources:
+      - id: S1
+        title: "Zapier pricing"
+        url: https://zapier.com/pricing
+        publisher: Zapier 공식 가격표
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Zapier help center"
+        url: https://zapier.com/help
+        publisher: Zapier 공식 도움말
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Zapier app directory"
+        url: https://zapier.com/apps
+        publisher: Zapier 공식 앱 디렉터리
+        accessed_at: "2026-11-07"
+      - id: S4
+        title: "n8n pricing"
+        url: https://n8n.io/pricing
+        publisher: n8n 공식 가격표
+        accessed_at: "2026-11-07"
+    sourced_inputs:
+      selected_plan: [S1]
+      platforms: [S1]
+      integrations: [S3]
+    assumptions:
+      - name: 월 작업 수
+        value: "750"
+        unit: 건
+        basis: "공식 요금제에 포함된 월 작업 수를 기준으로 편집상 가정"
+      - name: 작업당 절감 시간
+        value: "5"
+        unit: 분
+        basis: 편집상 가정
+      - name: 시간당 인건비
+        value: "25,000"
+        unit: 원
+        basis: 편집상 가정
+      - name: 환율
+        value: "1,400"
+        unit: 원/달러
+        basis: 편집상 가정
+    limitations:
+      - "월 750회 작업은 요금제 포함량이며, 실제 자동화 실행 횟수는 업무량에 따라 달라집니다."
+      - "작업당 절감 시간과 시간당 인건비는 계산을 위한 편집상 가정입니다."
+    checklist:
+      - "월 예상 자동화 실행 횟수를 계산했는가"
+      - "필요한 앱이 공식 디렉터리에 있는지 확인했는가"
+      - "월 결제와 연 결제의 비용 차이를 비교했는가"
+      - "자동화 실패 시 알림과 복구 절차를 정했는가"
+      - "사용량이 포함량을 넘을 때의 대안을 준비했는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: github-copilot-pro
+    name: GitHub Copilot Pro
+    category: AI 도구
+    title: GitHub Copilot Pro, 월 10달러로 개발 시간을 얼마나 줄일까
+    meta_description: "GitHub Copilot Pro를 월 10달러, 월 300건 코딩 작업, 시간당 30,000원 인건비 가정으로 분석했습니다. 작업당 비용과 절감 시간 가치, 지원 플랫폼과 연동, 경쟁 AI 코딩 도구 가격을 비교했습니다."
+    primary_keyword: GitHub Copilot
+    secondary_keywords:
+      - Copilot Pro
+      - AI 코딩
+      - 개발자 도구
+    tags:
+      - GitHub Copilot
+      - AI 코딩
+      - 개발자 도구
+      - 요금제 비교
+    summary: "GitHub Copilot Pro는 코드 작성과 수정을 돕는 AI 개발 도구입니다. 월 10달러와 월 300건 코딩 작업을 기준으로 작업당 비용과 시간 절감 가치를 계산했습니다."
+    why_now: "AI 코딩 도구는 모델과 사용 한도가 자주 바뀌므로, 월 요금만 비교하지 말고 실제 작업량과 지원 환경을 함께 확인해야 합니다."
+    product:
+      name: GitHub Copilot
+      vendor: GitHub
+      plans:
+        - name: Free
+          monthly_krw: 0
+          annual_krw: 0
+          included_units: null
+          unit: ""
+          note: "제한적인 기능을 제공하는 무료 플랜"
+        - name: Pro
+          monthly_krw: 14000
+          annual_krw: 168000
+          included_units: null
+          unit: AI credits
+          note: "월 10달러, 월 1,500 AI 크레딧. 크레딧은 작업 수와 직접 대응하지 않아 사용량 점수는 매기지 않음"
+      selected_plan: Pro
+      tasks_per_month: 300
+      minutes_saved_per_task: 10
+      hourly_labor_cost_krw: 30000
+      features:
+        - name: 코드 완성
+          available: true
+          note: 편집기에서 다음 코드를 제안
+          source_ids: [S1, S2]
+        - name: 채팅
+          available: true
+          note: 코드와 문서를 대화형으로 질문
+          source_ids: [S1, S2]
+        - name: 에이전트 모드
+          available: true
+          note: 여러 파일에 걸친 작업을 보조
+          source_ids: [S1]
+        - name: 모델 선택
+          available: true
+          note: 요금제에 따라 선택 가능한 모델 제공
+          source_ids: [S2]
+        - name: CLI 지원
+          available: true
+          note: 터미널 환경에서 사용 지원
+          source_ids: [S1]
+      platforms:
+        - VS Code
+        - Visual Studio
+        - JetBrains
+        - Neovim
+        - Xcode
+        - GitHub.com
+      integrations:
+        - GitHub
+        - VS Code
+        - Visual Studio
+        - JetBrains
+        - Neovim
+        - Xcode
+        - GitHub CLI
+        - GitHub Actions
+      usage_limits: "Pro 요금제는 월 1,500 AI 크레딧을 제공하지만, 크레딧은 코딩 작업 건수와 직접 대응하지 않습니다. 공식 문서에서 모델별 사용량을 확인해야 합니다."
+      ratings:
+        feature_diversity:
+          score: 9.0
+          basis: "코드 완성, 채팅, 에이전트 모드, 모델 선택, CLI 지원을 공식 요금제 문서에서 확인했습니다."
+          source_ids: [S1, S2]
+        practicality:
+          score: 8.5
+          basis: "코드 작성과 수정, 질문 응답을 개발 흐름 안에서 처리할 수 있어 실무 활용 범위가 넓습니다."
+          source_ids: [S1, S2]
+        price_value:
+          score: 8.5
+          basis: "Pro는 사용자당 월 10달러로, 월 1,500 AI 크레딧과 여러 편집기 지원을 제공합니다."
+          source_ids: [S1, S2]
+        ease_of_use:
+          score: 8.0
+          basis: "주요 편집기 확장과 GitHub 계정 기반 설정을 공식 문서에서 안내합니다."
+          source_ids: [S2]
+        scalability:
+          score: 8.0
+          basis: "개인 Pro에서 조직·엔터프라이즈 플랜으로 확장할 수 있고 여러 편집기를 지원합니다."
+          source_ids: [S1, S2]
+        stability_transparency:
+          score: 8.0
+          basis: "공식 요금제 문서에 가격과 크레딧, 플랜 차이가 명시되어 있습니다."
+          source_ids: [S1, S2]
+        fit_for_purpose:
+          score: 8.5
+          basis: "개인 개발자와 코드 편집기 중심으로 일하는 팀에 적합합니다."
+          source_ids: [S1]
+      notes: "AI 크레딧은 작업 건수와 직접 대응하지 않으므로 사용량 제한 항목은 평가하지 않았습니다."
+    competitors:
+      - name: Cursor Plus
+        monthly_krw: 11200
+        annual_krw: null
+        feature_count: null
+        notes: "월 8달러를 편집상 환율 1,400원/달러로 환산한 값입니다."
+        source_ids: [S4]
+    ratings: {}
+    sources:
+      - id: S1
+        title: "GitHub Copilot plans"
+        url: https://github.com/features/copilot/plans
+        publisher: GitHub 공식 요금제
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Plans for GitHub Copilot"
+        url: https://docs.github.com/en/copilot/about-github-copilot/plans-for-github-copilot
+        publisher: GitHub 공식 문서
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "GitHub Copilot"
+        url: https://github.com/features/copilot
+        publisher: GitHub 공식 제품 페이지
+        accessed_at: "2026-11-07"
+      - id: S4
+        title: "Cursor pricing"
+        url: https://cursor.com/pricing
+        publisher: Cursor 공식 가격표
+        accessed_at: "2026-11-07"
+    sourced_inputs:
+      selected_plan: [S1]
+      platforms: [S2]
+      integrations: [S2]
+    assumptions:
+      - name: 월 작업 수
+        value: "300"
+        unit: 건
+        basis: 편집상 가정
+      - name: 작업당 절감 시간
+        value: "10"
+        unit: 분
+        basis: 편집상 가정
+      - name: 시간당 인건비
+        value: "30,000"
+        unit: 원
+        basis: 편집상 가정
+      - name: 환율
+        value: "1,400"
+        unit: 원/달러
+        basis: 편집상 가정
+    limitations:
+      - "AI 크레딧 소모량은 모델과 작업 종류에 따라 달라 월 1,500 크레딧으로 처리할 수 있는 작업 수를 단정할 수 없습니다."
+      - "월 작업 수, 작업당 절감 시간, 시간당 인건비는 계산을 위한 편집상 가정입니다."
+    checklist:
+      - "팀에서 사용하는 편집기가 공식 지원 목록에 있는가"
+      - "월 1,500 AI 크레딧으로 충분한지 시범 사용으로 확인했는가"
+      - "코드 검토와 보안 정책에 AI 도구 사용 기준이 있는가"
+      - "월 10달러와 실제 절감 시간을 비교했는가"
+      - "요금제 변경이나 중단 기준을 정했는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: claude-pro
+    name: Claude Pro 구독
+    category: AI 도구
+    title: Claude Pro 구독, 월 20달러 AI 도구의 가격 대비 가치 분석
+    meta_description: "Claude Pro를 월 20달러와 월 200건 작업, 시간당 30,000원 인건비 가정으로 분석했습니다. 작업당 비용, 시간 절감 가치, 지원 플랫폼과 연동 범위, 경쟁 AI 도구 가격 차이를 정리했습니다."
+    primary_keyword: Claude Pro
+    secondary_keywords:
+      - Claude 요금제
+      - AI 구독
+      - AI 생산성
+    tags:
+      - Claude
+      - AI 도구
+      - 구독 요금제
+      - 생산성
+    summary: "Claude Pro 구독은 문서 작성과 분석을 돕는 AI 도구입니다. 월 20달러와 월 200건 작업을 기준으로 작업당 비용과 시간 절감 가치를 계산했습니다."
+    why_now: "AI 구독은 사용량 한도와 모델 구성이 자주 바뀌므로, 월 요금과 함께 실제 작업량에서의 비용을 확인해야 합니다."
+    product:
+      name: Claude
+      vendor: Anthropic
+      plans:
+        - name: Free
+          monthly_krw: 0
+          annual_krw: 0
+          included_units: null
+          unit: ""
+          note: "제한적 사용이 가능한 무료 플랜"
+        - name: Pro
+          monthly_krw: 28000
+          annual_krw: 280000
+          included_units: null
+          unit: ""
+          note: "월 20달러 또는 연 200달러, 사용량 한도는 공식 정책에 따라 달라짐"
+      selected_plan: Pro
+      tasks_per_month: 200
+      minutes_saved_per_task: 12
+      hourly_labor_cost_krw: 30000
+      features:
+        - name: 웹·데스크톱·모바일 채팅
+          available: true
+          note: 여러 환경에서 대화형으로 사용
+          source_ids: [S1]
+        - name: 파일 생성과 분석
+          available: true
+          note: 문서와 데이터를 다루는 작업 지원
+          source_ids: [S1]
+        - name: 웹 검색
+          available: true
+          note: 최신 정보를 검색해 답변에 활용
+          source_ids: [S1]
+        - name: 프로젝트
+          available: true
+          note: 작업 맥락을 모아 관리
+          source_ids: [S1]
+        - name: Claude Code
+          available: true
+          note: 개발 작업을 위한 별도 인터페이스
+          source_ids: [S1]
+      platforms:
+        - 웹
+        - Windows
+        - macOS
+        - iOS
+        - Android
+      integrations:
+        - Google Workspace
+        - Microsoft 365
+        - Chrome
+        - Slack
+        - GitHub
+        - MCP 커넥터
+      usage_limits: "Pro 요금제의 사용량 한도는 공식 정책에 따라 달라지며, 고정된 작업 수치가 없어 사용량 점수를 매기지 않았습니다."
+      ratings:
+        feature_diversity:
+          score: 8.5
+          basis: "채팅, 파일 분석, 웹 검색, 프로젝트, Claude Code를 공식 가격 페이지에서 확인했습니다."
+          source_ids: [S1]
+        practicality:
+          score: 8.5
+          basis: "문서 작성과 요약, 분석, 코딩 보조를 한 구독으로 처리할 수 있어 활용 범위가 넓습니다."
+          source_ids: [S1]
+        price_value:
+          score: 7.5
+          basis: "Pro는 월 20달러, 연 결제는 200달러이며 무료 플랜도 제공됩니다. 사용량 한도가 고정되어 있지 않아 비용 대비 효율은 사용 패턴에 따라 달라집니다."
+          source_ids: [S1]
+        ease_of_use:
+          score: 8.0
+          basis: "웹, 데스크톱, 모바일 앱을 제공하고 공식 문서에서 사용 방법을 안내합니다."
+          source_ids: [S1, S2]
+        scalability:
+          score: 7.5
+          basis: "개인 Pro에서 팀·엔터프라이즈 플랜으로 확장할 수 있지만, 팀 단위 가격은 별도 상담이 필요합니다."
+          source_ids: [S1]
+        stability_transparency:
+          score: 8.0
+          basis: "공식 가격 페이지와 API 가격 문서, 상업 이용 약관을 제공합니다."
+          source_ids: [S1, S2, S3]
+        fit_for_purpose:
+          score: 8.0
+          basis: "문서 중심 업무와 코딩 보조를 함께 원하는 개인 사용자에게 적합합니다."
+          source_ids: [S1]
+      notes: "사용량 한도가 고정 작업 수로 표시되지 않아 사용량 제한 항목은 평가하지 않았습니다."
+    competitors:
+      - name: GitHub Copilot Pro
+        monthly_krw: 14000
+        annual_krw: null
+        feature_count: null
+        notes: "사용자당 월 10달러를 편집상 환율 1,400원/달러로 환산한 값입니다."
+        source_ids: [S4]
+    ratings: {}
+    sources:
+      - id: S1
+        title: "Claude pricing"
+        url: https://claude.com/pricing
+        publisher: Anthropic 공식 가격표
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Claude API pricing"
+        url: https://docs.anthropic.com/en/docs/about-claude/pricing
+        publisher: Anthropic 공식 문서
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Commercial terms"
+        url: https://www.anthropic.com/legal/commercial-terms
+        publisher: Anthropic 공식 약관
+        accessed_at: "2026-11-07"
+      - id: S4
+        title: "GitHub Copilot plans"
+        url: https://github.com/features/copilot/plans
+        publisher: GitHub 공식 요금제
+        accessed_at: "2026-11-07"
+    sourced_inputs:
+      selected_plan: [S1]
+      platforms: [S1]
+      integrations: [S1]
+    assumptions:
+      - name: 월 작업 수
+        value: "200"
+        unit: 건
+        basis: 편집상 가정
+      - name: 작업당 절감 시간
+        value: "12"
+        unit: 분
+        basis: 편집상 가정
+      - name: 시간당 인건비
+        value: "30,000"
+        unit: 원
+        basis: 편집상 가정
+      - name: 환율
+        value: "1,400"
+        unit: 원/달러
+        basis: 편집상 가정
+    limitations:
+      - "Pro 요금제의 사용량 한도는 고정 작업 수가 아니므로 월 200건 작업은 계산을 위한 편집상 가정입니다."
+      - "작업당 절감 시간과 시간당 인건비도 실제 성과가 아닌 편집상 가정입니다."
+    checklist:
+      - "주로 사용할 환경이 웹, 데스크톱, 모바일 중 어디인지 정했는가"
+      - "월 사용량 한도가 업무량에 충분한지 시범 사용으로 확인했는가"
+      - "민감한 자료를 입력해도 되는지 약관과 보안 정책을 확인했는가"
+      - "월 20달러와 연 200달러 중 유리한 결제 방식을 비교했는가"
+      - "다른 AI 도구와 역할을 나눌 기준을 정했는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: google-workspace-business-starter
+    name: Google Workspace Business Starter
+    category: 생산성 앱
+    title: Google Workspace Business Starter, 사용자당 7달러의 실제 비용
+    meta_description: "Google Workspace Business Starter를 사용자당 월 7달러와 월 300건 작업, 시간당 25,000원 인건비 가정으로 분석했습니다. 작업당 비용과 절감 시간 가치, 플랫폼과 연동, 경쟁 도구 차이를 정리했습니다."
+    primary_keyword: Google Workspace
+    secondary_keywords:
+      - Business Starter
+      - 업무용 이메일
+      - 협업 도구
+    tags:
+      - Google Workspace
+      - 업무용 이메일
+      - 생산성
+      - 요금제 비교
+    summary: "Google Workspace Business Starter는 맞춤 도메인 이메일과 문서, 화상회의를 묶은 업무용 도구입니다. 사용자당 월 7달러와 월 300건 작업을 기준으로 비용과 시간 절감 가치를 계산했습니다."
+    why_now: "업무용 이메일과 협업 도구는 사용자 수에 비례해 비용이 늘어나므로, 기능별 가격보다 사용자당 총비용을 먼저 확인해야 합니다."
+    product:
+      name: Google Workspace
+      vendor: Google
+      plans:
+        - name: Business Starter
+          monthly_krw: 9800
+          annual_krw: 117600
+          included_units: null
+          unit: ""
+          note: "사용자당 월 7달러, 사용자당 30GB 풀 스토리지"
+      selected_plan: Business Starter
+      tasks_per_month: 300
+      minutes_saved_per_task: 6
+      hourly_labor_cost_krw: 25000
+      features:
+        - name: 맞춤 도메인 Gmail
+          available: true
+          note: 회사 도메인으로 이메일 사용
+          source_ids: [S1]
+        - name: Google Meet
+          available: true
+          note: 화상회의 기능
+          source_ids: [S1]
+        - name: Google Chat
+          available: true
+          note: 팀 메신저 기능
+          source_ids: [S1]
+        - name: Google Drive
+          available: true
+          note: 사용자당 30GB 풀 스토리지
+          source_ids: [S1]
+        - name: Docs·Sheets·Slides
+          available: true
+          note: 문서, 스프레드시트, 프레젠테이션
+          source_ids: [S1]
+      platforms:
+        - 웹
+        - Windows
+        - macOS
+        - iOS
+        - Android
+      integrations:
+        - Gmail
+        - Google Drive
+        - Google Calendar
+        - Google Meet
+        - Google Chat
+        - Google Docs
+      usage_limits: "Business Starter는 사용자당 30GB 풀 스토리지를 제공하지만, 작업 건수 기준 포함 사용량은 공식 가격표에 없어 사용량 점수를 매기지 않았습니다."
+      ratings:
+        feature_diversity:
+          score: 8.0
+          basis: "맞춤 도메인 Gmail, Meet, Chat, Drive, Docs·Sheets·Slides를 공식 가격표에서 확인했습니다."
+          source_ids: [S1]
+        practicality:
+          score: 8.5
+          basis: "이메일, 화상회의, 문서 작업을 한 공급자에서 처리할 수 있어 중소 팀의 기본 업무를 폭넓게 덮습니다."
+          source_ids: [S1]
+        price_value:
+          score: 8.0
+          basis: "Business Starter는 사용자당 월 7달러로 업무용 이메일과 기본 협업 도구를 함께 제공합니다."
+          source_ids: [S1]
+        ease_of_use:
+          score: 8.0
+          basis: "익숙한 Google 서비스 인터페이스를 사용하고 공식 관리자 문서를 제공합니다."
+          source_ids: [S1, S2]
+        scalability:
+          score: 7.5
+          basis: "사용자 수를 늘려 확장할 수 있지만, 스토리지와 기능이 더 필요하면 상위 요금제로 올려야 합니다."
+          source_ids: [S1]
+        stability_transparency:
+          score: 8.0
+          basis: "공식 가격표와 제품 페이지, 관리자용 개인정보 문서를 제공합니다."
+          source_ids: [S1, S2, S3]
+        fit_for_purpose:
+          score: 8.5
+          basis: "회사 도메인 이메일과 기본 협업 도구가 필요한 중소 팀에 적합합니다."
+          source_ids: [S1]
+      notes: "사용자당 가격이므로 팀 인원 수에 따라 총비용이 비례해 늘어납니다."
+    competitors:
+      - name: Microsoft 365 Business Basic
+        monthly_krw: null
+        annual_krw: null
+        feature_count: null
+        notes: "공식 가격 페이지 접근에 실패해 가격을 확인하지 못했습니다. 비교표에는 가격 미확인으로 표시합니다."
+        source_ids: []
+    ratings: {}
+    sources:
+      - id: S1
+        title: "Google Workspace pricing"
+        url: https://workspace.google.com/pricing
+        publisher: Google Workspace 공식 가격표
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Google Workspace products"
+        url: https://workspace.google.com/products/
+        publisher: Google Workspace 공식 제품 페이지
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Generative AI in Google Workspace privacy hub"
+        url: https://knowledge.workspace.google.com/admin/gemini/generative-ai-in-google-workspace-privacy-hub
+        publisher: Google Workspace 공식 관리자 문서
+        accessed_at: "2026-11-07"
+    sourced_inputs:
+      selected_plan: [S1]
+      platforms: [S1]
+      integrations: [S1]
+    assumptions:
+      - name: 월 작업 수
+        value: "300"
+        unit: 건
+        basis: 편집상 가정
+      - name: 작업당 절감 시간
+        value: "6"
+        unit: 분
+        basis: 편집상 가정
+      - name: 시간당 인건비
+        value: "25,000"
+        unit: 원
+        basis: 편집상 가정
+      - name: 환율
+        value: "1,400"
+        unit: 원/달러
+        basis: 편집상 가정
+      - name: 사용자 수
+        value: "1"
+        unit: 명
+        basis: "사용자당 가격이므로 편집상 1명 기준으로 계산"
+    limitations:
+      - "사용자당 가격이므로 실제 총비용은 팀 인원 수에 비례합니다."
+      - "월 작업 수, 작업당 절감 시간, 시간당 인건비는 계산을 위한 편집상 가정입니다."
+    checklist:
+      - "팀 인원 수를 기준으로 월 총비용을 계산했는가"
+      - "필요한 스토리지가 사용자당 30GB로 충분한가"
+      - "기존 이메일과 일정 데이터를 이전할 계획이 있는가"
+      - "관리자 계정과 보안 설정 담당자를 정했는가"
+      - "상위 요금제로 올릴 기준을 정했는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: figma-professional
+    name: Figma Professional 요금제
+    category: 소프트웨어 분석
+    title: Figma Professional 요금제, 디자인 팀에 맞는 가격과 기능은
+    meta_description: "Figma Professional 요금제를 Full seat 월 16달러와 월 100건 작업, 시간당 30,000원 인건비 가정으로 분석했습니다. 작업당 비용과 절감 시간 가치, 지원 플랫폼과 연동, 경쟁 디자인 도구 차이를 정리했습니다."
+    primary_keyword: Figma
+    secondary_keywords:
+      - Figma Professional
+      - 디자인 도구
+      - 협업 디자인
+    tags:
+      - Figma
+      - 디자인 도구
+      - 협업
+      - 요금제 비교
+    summary: "Figma Professional 요금제는 디자인과 프로토타이핑을 팀 단위로 협업하는 도구입니다. Full seat 월 16달러와 월 100건 작업을 기준으로 작업당 비용과 시간 절감 가치를 계산했습니다."
+    why_now: "디자인 도구는 좌석 종류와 편집 권한에 따라 가격이 달라지므로, 팀원 역할을 먼저 나눈 뒤 필요한 좌석만 계산해야 합니다."
+    product:
+      name: Figma
+      vendor: Figma
+      plans:
+        - name: Starter
+          monthly_krw: 0
+          annual_krw: 0
+          included_units: null
+          unit: ""
+          note: "무료로 시작할 수 있는 플랜"
+        - name: Professional
+          monthly_krw: 22400
+          annual_krw: 268800
+          included_units: null
+          unit: ""
+          note: "Full seat 기준 월 16달러"
+      selected_plan: Professional
+      tasks_per_month: 100
+      minutes_saved_per_task: 15
+      hourly_labor_cost_krw: 30000
+      features:
+        - name: 디자인
+          available: true
+          note: 화면과 구성 요소 디자인
+          source_ids: [S1]
+        - name: 프로토타이핑
+          available: true
+          note: 상호작용이 있는 시제품 제작
+          source_ids: [S1]
+        - name: FigJam
+          available: true
+          note: 협업 화이트보드
+          source_ids: [S1]
+        - name: 팀 라이브러리
+          available: true
+          note: 공통 구성 요소와 스타일 공유
+          source_ids: [S1]
+        - name: 플러그인
+          available: true
+          note: 커뮤니티 플러그인으로 기능 확장
+          source_ids: [S3]
+        - name: Dev Mode
+          available: false
+          note: 좌석 종류와 요금제 조건에 따라 별도 확인이 필요해 기능 수에서 제외
+          source_ids: [S1]
+      platforms:
+        - 웹
+        - Windows
+        - macOS
+        - iOS
+        - Android
+      integrations:
+        - Slack
+        - Jira
+        - GitHub
+        - Storybook
+        - Notion
+        - Google Drive
+      usage_limits: "Professional 요금제는 공식 가격표에 작업 건수 기준 포함 사용량을 명시하지 않아 사용량 점수를 매기지 않았습니다."
+      ratings:
+        feature_diversity:
+          score: 8.0
+          basis: "디자인, 프로토타이핑, FigJam, 팀 라이브러리, 플러그인을 공식 가격표와 커뮤니티 페이지에서 확인했습니다."
+          source_ids: [S1, S3]
+        practicality:
+          score: 8.5
+          basis: "디자인과 시제품 제작, 화이트보드 협업을 한 도구에서 처리할 수 있어 디자인 팀의 실무 흐름을 넓게 덮습니다."
+          source_ids: [S1]
+        price_value:
+          score: 7.5
+          basis: "Professional Full seat는 월 16달러이며 무료 Starter 플랜도 있습니다. 좌석 종류에 따라 가격이 달라집니다."
+          source_ids: [S1]
+        ease_of_use:
+          score: 8.0
+          basis: "웹 기반 편집기와 공식 파트너·커뮤니티 자료를 제공해 학습 자료를 찾기 쉽습니다."
+          source_ids: [S1, S2]
+        scalability:
+          score: 8.0
+          basis: "팀 라이브러리와 플러그인, 외부 연동으로 조직 단위 확장이 가능합니다."
+          source_ids: [S1, S3]
+        stability_transparency:
+          score: 7.5
+          basis: "공식 가격표와 파트너 페이지에서 가격과 생태계를 확인할 수 있지만, 좌석별 조건은 별도 확인이 필요합니다."
+          source_ids: [S1, S2]
+        fit_for_purpose:
+          score: 8.5
+          basis: "디자인과 프로토타이핑을 협업으로 진행하는 제품·디자인 팀에 적합합니다."
+          source_ids: [S1]
+      notes: "Full seat 기준 가격이며, Dev seat와 Collab seat는 역할과 가격이 다르므로 함께 확인해야 합니다."
+    competitors:
+      - name: Sketch
+        monthly_krw: null
+        annual_krw: null
+        feature_count: null
+        notes: "공식 가격 페이지를 확인하지 못해 가격 미확인으로 표시합니다."
+        source_ids: []
+    ratings: {}
+    sources:
+      - id: S1
+        title: "Figma pricing"
+        url: https://www.figma.com/pricing/
+        publisher: Figma 공식 가격표
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Figma partners"
+        url: https://www.figma.com/partners/
+        publisher: Figma 공식 파트너 페이지
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Figma community integrations"
+        url: https://www.figma.com/community/integrations
+        publisher: Figma 공식 커뮤니티
+        accessed_at: "2026-11-07"
+    sourced_inputs:
+      selected_plan: [S1]
+      platforms: [S1]
+      integrations: [S3]
+    assumptions:
+      - name: 월 작업 수
+        value: "100"
+        unit: 건
+        basis: 편집상 가정
+      - name: 작업당 절감 시간
+        value: "15"
+        unit: 분
+        basis: 편집상 가정
+      - name: 시간당 인건비
+        value: "30,000"
+        unit: 원
+        basis: 편집상 가정
+      - name: 환율
+        value: "1,400"
+        unit: 원/달러
+        basis: 편집상 가정
+      - name: 좌석 수
+        value: "1"
+        unit: 석
+        basis: "Full seat 1석 기준 편집상 가정"
+    limitations:
+      - "좌석 종류와 팀 인원 수에 따라 총비용이 달라지므로 실제 견적과 차이가 날 수 있습니다."
+      - "월 작업 수, 작업당 절감 시간, 시간당 인건비는 계산을 위한 편집상 가정입니다."
+    checklist:
+      - "팀원별로 필요한 좌석 종류를 정했는가"
+      - "무료 Starter 플랜으로 먼저 협업 구조를 검증했는가"
+      - "필요한 플러그인과 외부 연동이 있는지 확인했는가"
+      - "디자인 파일과 라이브러리 이전 계획을 세웠는가"
+      - "좌석을 줄이거나 요금제를 낮출 기준을 정했는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: slack-pro
+    name: Slack Pro 요금제
+    category: 생산성 앱
+    title: Slack Pro 요금제, 팀 메신저 비용과 기능을 함께 비교하면
+    meta_description: "Slack Pro 요금제를 사용자당 월 8.75달러와 월 500건 작업, 시간당 25,000원 인건비 가정으로 분석했습니다. 작업당 비용과 절감 시간 가치, 플랫폼과 앱 연동, 경쟁 메신저 차이를 정리했습니다."
+    primary_keyword: Slack
+    secondary_keywords:
+      - Slack Pro
+      - 팀 메신저
+      - 협업 도구
+    tags:
+      - Slack
+      - 팀 메신저
+      - 협업 도구
+      - 요금제 비교
+    summary: "Slack Pro 요금제는 채널과 허들, 워크플로를 제공하는 팀 메신저입니다. 사용자당 월 8.75달러와 월 500건 작업을 기준으로 작업당 비용과 시간 절감 가치를 계산했습니다."
+    why_now: "팀 메신저는 사용자당 요금이므로 인원이 늘수록 비용이 커집니다. 무료 플랜과 Pro의 차이를 확인한 뒤 필요한 시점에 올려야 합니다."
+    product:
+      name: Slack
+      vendor: Salesforce
+      plans:
+        - name: Free
+          monthly_krw: 0
+          annual_krw: 0
+          included_units: null
+          unit: ""
+          note: "소규모 팀을 위한 무료 플랜"
+        - name: Pro
+          monthly_krw: 12250
+          annual_krw: 121800
+          included_units: null
+          unit: ""
+          note: "사용자당 월 8.75달러(월 결제), 7.25달러(연 결제)"
+      selected_plan: Pro
+      tasks_per_month: 500
+      minutes_saved_per_task: 4
+      hourly_labor_cost_krw: 25000
+      features:
+        - name: 채널
+          available: true
+          note: 주제별 대화 공간
+          source_ids: [S1]
+        - name: 허들
+          available: true
+          note: 음성·영상으로 빠르게 대화
+          source_ids: [S1]
+        - name: 캔버스
+          available: true
+          note: 문서와 정보를 채널에 정리
+          source_ids: [S1]
+        - name: 워크플로
+          available: true
+          note: 반복 작업을 자동화
+          source_ids: [S1]
+        - name: 앱 연동
+          available: true
+          note: 외부 앱과 연결
+          source_ids: [S3]
+      platforms:
+        - 웹
+        - Windows
+        - macOS
+        - iOS
+        - Android
+      integrations:
+        - Google Drive
+        - GitHub
+        - Jira
+        - Asana
+        - Trello
+        - Zoom
+        - Microsoft Teams
+      usage_limits: "Pro 요금제는 공식 가격표에 작업 건수 기준 포함 사용량을 명시하지 않아 사용량 점수를 매기지 않았습니다."
+      ratings:
+        feature_diversity:
+          score: 8.5
+          basis: "채널, 허들, 캔버스, 워크플로, 앱 연동을 공식 가격표와 앱 디렉터리에서 확인했습니다."
+          source_ids: [S1, S3]
+        practicality:
+          score: 8.5
+          basis: "대화, 문서 정리, 자동화를 한 도구에서 처리할 수 있어 팀 커뮤니케이션에 폭넓게 적용됩니다."
+          source_ids: [S1]
+        price_value:
+          score: 7.5
+          basis: "Pro는 사용자당 월 8.75달러, 연 결제는 월 7.25달러이며 무료 플랜도 있습니다. 인원이 많을수록 총비용이 커집니다."
+          source_ids: [S1]
+        ease_of_use:
+          score: 8.0
+          basis: "웹과 데스크톱, 모바일 앱을 제공하고 앱 디렉터리에서 연동 방법을 찾을 수 있습니다."
+          source_ids: [S1, S3]
+        scalability:
+          score: 8.0
+          basis: "사용자 수와 워크플로를 늘려 확장할 수 있고 상위 요금제도 제공됩니다."
+          source_ids: [S1]
+        stability_transparency:
+          score: 8.0
+          basis: "공식 가격표와 이용 약관, 앱 디렉터리를 제공합니다."
+          source_ids: [S1, S2, S3]
+        fit_for_purpose:
+          score: 8.5
+          basis: "채널 기반으로 팀 대화와 알림을 한곳에 모으려는 조직에 적합합니다."
+          source_ids: [S1]
+      notes: "사용자당 가격이므로 실제 월 비용은 활성 사용자 수에 비례합니다."
+    competitors:
+      - name: Microsoft Teams
+        monthly_krw: null
+        annual_krw: null
+        feature_count: null
+        notes: "Microsoft 365 구독에 포함되어 단독 가격을 확인하지 못했습니다. 비교표에는 가격 미확인으로 표시합니다."
+        source_ids: []
+    ratings: {}
+    sources:
+      - id: S1
+        title: "Slack pricing"
+        url: https://slack.com/pricing
+        publisher: Slack 공식 가격표
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Slack terms of service"
+        url: https://slack.com/terms-of-service
+        publisher: Slack 공식 약관
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Slack app directory"
+        url: https://slack.com/apps
+        publisher: Slack 공식 앱 디렉터리
+        accessed_at: "2026-11-07"
+    sourced_inputs:
+      selected_plan: [S1]
+      platforms: [S1]
+      integrations: [S3]
+    assumptions:
+      - name: 월 작업 수
+        value: "500"
+        unit: 건
+        basis: 편집상 가정
+      - name: 작업당 절감 시간
+        value: "4"
+        unit: 분
+        basis: 편집상 가정
+      - name: 시간당 인건비
+        value: "25,000"
+        unit: 원
+        basis: 편집상 가정
+      - name: 환율
+        value: "1,400"
+        unit: 원/달러
+        basis: 편집상 가정
+      - name: 사용자 수
+        value: "1"
+        unit: 명
+        basis: "사용자당 가격이므로 편집상 1명 기준으로 계산"
+    limitations:
+      - "사용자당 가격이므로 실제 총비용은 팀 인원 수에 비례합니다."
+      - "월 작업 수, 작업당 절감 시간, 시간당 인건비는 계산을 위한 편집상 가정입니다."
+    checklist:
+      - "팀 인원 수를 기준으로 월 총비용을 계산했는가"
+      - "무료 플랜과 Pro의 기능 차이가 필요한지 확인했는가"
+      - "필요한 외부 앱이 공식 디렉터리에 있는지 확인했는가"
+      - "보존 정책과 보안 설정을 검토했는가"
+      - "사용자 수가 줄거나 늘 때의 비용 계획을 세웠는가"
+    last_reviewed: "2026-11-07"
+    status: active

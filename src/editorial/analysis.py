@@ -1,409 +1,311 @@
 from __future__ import annotations
 
-import re
-from dataclasses import dataclass, field
-from typing import Any
+from typing import Any, Iterable
 
-from src.editorial.models import AnalysisDimension, OriginalAnalysis
-from src.editorial.profiles import BlogProfile
-
-FRAMEWORK_SPECS: dict[str, dict[str, Any]] = {
-    "CPPI": {
-        "name": "Crystal Practical Profitability Index (CPPI)",
-        "dimensions": [
-            (
-                "Revenue Potential",
-                0.25,
-                ("revenue potential", "수익 잠재력", "수익성", "매출 잠재력"),
-            ),
-            (
-                "Cost Efficiency",
-                0.20,
-                ("cost efficiency", "비용 효율", "비용 효율성", "원가 효율"),
-            ),
-            (
-                "Time Efficiency",
-                0.20,
-                ("time efficiency", "시간 효율", "시간 효율성", "시간 대비"),
-            ),
-            (
-                "Execution Feasibility",
-                0.20,
-                ("execution feasibility", "실행 가능성", "실행력", "실현 가능성"),
-            ),
-            (
-                "Risk Management",
-                0.15,
-                ("risk management", "리스크 관리", "위험 관리", "위험성"),
-            ),
-        ],
-    },
-    "QDVI": {
-        "name": "Quartz Digital Value Index (QDVI)",
-        "dimensions": [
-            (
-                "Functional Capability",
-                0.25,
-                ("functional capability", "기능", "기능성", "기능 역량"),
-            ),
-            (
-                "Ease of Use",
-                0.20,
-                ("ease of use", "사용성", "사용 편의성", "편의성"),
-            ),
-            (
-                "Price-to-Value",
-                0.20,
-                ("price-to-value", "price to value", "가격 대비 가치", "가성비"),
-            ),
-            (
-                "Integration & Scalability",
-                0.15,
-                (
-                    "integration & scalability",
-                    "integration and scalability",
-                    "통합 및 확장성",
-                    "통합·확장성",
-                    "통합 확장성",
-                    "확장성",
-                ),
-            ),
-            (
-                "Reliability & Transparency",
-                0.20,
-                (
-                    "reliability & transparency",
-                    "reliability and transparency",
-                    "신뢰성 및 투명성",
-                    "신뢰성·투명성",
-                    "신뢰성",
-                    "투명성",
-                ),
-            ),
-        ],
-    },
-}
+from src.editorial.models import (
+    AnalysisDimension,
+    Assumption,
+    EvaluationItem,
+    MetricResult,
+    OriginalAnalysis,
+    ResearchSource,
+)
 
 
-@dataclass
-class AnalysisValidation:
-    analysis: OriginalAnalysis
-    errors: list[str] = field(default_factory=list)
-    warnings: list[str] = field(default_factory=list)
-
-    @property
-    def ok(self) -> bool:
-        return not self.errors
+def _cell(value: Any) -> str:
+    text = "" if value is None else str(value)
+    return text.replace("|", "/").replace("\n", " ").strip()
 
 
-def _norm_name(value: str) -> str:
-    return re.sub(r"[^가-힣a-z0-9]", "", (value or "").lower())
+def _cite(source_ids: Iterable[str]) -> str:
+    ids = [source_id for source_id in source_ids if source_id]
+    if not ids:
+        return ""
+    return " " + "".join(f"[{source_id}]" for source_id in ids)
 
 
-def _as_float(value: Any) -> float | None:
-    if value is None or value == "":
-        return None
-    try:
-        return float(value)
-    except (TypeError, ValueError):
-        return None
+def _score(value: float | None) -> str:
+    return "평가 불가" if value is None else f"{value:.1f} / 10"
 
 
-def _dimension_lookup(raw_dimensions: Any) -> dict[str, dict[str, Any]]:
-    """Accept either a list of dimension objects or a mapping."""
-
-    lookup: dict[str, dict[str, Any]] = {}
-    if isinstance(raw_dimensions, dict):
-        for name, value in raw_dimensions.items():
-            if isinstance(value, dict):
-                item = dict(value)
-                item.setdefault("name", name)
-            else:
-                item = {"name": name, "score": value}
-            lookup[_norm_name(str(name))] = item
-        return lookup
-    if isinstance(raw_dimensions, list):
-        for item in raw_dimensions:
-            if not isinstance(item, dict):
-                continue
-            name = str(item.get("name") or item.get("dimension") or "")
-            if name:
-                lookup[_norm_name(name)] = item
-    return lookup
-
-
-def normalize_analysis(raw: dict[str, Any], profile: BlogProfile) -> AnalysisValidation:
-    """Validate and recompute a CPPI/QDVI analysis.
-
-    The model's own result is never trusted. We recompute it from the disclosed
-    dimension scores and weights. If the disclosed result differs materially, the
-    analysis is rejected as an incorrect calculation.
-    """
-
-    errors: list[str] = []
-    warnings: list[str] = []
-    framework = str(raw.get("framework") or profile.framework).strip().upper()
-    expected = profile.framework.upper()
-    if framework != expected:
-        errors.append(f"분석 프레임워크 불일치: 기대={expected}, 실제={framework}")
-
-    spec = FRAMEWORK_SPECS.get(expected)
-    if spec is None:
-        errors.append(f"지원하지 않는 프레임워크: {expected}")
-        return AnalysisValidation(
-            analysis=OriginalAnalysis(framework=expected),
-            errors=errors,
-            warnings=warnings,
-        )
-
-    lookup = _dimension_lookup(raw.get("dimensions"))
-    dimensions: list[AnalysisDimension] = []
-    for name, weight, aliases in spec["dimensions"]:
-        item = None
-        for alias in (name, *aliases):
-            item = lookup.get(_norm_name(alias))
-            if item is not None:
-                break
-
-        if item is None:
-            dimensions.append(
-                AnalysisDimension(
-                    name=name,
-                    score=None,
-                    weight=weight,
-                    rationale="제공된 자료로 평가할 수 없음",
-                    unavailable=True,
-                )
-            )
-            warnings.append(f"{name} 차원이 누락되어 가중치를 정규화합니다.")
-            continue
-
-        score = _as_float(item.get("score"))
-        unavailable = bool(item.get("unavailable")) or score is None
-        rationale = str(item.get("rationale") or item.get("reason") or "").strip()
-        item_weight = _as_float(item.get("weight"))
-        effective_weight = item_weight if item_weight is not None else weight
-        if effective_weight <= 0:
-            effective_weight = weight
-
-        if not unavailable and (score is None or score < 0 or score > 10):
-            errors.append(f"{name} 점수가 0~10 범위를 벗어났습니다: {score}")
-            unavailable = True
-
-        dimensions.append(
-            AnalysisDimension(
-                name=name,
-                score=None if unavailable else round(float(score), 2),
-                weight=effective_weight,
-                rationale=rationale,
-                unavailable=unavailable,
-            )
-        )
-
-    available = [d for d in dimensions if not d.unavailable and d.score is not None]
-    if len(available) < 3:
-        errors.append(f"평가 가능한 차원이 {len(available)}개뿐입니다. 최소 3개가 필요합니다.")
-
-    recomputed: float | None = None
-    weight_sum = sum(d.weight for d in available)
-    if available and weight_sum > 0:
-        recomputed = sum(float(d.score) * d.weight for d in available) / weight_sum
-        recomputed = round(recomputed, 2)
-
-    disclosed = _as_float(raw.get("result"))
-    if recomputed is not None and disclosed is not None:
-        if abs(disclosed - recomputed) > 0.1:
-            errors.append(
-                "계산 결과 불일치: 공개된 결과 "
-                f"{disclosed} vs 재계산 {recomputed}. 공식과 입력값을 확인해야 합니다."
-            )
-    elif recomputed is not None and disclosed is None:
-        warnings.append("모델이 최종 점수를 공개하지 않아 재계산값을 사용합니다.")
-
-    formula = str(raw.get("formula") or "").strip()
-    if not formula:
-        errors.append("계산 공식이 비어 있습니다.")
-    elif expected not in formula.upper():
-        warnings.append(f"공식 문자열에 {expected} 표기가 없습니다.")
-
-    purpose = str(raw.get("purpose") or "").strip()
-    if not purpose:
-        errors.append("분석 목적이 비어 있습니다.")
-
-    inputs = raw.get("inputs")
-    if not isinstance(inputs, dict) or not inputs:
-        errors.append("분석 입력값(inputs)이 비어 있습니다.")
-        inputs = inputs if isinstance(inputs, dict) else {}
-
-    data_sources = [str(item) for item in (raw.get("data_sources") or []) if str(item).strip()]
-    if not data_sources:
-        errors.append("분석 데이터 출처(data_sources)가 비어 있습니다.")
-
-    steps = [str(item) for item in (raw.get("steps") or []) if str(item).strip()]
-    if not steps:
-        errors.append("계산 과정(steps)이 비어 있습니다.")
-
-    limitations = [str(item) for item in (raw.get("limitations") or []) if str(item).strip()]
-    if not limitations:
-        errors.append("분석 한계(limitations)가 비어 있습니다.")
-
-    interpretation = str(raw.get("interpretation") or "").strip()
-    if not interpretation:
-        errors.append("결과 해석(interpretation)이 비어 있습니다.")
-
-    scenario_analysis = raw.get("scenario_analysis") or []
-    if not isinstance(scenario_analysis, list):
-        scenario_analysis = []
-    scenario_analysis = [item for item in scenario_analysis if isinstance(item, dict)]
-
-    analysis = OriginalAnalysis(
-        framework=expected,
-        purpose=purpose,
-        formula=formula,
-        dimensions=dimensions,
-        inputs=inputs,
-        data_sources=data_sources,
-        steps=steps,
-        result=recomputed if recomputed is not None else disclosed,
-        interpretation=interpretation,
-        limitations=limitations,
-        scenario_analysis=scenario_analysis,
-    )
-    return AnalysisValidation(analysis=analysis, errors=errors, warnings=warnings)
-
-
-def _escape_table(value: Any) -> str:
-    return str(value or "").replace("|", "\\|").replace("\n", " ").strip()
-
-
-def build_analysis_markdown(analysis: OriginalAnalysis, profile: BlogProfile) -> str:
-    """Render the canonical, reproducible analysis section.
-
-    The article body is generated by the model, but this section is generated
-    deterministically from the validated analysis object. That guarantees the
-    published numbers and the disclosed calculation cannot drift apart.
-    """
-
-    title = (
-        "Crystal Practical Profitability Index (CPPI)"
-        if profile.framework == "CPPI"
-        else "Quartz Digital Value Index (QDVI)"
-    )
-    lines: list[str] = [
-        f"## 원문 분석: {title}",
+def render_dimension_table(analysis: OriginalAnalysis) -> str:
+    if not analysis.dimensions:
+        return ""
+    lines = [
+        f"### {analysis.framework} 구성 차원",
         "",
-        "> 이 점수는 편집상 의사결정 프레임워크입니다. 실제 수익, 성과, 또는 제품의 절대적 우열을 보장하지 않습니다.",
-        "",
-        f"**목적:** {analysis.purpose or '해당 주제의 의사결정을 돕기 위한 분석'}",
-        "",
-        f"**공식:** {analysis.formula or '(공식 미기재)'}",
-        "",
-        "| 평가 차원 | 점수 (0~10) | 가중치 | 근거 |",
+        "| 차원 | 점수 | 가중치 | 구성 항목 |",
         "| --- | ---: | ---: | --- |",
     ]
     for dimension in analysis.dimensions:
-        score = "평가 불가" if dimension.unavailable or dimension.score is None else f"{dimension.score:.1f}"
         lines.append(
-            f"| {_escape_table(dimension.name)} | {score} | {dimension.weight:.2f} | "
-            f"{_escape_table(dimension.rationale) or '-'} |"
+            "| {name} | {score} | {weight:.0%} | {rationale} |".format(
+                name=_cell(dimension.name),
+                score="평가 불가" if dimension.score is None else f"{dimension.score:.2f}",
+                weight=dimension.weight,
+                rationale=_cell(dimension.rationale),
+            )
         )
     lines.append("")
+    lines.append(
+        f"종합 {analysis.framework} 점수는 "
+        f"{'계산 불가' if analysis.result is None else f'{analysis.result:.2f} / 10'}입니다. "
+        "이 점수는 10개 평가 항목을 묶어 계산한 보조 지표이며, 아래 항목별 근거를 함께 읽어야 합니다."
+    )
+    return "\n".join(lines)
 
-    if analysis.inputs:
-        lines.extend(
-            [
-                "### 입력 변수와 데이터 출처",
-                "",
-                "| 입력 변수 | 값 |",
-                "| --- | --- |",
-            ]
-        )
-        for key, value in analysis.inputs.items():
-            lines.append(f"| {_escape_table(key)} | {_escape_table(value)} |")
-        lines.append("")
 
-    if analysis.steps:
-        lines.extend(["### 계산 과정", ""])
-        for index, step in enumerate(analysis.steps, start=1):
-            lines.append(f"{index}. {step}")
-        lines.append("")
-
-    if analysis.result is not None:
-        lines.extend(
-            [
-                "### 계산 결과",
-                "",
-                f"**{profile.framework} = {analysis.result:.2f} / 10**",
-                "",
-            ]
-        )
-
-    if analysis.interpretation:
-        lines.extend(["### 결과 해석", "", analysis.interpretation, ""])
-
-    if analysis.scenario_analysis:
-        lines.extend(
-            [
-                "### 시나리오 분석",
-                "",
-                "| 시나리오 | 가정 | 결과 |",
-                "| --- | --- | --- |",
-            ]
-        )
-        for scenario in analysis.scenario_analysis:
-            lines.append(
-                f"| {_escape_table(scenario.get('scenario'))} | "
-                f"{_escape_table(scenario.get('assumptions'))} | "
-                f"{_escape_table(scenario.get('result'))} |"
+def render_evaluation_table(analysis: OriginalAnalysis) -> str:
+    if not analysis.evaluation_items:
+        return ""
+    lines = [
+        "## 10가지 평가 항목",
+        "",
+        "아래 표는 이 글의 중심 분석입니다. 각 항목은 공개 자료, 계산 결과, 또는 명시된 편집상 가정을 근거로 평가했습니다.",
+        "",
+        "| 평가 항목 | 측정값 | 점수 | 판단 근거 |",
+        "| --- | --- | ---: | --- |",
+    ]
+    for item in analysis.evaluation_items:
+        lines.append(
+            "| {name} | {value} | {score} | {basis}{cite} |".format(
+                name=_cell(item.name),
+                value=_cell(item.display or item.value),
+                score=_score(item.score),
+                basis=_cell(item.basis),
+                cite=_cite(item.source_ids),
             )
-        lines.append("")
-
-    if analysis.limitations:
-        lines.extend(["### 분석의 한계", ""])
-        for limitation in analysis.limitations:
-            lines.append(f"- {limitation}")
-        lines.append("")
-
-    if analysis.data_sources:
-        lines.extend(
-            [
-                "### 분석에 사용한 출처",
-                "",
-                ", ".join(f"[{source_id}]" for source_id in analysis.data_sources),
-                "",
-            ]
         )
+    lines.append("")
+    return "\n".join(lines)
 
-    return "\n".join(lines).strip()
+
+def render_metrics_table(analysis: OriginalAnalysis) -> str:
+    if not analysis.metrics:
+        return ""
+    lines = [
+        "## 핵심 수치와 계산식",
+        "",
+        "| 지표 | 값 | 계산식 |",
+        "| --- | ---: | --- |",
+    ]
+    for metric in analysis.metrics:
+        reason = ""
+        if metric.value is None and metric.unavailable_reason:
+            reason = f" ({metric.unavailable_reason})"
+        lines.append(
+            "| {name} | {value}{reason} | {formula}{cite} |".format(
+                name=_cell(metric.name),
+                value=_cell(metric.display),
+                reason=_cell(reason),
+                formula=_cell(metric.formula),
+                cite=_cite(metric.source_ids),
+            )
+        )
+    lines.append("")
+    return "\n".join(lines)
 
 
-def build_sources_markdown(sources: list[Any], profile: BlogProfile) -> str:
-    lines = ["## 참고 자료", ""]
+def render_steps(analysis: OriginalAnalysis) -> str:
+    if not analysis.steps:
+        return ""
+    lines = ["## 계산 과정", ""]
+    for index, step in enumerate(analysis.steps, start=1):
+        lines.append(f"{index}. {step}")
+    lines.append("")
+    return "\n".join(lines)
+
+
+_SCENARIO_LABELS = {
+    "monthly_revenue": "월 매출",
+    "monthly_cost": "월 비용",
+    "monthly_net_profit": "월 순이익",
+    "hourly_net_profit": "시간당 순수익",
+    "roi_percent": "ROI",
+    "cost_per_task": "작업당 비용",
+    "time_saved_hours": "월 절감 시간",
+    "time_value": "절감 시간 가치",
+    "net_time_value": "시간 절감 순가치",
+}
+
+
+def render_scenarios(analysis: OriginalAnalysis) -> str:
+    if not analysis.scenario_analysis:
+        return ""
+    numeric_keys: list[str] = []
+    for row in analysis.scenario_analysis:
+        for key, value in row.items():
+            if key in _SCENARIO_LABELS and isinstance(value, (int, float)) and key not in numeric_keys:
+                numeric_keys.append(key)
+    header = ["시나리오", "가정", *(_SCENARIO_LABELS[key] for key in numeric_keys), "결과"]
+    lines = [
+        "## 시나리오 분석",
+        "",
+        "입력값이 바뀌면 결과가 어떻게 달라지는지 확인하기 위한 계산입니다. 아래 수치는 예측이 아니라 조건별 계산 결과입니다.",
+        "",
+        "| " + " | ".join(header) + " |",
+        "| " + " | ".join(["---"] * len(header)) + " |",
+    ]
+    for row in analysis.scenario_analysis:
+        cells = [_cell(row.get("scenario")), _cell(row.get("assumptions"))]
+        for key in numeric_keys:
+            value = row.get(key)
+            cells.append(_cell(value) if value is not None else "계산 불가")
+        cells.append(_cell(row.get("result")))
+        lines.append("| " + " | ".join(cells) + " |")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_assumptions(analysis: OriginalAnalysis) -> str:
+    if not analysis.assumptions:
+        return ""
+    lines = [
+        "## 공식 자료와 편집상 가정",
+        "",
+        "이 글은 공식 자료에서 확인한 값과, 자료가 없는 부분에 대해 편집상 설정한 가정을 구분합니다. 가정은 실제 결과와 다를 수 있습니다.",
+        "",
+        "| 구분 | 항목 | 값 | 근거 |",
+        "| --- | --- | ---: | --- |",
+    ]
+    for assumption in analysis.assumptions:
+        lines.append(
+            "| {kind} | {name} | {value}{unit} | {basis}{cite} |".format(
+                kind="편집상 가정" if assumption.is_editorial else "공식 자료",
+                name=_cell(assumption.name),
+                value=_cell(assumption.value),
+                unit=_cell(f" {assumption.unit}" if assumption.unit else ""),
+                basis=_cell(assumption.basis),
+                cite=_cite(assumption.source_ids),
+            )
+        )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def render_comparison(analysis: OriginalAnalysis) -> str:
+    if not analysis.comparison:
+        return ""
+    lines = [
+        "## 가격과 기능 비교",
+        "",
+        "| 제품 | 월 비용 | 연 비용 | 기능 수 | 월 비용 차이 | 기능 수 차이 | 비고 |",
+        "| --- | ---: | ---: | ---: | ---: | ---: | --- |",
+    ]
+    for row in analysis.comparison:
+        lines.append(
+            "| {name} | {monthly} | {annual} | {features} | {monthly_diff} | {feature_diff} | {notes} |".format(
+                name=_cell(row.get("name")),
+                monthly=_money(row.get("monthly_krw")),
+                annual=_money(row.get("annual_krw")),
+                features=_count(row.get("feature_count")),
+                monthly_diff=_money(row.get("monthly_diff_krw"), signed=True),
+                feature_diff=_count(row.get("feature_diff"), signed=True),
+                notes=_cell(row.get("notes")),
+            )
+        )
+    lines.append("")
+    lines.append("비교표의 차이는 이 글에서 선택한 요금제를 기준으로 계산했습니다. 경쟁 제품의 가격과 기능은 공식 페이지가 바뀌면 달라질 수 있습니다.")
+    lines.append("")
+    return "\n".join(lines)
+
+
+def _money(value: Any, *, signed: bool = False) -> str:
+    if value is None:
+        return "확인 불가"
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return "확인 불가"
+    if signed:
+        return f"{number:+,.0f}원"
+    return f"{number:,.0f}원"
+
+
+def _count(value: Any, *, signed: bool = False) -> str:
+    if value is None:
+        return "확인 불가"
+    try:
+        number = int(value)
+    except (TypeError, ValueError):
+        return "확인 불가"
+    if signed:
+        return f"{number:+d}개"
+    return f"{number}개"
+
+
+def render_sources(sources: Iterable[ResearchSource]) -> str:
+    sources = list(sources)
+    if not sources:
+        return ""
+    lines = ["## 출처", ""]
     for source in sources:
-        date = source.published_at or "날짜 미상"
+        date = source.published_at or source.retrieved_at[:10] or "날짜 미상"
         publisher = source.publisher or "출처"
         lines.append(
             f"- [{source.source_id}] [{source.title}]({source.url}) — {publisher} ({date})"
         )
     lines.append("")
-    if profile.framework == "CPPI":
-        lines.extend(
-            [
-                "---",
-                "",
-                "*이 글은 공개 자료를 바탕으로 작성된 분석이며, 특정 상품이나 사업을 권유하지 않습니다. "
-                "CPPI는 편집상 의사결정 프레임워크로 실제 수익을 보장하지 않습니다. "
-                "수익·비용·시간은 독자의 상황에 따라 달라질 수 있습니다.*",
-            ]
-        )
-    else:
-        lines.extend(
-            [
-                "---",
-                "",
-                "*이 글은 공개 자료와 공식 문서를 바탕으로 작성된 평가이며, 특정 제품의 구매를 권유하지 않습니다. "
-                "QDVI는 편집상 평가 프레임워크로 독립적인 과학적 측정값이 아닙니다. "
-                "실제 사용 경험이 아닌 문서 기반 평가인 경우 본문에 명시했습니다.*",
-            ]
-        )
-    return "\n".join(lines).strip()
+    return "\n".join(lines)
+
+
+def build_analysis_markdown(
+    analysis: OriginalAnalysis,
+    *,
+    include_dimensions: bool = True,
+) -> str:
+    """Render the 10-item evaluation and the secondary CPPI/QDVI index."""
+
+    blocks = [
+        render_evaluation_table(analysis),
+        render_metrics_table(analysis),
+        render_steps(analysis),
+        render_scenarios(analysis),
+        render_assumptions(analysis),
+        render_comparison(analysis),
+        render_dimension_table(analysis) if include_dimensions else "",
+    ]
+    return "\n".join(block for block in blocks if block.strip())
+
+
+def render_limitations(analysis: OriginalAnalysis) -> str:
+    if not analysis.limitations:
+        return ""
+    lines = ["## 한계와 주의사항", ""]
+    for item in analysis.limitations:
+        lines.append(f"- {item}")
+    lines.append("")
+    lines.append(
+        "이 글은 공개 자료와 계산 결과를 바탕으로 한 정보 제공 목적의 분석입니다. "
+        "투자, 수익, 성과를 보장하지 않으며 최종 결정은 독자의 상황과 최신 공식 자료를 기준으로 해야 합니다."
+    )
+    lines.append("")
+    return "\n".join(lines)
+
+
+def format_dimension(analysis: OriginalAnalysis, name: str) -> AnalysisDimension | None:
+    for dimension in analysis.dimensions:
+        if dimension.name == name:
+            return dimension
+    return None
+
+
+def metric(analysis: OriginalAnalysis, key: str) -> MetricResult | None:
+    for item in analysis.metrics:
+        if item.key == key:
+            return item
+    return None
+
+
+def evaluation(analysis: OriginalAnalysis, key: str) -> EvaluationItem | None:
+    for item in analysis.evaluation_items:
+        if item.key == key:
+            return item
+    return None
+
+
+def assumption(analysis: OriginalAnalysis, name: str) -> Assumption | None:
+    for item in analysis.assumptions:
+        if item.name == name:
+            return item
+    return None

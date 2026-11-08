@@ -1,0 +1,436 @@
+version: 1
+blog: crystal
+entries:
+  - id: adsense-blog
+    name: 구글 애드센스 블로그 수익
+    category: 블로그 수익화
+    title: 구글 애드센스 블로그 수익, 월 3만 방문이면 얼마 남을까
+    meta_description: "구글 애드센스 블로그에서 월 3만 방문과 RPM 3,000원을 가정해 예상 매출, 운영 비용, 순이익, ROI, 손익분기, 시간당 수익을 계산하고 수익 변동 위험과 시작 전 체크리스트를 정리했습니다."
+    primary_keyword: 애드센스
+    secondary_keywords:
+      - 블로그 수익
+      - RPM
+      - 광고 수익
+    tags:
+      - 애드센스
+      - 블로그 수익화
+      - 온라인 수익
+      - RPM
+    summary: "구글 애드센스 블로그 수익은 방문자 수, RPM, 광고 채움률에 따라 크게 달라집니다. 월 3만 방문과 RPM 3,000원을 기준으로 실제로 남는 금액을 계산했습니다."
+    why_now: "광고 단가와 플랫폼 정책이 자주 바뀌어, 방문자 수만 보고 수익을 예상하면 실제 정산액과 차이가 날 수 있습니다."
+    model:
+      type: advertising
+      inputs:
+        monthly_pageviews: 30000
+        rpm_krw: 3000
+        fill_rate: 0.9
+      initial_investment_krw: 300000
+      fixed_monthly_krw: 20000
+      variable_cost_per_unit_krw: 0
+      monthly_hours: 24
+      scenarios:
+        conservative: 0.5
+        base: 1.0
+        optimistic: 1.5
+    ratings:
+      revenue_variability_risk:
+        score: 6.0
+        basis: "광고 단가는 계절, 광고주 예산, 플랫폼 정책에 따라 변동하므로 같은 방문자 수에서도 월 수익이 달라질 수 있습니다."
+        source_ids: [S1, S2]
+      operational_difficulty:
+        score: 5.0
+        basis: "글 작성과 검색 유입 관리가 꾸준히 필요하지만, 결제·재고·고객 응대 부담은 상대적으로 작습니다."
+        source_ids: [S1]
+      long_term_sustainability:
+        score: 7.0
+        basis: "검색 유입 자산은 오래 유지될 수 있으나, 플랫폼 정책과 검색 알고리즘 변화에 대한 대비가 필요합니다."
+        source_ids: [S1, S2]
+    sources:
+      - id: S1
+        title: "How AdSense revenue is shared"
+        url: https://support.google.com/adsense/answer/180195
+        publisher: Google AdSense 공식 도움말
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "AdSense program policies"
+        url: https://support.google.com/adsense/answer/48182
+        publisher: Google AdSense 공식 도움말
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Google AdSense 시작하기"
+        url: https://adsense.google.com/start/
+        publisher: Google AdSense 공식
+        accessed_at: "2026-11-07"
+    sourced_inputs: {}
+    assumptions:
+      - name: 세금과 본인 부담 비용
+        value: "계산에서 제외"
+        unit: ""
+        basis: 편집상 가정
+      - name: 광고 수익 정산 통화
+        value: "원화 환산 기준"
+        unit: ""
+        basis: 편집상 가정
+    limitations:
+      - "RPM과 광고 채움률은 독자의 주제, 국가, 기기 비중에 따라 크게 달라지는 편집상 가정입니다."
+      - "애드센스 정책 위반이나 계정 정지 가능성은 계산에 포함하지 않았습니다."
+    checklist:
+      - "월 방문자 수와 실제 RPM을 애드센스 보고서에서 확인했는가"
+      - "광고 채움률과 정책 위반 위험을 점검했는가"
+      - "콘텐츠 제작에 들어가는 월 시간을 실제로 확보할 수 있는가"
+      - "수익이 0원인 달에도 버틸 수 있는 기간을 계산했는가"
+      - "중단하거나 주제를 바꿀 기준을 정해 두었는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: gumroad-digital-product
+    name: Gumroad 디지털 상품 판매 수익
+    category: 디지털 상품
+    title: Gumroad 디지털 상품 판매, 수수료 떼고 얼마나 남을까
+    meta_description: "Gumroad에서 2만원 디지털 상품을 월 20개 판매할 때 플랫폼 수수료와 건당 비용을 반영해 매출, 순이익, ROI, 시간당 수익, 손익분기를 계산했습니다."
+    primary_keyword: 디지털 상품 판매
+    secondary_keywords:
+      - Gumroad 수수료
+      - 디지털 상품 수익
+      - 온라인 판매
+    tags:
+      - Gumroad
+      - 디지털 상품
+      - 온라인 수익
+      - 수수료
+    summary: "Gumroad 디지털 상품 판매는 판매가와 수수료 구조를 함께 봐야 실제 수익이 보입니다. 2만원 상품을 월 20개 판매하는 조건으로 비용과 순이익을 계산했습니다."
+    why_now: "디지털 상품은 재고 없이 시작할 수 있지만, 플랫폼 수수료와 환불·세금 정책을 반영하지 않으면 기대 수익과 실제 입금액이 달라집니다."
+    model:
+      type: digital_product
+      inputs:
+        price_per_unit_krw: 20000
+        units_per_month: 20
+        platform_fee_rate: 0.10
+      initial_investment_krw: 100000
+      fixed_monthly_krw: 0
+      variable_cost_per_unit_krw: 700
+      monthly_hours: 10
+      scenarios:
+        conservative: 0.5
+        base: 1.0
+        optimistic: 1.5
+    ratings:
+      revenue_variability_risk:
+        score: 7.0
+        basis: "판매량이 콘텐츠 노출과 구매 전환에 따라 크게 달라지고, 환불과 할인 정책도 수익에 영향을 줍니다."
+        source_ids: [S1, S3]
+      operational_difficulty:
+        score: 4.0
+        basis: "상품 제작과 고객 지원은 필요하지만, 재고·배송·물류 운영 부담은 없습니다."
+        source_ids: [S2]
+      long_term_sustainability:
+        score: 6.0
+        basis: "한 번 만든 상품을 반복 판매할 수 있으나, 시장 유행과 경쟁 상품에 따라 판매량이 줄 수 있습니다."
+        source_ids: [S1, S2]
+    sources:
+      - id: S1
+        title: "Gumroad pricing"
+        url: https://gumroad.com/pricing
+        publisher: Gumroad 공식
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Gumroad features"
+        url: https://gumroad.com/features
+        publisher: Gumroad 공식
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Gumroad terms of service"
+        url: https://gumroad.com/terms
+        publisher: Gumroad 공식
+        accessed_at: "2026-11-07"
+    sourced_inputs:
+      platform_fee_rate: [S1]
+    assumptions:
+      - name: 건당 결제 수수료
+        value: "700"
+        unit: 원/건
+        basis: "편집상 가정 — 공식 0.50달러를 1,400원 환율로 환산"
+      - name: 환율
+        value: "1,400"
+        unit: 원/달러
+        basis: 편집상 가정
+      - name: 세금과 소득 신고 비용
+        value: "계산에서 제외"
+        unit: ""
+        basis: 편집상 가정
+    limitations:
+      - "플랫폼 수수료율과 건당 수수료는 판매 경로와 결제 방식에 따라 달라질 수 있습니다."
+      - "월 20개 판매량은 실제 시장 수요가 아니라 계산을 위한 편집상 가정입니다."
+    checklist:
+      - "판매 경로별 수수료율과 건당 수수료를 공식 가격표에서 확인했는가"
+      - "환불·세금·정산 주기를 확인했는가"
+      - "상품 제작과 고객 지원에 들어가는 시간을 계산했는가"
+      - "판매가 인상 또는 할인 기준을 정했는가"
+      - "판매가 부진할 때 중단할 기준을 정했는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: patreon-membership
+    name: Patreon 멤버십 구독 수익
+    category: 디지털 상품
+    title: Patreon 멤버십 구독 수익, 30명이면 월 얼마가 남을까
+    meta_description: "Patreon 멤버십 구독을 월 5,000원, 구독자 30명으로 가정할 때 10% 수수료를 반영한 실제 수익과 초기 비용, 시간당 순수익, 손익분기를 계산했습니다."
+    primary_keyword: 멤버십 구독
+    secondary_keywords:
+      - Patreon 수수료
+      - 구독 수익
+      - 크리에이터 수익
+    tags:
+      - Patreon
+      - 멤버십
+      - 구독 수익
+      - 디지털 상품
+    summary: "Patreon 멤버십 구독 수익은 구독자 수와 수수료율에 따라 달라집니다. 월 5,000원 멤버십과 구독자 30명을 기준으로 실제로 남는 금액을 계산했습니다."
+    why_now: "구독형 수익은 매달 반복되는 현금흐름을 만들 수 있지만, 플랫폼 수수료와 이탈률을 반영하지 않으면 순이익을 과대평가하기 쉽습니다."
+    model:
+      type: subscription
+      inputs:
+        price_per_unit_krw: 4500
+        units_per_month: 30
+      initial_investment_krw: 50000
+      fixed_monthly_krw: 0
+      variable_cost_per_unit_krw: 0
+      monthly_hours: 8
+      scenarios:
+        conservative: 0.5
+        base: 1.0
+        optimistic: 1.5
+    ratings:
+      revenue_variability_risk:
+        score: 7.0
+        basis: "구독자 이탈과 신규 유입에 따라 월 수익이 변동하며, 플랫폼 수수료 정책도 바뀔 수 있습니다."
+        source_ids: [S1, S2]
+      operational_difficulty:
+        score: 5.0
+        basis: "매달 회원 전용 콘텐츠를 꾸준히 제공해야 하므로 기획과 제작 시간이 반복적으로 필요합니다."
+        source_ids: [S1]
+      long_term_sustainability:
+        score: 7.0
+        basis: "구독자는 반복 수익을 만들 수 있으나, 콘텐츠 품질과 커뮤니티 관리가 유지되지 않으면 이탈이 늘어납니다."
+        source_ids: [S1, S2]
+    sources:
+      - id: S1
+        title: "Patreon pricing"
+        url: https://www.patreon.com/pricing
+        publisher: Patreon 공식
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Creator fees"
+        url: https://support.patreon.com/hc/en-us/articles/11111747095181
+        publisher: Patreon 공식 도움말
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Patreon 공식 홈페이지"
+        url: https://www.patreon.com/
+        publisher: Patreon 공식
+        accessed_at: "2026-11-07"
+    sourced_inputs: {}
+    assumptions:
+      - name: Patreon 수수료 반영 후 단가
+        value: "4,500"
+        unit: 원
+        basis: "편집상 가정 — 월 5,000원에서 공식 10% 수수료를 제외"
+      - name: 결제 처리 수수료
+        value: "계산에서 제외"
+        unit: ""
+        basis: 편집상 가정
+      - name: 구독자 이탈률
+        value: "계산에서 제외"
+        unit: ""
+        basis: 편집상 가정
+    limitations:
+      - "Patreon 수수료는 요금제와 결제 방식에 따라 달라질 수 있으므로 공식 가격표를 다시 확인해야 합니다."
+      - "월 30명 구독자는 실제 성과가 아니라 계산을 위한 편집상 가정입니다."
+    checklist:
+      - "Patreon 요금제와 수수료율을 공식 가격표에서 확인했는가"
+      - "매달 제공할 회원 전용 콘텐츠를 계획했는가"
+      - "구독자 이탈률과 환불 정책을 확인했는가"
+      - "콘텐츠 제작에 들어가는 월 시간을 확보할 수 있는가"
+      - "구독자 수가 목표에 못 미칠 때 중단할 기준을 정했는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: shopify-affiliate
+    name: Shopify 제휴 마케팅 수익
+    category: 제휴 마케팅
+    title: Shopify 제휴 마케팅, 클릭 1,000회로 월 얼마 벌 수 있을까
+    meta_description: "Shopify 제휴 마케팅에서 월 클릭 1,000회와 전환율 0.5%, 건당 25달러 수수료를 가정해 예상 수수료 수익과 시간당 수익, 손익분기를 계산했습니다."
+    primary_keyword: 제휴 마케팅
+    secondary_keywords:
+      - Shopify 제휴
+      - 제휴 수수료
+      - 전환율
+    tags:
+      - Shopify
+      - 제휴 마케팅
+      - 온라인 수익
+      - 전환율
+    summary: "Shopify 제휴 마케팅 수익은 클릭 수와 전환율, 지역별 수수료 밴드에 따라 달라집니다. 한국 기준 25달러 수수료를 원화로 환산해 월 수익을 계산했습니다."
+    why_now: "제휴 수수료는 국가와 프로그램 조건에 따라 다르게 적용될 수 있어, 타 국가의 수수료를 그대로 적용하면 수익을 크게 오해할 수 있습니다."
+    model:
+      type: affiliate
+      inputs:
+        monthly_clicks: 1000
+        conversion_rate: 0.005
+        commission_krw: 35000
+      initial_investment_krw: 0
+      fixed_monthly_krw: 0
+      variable_cost_per_unit_krw: 0
+      monthly_hours: 10
+      scenarios:
+        conservative: 0.5
+        base: 1.0
+        optimistic: 1.5
+    ratings:
+      revenue_variability_risk:
+        score: 8.0
+        basis: "클릭 수와 전환율이 모두 변동성이 크고, 제휴 프로그램 정책과 수수료 밴드도 바뀔 수 있습니다."
+        source_ids: [S1, S2]
+      operational_difficulty:
+        score: 6.0
+        basis: "콘텐츠와 링크 운영은 비교적 단순하지만, 전환율을 높이기 위한 지속적인 실험과 추적이 필요합니다."
+        source_ids: [S1]
+      long_term_sustainability:
+        score: 6.0
+        basis: "제휴 프로그램이 유지되는 동안에는 반복 수익이 가능하지만, 프로그램 종료나 수수료 변경에 취약합니다."
+        source_ids: [S1, S2]
+    sources:
+      - id: S1
+        title: "Shopify Affiliate Program"
+        url: https://www.shopify.com/affiliates
+        publisher: Shopify 공식
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Shopify Affiliate earnings"
+        url: https://www.shopify.com/affiliates/earnings
+        publisher: Shopify 공식
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "About Shopify"
+        url: https://www.shopify.com/about
+        publisher: Shopify 공식
+        accessed_at: "2026-11-07"
+    sourced_inputs: {}
+    assumptions:
+      - name: 한국 제휴 수수료
+        value: "25"
+        unit: USD/전환
+        basis: 공식 자료
+        source_ids: [S2]
+      - name: 환율
+        value: "1,400"
+        unit: 원/달러
+        basis: 편집상 가정
+      - name: 전환율
+        value: "0.5%"
+        unit: ""
+        basis: 편집상 가정
+      - name: 세금과 광고비
+        value: "계산에서 제외"
+        unit: ""
+        basis: 편집상 가정
+    limitations:
+      - "제휴 수수료 밴드는 국가와 프로그램 조건에 따라 다르며, 25달러는 한국 기준 공식 안내를 원화로 환산한 값입니다."
+      - "클릭 1,000회와 전환율 0.5%는 실제 성과가 아니라 계산을 위한 편집상 가정입니다."
+    checklist:
+      - "한국 기준 제휴 수수료와 지급 조건을 공식 페이지에서 확인했는가"
+      - "전환 추적과 쿠키 기간을 확인했는가"
+      - "콘텐츠 제작과 링크 관리에 드는 시간을 계산했는가"
+      - "제휴 프로그램이 종료될 경우의 대안을 준비했는가"
+      - "광고비를 집행할 경우 손익분기 클릭 수를 계산했는가"
+    last_reviewed: "2026-11-07"
+    status: active
+
+  - id: upwork-freelance
+    name: Upwork 프리랜서 수익 구조
+    category: 부업
+    title: Upwork 프리랜서 수익, 시간당 3만원이면 실제로 얼마 남을까
+    meta_description: "Upwork 프리랜서 수익을 시간당 3만원과 월 40시간 청구로 가정하고 Connects 비용과 서비스 수수료를 반영해 순이익, 시간당 수익, 손익분기를 계산했습니다."
+    primary_keyword: 프리랜서 수익
+    secondary_keywords:
+      - Upwork 수수료
+      - 프리랜서 비용
+      - 시간당 수익
+    tags:
+      - Upwork
+      - 프리랜서
+      - 부업
+      - 수수료
+    summary: "Upwork 프리랜서 수익은 시간당 단가와 실제 청구 가능 시간, 플랫폼 비용에 따라 달라집니다. 시간당 3만원과 월 40시간을 기준으로 비용을 뺀 순이익을 계산했습니다."
+    why_now: "프리랜서 플랫폼은 시간당 단가만 보기 쉽지만, Connects 구매와 서비스 수수료를 반영해야 실제 시간당 수익을 알 수 있습니다."
+    model:
+      type: service
+      inputs:
+        hourly_rate_krw: 30000
+        billable_hours_per_month: 40
+      initial_investment_krw: 0
+      fixed_monthly_krw: 21000
+      variable_cost_per_unit_krw: 3000
+      monthly_hours: 40
+      scenarios:
+        conservative: 0.5
+        base: 1.0
+        optimistic: 1.5
+    ratings:
+      revenue_variability_risk:
+        score: 6.0
+        basis: "프로젝트 수주와 클라이언트 상황에 따라 월 청구 시간이 달라지고, 플랫폼 수수료 정책도 변경될 수 있습니다."
+        source_ids: [S1, S2]
+      operational_difficulty:
+        score: 6.0
+        basis: "제안서 작성, 면접, 커뮤니케이션, 결과물 관리까지 직접 해야 하므로 청구 시간 외 업무가 발생합니다."
+        source_ids: [S1]
+      long_term_sustainability:
+        score: 6.0
+        basis: "전문성과 평판이 쌓이면 단가를 올릴 수 있지만, 특정 플랫폼 의존도가 높으면 수주 변동에 취약합니다."
+        source_ids: [S1, S2]
+    sources:
+      - id: S1
+        title: "Connects"
+        url: https://support.upwork.com/hc/en-us/articles/211062898-Connects
+        publisher: Upwork 공식 도움말
+        accessed_at: "2026-11-07"
+      - id: S2
+        title: "Upwork help center"
+        url: https://support.upwork.com/hc/en-us
+        publisher: Upwork 공식 도움말
+        accessed_at: "2026-11-07"
+      - id: S3
+        title: "Upwork 공식 홈페이지"
+        url: https://www.upwork.com/
+        publisher: Upwork 공식
+        accessed_at: "2026-11-07"
+    sourced_inputs: {}
+    assumptions:
+      - name: Upwork 서비스 수수료율
+        value: "10%"
+        unit: ""
+        basis: 편집상 가정
+      - name: Connects 구매 비용
+        value: "21,000"
+        unit: 원/월
+        basis: "편집상 가정 — 공식 Connects 단가를 기준으로 월 사용량을 가정"
+      - name: 제안·관리 시간
+        value: "청구 시간에 포함하지 않음"
+        unit: ""
+        basis: 편집상 가정
+      - name: 세금과 장비 비용
+        value: "계산에서 제외"
+        unit: ""
+        basis: 편집상 가정
+    limitations:
+      - "Upwork 수수료와 Connects 가격은 변경될 수 있으므로 공식 도움말을 다시 확인해야 합니다."
+      - "월 40시간 청구와 시간당 3만원은 실제 계약이 아니라 계산을 위한 편집상 가정입니다."
+    checklist:
+      - "서비스 수수료율과 Connects 가격을 공식 도움말에서 확인했는가"
+      - "제안서 작성과 커뮤니케이션에 드는 시간을 계산했는가"
+      - "환불·분쟁·지급 보류 정책을 확인했는가"
+      - "플랫폼 외 직접 계약 가능성을 검토했는가"
+      - "월 목표 수익에 못 미칠 때 중단할 기준을 정했는가"
+    last_reviewed: "2026-11-07"
+    status: active

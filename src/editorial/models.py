@@ -9,11 +9,11 @@ from src.models.source import utc_now_iso
 
 
 class ResearchSource(BaseModel):
-    """A single source collected before writing.
+    """A source used by the article.
 
-    ``source_id`` is the stable ID (``S1``, ``S2`` ...) used in prompts and in
-    inline citations. ``url`` must be a real URL returned by the research step;
-    the quality gate rejects URLs that are not in the research pool.
+    ``source_id`` is the stable ID (``S1``, ``S2`` ...) used in the body and in
+    the source list. Catalog sources and Google News RSS sources share this
+    shape so the renderer and quality gate can treat them identically.
     """
 
     source_id: str
@@ -27,7 +27,7 @@ class ResearchSource(BaseModel):
     snippet: str = ""
 
     def display(self) -> str:
-        date = self.published_at or "날짜 미상"
+        date = self.published_at or self.retrieved_at[:10] or "날짜 미상"
         publisher = self.publisher or "출처"
         return f"[{self.source_id}] {self.title} — {publisher} ({date})"
 
@@ -40,6 +40,56 @@ class TopicCandidate(BaseModel):
     source_ids: list[str] = Field(default_factory=list)
     primary_keyword: str = ""
     category: str = ""
+    catalog_id: str = ""
+
+
+class Rating(BaseModel):
+    """An editorial rating derived from catalog evidence.
+
+    Ratings are analysis, not facts. Every rating must explain its basis and
+    point at the catalog sources that support the underlying facts.
+    """
+
+    score: float
+    basis: str
+    source_ids: list[str] = Field(default_factory=list)
+
+
+class Assumption(BaseModel):
+    name: str
+    value: str
+    unit: str = ""
+    basis: str = "편집상 가정"
+    source_ids: list[str] = Field(default_factory=list)
+
+    @property
+    def is_editorial(self) -> bool:
+        return "가정" in self.basis or "assumption" in self.basis.lower()
+
+
+class MetricResult(BaseModel):
+    key: str
+    name: str
+    value: float | None = None
+    display: str = ""
+    unit: str = ""
+    formula: str = ""
+    inputs: dict[str, Any] = Field(default_factory=dict)
+    assumption: bool = False
+    source_ids: list[str] = Field(default_factory=list)
+    unavailable_reason: str = ""
+
+
+class EvaluationItem(BaseModel):
+    key: str
+    name: str
+    value: float | str | None = None
+    display: str = ""
+    unit: str = ""
+    score: float | None = None
+    basis: str = ""
+    assumption: bool = False
+    source_ids: list[str] = Field(default_factory=list)
 
 
 class AnalysisDimension(BaseModel):
@@ -48,20 +98,29 @@ class AnalysisDimension(BaseModel):
     weight: float = 0.0
     rationale: str = ""
     unavailable: bool = False
+    mapped_items: list[str] = Field(default_factory=list)
 
 
 class OriginalAnalysis(BaseModel):
     framework: str
+    framework_name: str = ""
     purpose: str = ""
     formula: str = ""
     dimensions: list[AnalysisDimension] = Field(default_factory=list)
+    evaluation_items: list[EvaluationItem] = Field(default_factory=list)
+    metrics: list[MetricResult] = Field(default_factory=list)
     inputs: dict[str, Any] = Field(default_factory=dict)
+    assumptions: list[Assumption] = Field(default_factory=list)
     data_sources: list[str] = Field(default_factory=list)
     steps: list[str] = Field(default_factory=list)
     result: float | None = None
     interpretation: str = ""
     limitations: list[str] = Field(default_factory=list)
     scenario_analysis: list[dict[str, Any]] = Field(default_factory=list)
+    comparison: list[dict[str, Any]] = Field(default_factory=list)
+    mapping: dict[str, list[str]] = Field(default_factory=dict)
+    warnings: list[str] = Field(default_factory=list)
+    subject: str = ""
 
 
 class QualityScores(BaseModel):
@@ -85,26 +144,11 @@ class QualityScores(BaseModel):
         )
 
 
-class SelfQuality(BaseModel):
-    """The model's own QA estimate. It is a cross-check, never the authority."""
-
-    factual_accuracy: float = 0.0
-    originality: float = 0.0
-    search_intent: float = 0.0
-    source_quality: float = 0.0
-    readability: float = 0.0
-    seo_quality: float = 0.0
-    total: float = 0.0
-    critical_failures: list[str] = Field(default_factory=list)
-    notes: list[str] = Field(default_factory=list)
-
-
 class QualityReport(BaseModel):
     scores: QualityScores = Field(default_factory=QualityScores)
     total: float = 0.0
     critical_failures: list[str] = Field(default_factory=list)
     warnings: list[str] = Field(default_factory=list)
-    ai_self_total: float | None = None
     notes: list[str] = Field(default_factory=list)
 
 
@@ -120,16 +164,16 @@ class EditorialDraft(BaseModel):
     body_markdown: str = ""
     analysis: OriginalAnalysis
     sources: list[ResearchSource] = Field(default_factory=list)
-    source_notes: list[dict[str, Any]] = Field(default_factory=list)
-    self_quality: SelfQuality | None = None
     topic: TopicCandidate
     created_at: str = Field(default_factory=utc_now_iso)
+    catalog_id: str = ""
 
 
 class EditorialArticle(BaseModel):
     article_id: str
     blog: str
     title: str
+    seo_title: str = ""
     slug: str
     meta_description: str = ""
     primary_keyword: str = ""
@@ -140,17 +184,19 @@ class EditorialArticle(BaseModel):
     body_with_sources: str = ""
     analysis: OriginalAnalysis
     sources: list[ResearchSource] = Field(default_factory=list)
-    source_notes: list[dict[str, Any]] = Field(default_factory=list)
     topic: TopicCandidate
     quality: QualityReport
     decision: str = "DO NOT PUBLISH"
     decision_reason: str = ""
+    status: str = "draft"  # draft | ready | published | failed
+    catalog_id: str = ""
     created_at: str = Field(default_factory=utc_now_iso)
     published_at: str | None = None
     published_url: str | None = None
+    failure_reason: str = ""
 
     def to_report(self) -> dict[str, Any]:
-        """The A-F structured output required by the editorial master prompt."""
+        """The A-F structured output required by the editorial brief."""
 
         return {
             "A. Article": {
@@ -158,7 +204,7 @@ class EditorialArticle(BaseModel):
                 "body_markdown": self.body_with_sources or self.body_markdown,
             },
             "B. SEO Metadata": {
-                "seo_title": self.title,
+                "seo_title": self.seo_title or self.title,
                 "meta_description": self.meta_description,
                 "slug": self.slug,
                 "primary_keyword": self.primary_keyword,
@@ -172,6 +218,7 @@ class EditorialArticle(BaseModel):
             "F. Publication Decision": {
                 "decision": self.decision,
                 "reason": self.decision_reason,
+                "status": self.status,
             },
         }
 

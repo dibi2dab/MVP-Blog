@@ -76,6 +76,17 @@ def test_global_kakao_fallback(monkeypatch):
     assert profile.kakao_password == "shared-pw"
 
 
+def test_visibility_is_public_by_default(monkeypatch):
+    monkeypatch.setenv("TISTORY_VISIBILITY", "private")
+    assert get_profile("crystal").visibility == "public"
+    assert get_profile("quartz").visibility == "public"
+
+
+def test_visibility_override(monkeypatch):
+    monkeypatch.setenv("CRYSTAL_VISIBILITY", "protected")
+    assert get_profile("crystal").visibility == "protected"
+
+
 def test_blog_specific_kakao_wins(monkeypatch):
     monkeypatch.setenv("TISTORY_KAKAO_ID", "shared-id")
     monkeypatch.setenv("QUARTZ_KAKAO_ID", "quartz-id")

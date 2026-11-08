@@ -32,11 +32,16 @@ def _timestamp() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
 
 
-class EditorialState:
-    """Per-blog publication history and run artifacts.
+def _safe_name(value: str) -> str:
+    cleaned = re.sub(r"[\\/:*?\"<>|]", "-", value or "").strip()
+    return cleaned or "article"
 
-    Only ``published.json`` is meant to be committed. Drafts and run reports are
-    ignored by git and uploaded as CI artifacts.
+
+class EditorialState:
+    """Per-blog publication history, generated queue, and run artifacts.
+
+    Only ``published.json`` and the generated queue are meant to be committed.
+    Run reports are ignored by git and uploaded as CI artifacts.
     """
 
     def __init__(
@@ -51,6 +56,7 @@ class EditorialState:
         self.published_path = self.dir / "published.json"
         self.runs_dir = self.dir / "runs"
         self.drafts_dir = self.dir / "drafts"
+        self.queue_dir = self.dir / "queue"
         self.content_root = Path(content_root) if content_root else PROJECT_ROOT / "content"
 
     # ------------------------------------------------------------------ load
@@ -89,10 +95,71 @@ class EditorialState:
     def recent_topics(self, limit: int = 30) -> list[str]:
         return [str(record.get("topic") or "") for record in self.recent_records(limit) if record.get("topic")]
 
+    def published_catalog_ids(self) -> set[str]:
+        return {
+            str(record.get("catalog_id") or "")
+            for record in self.load_published()
+            if record.get("catalog_id")
+        }
+
+    # ------------------------------------------------------------------ queue
+    def article_json_path(self, article_id: str) -> Path:
+        return self.queue_dir / f"{_safe_name(article_id)}.json"
+
+    def article_markdown_path(self, article_id: str) -> Path:
+        return self.queue_dir / f"{_safe_name(article_id)}.md"
+
+    def save_article(self, article: EditorialArticle) -> tuple[Path, Path]:
+        self.queue_dir.mkdir(parents=True, exist_ok=True)
+        json_path = self.article_json_path(article.article_id)
+        markdown_path = self.article_markdown_path(article.article_id)
+        self._write_json(json_path, article.model_dump(mode="json"))
+        markdown_path.write_text(
+            f"# {article.title}\n\n{article.body_with_sources or article.body_markdown}\n",
+            encoding="utf-8",
+        )
+        return json_path, markdown_path
+
+    def load_article(self, article_id: str) -> EditorialArticle | None:
+        path = self.article_json_path(article_id)
+        if not path.exists():
+            return None
+        try:
+            payload = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            return None
+        try:
+            return EditorialArticle.model_validate(payload)
+        except Exception:  # noqa: BLE001 - corrupted queue files are skipped
+            return None
+
+    def list_articles(self, *, status: str | None = None) -> list[EditorialArticle]:
+        if not self.queue_dir.exists():
+            return []
+        articles: list[EditorialArticle] = []
+        for path in sorted(self.queue_dir.glob("*.json")):
+            article = self.load_article(path.stem)
+            if article is None:
+                continue
+            if status is None or article.status == status:
+                articles.append(article)
+        articles.sort(key=lambda item: item.created_at)
+        return articles
+
+    def update_article(self, article: EditorialArticle) -> None:
+        self.save_article(article)
+
     # ------------------------------------------------------------------ save
     def save_published(self, record: dict[str, Any]) -> None:
         self.dir.mkdir(parents=True, exist_ok=True)
         records = self.load_published()
+        article_id = str(record.get("article_id") or "")
+        if article_id:
+            records = [
+                existing
+                for existing in records
+                if str(existing.get("article_id") or "") != article_id
+            ]
         records.append(record)
         self._write_json(self.published_path, records)
 
@@ -129,16 +196,26 @@ class EditorialState:
         path = out_dir / f"{date}-{slug}.md"
         frontmatter = {
             "title": article.title,
+            "seo_title": article.seo_title or article.title,
             "blog": self.blog,
+            "article_id": article.article_id,
+            "catalog_id": article.catalog_id,
             "slug": article.slug,
             "primary_keyword": article.primary_keyword,
             "secondary_keywords": article.secondary_keywords,
             "category": article.category,
             "tags": article.tags,
             "meta_description": article.meta_description,
+            "status": article.status,
+            "decision": article.decision,
+            "decision_reason": article.decision_reason,
             "quality_total": article.quality.total,
+            "quality_scores": article.quality.scores.model_dump(),
+            "critical_failures": article.quality.critical_failures,
             "framework": article.analysis.framework,
             "framework_result": article.analysis.result,
+            "metrics": [metric.model_dump() for metric in article.analysis.metrics],
+            "assumptions": [item.model_dump() for item in article.analysis.assumptions],
             "published_url": article.published_url,
             "published_at": article.published_at,
             "sources": [source.model_dump() for source in article.sources],
@@ -155,6 +232,8 @@ class EditorialState:
 
     def record_from_article(self, article: EditorialArticle, *, url: str = "") -> dict[str, Any]:
         return {
+            "article_id": article.article_id,
+            "catalog_id": article.catalog_id,
             "date": (article.published_at or article.created_at)[:10],
             "published_at": article.published_at or _iso_now(),
             "title": article.title,
@@ -163,10 +242,12 @@ class EditorialState:
             "topic": article.topic.topic,
             "primary_keyword": article.primary_keyword,
             "category": article.category,
+            "status": article.status,
+            "decision": article.decision,
             "framework": article.analysis.framework,
             "framework_result": article.analysis.result,
             "quality_total": article.quality.total,
-            "ai_self_total": article.quality.ai_self_total,
+            "quality_scores": article.quality.scores.model_dump(),
             "content_hash": hashlib.sha1(
                 (article.body_with_sources or article.body_markdown).encode("utf-8")
             ).hexdigest(),
@@ -185,6 +266,7 @@ class EditorialState:
 
     @staticmethod
     def _write_json(path: Path, payload: Any) -> None:
+        path.parent.mkdir(parents=True, exist_ok=True)
         tmp = path.with_suffix(path.suffix + ".tmp")
         tmp.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
         tmp.replace(path)

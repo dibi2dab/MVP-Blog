@@ -189,22 +189,90 @@ npm run selectors:fix     # 깨진 선택자 추론 후 src/publishTistory.js �
   `report.json` / `editor.html` / `editor.png` 를 아티팩트로 남긴다.
 - 수동으로 맞출 때도 `SELECTORS` 객체만 고치면 된다.
 
-## Crystal / Quartz 편집 파이프라인
+## Crystal / Quartz 편집 파이프라인 (AI 미사용)
 
 기존 **Obsidian(eneru)** 주식 파이프라인은 그대로 유지된다. 설정·카테고리·토픽 전략·
 `scheduled.yml` 은 변경하지 않았고, 아래 두 블로그만 별도 패키지(`src/editorial`)와
 별도 워크플로(`.github/workflows/editorial.yml`)로 운영한다.
 
-| 블로그 | 주제 | 분석 프레임워크 | 하루 |
-| --- | --- | --- | --- |
-| **Crystal** (Itmeans, `rumbell.tistory.com`) | 온라인 수익, 부업, 블로그·웹사이트 수익화, 제휴 마케팅, 디지털 상품, 사이트 운영 | **CPPI** | 1편 |
-| **Quartz** (`quar1z.tistory.com`) | AI, AI 도구·서비스, 소프트웨어 분석·비교, 디지털 상품, 개발자 도구, 자동화·생산성 | **QDVI** | 1편 |
+| 블로그 | 주제 | 하루 | 분석 |
+| --- | --- | ---: | --- |
+| **Crystal** (Itmeans, `rumbell.tistory.com`) | 온라인 수익, 부업, 블로그·웹사이트 수익화, 제휴 마케팅, 디지털 상품, 사이트 운영 | 1편 | 10항목 수익성 평가 + CPPI 보조 지수 |
+| **Quartz** (`quar1z.tistory.com`) | AI, AI 도구·서비스, 소프트웨어 분석·비교, 디지털 상품, 개발자 도구, 자동화·생산성 | 1편 | 10항목 제품 평가 + QDVI 보조 지수 |
 
-- 프롬프트는 영어로 작성하지만 **발행되는 본문·제목·표·메타데이터는 모두 한국어**다.
-- Obsidian은 기존 주식 데이터 파이프라인을 계속 사용한다. Crystal/Quartz 기사는
-  새 편집 프롬프트로 생성하지 않는다.
+Crystal/Quartz 경로에는 **AI/LLM이 전혀 없다**. 기사 생성은 `src/editorial` 의 순수 Python
+코드가 담당한다.
 
-### CPPI / QDVI
+```text
+검증된 카탈로그(data/editorial/*/catalog.yaml)
+        -> Python 계산(수익성/가격/비용/시간 절감)
+        -> 결정론적 한국어 본문 생성
+        -> 결정론적 100점 품질 게이트
+        -> ready 큐 파일 저장
+        -> (별도 job) 큐 재검증 + 품질 재계산
+        -> 기존 Node/Playwright Tistory 발행 엔진
+```
+
+- **생성과 발행은 분리**되어 있다. `generate` 는 구조화된 큐 파일만 쓰고,
+  `publish` 는 그 파일을 다시 읽어 검증한 뒤 발행한다.
+- **데이터 수집 실패를 임의 값으로 대체하지 않는다.** 카탈로그에 검증된 값이 없으면
+  항목을 비활성화하거나 해당 지표를 `unavailable` 로 남긴다.
+- 공식 가격 페이지·도움말·문서·변경 로그를 우선 사용하고, 직접 테스트하지 않은 제품을
+  후기처럼 쓰지 않는다. 모든 수치는 **사실 / 가정 / 계산 결과**로 구분한다.
+- 발행 본문·제목·표·메타데이터는 모두 한국어이며, 제목에는 날짜를 넣지 않는다.
+
+### 카탈로그 (`data/editorial/<blog>/catalog.yaml`)
+
+기사 1편 = 카탈로그 항목 1개다. 새 글은 항목을 추가하고 `validate` 로 검사한다.
+
+| 필드 | 설명 |
+| --- | --- |
+| `id`, `name`, `category` | 항목 식별자, 표시 이름, 카테고리 |
+| `title`, `meta_description`, `primary_keyword` | 제목(날짜 금지), 80~160자 메타 설명, 핵심 키워드 |
+| `secondary_keywords`, `tags` | 보조 키워드, 태그 3~10개 |
+| `summary`, `why_now`, `limitations`, `checklist` | 요약, 작성 배경, 한계, 독자 체크리스트 |
+| `sources[]` | `id`/`title`/`url`/`publisher` + `published_at` 또는 `accessed_at` (필수) |
+| `sourced_inputs` | 입력값 → 근거 `source_ids` 매핑 |
+| `assumptions[]` | 사실이 아닌 편집상 가정과 그 근거 |
+| `last_reviewed`, `status` | 마지막 검토일, `active`/`paused` |
+
+**Crystal** 은 `model`(수익 모델)에 초기 투자, 월 고정비, 단위당 변동비, 가격, 월 판매량,
+월 투입 시간, 시나리오 배수를 넣고 `ratings` 에 수익 변동 위험·운영 난이도·장기 지속성을
+평가한다. **Quartz** 는 `product` 에 요금제, 월 작업량, 작업당 절감 시간, 인건비, 기능,
+플랫폼, 연동, 사용 한도, 10항목 평점을 넣는다.
+
+검증 규칙(`src/editorial/catalog.py`):
+
+- 출처 URL은 `http(s)://` 여야 하고 발행일 또는 접근일이 있어야 한다.
+- 평점과 `sourced_inputs` 가 참조하는 `source_ids` 는 실제 출처에 존재해야 한다.
+- `selected_plan` 은 `plans` 안에 있어야 한다.
+- 제목에 날짜(`2026-11-08`, `2026년`, `20xx`)가 들어가면 거부한다.
+- 항목 ID 중복, 블로그 불일치, 필수 필드 누락을 거부한다.
+
+### 계산과 평가
+
+**Crystal 필수 분석 항목** — 초기 투자, 월 운영비, 예상 매출, 예상 순이익, 손익분기,
+시간당 순이익, ROI, 수익 변동 위험, 운영 난이도, 장기 지속성.
+
+```text
+순이익       = 총매출 - 총비용
+ROI          = 월 순이익 / 초기 투자 × 100
+시간당 순이익 = 월 순이익 / 월 투입 시간
+손익분기     = 고정비 / 단위당 공헌이익
+```
+
+**Quartz 필수 분석 항목** — 기능 다양성, 기능 실용성, 가격 대비 가치, 사용 편의성,
+사용 한도, 플랫폼 지원, 외부 연동, 확장성, 안정성·신뢰, 목적 적합성.
+
+가능한 경우 월 구독료, 연 구독료, 작업당 비용, 기능당 비용, 자동화 절감 시간,
+절감 시간의 가치, 경쟁사 가격·기능 차이를 함께 계산한다.
+
+- 10항목 평가가 **본문의 주 분석**이고, CPPI/QDVI는 10항목을 묶어 만든 **보조 요약 지수**다.
+- 평가 불가능한 항목은 `unavailable` 로 두고 **남은 가중치를 100%로 정규화**한다.
+  공식 요금제에 포함 사용량이 없으면 `usage_limit` 을 "무제한"으로 채점하지 않는다.
+- 공식·입력값·가정·계산 단계·결과·해석·한계를 모두 공개한다.
+- 발행 직전 `quality.py` 가 카탈로그로 계산을 다시 수행해 값이 다르면 **계산 결과 불일치**로
+  발행을 차단한다.
 
 **CPPI (Crystal Practical Profitability Index)** — 수익 잠재력 25%, 비용 효율 20%,
 시간 효율 20%, 실행 가능성 20%, 리스크 관리 15%.
@@ -212,79 +280,117 @@ npm run selectors:fix     # 깨진 선택자 추론 후 src/publishTistory.js �
 **QDVI (Quartz Digital Value Index)** — 기능 역량 25%, 사용성 20%, 가격 대비 가치 20%,
 통합·확장성 15%, 신뢰성·투명성 20%.
 
-두 프레임워크 모두 각 차원을 0~10으로 평가하고, 평가 불가능한 차원은 `unavailable` 로
-표시한 뒤 **남은 가중치를 100%로 정규화**해 재계산한다. 공식·입력값·가정·계산 단계·
-결과·해석·한계를 모두 공개하며, 모델이 제시한 최종 점수는 절대 신뢰하지 않고
-시스템이 다시 계산한다. 계산이 맞지 않으면 `계산 결과 불일치` 로 발행이 차단된다.
+### 환율·수익 가정
+
+해외 요금과 수수료는 아래 **편집상 가정**으로 원화 환산하며, 본문에도 가정임을 표시한다.
+실시간 환율이 아니므로 결론은 환율에 따라 달라질 수 있다.
+
+| 통화 | 기준 |
+| --- | --- |
+| USD → KRW | 1 USD = 1,400 KRW |
+| EUR → KRW | 1 EUR = 1,500 KRW |
+
+수익성 글은 특정 수익을 보장하지 않는다. 모든 매출·순이익은 입력 가정에 따른 계산 결과이며,
+보수적/기본/낙관 시나리오를 함께 제시한다.
 
 ### 품질 게이트
 
-결정론적 품질 검사(`src/editorial/quality.py`)가 모델 자기평가와 독립적으로 점수를 매긴다.
+결정론적 품질 검사(`src/editorial/quality.py`)가 점수를 매긴다. 모델 자기평가는 사용하지 않는다.
 
 | 항목 | 배점 |
 | --- | ---: |
 | 사실 정확성 | 25 |
 | 독창성 | 20 |
 | 검색 의도 충족 | 20 |
-| 출처 품질 | 15 |
+| 출처·데이터 신뢰성 | 15 |
 | 가독성 | 10 |
 | SEO | 10 |
 | **합계** | **100** |
 
-- **85점 이상만 `PUBLISH`**, 미만은 `REQUIRES REVISION`.
-- 다음 치명적 실패는 점수와 무관하게 `DO NOT PUBLISH`:
-  날조된 데이터·출처, 근거 없는 금융 주장, 오해를 부르는 제품 정보, 잘못된 계산,
-  중복 콘텐츠, 누락된 고지, 날조된 직접 테스트.
-- 가격·통계·수익·기능·벤치마크·리뷰·출처를 절대 창작하지 않는다. 사실/추정/가정/분석을
-  구분하고, 모든 출처는 **URL + 발행일**을 남긴다.
-- `mock` AI 결과는 절대 발행하지 않는다. Gemini는 지원하지 않는다.
+| 점수 | 결정 | 상태 |
+| ---: | --- | --- |
+| 85 이상 | `PUBLISH` | `ready` |
+| 70~84 | `REQUIRES REVISION` | `draft` |
+| 70 미만 | `DO NOT PUBLISH` | `draft` |
+| 치명적 실패 | 점수 무관 `DO NOT PUBLISH` | `draft`/`failed` |
+
+- 치명적 실패: 날조된 데이터·출처, 근거 없는 금융 주장, 오해를 부르는 제품 정보,
+  잘못된 계산, 중복 콘텐츠, 누락된 고지, 날조된 직접 테스트.
+- 본문 1,800자 이상, 소제목 5개 이상, 표 1개 이상, 한국어 비중 0.6 이상,
+  제목·본문 핵심 키워드 포함, 메타 설명 80~160자, 제목 20~60자, 태그 3~10개,
+  공식 도메인 2곳 이상을 포함한 출처 3개 이상(모두 날짜 기재)을 요구한다.
+- 독창성: 자체 계산, 수익성 분석, 가격 비교, 비용 분석, 데이터 기반 평가,
+  독자적 비교 기준, 실전 판단법, 비직관적 분석 중 최소 1개를 반드시 포함한다.
+  주제에 맞지 않는 공식을 억지로 넣지 않는다.
 
 ### CLI
 
 ```bash
-# Crystal 1편 생성 + 검수 + 발행 (KST 하루 1편 제한)
-python -m src.editorial.cli --blog crystal
+# 카탈로그 검증 (필수 필드·출처·날짜·제목 규칙)
+python -m src.editorial.cli validate --blog crystal
+python -m src.editorial.cli validate --blog all
 
-# Quartz 1편
-python -m src.editorial.cli --blog quartz
+# 기사 생성 (KST 하루 1편, 중복 주제 제외) — 큐 파일만 기록
+python -m src.editorial.cli generate --blog crystal
+python -m src.editorial.cli generate --blog quartz
+python -m src.editorial.cli generate --blog all
 
-# 둘 다
-python -m src.editorial.cli --blog all
+# 선택 사항: Google News RSS를 주제 신호로만 사용 (사실 출처로는 쓰지 않음)
+python -m src.editorial.cli generate --blog quartz --signals
 
-# 발행 없이 생성/검수만 (draft + report 저장)
-python -m src.editorial.cli --blog quartz --dry-run
+# 생성된 ready 글 검증 후 발행 (발행 없이 검증만 하려면 --dry-run)
+python -m src.editorial.cli publish --blog crystal
+python -m src.editorial.cli publish --blog all --dry-run
 
-# 품질 게이트 테스트용 mock 허용 (mock 은 그래도 발행되지 않음)
-python -m src.editorial.cli --blog quartz --allow-mock
+# 큐·발행 현황
+python -m src.editorial.cli status --blog all
 ```
+
+- `generate` 는 `failed` 결과가 있으면 종료 코드 1을 반환한다.
+- `publish` 는 실패한 항목이 있으면 종료 코드 1을 반환한다.
+- `validate`/카탈로그 오류는 종료 코드 2다.
+- `--force` 는 일일 한도만 무시하며, 중복 주제는 여전히 거부한다.
 
 결과물:
 
 - `data/blogs/{blog}/published.json` — 발행 이력, 중복 방지 fingerprint, KST 일일 카운트 (커밋됨)
-- `data/blogs/{blog}/runs/` — A~F 형식 실행 리포트 (gitignore, Actions artifact)
-- `data/blogs/{blog}/drafts/` — 생성된 Markdown/JSON 초안 (gitignore, Actions artifact)
-- `content/{blog}/` — 발행된 기사 아카이브
+- `data/blogs/{blog}/queue/` — 생성된 기사 JSON + Markdown (커밋됨, 발행 입력)
+- `data/blogs/{blog}/runs/` — 생성/발행 실행 리포트 (gitignore, Actions artifact)
+- `data/blogs/{blog}/drafts/` — 생성된 초안 (gitignore, Actions artifact)
+- `content/{blog}/` — 발행된 기사 아카이브 (frontmatter + Markdown)
 
 ### GitHub Actions
 
-`.github/workflows/editorial.yml` 이 **매일 10:00 KST** Crystal과 Quartz를 순차 실행한다
-(matrix, `max-parallel: 1`). 수동 실행 시 `blog`(all/crystal/quartz)와 `dry_run`을 선택할 수 있다.
+`.github/workflows/editorial.yml` 이 **매일 10:00 KST** 실행된다. `generate` job과
+`publish` job이 분리되어 있고, 각각 Crystal/Quartz matrix(`max-parallel: 1`)로 동작한다.
+
+1. `validate` → `generate` → 큐 아티팩트 업로드
+2. `publish` job이 아티팩트를 내려받아 세션 복원 → `session:check` → `publish`
+3. 실행 리포트·초안·오류 아티팩트 업로드, `published.json`·`queue`·`content` 변경 커밋
+
+수동 실행 시 `blog`(all/crystal/quartz)와 `dry_run`을 선택할 수 있다.
+`dry_run=true` 면 발행 없이 검증만 하고 상태를 커밋하지 않는다.
 
 세션은 블로그별 Secret을 우선 사용하고, 없으면 기존 `TISTORY_*` 로 폴백한다.
+세 블로그가 같은 카카오 계정을 쓰므로 `TISTORY_STORAGE_STATE` /
+`TISTORY_KAKAO_ID` / `TISTORY_KAKAO_PASSWORD` 만으로도 동작한다.
 
 | Secret | 용도 |
 | --- | --- |
-| `CRYSTAL_STORAGE_STATE` / `QUARTZ_STORAGE_STATE` | 블로그별 Base64 세션 (없으면 `TISTORY_STORAGE_STATE`) |
-| `CRYSTAL_KAKAO_ID` / `CRYSTAL_KAKAO_PASSWORD` | Crystal 자동 재로그인 (없으면 `TISTORY_*`) |
-| `QUARTZ_KAKAO_ID` / `QUARTZ_KAKAO_PASSWORD` | Quartz 자동 재로그인 (없으면 `TISTORY_*`) |
+| `CRYSTAL_STORAGE_STATE` / `QUARTZ_STORAGE_STATE` | (선택) 블로그별 Base64 세션, 없으면 `TISTORY_STORAGE_STATE` |
+| `CRYSTAL_KAKAO_ID` / `CRYSTAL_KAKAO_PASSWORD` | (선택) Crystal 자동 재로그인, 없으면 `TISTORY_*` |
+| `QUARTZ_KAKAO_ID` / `QUARTZ_KAKAO_PASSWORD` | (선택) Quartz 자동 재로그인, 없으면 `TISTORY_*` |
+| `TISTORY_STORAGE_STATE` | 공통 Base64 세션 |
+| `TISTORY_KAKAO_ID` / `TISTORY_KAKAO_PASSWORD` | 공통 자동 재로그인 |
 | `CRYSTAL_BLOG_NAME` / `QUARTZ_BLOG_NAME` | 기본값 `rumbell` / `quar1z` |
-| `CRYSTAL_VISIBILITY` / `QUARTZ_VISIBILITY` | 기본 `public` |
+| `CRYSTAL_VISIBILITY` / `QUARTZ_VISIBILITY` | 기본 `public` (Obsidian의 `TISTORY_VISIBILITY` 와 무관) |
 | `CRYSTAL_TISTORY_CATEGORY` / `QUARTZ_TISTORY_CATEGORY` | 비우면 블로그 기본 카테고리 |
-| `EDITORIAL_AI_PROVIDER` | `auto`(기본) / `openai` / `anthropic` |
-| `OPENAI_API_KEY` 또는 `ANTHROPIC_API_KEY` | 기사 생성 |
+| `CRYSTAL_MAX_ARTICLES_PER_DAY` / `QUARTZ_MAX_ARTICLES_PER_DAY` | 기본 1 |
+| `CRYSTAL_MIN_QUALITY_SCORE` / `QUARTZ_MIN_QUALITY_SCORE` | 기본 85 |
+| `CRYSTAL_MIN_SOURCES` / `QUARTZ_MIN_SOURCES` | 기본 3 |
 
-> `EDITORIAL_AI_PROVIDER` 를 지정하지 않으면 `auto` 로 동작해 OpenAI → Anthropic 순서로
-> 사용 가능한 키를 선택한다. Obsidian용 `AI_PROVIDER=mock` 설정과 분리되어 있다.
+> Crystal/Quartz 경로에는 AI 키가 필요 없다. Obsidian 전용 `AI_PROVIDER` /
+> `OPENAI_API_KEY` / `ANTHROPIC_API_KEY` 는 그대로 두어도 이 워크플로에는 영향이 없다.
 
 ## GitHub Actions 자동화
 
@@ -321,7 +427,7 @@ src/
   writers/           # 기사 작성, Markdown, SEO
   renderers/         # Markdown -> Tistory 호환 HTML
   publishers/        # tistory-node(Node 브리지) / tistory(Python 폴백) / local / mock
-  editorial/         # Crystal/Quartz 편집 파이프라인 (CPPI/QDVI, 품질 게이트, 상태)
+  editorial/         # Crystal/Quartz 결정론적 생성·계산·품질 게이트 (AI 미사용)
   publishTistory.js  # Node Playwright 발행 엔진 (SELECTORS 단일 소스)
   publishCli.js      # Python -> Node 발행 브리지 CLI
   selectorHealth.js  # SELECTORS 검사 + 자동 추론/패치
@@ -332,14 +438,15 @@ src/
 scripts/             # tistory_login.py (최초 로그인 세션 생성)
 package.json         # Node 발행 엔진 의존성 (playwright, dotenv)
 data/                # 수집 원본/이벤트/패킷/게시 마커 (gitignore)
-data/blogs/          # Crystal/Quartz 발행 이력·실행 리포트·초안
+data/blogs/          # Crystal/Quartz 발행 이력·큐·실행 리포트·초안
+data/editorial/      # Crystal/Quartz 검증된 카탈로그 (수치·출처·가정)
 content/stocks/*.md  # Obsidian 생성 기사 (gitignore)
 content/crystal/     # Crystal 발행 기사 아카이브
 content/quartz/      # Quartz 발행 기사 아카이브
 static/charts/*.png  # 생성 차트 (gitignore)
 .state/              # 로그인 세션 (gitignore)
 artifacts/           # 발행 오류/셀렉터 리포트 (gitignore)
-tests/               # pytest (163 개)
+tests/               # pytest (195 개)
 ```
 
 ## 면책
