@@ -75,6 +75,50 @@ async function main() {
     page.setDefaultTimeout(tistoryConfig.timeout);
     page.on('dialog', (dialog) => dialog.accept().catch(() => {}));
 
+    if (mode === 'discover') {
+      await page.goto(`${base}/manage`, { waitUntil: 'domcontentloaded' });
+      await page.waitForTimeout(5000);
+      const links = await page.evaluate(() =>
+        Array.from(document.querySelectorAll('a'))
+          .map((a) => ({
+            text: (a.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40),
+            href: a.getAttribute('href') || '',
+          }))
+          .filter((item) => item.href)
+      );
+      console.log('=== links on /manage ===');
+      console.log(JSON.stringify(links, null, 2));
+      console.log(`url=${page.url()}`);
+      console.log(`frames=${page.frames().map((f) => f.url()).join(' | ')}`);
+
+      const candidates = [
+        '/manage/post',
+        '/manage/posts',
+        '/manage/entry',
+        '/manage/contents/post',
+        '/manage/blog/post',
+        '/manage/post/list',
+      ];
+      for (const candidate of candidates) {
+        try {
+          await page.goto(`${base}${candidate}`, { waitUntil: 'domcontentloaded' });
+          await page.waitForTimeout(2500);
+          const checks = await page.evaluate(() => ({
+            url: location.href,
+            checkboxes: Array.from(document.querySelectorAll('input[type="checkbox"]'))
+              .map((el) => el.id)
+              .filter(Boolean)
+              .slice(0, 5),
+            hasPostCheck: !!document.querySelector('[id^="inpCheck"]'),
+          }));
+          console.log(`candidate ${candidate} -> ${JSON.stringify(checks)}`);
+        } catch (err) {
+          console.log(`candidate ${candidate} -> error ${err?.message || err}`);
+        }
+      }
+      return;
+    }
+
     if (mode === 'inspect') {
       await page.goto(`${base}/manage/posts/`, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(5000);
