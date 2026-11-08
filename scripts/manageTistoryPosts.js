@@ -115,27 +115,36 @@ async function main() {
       await page.waitForTimeout(1200);
       await describe(page, 'after selection (delete probe)');
 
-      const del = page
+      // 티스토리 관리 화면의 실제 삭제 버튼은 "선택한 글 삭제"처럼
+      // 문구가 길고 btn_delete 클래스를 쓴다. 정확히 "삭제"만 찾으면 놓친다.
+      const del = page.locator('button.btn_delete, a.btn_delete').first();
+      const fallbackDel = page
         .locator('button, a')
-        .filter({ hasText: /^\s*삭제\s*$/ })
+        .filter({ hasText: /삭제/ })
         .first();
-      if (!(await del.count())) {
+      const target = (await del.count()) ? del : fallbackDel;
+      if (!(await target.count())) {
         console.log('delete control not found; run inspect mode first');
         return;
       }
-      await del.click({ force: true });
-      await page.waitForTimeout(1500);
+      await target.click({ force: true });
+      await page.waitForTimeout(2000);
       await describe(page, 'after delete click (confirm probe)');
 
+      // 확인 레이어가 있으면 삭제/확인/예 버튼을 누른다. 브라우저
+      // confirm() 은 위의 dialog 핸들러가 이미 승인한다.
       const confirm = page
-        .locator('button, a')
-        .filter({ hasText: /^\s*(삭제|확인|예)\s*$/ })
+        .locator(
+          '.layer_confirm button, .layer_popup button, .modal button, [role="dialog"] button'
+        )
+        .filter({ hasText: /삭제|확인|예/ })
         .last();
       if (await confirm.count()) {
         await confirm.click({ force: true }).catch(() => {});
       }
-      await page.waitForTimeout(4000);
+      await page.waitForTimeout(5000);
       console.log(`delete attempted for ${selected} post(s)`);
+      console.log(`url=${page.url()}`);
       return;
     }
 
