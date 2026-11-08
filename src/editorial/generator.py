@@ -91,7 +91,7 @@ def _rating_paragraph(analysis: Any, key: str, heading: str) -> str:
         [
             f"## {heading}",
             "",
-            f"{item.name}은 {display}로 평가했습니다. {basis}",
+            f"{item.name} 평가 결과는 {display}입니다. {basis}",
             "",
         ]
     )
@@ -314,7 +314,7 @@ def _quartz_body(entry: CatalogEntryModel, analysis: Any, sources: list[Research
                 ),
                 (
                     "작업당 비용은 어떻게 계산했나요?",
-                    f"월 구독 비용을 월 작업 수로 나누어 {per_task}로 계산했습니다. 실제 작업 수가 다르면 결과도 달라집니다.",
+                    f"월 구독 비용을 월 작업 수로 나눈 값은 {per_task}입니다. 실제 작업 수가 다르면 결과도 달라집니다.",
                 ),
                 (
                     "기능이 많을수록 좋은 도구인가요?",

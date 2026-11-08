@@ -129,6 +129,32 @@ _SCENARIO_LABELS = {
 }
 
 
+def _scenario_cell(key: str, value: Any) -> str:
+    """Format a scenario number with the same unit used in the summary."""
+
+    if value is None:
+        return "계산 불가"
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return _cell(value)
+    if key == "roi_percent":
+        return f"{number:,.1f}%"
+    if key == "time_saved_hours":
+        return f"{number:,.1f}시간"
+    if key in {
+        "monthly_revenue",
+        "monthly_cost",
+        "monthly_net_profit",
+        "hourly_net_profit",
+        "cost_per_task",
+        "time_value",
+        "net_time_value",
+    }:
+        return f"{number:,.0f}원"
+    return _cell(value)
+
+
 def render_scenarios(analysis: OriginalAnalysis) -> str:
     if not analysis.scenario_analysis:
         return ""
@@ -149,8 +175,7 @@ def render_scenarios(analysis: OriginalAnalysis) -> str:
     for row in analysis.scenario_analysis:
         cells = [_cell(row.get("scenario")), _cell(row.get("assumptions"))]
         for key in numeric_keys:
-            value = row.get(key)
-            cells.append(_cell(value) if value is not None else "계산 불가")
+            cells.append(_scenario_cell(key, row.get(key)))
         cells.append(_cell(row.get("result")))
         lines.append("| " + " | ".join(cells) + " |")
     lines.append("")

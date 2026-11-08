@@ -84,3 +84,34 @@ def test_generator_marks_editorial_assumptions():
 def test_generator_never_guarantees_income():
     article = make_article("crystal", "adsense-blog")
     assert "수익을 보장하지 않습니다" in article.body_markdown
+
+
+def test_advertising_break_even_uses_actual_pageviews():
+    article = make_article("crystal", "adsense-blog")
+    assert "7.41,000" not in article.body_markdown
+    assert "7,407방문" in article.body_markdown
+
+
+def test_scenario_tables_do_not_leak_raw_floats():
+    raw_float_cell = re.compile(r"\|\s*-?\d+\.\d+\s*\|")
+    for blog, ids in (("crystal", CRYSTAL_IDS), ("quartz", QUARTZ_IDS)):
+        for entry_id in ids:
+            article = make_article(blog, entry_id)
+            section = article.body_markdown.split("## 시나리오 분석", 1)[1]
+            section = section.split("\n## ", 1)[0]
+            assert not raw_float_cell.search(section), (blog, entry_id)
+
+
+def test_assumption_rows_are_unique():
+    for blog, ids in (("crystal", CRYSTAL_IDS), ("quartz", QUARTZ_IDS)):
+        for entry_id in ids:
+            article = make_article(blog, entry_id)
+            names = [item.name for item in article.analysis.assumptions]
+            assert len(names) == len(set(names)), (blog, entry_id, names)
+
+
+def test_rating_paragraphs_use_natural_korean():
+    article = make_article("crystal", "adsense-blog")
+    assert "난이도은" not in article.body_markdown
+    assert "수익 변동 위험 평가 결과는" in article.body_markdown
+    assert "10로 평가" not in article.body_markdown

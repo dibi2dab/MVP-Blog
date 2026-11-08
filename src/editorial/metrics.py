@@ -117,6 +117,22 @@ def _hours(value: float | None) -> str:
     return f"{value:,.1f}시간"
 
 
+def _units_display(value: float | None, driver: "_CrystalDriver") -> str:
+    """Render a driver-unit quantity using its real-world unit.
+
+    Advertising revenue is modelled per 1,000 pageviews, so a break-even
+    quantity of 7.4 driver units means 7,400 actual pageviews. Displaying the
+    driver unit directly produced values like "7.41,000 방문".
+    """
+
+    if value is None:
+        return "계산 불가"
+    scaled = value * driver.unit_scale
+    label = driver.unit_display or driver.unit_label
+    decimals = 0 if driver.unit_scale > 1 else 1
+    return f"{scaled:,.{decimals}f}{label}"
+
+
 def _positive_score(value: float | None, low: float, high: float) -> float | None:
     """0 at/below ``low``, 10 at/above ``high``, linear in between."""
 
@@ -314,6 +330,8 @@ class _CrystalDriver:
     variable_per_unit: float
     unit_label: str
     formula: str
+    unit_scale: float = 1.0
+    unit_display: str = ""
     missing: list[str] = field(default_factory=list)
 
 
@@ -335,6 +353,8 @@ def _crystal_driver(spec: CrystalModelSpec, multiplier: float = 1.0) -> _Crystal
             variable_per_unit=variable,
             unit_label="1,000 방문",
             formula="월 매출 = 월 방문자 수 / 1,000 × RPM × 광고 채움률",
+            unit_scale=1000.0,
+            unit_display="방문",
             missing=missing,
         )
     if spec.type == "subscription":
@@ -555,7 +575,7 @@ def build_crystal_analysis(entry: CatalogEntryModel) -> OriginalAnalysis:
             "break_even_units",
             "손익분기 처리량",
             break_even_units,
-            "계산 불가" if break_even_units is None else f"{break_even_units:,.1f}{driver.unit_label}",
+            _units_display(break_even_units, driver),
             driver.unit_label,
             "손익분기 처리량 = 고정비 / (단위당 판매가 - 단위당 변동비)",
             entry,
@@ -612,7 +632,7 @@ def build_crystal_analysis(entry: CatalogEntryModel) -> OriginalAnalysis:
         display=(
             f"{be_months:,.1f}개월"
             if be_months is not None
-            else (f"{be_units:,.1f}{driver.unit_label}" if be_units is not None else "계산 불가")
+            else _units_display(be_units, driver)
         ),
         unit="개월" if be_months is not None else driver.unit_label,
         score=(
@@ -815,7 +835,11 @@ def _crystal_assumptions(
             source_ids=sourced_hours,
         )
     )
-    assumptions.extend(_catalog_assumptions(entry))
+    seen = {item.name for item in assumptions}
+    for item in _catalog_assumptions(entry):
+        if item.name not in seen:
+            assumptions.append(item)
+            seen.add(item.name)
     return assumptions
 
 
@@ -1172,7 +1196,11 @@ def _quartz_assumptions(
                 source_ids=sourced,
             )
         )
-    assumptions.extend(_catalog_assumptions(entry))
+    seen = {item.name for item in assumptions}
+    for item in _catalog_assumptions(entry):
+        if item.name not in seen:
+            assumptions.append(item)
+            seen.add(item.name)
     return assumptions
 
 
