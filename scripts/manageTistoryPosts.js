@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 /**
- * 티스토리 관리 페이지에서 글을 조회/삭제하는 일회성 운영 스크립트.
+ * ?�스?�리 관�??�이지?�서 글??조회/??��?�는 ?�회???�영 ?�크립트.
  *
  *   node scripts/manageTistoryPosts.js inspect 45 43
  *   node scripts/manageTistoryPosts.js delete 45 43
  *
- * GitHub Actions 에서 Secrets 의 카카오 계정으로 자동 로그인한 뒤 실행한다.
- * 로그에는 버튼/체크박스의 메타데이터만 남기고 페이지 HTML/토큰은 출력하지 않는다.
+ * GitHub Actions ?�서 Secrets ??카카??계정?�로 ?�동 로그?�한 ???�행?�다.
+ * 로그?�는 버튼/체크박스??메�??�이?�만 ?�기�??�이지 HTML/?�큰?� 출력?��? ?�는??
  */
 import { chromium } from 'playwright';
 import { tistoryConfig } from '../src/tistoryConfig.js';
@@ -120,31 +120,31 @@ async function main() {
     }
 
     if (mode === 'inspect') {
-      await page.goto(`${base}/manage/posts/`, { waitUntil: 'domcontentloaded' });
+      await page.goto(`${base}/manage/posts`, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(5000);
-      await describe(page, '/manage/posts/ before selection');
+      await describe(page, '/manage/posts before selection');
 
       for (const id of ids) {
         const ok = await selectPost(page, id);
         console.log(`select ${id}: ${ok}`);
       }
       await page.waitForTimeout(1500);
-      await describe(page, '/manage/posts/ after selection');
+      await describe(page, '/manage/posts after selection');
 
-      // '변경' 류 드롭다운을 열어 실제 액션 메뉴를 확인한다.
-      for (const name of ['변경', '선택한 글', '글 관리']) {
+      // '변�? �??�롭?�운???�어 ?�제 ?�션 메뉴�??�인?�다.
+      for (const name of ['변�?, '?�택??글', '글 관�?]) {
         const btn = page.getByRole('button', { name }).first();
         if (await btn.count()) {
           await btn.click({ force: true }).catch(() => {});
           await page.waitForTimeout(1000);
-          await describe(page, `/manage/posts/ after click ${name}`);
+          await describe(page, `/manage/posts after click ${name}`);
         }
       }
       return;
     }
 
     if (mode === 'delete') {
-      await page.goto(`${base}/manage/posts/`, { waitUntil: 'domcontentloaded' });
+      await page.goto(`${base}/manage/posts`, { waitUntil: 'domcontentloaded' });
       await page.waitForTimeout(5000);
 
       let selected = 0;
@@ -159,12 +159,12 @@ async function main() {
       await page.waitForTimeout(1200);
       await describe(page, 'after selection (delete probe)');
 
-      // 티스토리 관리 화면의 실제 삭제 버튼은 "선택한 글 삭제"처럼
-      // 문구가 길고 btn_delete 클래스를 쓴다. 정확히 "삭제"만 찾으면 놓친다.
+      // ?�스?�리 관�??�면???�제 ??�� 버튼?� "?�택??글 ??��"처럼
+      // 문구가 길고 btn_delete ?�래?��? ?�다. ?�확??"??��"�?찾으�??�친??
       const del = page.locator('button.btn_delete, a.btn_delete').first();
       const fallbackDel = page
         .locator('button, a')
-        .filter({ hasText: /삭제/ })
+        .filter({ hasText: /??��/ })
         .first();
       const target = (await del.count()) ? del : fallbackDel;
       if (!(await target.count())) {
@@ -175,13 +175,13 @@ async function main() {
       await page.waitForTimeout(2000);
       await describe(page, 'after delete click (confirm probe)');
 
-      // 확인 레이어가 있으면 삭제/확인/예 버튼을 누른다. 브라우저
-      // confirm() 은 위의 dialog 핸들러가 이미 승인한다.
+      // ?�인 ?�이?��? ?�으�???��/?�인/??버튼???�른?? 브라?��?
+      // confirm() ?� ?�의 dialog ?�들?��? ?��? ?�인?�다.
       const confirm = page
         .locator(
           '.layer_confirm button, .layer_popup button, .modal button, [role="dialog"] button'
         )
-        .filter({ hasText: /삭제|확인|예/ })
+        .filter({ hasText: /??��|?�인|?? })
         .last();
       if (await confirm.count()) {
         await confirm.click({ force: true }).catch(() => {});
