@@ -17,7 +17,7 @@ class EditorialTistoryPublisher:
     """Publish an approved editorial article through the existing Node engine.
 
     Stock-specific checks are intentionally not used here. Editorial articles
-    have already passed the deterministic CPPI/QDVI and quality gates.
+    have already passed the deterministic calculation and quality gates.
     """
 
     def __init__(self, settings: Settings, target: PublishTarget) -> None:

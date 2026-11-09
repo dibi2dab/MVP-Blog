@@ -17,8 +17,8 @@ from src.editorial.text import (
     body_fingerprint,
     count_headings,
     fingerprint_similarity,
-    has_table,
     korean_ratio,
+    paragraphs,
     title_similarity,
 )
 
@@ -82,20 +82,6 @@ def _verify_calculations(
                 f"(기대 {expected.value:,.2f}, 본문 {actual.value:,.2f})"
             )
     notes.append("카탈로그 입력값으로 핵심 수치를 다시 계산해 대조했습니다.")
-
-    item_scores = {item.key: item.score for item in article.analysis.evaluation_items}
-    for expected in recomputed.evaluation_items:
-        if expected.key not in item_scores:
-            critical.append(f"평가 항목이 누락되었습니다: {expected.name}")
-            continue
-        actual = item_scores[expected.key]
-        if expected.score is None and actual is None:
-            continue
-        if expected.score is None or actual is None:
-            critical.append(f"평가 점수가 카탈로그와 다릅니다: {expected.name}")
-            continue
-        if abs(float(expected.score) - float(actual)) > 0.01:
-            critical.append(f"평가 점수 검증 실패: {expected.name}")
     return notes
 
 
@@ -146,9 +132,6 @@ def _factual_accuracy(
                 f"데이터와 분석 대상이 일치하지 않습니다: {article.analysis.subject} != {entry.name}"
             )
             score -= 20.0
-        if len(article.analysis.evaluation_items) < 10:
-            critical.append("10가지 평가 항목이 모두 포함되지 않았습니다.")
-            score -= 10.0
         notes.extend(_verify_calculations(article, entry, critical))
 
         if entry.product is not None:
@@ -171,15 +154,6 @@ def _factual_accuracy(
         critical.append("검증되지 않은 직접 사용 후기 표현이 포함되어 있습니다.")
         score -= 10.0
 
-    missing_displays = [
-        item.name
-        for item in article.analysis.metrics
-        if item.value is not None and item.display and item.display not in body
-    ]
-    if missing_displays:
-        warnings.append(f"본문에 표시되지 않은 계산 결과가 있습니다: {', '.join(missing_displays)}")
-        score -= min(5.0, len(missing_displays))
-
     return max(0.0, min(25.0, score))
 
 
@@ -188,15 +162,9 @@ def _originality(article: EditorialArticle, critical: list[str], notes: list[str
     score = 0.0
     calculated = [item for item in analysis.metrics if item.value is not None and item.formula]
     if len(calculated) >= 3:
-        score += 6.0
+        score += 8.0
     elif calculated:
-        score += 3.0
-
-    scored_items = [item for item in analysis.evaluation_items if item.score is not None]
-    if len(scored_items) >= 8:
-        score += 5.0
-    elif len(scored_items) >= 5:
-        score += 3.0
+        score += 4.0
 
     if len(analysis.scenario_analysis) >= 2:
         score += 4.0
@@ -204,17 +172,21 @@ def _originality(article: EditorialArticle, critical: list[str], notes: list[str
         score += 2.0
 
     if len(analysis.comparison) >= 2:
-        score += 3.0
-    elif len(analysis.steps) >= 3:
-        score += 2.0
+        score += 4.0
+    elif analysis.steps:
+        score += 1.0
 
     if analysis.assumptions:
+        score += 2.0
+    if analysis.interpretation:
         score += 2.0
 
     score = min(20.0, score)
     if score < 5.0:
         critical.append("독자적 계산, 비교, 시나리오 분석이 부족합니다.")
-    notes.append(f"독자 분석 점수: {score:.1f}/20 (계산 {len(calculated)}개, 평가 {len(scored_items)}개).")
+    notes.append(
+        f"독자 분석 점수: {score:.1f}/20 (계산 {len(calculated)}개, 시나리오 {len(analysis.scenario_analysis)}개)."
+    )
     return score
 
 
@@ -254,7 +226,7 @@ def _search_intent(article: EditorialArticle, critical: list[str], warnings: lis
     else:
         warnings.append("메타 설명 길이가 권장 범위(80~160자)를 벗어났습니다.")
 
-    decision_markers = ("체크리스트", "적합", "판단 기준", "도입", "시작", "선택 기준")
+    decision_markers = ("확인할 점", "판단 기준", "맞는", "과한", "비교", "비용", "절차", "선택")
     if any(marker in body for marker in decision_markers):
         score += 3.0
     else:
@@ -324,8 +296,11 @@ def _readability(article: EditorialArticle, warnings: list[str]) -> float:
 
     if count_headings(body) >= 4:
         score += 2.0
-    if has_table(body):
+    paragraph_count = len(paragraphs(body))
+    if paragraph_count >= 6:
         score += 2.0
+    elif paragraph_count >= 3:
+        score += 1.0
     if korean_ratio(body) >= 0.6:
         score += 1.0
     if 0 < average_sentence_length(body) <= 90:

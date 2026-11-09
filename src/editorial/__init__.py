@@ -5,8 +5,8 @@ using the existing stock pipeline in ``main.py`` and ``src/pipeline``.
 
 This package adds a separate, evidence-first editorial workflow for:
 
-- Crystal  (rumbell)  — online income / practical profitability (CPPI)
-- Quartz   (quar1z)   — AI, software, digital products (QDVI)
+- Crystal  (rumbell)  — online income / practical profitability
+- Quartz   (quar1z)   — AI, software, digital products
 """
 
 from src.editorial.profiles import BlogProfile, get_profile, list_profiles

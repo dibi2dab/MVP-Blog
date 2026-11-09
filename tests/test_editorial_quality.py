@@ -37,13 +37,6 @@ def test_tampered_metric_is_a_critical_failure():
     assert article.decision == "DO NOT PUBLISH"
 
 
-def test_tampered_evaluation_score_is_a_critical_failure():
-    article = clone_article(make_article("quartz", "zapier-pro"))
-    article.analysis.evaluation_items[0].score = 1.0
-    report = _report(article)
-    assert any("평가 점수" in failure for failure in report.critical_failures)
-
-
 def test_title_without_primary_keyword_is_rejected():
     article = clone_article(make_article("quartz", "notion-plus"))
     article.title = "협업 도구의 가격을 비교하면"

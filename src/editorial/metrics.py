@@ -736,7 +736,7 @@ def build_crystal_analysis(entry: CatalogEntryModel) -> OriginalAnalysis:
     analysis.assumptions = _crystal_assumptions(entry, spec, driver)
     analysis.steps = _crystal_steps(metric, driver, spec)
     analysis.limitations = list(entry.limitations) + [
-        "이 분석은 카탈로그에 기록된 공개 자료와 명시된 가정으로 계산했으며, 실제 수익은 독자의 실행 방식과 시장 상황에 따라 달라집니다.",
+        "실제 수익은 방문자 수, 광고 단가, 수수료 변화에 따라 계산 결과와 달라질 수 있습니다.",
         "가격, 수수료, 광고 단가는 변경될 수 있으므로 의사결정 전 최신 자료를 다시 확인해야 합니다.",
     ]
     analysis.scenario_analysis = _crystal_scenarios(entry, spec)
@@ -1117,7 +1117,7 @@ def build_quartz_analysis(entry: CatalogEntryModel) -> OriginalAnalysis:
     analysis.assumptions = _quartz_assumptions(entry, product, plan, tasks, minutes, hourly_labor)
     analysis.steps = _quartz_steps(metric, product, plan, tasks, minutes, hourly_labor)
     analysis.limitations = list(entry.limitations) + [
-        "이 평가는 공식 문서와 공개 가격표를 바탕으로 한 문서 기반 평가이며, 실제 사용 경험이 아닙니다.",
+        "기능과 사용량 조건은 요금제 개편에 따라 달라질 수 있습니다.",
         "가격과 기능은 변경될 수 있으므로 도입 전 공식 페이지에서 최신 정보를 확인해야 합니다.",
     ]
     analysis.scenario_analysis = _quartz_scenarios(entry, product, monthly, tasks, minutes, hourly_labor)

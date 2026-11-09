@@ -24,62 +24,6 @@ def _cite(source_ids: Iterable[str]) -> str:
     return " " + "".join(f"[{source_id}]" for source_id in ids)
 
 
-def _score(value: float | None) -> str:
-    return "평가 불가" if value is None else f"{value:.1f} / 10"
-
-
-def render_dimension_table(analysis: OriginalAnalysis) -> str:
-    if not analysis.dimensions:
-        return ""
-    lines = [
-        f"### {analysis.framework} 구성 차원",
-        "",
-        "| 차원 | 점수 | 가중치 | 구성 항목 |",
-        "| --- | ---: | ---: | --- |",
-    ]
-    for dimension in analysis.dimensions:
-        lines.append(
-            "| {name} | {score} | {weight:.0%} | {rationale} |".format(
-                name=_cell(dimension.name),
-                score="평가 불가" if dimension.score is None else f"{dimension.score:.2f}",
-                weight=dimension.weight,
-                rationale=_cell(dimension.rationale),
-            )
-        )
-    lines.append("")
-    lines.append(
-        f"종합 {analysis.framework} 점수는 "
-        f"{'계산 불가' if analysis.result is None else f'{analysis.result:.2f} / 10'}입니다. "
-        "이 점수는 10개 평가 항목을 묶어 계산한 보조 지표이며, 아래 항목별 근거를 함께 읽어야 합니다."
-    )
-    return "\n".join(lines)
-
-
-def render_evaluation_table(analysis: OriginalAnalysis) -> str:
-    if not analysis.evaluation_items:
-        return ""
-    lines = [
-        "## 10가지 평가 항목",
-        "",
-        "아래 표는 이 글의 중심 분석입니다. 각 항목은 공개 자료, 계산 결과, 또는 명시된 편집상 가정을 근거로 평가했습니다.",
-        "",
-        "| 평가 항목 | 측정값 | 점수 | 판단 근거 |",
-        "| --- | --- | ---: | --- |",
-    ]
-    for item in analysis.evaluation_items:
-        lines.append(
-            "| {name} | {value} | {score} | {basis}{cite} |".format(
-                name=_cell(item.name),
-                value=_cell(item.display or item.value),
-                score=_score(item.score),
-                basis=_cell(item.basis),
-                cite=_cite(item.source_ids),
-            )
-        )
-    lines.append("")
-    return "\n".join(lines)
-
-
 def render_metrics_table(analysis: OriginalAnalysis) -> str:
     if not analysis.metrics:
         return ""
@@ -106,15 +50,11 @@ def render_metrics_table(analysis: OriginalAnalysis) -> str:
     return "\n".join(lines)
 
 
-def render_steps(analysis: OriginalAnalysis) -> str:
-    if not analysis.steps:
-        return ""
-    lines = ["## 계산 과정", ""]
-    for index, step in enumerate(analysis.steps, start=1):
-        lines.append(f"{index}. {step}")
-    lines.append("")
-    return "\n".join(lines)
-
+_SCENARIO_NAMES = {
+    "conservative": "보수적",
+    "base": "기준",
+    "optimistic": "적극적",
+}
 
 _SCENARIO_LABELS = {
     "monthly_revenue": "월 매출",
@@ -163,20 +103,24 @@ def render_scenarios(analysis: OriginalAnalysis) -> str:
         for key, value in row.items():
             if key in _SCENARIO_LABELS and isinstance(value, (int, float)) and key not in numeric_keys:
                 numeric_keys.append(key)
-    header = ["시나리오", "가정", *(_SCENARIO_LABELS[key] for key in numeric_keys), "결과"]
+    header = ["시나리오", "가정", *(_SCENARIO_LABELS[key] for key in numeric_keys)]
+    if not numeric_keys:
+        header.append("결과")
     lines = [
         "## 시나리오 분석",
         "",
-        "입력값이 바뀌면 결과가 어떻게 달라지는지 확인하기 위한 계산입니다. 아래 수치는 예측이 아니라 조건별 계산 결과입니다.",
+        "입력값을 보수적·기준·적극적으로 바꾼 조건별 계산입니다. 미래 예측이 아니라 조건이 달라질 때 결과가 어떻게 움직이는지 보여줍니다.",
         "",
         "| " + " | ".join(header) + " |",
         "| " + " | ".join(["---"] * len(header)) + " |",
     ]
     for row in analysis.scenario_analysis:
-        cells = [_cell(row.get("scenario")), _cell(row.get("assumptions"))]
+        scenario = _SCENARIO_NAMES.get(str(row.get("scenario")), _cell(row.get("scenario")))
+        cells = [scenario, _cell(row.get("assumptions"))]
         for key in numeric_keys:
             cells.append(_scenario_cell(key, row.get(key)))
-        cells.append(_cell(row.get("result")))
+        if not numeric_keys:
+            cells.append(_cell(row.get("result")))
         lines.append("| " + " | ".join(cells) + " |")
     lines.append("")
     return "\n".join(lines)
@@ -188,19 +132,22 @@ def render_assumptions(analysis: OriginalAnalysis) -> str:
     lines = [
         "## 공식 자료와 편집상 가정",
         "",
-        "이 글은 공식 자료에서 확인한 값과, 자료가 없는 부분에 대해 편집상 설정한 가정을 구분합니다. 가정은 실제 결과와 다를 수 있습니다.",
+        "공식 자료에서 확인한 값과, 자료가 없어 설정한 가정을 구분했습니다. 가정은 실제 결과와 다를 수 있습니다.",
         "",
         "| 구분 | 항목 | 값 | 근거 |",
         "| --- | --- | ---: | --- |",
     ]
     for assumption in analysis.assumptions:
+        basis = assumption.basis.strip()
+        if basis in {"편집상 가정", "가정"}:
+            basis = "공식 자료 없음"
         lines.append(
             "| {kind} | {name} | {value}{unit} | {basis}{cite} |".format(
                 kind="편집상 가정" if assumption.is_editorial else "공식 자료",
                 name=_cell(assumption.name),
                 value=_cell(assumption.value),
                 unit=_cell(f" {assumption.unit}" if assumption.unit else ""),
-                basis=_cell(assumption.basis),
+                basis=_cell(basis),
                 cite=_cite(assumption.source_ids),
             )
         )
@@ -212,25 +159,27 @@ def render_comparison(analysis: OriginalAnalysis) -> str:
     if not analysis.comparison:
         return ""
     lines = [
-        "## 가격과 기능 비교",
+        "## 경쟁 도구와 가격 비교",
         "",
-        "| 제품 | 월 비용 | 연 비용 | 기능 수 | 월 비용 차이 | 기능 수 차이 | 비고 |",
-        "| --- | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| 제품 | 월 비용 | 연 비용 | 월 비용 차이 | 비고 |",
+        "| --- | ---: | ---: | ---: | --- |",
     ]
     for row in analysis.comparison:
+        diff = "기준" if row.get("is_primary") else _money(row.get("monthly_diff_krw"), signed=True)
+        notes = _cell(row.get("notes")) or "—"
         lines.append(
-            "| {name} | {monthly} | {annual} | {features} | {monthly_diff} | {feature_diff} | {notes} |".format(
+            "| {name} | {monthly} | {annual} | {monthly_diff} | {notes} |".format(
                 name=_cell(row.get("name")),
                 monthly=_money(row.get("monthly_krw")),
                 annual=_money(row.get("annual_krw")),
-                features=_count(row.get("feature_count")),
-                monthly_diff=_money(row.get("monthly_diff_krw"), signed=True),
-                feature_diff=_count(row.get("feature_diff"), signed=True),
-                notes=_cell(row.get("notes")),
+                monthly_diff=diff,
+                notes=notes,
             )
         )
     lines.append("")
-    lines.append("비교표의 차이는 이 글에서 선택한 요금제를 기준으로 계산했습니다. 경쟁 제품의 가격과 기능은 공식 페이지가 바뀌면 달라질 수 있습니다.")
+    lines.append(
+        "차이는 이 글에서 선택한 요금제를 기준으로 계산했습니다. 경쟁 제품의 가격과 구성은 공식 페이지가 바뀌면 달라질 수 있습니다."
+    )
     lines.append("")
     return "\n".join(lines)
 
@@ -245,18 +194,6 @@ def _money(value: Any, *, signed: bool = False) -> str:
     if signed:
         return f"{number:+,.0f}원"
     return f"{number:,.0f}원"
-
-
-def _count(value: Any, *, signed: bool = False) -> str:
-    if value is None:
-        return "확인 불가"
-    try:
-        number = int(value)
-    except (TypeError, ValueError):
-        return "확인 불가"
-    if signed:
-        return f"{number:+d}개"
-    return f"{number}개"
 
 
 def render_sources(sources: Iterable[ResearchSource]) -> str:
@@ -274,36 +211,12 @@ def render_sources(sources: Iterable[ResearchSource]) -> str:
     return "\n".join(lines)
 
 
-def build_analysis_markdown(
-    analysis: OriginalAnalysis,
-    *,
-    include_dimensions: bool = True,
-) -> str:
-    """Render the 10-item evaluation and the secondary CPPI/QDVI index."""
-
-    blocks = [
-        render_evaluation_table(analysis),
-        render_metrics_table(analysis),
-        render_steps(analysis),
-        render_scenarios(analysis),
-        render_assumptions(analysis),
-        render_comparison(analysis),
-        render_dimension_table(analysis) if include_dimensions else "",
-    ]
-    return "\n".join(block for block in blocks if block.strip())
-
-
 def render_limitations(analysis: OriginalAnalysis) -> str:
     if not analysis.limitations:
         return ""
-    lines = ["## 한계와 주의사항", ""]
+    lines = ["## 이 계산의 한계", ""]
     for item in analysis.limitations:
         lines.append(f"- {item}")
-    lines.append("")
-    lines.append(
-        "이 글은 공개 자료와 계산 결과를 바탕으로 한 정보 제공 목적의 분석입니다. "
-        "투자, 수익, 성과를 보장하지 않으며 최종 결정은 독자의 상황과 최신 공식 자료를 기준으로 해야 합니다."
-    )
     lines.append("")
     return "\n".join(lines)
 
