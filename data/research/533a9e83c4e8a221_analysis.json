@@ -1,0 +1,64 @@
+{
+  "packet_id": "packet_533a9e83c4e8a221",
+  "event_id": "533a9e83c4e8a221",
+  "analyst_output": {
+    "facts": [
+      {
+        "claim": "확인된 사실: 가격·거래량 데이터에 따르면 해당 종목의 거래량이 평균 대비 크게 증가했다.",
+        "type": "fact",
+        "confidence": 0.95,
+        "source_ids": [],
+        "reasoning": ""
+      }
+    ],
+    "hypotheses": [
+      {
+        "claim": "뉴스·공시 자료에서 직접 확인된 단일 원인은 확인되지 않았다.",
+        "type": "hypothesis",
+        "confidence": 0.6,
+        "source_ids": [],
+        "reasoning": ""
+      }
+    ],
+    "key_drivers": [
+      "거래량 급증",
+      "주가 변동"
+    ],
+    "unknowns": [
+      "명확한 상승/하락의 단일 원인"
+    ],
+    "summary": "집계된 데이터상 거래량 급증이 관찰되며, 원인은 추가 자료로 확인해야 한다."
+  },
+  "fact_check": {
+    "approved_claims": [
+      {
+        "claim": "확인된 사실: 가격·거래량 데이터에 따르면 해당 종목의 거래량이 평균 대비 크게 증가했다.",
+        "type": "fact",
+        "confidence": 0.95,
+        "source_ids": [],
+        "reasoning": ""
+      }
+    ],
+    "rejected_claims": [],
+    "replaced_claims": [
+      {
+        "claim": "뉴스·공시 자료에서 직접 확인된 단일 원인은 확인되지 않았다.",
+        "type": "hypothesis",
+        "confidence": 0.6,
+        "source_ids": [],
+        "reasoning": ""
+      }
+    ],
+    "issue_notes": [
+      "confidence 낮음(0.60) -> 배제: 뉴스·공시 자료에서 직접 확인된 단일 원인은 확인되지 않았다."
+    ],
+    "verdict": "needs_review"
+  },
+  "quality_check": {
+    "passed": true,
+    "score": 1.0,
+    "issues": [],
+    "suggestions": []
+  },
+  "generated_at": "2026-11-09T04:23:48+00:00"
+}

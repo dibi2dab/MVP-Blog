@@ -1,0 +1,32 @@
+{
+  "event_id": "5b48fcb5411173ef",
+  "event_type": "news_event",
+  "entity": {
+    "name": "파인트리테라퓨틱스, 기술성평가 A·A",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-09T04:23:46+00:00",
+  "event_date": "Mon, 09 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 파인트리테라퓨틱스, 기술성평가 A·A 획득⋯코스닥 상장 본격화 - 이투데이",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTFBtektuQjRDM2UwN29VcUotdDBzcHJ0dnBkQTZrbmhIc0dncV9ENHJsVU1NT0Q2dTd5X2x1RC1qWjFjWW12VTYzeDJVQzVJbUlabUdmUw?oc=5",
+    "title": "파인트리테라퓨틱스, 기술성평가 A·A 획득⋯코스닥 상장 본격화 - 이투데이"
+  },
+  "summary": "뉴스: 파인트리테라퓨틱스, 기술성평가 A·A 획득⋯코스닥 상장 본격화 - 이투데이"
+}

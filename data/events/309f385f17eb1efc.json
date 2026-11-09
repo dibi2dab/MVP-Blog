@@ -1,0 +1,32 @@
+{
+  "event_id": "309f385f17eb1efc",
+  "event_type": "news_event",
+  "entity": {
+    "name": "바로팜, 11일 코스닥 상장…AI·해",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-09T04:23:46+00:00",
+  "event_date": "Mon, 09 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 바로팜, 11일 코스닥 상장…AI·해외 진출·생산시설 투자 확대 - 한국의약통신",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBDWTd6bnNUWXoyRnVUSERFdV9BQ3BvaklVT2MzV1YtSi15Qjh0bC1GdnNQMUhFWDBpOElMajBndGpPYWY1STMxZEw4TDNfNG5GQ1hBNVpMNDV6S0VRUVRaZjlhdTJINGVFUS1R?oc=5",
+    "title": "바로팜, 11일 코스닥 상장…AI·해외 진출·생산시설 투자 확대 - 한국의약통신"
+  },
+  "summary": "뉴스: 바로팜, 11일 코스닥 상장…AI·해외 진출·생산시설 투자 확대 - 한국의약통신"
+}

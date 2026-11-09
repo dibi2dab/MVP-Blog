@@ -1,0 +1,32 @@
+{
+  "event_id": "3e8672d5589a0f4b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "'2026 코스닥상장법인 공시담당자 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-09T04:23:46+00:00",
+  "event_date": "Mon, 09 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: '2026 코스닥상장법인 공시담당자 워크숍' 개최 - 글로벌뉴스통신GNA",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE0zMXB5TUM1dkJYRUZjeGc4S2E3MDlUZmVIOW8wb29GQWxkV04zVVRQQ0NEcnh3TUFOZ19TS1Y3aVZsdzZTb1Q5UHpJMVVXLWFreDJTMnY5LU1RRDZLSFBLZGNidEFHR0NmMm1XYUQ0LThzTzVX?oc=5",
+    "title": "'2026 코스닥상장법인 공시담당자 워크숍' 개최 - 글로벌뉴스통신GNA"
+  },
+  "summary": "뉴스: '2026 코스닥상장법인 공시담당자 워크숍' 개최 - 글로벌뉴스통신GNA"
+}

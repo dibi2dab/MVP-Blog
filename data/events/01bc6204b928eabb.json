@@ -1,0 +1,32 @@
+{
+  "event_id": "01bc6204b928eabb",
+  "event_type": "news_event",
+  "entity": {
+    "name": "거래소 \"코스닥 전 상장사 연 1회 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-09T04:23:46+00:00",
+  "event_date": "Fri, 06 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 거래소 \"코스닥 전 상장사 연 1회 IR 의무화 추진…미이행 시 제재\" - 연합인포맥스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5qclItZlR1SEp0TDlCRG9FUVhHZzdubl90QjJncmFIb0RONzh0MXcxd0wwaGFvTEZSVkExbU5jTmRsbFNnYlcwT0xqbXdYRmd1NWpGY0ZQM0tqbTc3Mk1vNGpBRHd4eVZrLW5xUE9wQmo?oc=5",
+    "title": "거래소 \"코스닥 전 상장사 연 1회 IR 의무화 추진…미이행 시 제재\" - 연합인포맥스"
+  },
+  "summary": "뉴스: 거래소 \"코스닥 전 상장사 연 1회 IR 의무화 추진…미이행 시 제재\" - 연합인포맥스"
+}
