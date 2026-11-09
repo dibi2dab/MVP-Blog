@@ -2,8 +2,8 @@ name: scheduled
 
 on:
   schedule:
-    # 평일 09:00 KST (월~금) = 00:00 UTC
-    - cron: "0 0 * * 1-5"
+    # 월~토 09:00 KST = 00:00 UTC (일요일 휴무)
+    - cron: "0 0 * * 1-6"
   workflow_dispatch:
 
 env:

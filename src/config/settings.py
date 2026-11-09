@@ -156,7 +156,7 @@ class PublishingConfig(BaseModel):
     # 발행 준비 조건
     min_quality_score: float = 0.75
     max_article_age_days: int = 7
-    max_event_age_days: int = 7
+    max_event_age_days: int = 1
     min_independent_metrics: int = 4
     min_sources_with_url: int = 1
     max_recent_similarity: float = 0.55

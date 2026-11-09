@@ -394,7 +394,7 @@ python -m src.editorial.cli status --blog all
 
 ## GitHub Actions 자동화
 
-`/actions/google` 시크릿 설정 후 평일 09:00 KST 자동 실행 (`.github/workflows/scheduled.yml`):
+`/actions/google` 시크릿 설정 후 월~토 09:00 KST 자동 실행 (`.github/workflows/scheduled.yml`):
 
 | Secret | 용도 |
 | --- | --- |

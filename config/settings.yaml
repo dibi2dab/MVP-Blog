@@ -128,7 +128,7 @@ publishing:
   # 발행 준비 조건 (하나라도 미달이면 needs_review 로 저장만 하고 발행하지 않는다)
   min_quality_score: 0.75
   max_article_age_days: 7
-  max_event_age_days: 7
+  max_event_age_days: 1
   min_independent_metrics: 4
   min_sources_with_url: 1
   max_recent_similarity: 0.55
