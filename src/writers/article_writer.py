@@ -88,16 +88,22 @@ class _Context:
         sections: list[ArticleSection] = [
             ArticleSection(heading="", body=self.executive_summary()),
             ArticleSection(heading="핵심 데이터", body=self.data_card()),
-            ArticleSection(heading="검색 의도에 대한 답: 이번 변동은 무엇으로 설명되나", body=self.search_intent_answer()),
-            ArticleSection(heading="가격·거래량 진단", body=self.price_volume_diagnosis()),
-            ArticleSection(heading="패턴 진단", body=self.pattern_diagnosis()),
-            ArticleSection(heading="시나리오와 확인 조건", body=self.scenarios()),
-            ArticleSection(heading="반대 해석과 한계", body=self.counter_analysis()),
-            ArticleSection(heading="확인된 자료와 공시", body=self.source_section()),
-            ArticleSection(heading="앞으로 확인할 데이터", body=self.future_data()),
+            ArticleSection(heading="이번 변동은 무엇으로 설명되나", body=self.search_intent_answer()),
         ]
+        if self.m.change_pct is not None:
+            sections.append(ArticleSection(heading="가격·거래량 진단", body=self.price_volume_diagnosis()))
+        if self.patterns:
+            sections.append(ArticleSection(heading="패턴 진단", body=self.pattern_diagnosis()))
+        sections.extend(
+            [
+                ArticleSection(heading="시나리오와 확인 조건", body=self.scenarios()),
+                ArticleSection(heading="반대 해석과 한계", body=self.counter_analysis()),
+                ArticleSection(heading="확인된 자료와 공시", body=self.source_section()),
+                ArticleSection(heading="앞으로 확인할 데이터", body=self.future_data()),
+            ]
+        )
         if publication_type == "A" and self.filtered.background_news:
-            sections.insert(7, ArticleSection(heading="배경 자료", body=self.background_section()))
+            sections.insert(-1, ArticleSection(heading="배경 자료", body=self.background_section()))
         return [s for s in sections if s.body and s.body.strip()]
 
     # ------------------------------------------------------------------ #
@@ -173,11 +179,7 @@ class _Context:
     def search_intent_answer(self) -> str:
         pct = _fmt_abs_pct(self.m.change_pct)
         direction = direction_word(self.m.change_pct)
-        paras: list[str] = []
-        paras.append(
-            f"이 글의 질문은 '{self.name} 주가가 {self.date_ko} 왜 {pct} {direction}했는가'다. "
-            "확인된 자료와 자체 계산값을 분리해 답한다."
-        )
+        paras: list[str] = [f"{self.name} 주가는 {self.date_ko} {pct} {direction} 마감했다."]
         if self.filtered.has_cause:
             sources = []
             if self.filtered.has_cause_disclosure:
@@ -185,13 +187,13 @@ class _Context:
             if self.filtered.has_cause_news:
                 sources.append("변동일과 가까운 뉴스")
             paras.append(
-                f"**짧은 답** — {'와 '.join(sources)}가 확인된다. 다만 자료의 시점이 변동일과 가깝다는 사실과, "
+                f"{'와 '.join(sources)}가 변동일과 가까운 시점에 확인된다. 다만 시점이 가깝다는 사실과 "
                 "그 자료가 가격 방향을 실제로 만들었다는 판단은 구분해야 한다."
             )
         else:
             paras.append(
-                "**짧은 답** — 변동일 ±3일 안에서 이 움직임을 직접 설명하는 공시나 단일 뉴스를 확인하지 못했다. "
-                "따라서 원인을 단정하지 않고, 가격·거래량에서 관찰된 변화만 정리한다."
+                "변동일 ±3일 안에서 이 움직임을 직접 설명하는 공시나 단일 뉴스는 확인되지 않았다. "
+                "원인을 단정하지 않고 가격과 거래량에서 관찰된 변화만 짚는다."
             )
         observations: list[str] = []
         if self.m.volume_ratio is not None:
@@ -199,14 +201,15 @@ class _Context:
         if self.m.return_20d is not None:
             observations.append(f"20일 수익률이 {self.m.return_20d:+.2f}%로 중기 흐름을 보여준다")
         if self.m.distance_ma20_pct is not None:
-            observations.append(f"종가가 20일선에서 {self.m.distance_ma20_pct:+.2f}% 떨어져 있다")
+            gap = self.m.distance_ma20_pct
+            relation = "높다" if gap >= 0 else "낮다"
+            observations.append(f"종가가 20일선보다 {abs(gap):.2f}% {relation}")
         if self.m.gap_pct is not None and abs(self.m.gap_pct) >= 1.0:
             observations.append(f"시가가 전일 종가 대비 {self.m.gap_pct:+.2f}% 갭으로 출발했다")
         if observations:
-            paras.append("**데이터가 말하는 것** — " + ", ".join(observations) + ".")
+            paras.append(" ".join(f"{item}." for item in observations))
         paras.append(
-            "**확인되지 않은 것** — 매수·매도 주체, 장중 호가 흐름, 사건의 실제 파급력은 수집된 일봉만으로 알 수 없다. "
-            "이 글은 그 부분을 추정으로 채우지 않는다."
+            "매수·매도 주체, 장중 호가 흐름, 사건의 실제 파급력은 수집된 일봉만으로 알 수 없다."
         )
         return "\n\n".join(paras)
 
@@ -218,7 +221,7 @@ class _Context:
 
         pct = _fmt_signed_pct(m.change_pct)
         direction = direction_word(m.change_pct)
-        paras = [f"**FACT** — 종가는 {m.close:,.0f}원, 전일 대비 {pct} {direction}다. 거래량은 {m.volume:,}주다."]
+        paras = [f"**확인된 데이터** — 종가는 {m.close:,.0f}원, 전일 대비 {pct} {direction} 마감했다. 거래량은 {m.volume:,}주다."]
 
         context_bits = []
         if m.volume_ratio is not None:
@@ -229,7 +232,7 @@ class _Context:
             context_bits.append(f"당일 장중 변동 폭은 {m.intraday_range_pct:.2f}%")
         if m.return_5d is not None:
             context_bits.append(f"5일 수익률 {m.return_5d:+.2f}%")
-        paras.append("**CONTEXT** — " + ", ".join(context_bits) + "로 집계됐다." if context_bits else "**CONTEXT** — 비교 가능한 평균 데이터가 제한적이다.")
+        paras.append("**비교 맥락** — " + ", ".join(context_bits) + "로 집계됐다." if context_bits else "**비교 맥락** — 비교 가능한 평균 데이터가 제한적이다.")
 
         if m.volume_ratio is not None and m.change_pct is not None:
             if m.change_pct < 0 and m.volume_ratio >= 1.5:
@@ -257,21 +260,21 @@ class _Context:
                 )
         else:
             interpretation = "거래량 비교값이 없어 가격 변화의 성격을 거래 규모와 함께 해석하기 어렵다."
-        paras.append(f"**INTERPRETATION** — {interpretation}")
+        paras.append(f"**해석** — {interpretation}")
 
         if m.close_position is not None:
             position = (
-                "장중 고가 쪽에 가까운 종가" if m.close_position >= 0.7
-                else "장중 저가 쪽에 가까운 종가" if m.close_position <= 0.3
-                else "장중 중간에 형성된 종가"
+                "장중 고가 쪽에 가깝게 형성됐다" if m.close_position >= 0.7
+                else "장중 저가 쪽에 가깝게 형성됐다" if m.close_position <= 0.3
+                else "장중 고가와 저가의 중간대에서 형성됐다"
             )
             paras.append(
-                f"**LIMITATION** — 종가는 {position}다. 일봉의 시가·고가·저가만으로 장중 매매 주체를 구분할 수 없고, "
+                f"**한계** — 종가는 {position}. 일봉의 시가·고가·저가만으로 장중 매매 주체를 구분할 수 없고, "
                 "수집되지 않은 공시나 뉴스가 있을 수 있다."
             )
         else:
             paras.append(
-                "**LIMITATION** — 일봉의 종가와 거래량만으로 매매 주체를 구분할 수 없고, 수집되지 않은 공시나 뉴스가 있을 수 있다."
+                "**한계** — 일봉의 종가와 거래량만으로 매매 주체를 구분할 수 없고, 수집되지 않은 공시나 뉴스가 있을 수 있다."
             )
         return "\n\n".join(paras)
 
@@ -334,7 +337,7 @@ class _Context:
     def counter_analysis(self) -> str:
         paras = [
             "**반대 해석 1 — 업종 전체의 움직임** — 같은 날 동종 업종이나 시장 지수가 크게 움직였다면, "
-            "개별 종목의 재료보다 시장 요인이 가격을 밀었을 수 있다. 이 글은 업종 지수와의 상대 비교를 포함하지 않는다.",
+            "개별 종목의 재료보다 시장 요인이 가격을 밀었을 수 있다. 업종 지수와의 상대 비교가 없으면 이 가능성을 배제하기 어렵다.",
             "**반대 해석 2 — 이미 반영된 재료** — 확인된 뉴스·공시가 변동일 이전에 이미 시장에 알려졌다면, "
             "그 자료를 당일 변동의 원인으로 보기 어렵다. 발표 시점과 가격 반영 시점은 다를 수 있다.",
             "**반대 해석 3 — 수급의 성격** — 거래량 증가는 매수와 매도 어느 쪽에도 발생한다. "
@@ -381,7 +384,7 @@ class _Context:
         return "\n\n".join(lines)
 
     def background_section(self) -> str:
-        lines = ["변동일 이전에 공개된 배경 자료다. 원인 후보가 아니라 맥락으로만 사용한다."]
+        lines = ["변동일 이전에 공개된 배경 자료다. 원인 후보가 아니라 맥락으로만 참고해야 한다."]
         for item in self.filtered.background_news[:5]:
             lines.append(self._news_bullet(item, include_summary=False))
         return "\n".join(lines)

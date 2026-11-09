@@ -16,7 +16,6 @@ _DISCLAIMER = """---
 
 
 # 요구사항 12: 차트 앞뒤 설명
-_CHART_INTRO_HEADLINE = "아래 차트를 통해 '무엇을 확인해야 하는지'와 '실제로 어떤 데이터가 드러났는지'를 설명한다."
 _CHART_INTRO = {
     "price_volume": "아래 차트에서는 최근 주가 흐름과 함께 거래량이 어떻게 변했는지를 함께 확인할 수 있다. 가격 방향과 물량의 동반 움직임이 핵심이다.",
     "volume_ratio": "아래 차트는 최근 평균 대비 당일 거래량이 어느 수준이었는지를 보여준다. 가격 변동이 거래량을 동반했는지가 판단 포인트다.",
@@ -72,8 +71,6 @@ class MarkdownGenerator:
             lines.append("## 차트로 보는 데이터")
             lines.append("")
             lines.append("### 📉 차트에서 확인되는 흐름")
-            lines.append("")
-            lines.append(_CHART_INTRO_HEADLINE)
             lines.append("")
             for chart in charts:
                 intro = _CHART_INTRO.get(chart.chart_type)

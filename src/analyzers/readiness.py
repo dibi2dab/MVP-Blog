@@ -67,8 +67,10 @@ def evaluate_readiness(
 
     headings = " ".join(s.heading or "" for s in article.sections)
     body = article.body_markdown or ""
-    result.checks["search_intent_answer"] = ("검색 의도" in headings or "검색 의도" in body) and len(body) > 300
-    result.checks["analysis_structure"] = _has_heading(article, "시나리오") and _has_heading(article, "확인")
+    result.checks["search_intent_answer"] = ("이번 변동" in headings or "검색 의도" in headings) and len(body) > 300
+    result.checks["analysis_structure"] = _has_heading(article, "확인") and (
+        _has_heading(article, "시나리오") or _has_heading(article, "기준선")
+    )
 
     fact_ok = True
     if report is not None:

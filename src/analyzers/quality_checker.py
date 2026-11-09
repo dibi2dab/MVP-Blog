@@ -25,6 +25,11 @@ _SYSTEM_PROMPT = """당신은 금융 블로그 기사 품질 편집자다.
 - 제목에 날짜/종목명/핵심 숫자가 있는가
 - 관련 없는 공시가 포함되지 않았는가
 - 차트에 설명이 있는가
+- 작성 과정이나 편집 기준을 설명하는 메타 문장
+- 형식적인 평가표, 자체 점수, 의미 없는 지수·순위
+- 모든 글에 반복되는 주의사항
+- 주제와 무관한 FAQ
+- 같은 사실을 여러 번 설명하는 문장
 
 응답 JSON:
 {
@@ -46,6 +51,22 @@ _GENERIC_SENTENCES = [
     "투자자들의 관심이 집중되고 있다",
     "향후 수익률이 기대된다",
 ]
+
+# 새 작성 기준: 독자에게 노출하면 안 되는 메타 문장
+_META_SENTENCES = [
+    "이 글에서는",
+    "무엇을 알아볼까요",
+    "이 평가는 직접 사용 후기인가요",
+    "실제 사용 경험을 바탕으로 작성했는가",
+    "독자마다 다르게 느낄 수 있습니다",
+    "상황에 따라 달라질 수 있으므로 참고하시기 바랍니다",
+    "작성 과정",
+    "편집 기준",
+]
+
+# 새 작성 기준: 의미 없는 점수·지수
+_SCORE_MARKERS = ("CPPI", "QDVI", "평가 지수", "종합 점수")
+_SCORE_PATTERN = re.compile(r"\d+(?:\.\d+)?\s*/\s*10")
 
 # 요구사항 #8: 금지/과장 표현
 _BANNED = ["반드시 오를", "무조건 매수", "매수 추천", "지금 사야", "무조건 오른다"]
@@ -142,6 +163,9 @@ class QualityChecker:
         generic = self._generic_hits(text_body)
         if generic:
             issues.append(f"일반적 문장 사용 {len(generic)}건: {', '.join(generic[:3])}")
+
+        # ---- 새 작성 기준: 메타 문장 / 의미 없는 점수 ----
+        self._check_meta_and_scores(text_body, issues)
 
         # ---- (요구사항 15) 차트에 설명이 있는가 ----
         self._check_chart_descriptions(body, text_body, issues)
@@ -260,6 +284,17 @@ class QualityChecker:
             if phrase in text:
                 hits.append(phrase)
         return hits
+
+    def _check_meta_and_scores(self, text: str, issues: list[str]) -> None:
+        """새 작성 기준: 작성 과정 메타 문장과 의미 없는 점수를 차단한다."""
+        meta = [phrase for phrase in _META_SENTENCES if phrase in text]
+        if meta:
+            issues.append(f"작성 과정을 설명하는 메타 문장 포함: {', '.join(meta[:3])}")
+        markers = [marker for marker in _SCORE_MARKERS if marker in text]
+        if markers:
+            issues.append(f"의미 없는 자체 점수·지수 표현 포함: {', '.join(markers[:3])}")
+        if _SCORE_PATTERN.search(text):
+            issues.append("본문에 근거 없는 10점 척도 점수가 포함됨")
 
 
 def _is_generic(sent: str) -> bool:
