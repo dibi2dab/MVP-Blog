@@ -1,0 +1,1645 @@
+{
+  "event": {
+    "event_id": "c244100195350e31",
+    "event_type": "stock_surge",
+    "entity": {
+      "name": "한미반도체",
+      "ticker": "042700",
+      "entity_type": "corp",
+      "extra": {}
+    },
+    "detected_at": "2026-11-10T06:51:08+00:00",
+    "event_date": "2026-11-10",
+    "event_score": 7,
+    "evidence_score": 0,
+    "publication_type": "",
+    "reasons": [
+      {
+        "code": "price_up_10",
+        "label": "주가 +10% 이상",
+        "score_contribution": 5,
+        "detail": ""
+      },
+      {
+        "code": "gap_up",
+        "label": "갭 상승 (시가 급등)",
+        "score_contribution": 2,
+        "detail": ""
+      }
+    ],
+    "related_sources": [],
+    "status": "researching",
+    "evidence": {
+      "latest_change_pct": 0.10095238095238095,
+      "volume_ratio": 0.716579266252114,
+      "latest_amount": null
+    },
+    "summary": "한미반도체 주가 변동 0.10095238095238095% / 거래량 비율 0.716579266252114"
+  },
+  "entity": {
+    "name": "한미반도체",
+    "ticker": "042700",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "packet_id": "packet_c244100195350e31",
+  "market_data": {
+    "ticker": "042700",
+    "name": "한미반도체",
+    "price_series": {
+      "ticker": "042700",
+      "name": "한미반도체",
+      "currency": "KRW",
+      "bars": [
+        {
+          "date": "2026-06-30",
+          "open": 260500.0,
+          "high": 264500.0,
+          "low": 248000.0,
+          "close": 256500.0,
+          "volume": 798942,
+          "amount": null,
+          "change_pct": -0.58
+        },
+        {
+          "date": "2026-07-01",
+          "open": 260000.0,
+          "high": 267500.0,
+          "low": 246500.0,
+          "close": 246500.0,
+          "volume": 1518635,
+          "amount": null,
+          "change_pct": -3.9
+        },
+        {
+          "date": "2026-07-02",
+          "open": 243000.0,
+          "high": 243500.0,
+          "low": 215500.0,
+          "close": 219500.0,
+          "volume": 1450445,
+          "amount": null,
+          "change_pct": -10.95
+        },
+        {
+          "date": "2026-07-03",
+          "open": 217000.0,
+          "high": 233000.0,
+          "low": 209500.0,
+          "close": 232500.0,
+          "volume": 824813,
+          "amount": null,
+          "change_pct": 5.92
+        },
+        {
+          "date": "2026-07-06",
+          "open": 233500.0,
+          "high": 234500.0,
+          "low": 217500.0,
+          "close": 226500.0,
+          "volume": 621690,
+          "amount": null,
+          "change_pct": -2.58
+        },
+        {
+          "date": "2026-07-07",
+          "open": 221000.0,
+          "high": 225500.0,
+          "low": 205000.0,
+          "close": 210500.0,
+          "volume": 573842,
+          "amount": null,
+          "change_pct": -7.06
+        },
+        {
+          "date": "2026-07-08",
+          "open": 200000.0,
+          "high": 216000.0,
+          "low": 196100.0,
+          "close": 199200.0,
+          "volume": 795509,
+          "amount": null,
+          "change_pct": -5.37
+        },
+        {
+          "date": "2026-07-09",
+          "open": 201500.0,
+          "high": 223000.0,
+          "low": 201500.0,
+          "close": 215500.0,
+          "volume": 1361588,
+          "amount": null,
+          "change_pct": 8.18
+        },
+        {
+          "date": "2026-07-10",
+          "open": 224000.0,
+          "high": 228000.0,
+          "low": 211000.0,
+          "close": 222000.0,
+          "volume": 793613,
+          "amount": null,
+          "change_pct": 3.02
+        },
+        {
+          "date": "2026-07-13",
+          "open": 222000.0,
+          "high": 233000.0,
+          "low": 205000.0,
+          "close": 205500.0,
+          "volume": 634267,
+          "amount": null,
+          "change_pct": -7.43
+        },
+        {
+          "date": "2026-07-14",
+          "open": 203500.0,
+          "high": 210000.0,
+          "low": 190600.0,
+          "close": 207500.0,
+          "volume": 947589,
+          "amount": null,
+          "change_pct": 0.97
+        },
+        {
+          "date": "2026-07-15",
+          "open": 225500.0,
+          "high": 269500.0,
+          "low": 224000.0,
+          "close": 269500.0,
+          "volume": 2355581,
+          "amount": null,
+          "change_pct": 29.88
+        },
+        {
+          "date": "2026-07-16",
+          "open": 263000.0,
+          "high": 275000.0,
+          "low": 240000.0,
+          "close": 242500.0,
+          "volume": 1483602,
+          "amount": null,
+          "change_pct": -10.02
+        },
+        {
+          "date": "2026-07-20",
+          "open": 237000.0,
+          "high": 245500.0,
+          "low": 217000.0,
+          "close": 222000.0,
+          "volume": 791151,
+          "amount": null,
+          "change_pct": -8.45
+        },
+        {
+          "date": "2026-07-21",
+          "open": 223000.0,
+          "high": 229000.0,
+          "low": 217000.0,
+          "close": 224000.0,
+          "volume": 741706,
+          "amount": null,
+          "change_pct": 0.9
+        },
+        {
+          "date": "2026-07-22",
+          "open": 237500.0,
+          "high": 241500.0,
+          "low": 214500.0,
+          "close": 215000.0,
+          "volume": 915641,
+          "amount": null,
+          "change_pct": -4.02
+        },
+        {
+          "date": "2026-07-23",
+          "open": 218500.0,
+          "high": 221000.0,
+          "low": 205500.0,
+          "close": 216000.0,
+          "volume": 1111998,
+          "amount": null,
+          "change_pct": 0.47
+        },
+        {
+          "date": "2026-07-24",
+          "open": 212500.0,
+          "high": 213000.0,
+          "low": 199600.0,
+          "close": 200000.0,
+          "volume": 561294,
+          "amount": null,
+          "change_pct": -7.41
+        },
+        {
+          "date": "2026-07-27",
+          "open": 205000.0,
+          "high": 205500.0,
+          "low": 196000.0,
+          "close": 204500.0,
+          "volume": 518644,
+          "amount": null,
+          "change_pct": 2.25
+        },
+        {
+          "date": "2026-07-28",
+          "open": 190600.0,
+          "high": 192700.0,
+          "low": 178600.0,
+          "close": 179500.0,
+          "volume": 705041,
+          "amount": null,
+          "change_pct": -12.22
+        },
+        {
+          "date": "2026-07-29",
+          "open": 179600.0,
+          "high": 184300.0,
+          "low": 148900.0,
+          "close": 167600.0,
+          "volume": 1378514,
+          "amount": null,
+          "change_pct": -6.63
+        },
+        {
+          "date": "2026-07-30",
+          "open": 160200.0,
+          "high": 179800.0,
+          "low": 157700.0,
+          "close": 167600.0,
+          "volume": 1398060,
+          "amount": null,
+          "change_pct": 0.0
+        },
+        {
+          "date": "2026-07-31",
+          "open": 195600.0,
+          "high": 217000.0,
+          "low": 193200.0,
+          "close": 214500.0,
+          "volume": 2222655,
+          "amount": null,
+          "change_pct": 27.98
+        },
+        {
+          "date": "2026-08-03",
+          "open": 209500.0,
+          "high": 209500.0,
+          "low": 195700.0,
+          "close": 202500.0,
+          "volume": 679433,
+          "amount": null,
+          "change_pct": -5.59
+        },
+        {
+          "date": "2026-08-04",
+          "open": 208500.0,
+          "high": 209000.0,
+          "low": 193100.0,
+          "close": 203000.0,
+          "volume": 865479,
+          "amount": null,
+          "change_pct": 0.25
+        },
+        {
+          "date": "2026-08-05",
+          "open": 216500.0,
+          "high": 217000.0,
+          "low": 203500.0,
+          "close": 209000.0,
+          "volume": 626113,
+          "amount": null,
+          "change_pct": 2.96
+        },
+        {
+          "date": "2026-08-06",
+          "open": 204500.0,
+          "high": 209000.0,
+          "low": 198500.0,
+          "close": 200500.0,
+          "volume": 449146,
+          "amount": null,
+          "change_pct": -4.07
+        },
+        {
+          "date": "2026-08-07",
+          "open": 201500.0,
+          "high": 204500.0,
+          "low": 189300.0,
+          "close": 192300.0,
+          "volume": 732793,
+          "amount": null,
+          "change_pct": -4.09
+        },
+        {
+          "date": "2026-08-10",
+          "open": 195900.0,
+          "high": 207500.0,
+          "low": 192700.0,
+          "close": 205500.0,
+          "volume": 591703,
+          "amount": null,
+          "change_pct": 6.86
+        },
+        {
+          "date": "2026-08-11",
+          "open": 202500.0,
+          "high": 214000.0,
+          "low": 200000.0,
+          "close": 213000.0,
+          "volume": 416434,
+          "amount": null,
+          "change_pct": 3.65
+        },
+        {
+          "date": "2026-08-12",
+          "open": 213500.0,
+          "high": 221000.0,
+          "low": 209000.0,
+          "close": 217500.0,
+          "volume": 581820,
+          "amount": null,
+          "change_pct": 2.11
+        },
+        {
+          "date": "2026-08-13",
+          "open": 224500.0,
+          "high": 229000.0,
+          "low": 221500.0,
+          "close": 226000.0,
+          "volume": 744192,
+          "amount": null,
+          "change_pct": 3.91
+        },
+        {
+          "date": "2026-08-14",
+          "open": 239500.0,
+          "high": 240000.0,
+          "low": 223500.0,
+          "close": 229000.0,
+          "volume": 558447,
+          "amount": null,
+          "change_pct": 1.33
+        },
+        {
+          "date": "2026-08-18",
+          "open": 231000.0,
+          "high": 242000.0,
+          "low": 226500.0,
+          "close": 229000.0,
+          "volume": 602035,
+          "amount": null,
+          "change_pct": 0.0
+        },
+        {
+          "date": "2026-08-19",
+          "open": 214500.0,
+          "high": 229000.0,
+          "low": 209000.0,
+          "close": 221000.0,
+          "volume": 610160,
+          "amount": null,
+          "change_pct": -3.49
+        },
+        {
+          "date": "2026-08-20",
+          "open": 224000.0,
+          "high": 227000.0,
+          "low": 217000.0,
+          "close": 225500.0,
+          "volume": 645969,
+          "amount": null,
+          "change_pct": 2.04
+        },
+        {
+          "date": "2026-08-21",
+          "open": 219500.0,
+          "high": 220500.0,
+          "low": 212000.0,
+          "close": 213500.0,
+          "volume": 515436,
+          "amount": null,
+          "change_pct": -5.32
+        },
+        {
+          "date": "2026-08-24",
+          "open": 214500.0,
+          "high": 215000.0,
+          "low": 206000.0,
+          "close": 209000.0,
+          "volume": 431626,
+          "amount": null,
+          "change_pct": -2.11
+        },
+        {
+          "date": "2026-08-25",
+          "open": 203000.0,
+          "high": 217500.0,
+          "low": 195100.0,
+          "close": 217500.0,
+          "volume": 471730,
+          "amount": null,
+          "change_pct": 4.07
+        },
+        {
+          "date": "2026-08-26",
+          "open": 217000.0,
+          "high": 222000.0,
+          "low": 213500.0,
+          "close": 219500.0,
+          "volume": 278562,
+          "amount": null,
+          "change_pct": 0.92
+        },
+        {
+          "date": "2026-08-27",
+          "open": 227000.0,
+          "high": 227500.0,
+          "low": 217000.0,
+          "close": 222000.0,
+          "volume": 381093,
+          "amount": null,
+          "change_pct": 1.14
+        },
+        {
+          "date": "2026-08-28",
+          "open": 220500.0,
+          "high": 225500.0,
+          "low": 214000.0,
+          "close": 219500.0,
+          "volume": 547047,
+          "amount": null,
+          "change_pct": -1.13
+        },
+        {
+          "date": "2026-08-31",
+          "open": 211000.0,
+          "high": 225000.0,
+          "low": 205500.0,
+          "close": 220500.0,
+          "volume": 773977,
+          "amount": null,
+          "change_pct": 0.46
+        },
+        {
+          "date": "2026-09-01",
+          "open": 218500.0,
+          "high": 219000.0,
+          "low": 210500.0,
+          "close": 215000.0,
+          "volume": 375771,
+          "amount": null,
+          "change_pct": -2.49
+        },
+        {
+          "date": "2026-09-02",
+          "open": 207000.0,
+          "high": 216500.0,
+          "low": 205000.0,
+          "close": 213500.0,
+          "volume": 311065,
+          "amount": null,
+          "change_pct": -0.7
+        },
+        {
+          "date": "2026-09-03",
+          "open": 215500.0,
+          "high": 218500.0,
+          "low": 205500.0,
+          "close": 210500.0,
+          "volume": 349443,
+          "amount": null,
+          "change_pct": -1.41
+        },
+        {
+          "date": "2026-09-04",
+          "open": 213500.0,
+          "high": 230000.0,
+          "low": 212500.0,
+          "close": 230000.0,
+          "volume": 963556,
+          "amount": null,
+          "change_pct": 9.26
+        },
+        {
+          "date": "2026-09-07",
+          "open": 241500.0,
+          "high": 248500.0,
+          "low": 237500.0,
+          "close": 240500.0,
+          "volume": 732981,
+          "amount": null,
+          "change_pct": 4.57
+        },
+        {
+          "date": "2026-09-08",
+          "open": 241500.0,
+          "high": 255000.0,
+          "low": 241500.0,
+          "close": 244500.0,
+          "volume": 803718,
+          "amount": null,
+          "change_pct": 1.66
+        },
+        {
+          "date": "2026-09-09",
+          "open": 248500.0,
+          "high": 257000.0,
+          "low": 246500.0,
+          "close": 250500.0,
+          "volume": 562435,
+          "amount": null,
+          "change_pct": 2.45
+        },
+        {
+          "date": "2026-09-10",
+          "open": 248000.0,
+          "high": 266000.0,
+          "low": 244000.0,
+          "close": 253000.0,
+          "volume": 2327335,
+          "amount": null,
+          "change_pct": 1.0
+        },
+        {
+          "date": "2026-09-11",
+          "open": 241000.0,
+          "high": 241000.0,
+          "low": 231000.0,
+          "close": 231000.0,
+          "volume": 1109135,
+          "amount": null,
+          "change_pct": -8.7
+        },
+        {
+          "date": "2026-09-14",
+          "open": 228000.0,
+          "high": 234500.0,
+          "low": 223500.0,
+          "close": 226000.0,
+          "volume": 514707,
+          "amount": null,
+          "change_pct": -2.16
+        },
+        {
+          "date": "2026-09-15",
+          "open": 228500.0,
+          "high": 229000.0,
+          "low": 219500.0,
+          "close": 225000.0,
+          "volume": 529125,
+          "amount": null,
+          "change_pct": -0.44
+        },
+        {
+          "date": "2026-09-16",
+          "open": 220500.0,
+          "high": 227000.0,
+          "low": 215500.0,
+          "close": 226500.0,
+          "volume": 506977,
+          "amount": null,
+          "change_pct": 0.67
+        },
+        {
+          "date": "2026-09-17",
+          "open": 226500.0,
+          "high": 228250.0,
+          "low": 222500.0,
+          "close": 228000.0,
+          "volume": 302761,
+          "amount": null,
+          "change_pct": 0.66
+        },
+        {
+          "date": "2026-09-18",
+          "open": 233000.0,
+          "high": 238000.0,
+          "low": 229000.0,
+          "close": 235000.0,
+          "volume": 568038,
+          "amount": null,
+          "change_pct": 3.07
+        },
+        {
+          "date": "2026-09-21",
+          "open": 237500.0,
+          "high": 239000.0,
+          "low": 232500.0,
+          "close": 239000.0,
+          "volume": 349254,
+          "amount": null,
+          "change_pct": 1.7
+        },
+        {
+          "date": "2026-09-22",
+          "open": 243500.0,
+          "high": 246500.0,
+          "low": 235000.0,
+          "close": 240500.0,
+          "volume": 539012,
+          "amount": null,
+          "change_pct": 0.63
+        },
+        {
+          "date": "2026-09-23",
+          "open": 243500.0,
+          "high": 243500.0,
+          "low": 237000.0,
+          "close": 243000.0,
+          "volume": 369301,
+          "amount": null,
+          "change_pct": 1.04
+        },
+        {
+          "date": "2026-09-28",
+          "open": 240500.0,
+          "high": 245000.0,
+          "low": 232000.0,
+          "close": 233000.0,
+          "volume": 347448,
+          "amount": null,
+          "change_pct": -4.12
+        },
+        {
+          "date": "2026-09-29",
+          "open": 235000.0,
+          "high": 252000.0,
+          "low": 235000.0,
+          "close": 252000.0,
+          "volume": 744200,
+          "amount": null,
+          "change_pct": 8.15
+        },
+        {
+          "date": "2026-09-30",
+          "open": 250000.0,
+          "high": 258500.0,
+          "low": 247000.0,
+          "close": 258000.0,
+          "volume": 455440,
+          "amount": null,
+          "change_pct": 2.38
+        },
+        {
+          "date": "2026-10-01",
+          "open": 256500.0,
+          "high": 269500.0,
+          "low": 254000.0,
+          "close": 268000.0,
+          "volume": 669156,
+          "amount": null,
+          "change_pct": 3.88
+        },
+        {
+          "date": "2026-10-02",
+          "open": 274500.0,
+          "high": 281000.0,
+          "low": 267500.0,
+          "close": 272000.0,
+          "volume": 659070,
+          "amount": null,
+          "change_pct": 1.49
+        },
+        {
+          "date": "2026-10-06",
+          "open": 280000.0,
+          "high": 281500.0,
+          "low": 273000.0,
+          "close": 279000.0,
+          "volume": 488567,
+          "amount": null,
+          "change_pct": 2.57
+        },
+        {
+          "date": "2026-10-07",
+          "open": 273500.0,
+          "high": 275000.0,
+          "low": 262000.0,
+          "close": 264000.0,
+          "volume": 605179,
+          "amount": null,
+          "change_pct": -5.38
+        },
+        {
+          "date": "2026-10-08",
+          "open": 267500.0,
+          "high": 274000.0,
+          "low": 261000.0,
+          "close": 263000.0,
+          "volume": 1038513,
+          "amount": null,
+          "change_pct": -0.38
+        },
+        {
+          "date": "2026-10-12",
+          "open": 259500.0,
+          "high": 262000.0,
+          "low": 246500.0,
+          "close": 248000.0,
+          "volume": 594690,
+          "amount": null,
+          "change_pct": -5.7
+        },
+        {
+          "date": "2026-10-13",
+          "open": 235000.0,
+          "high": 237000.0,
+          "low": 216000.0,
+          "close": 230000.0,
+          "volume": 951531,
+          "amount": null,
+          "change_pct": -7.26
+        },
+        {
+          "date": "2026-10-14",
+          "open": 227500.0,
+          "high": 231500.0,
+          "low": 213500.0,
+          "close": 217500.0,
+          "volume": 654465,
+          "amount": null,
+          "change_pct": -5.43
+        },
+        {
+          "date": "2026-10-15",
+          "open": 202000.0,
+          "high": 205000.0,
+          "low": 186600.0,
+          "close": 186700.0,
+          "volume": 1311257,
+          "amount": null,
+          "change_pct": -14.16
+        },
+        {
+          "date": "2026-10-16",
+          "open": 198200.0,
+          "high": 211500.0,
+          "low": 190800.0,
+          "close": 210500.0,
+          "volume": 675737,
+          "amount": null,
+          "change_pct": 12.75
+        },
+        {
+          "date": "2026-10-19",
+          "open": 199100.0,
+          "high": 218500.0,
+          "low": 197400.0,
+          "close": 216500.0,
+          "volume": 620262,
+          "amount": null,
+          "change_pct": 2.85
+        },
+        {
+          "date": "2026-10-20",
+          "open": 211000.0,
+          "high": 211000.0,
+          "low": 195700.0,
+          "close": 196000.0,
+          "volume": 536545,
+          "amount": null,
+          "change_pct": -9.47
+        },
+        {
+          "date": "2026-10-21",
+          "open": 205000.0,
+          "high": 207000.0,
+          "low": 197700.0,
+          "close": 203000.0,
+          "volume": 523927,
+          "amount": null,
+          "change_pct": 3.57
+        },
+        {
+          "date": "2026-10-22",
+          "open": 199600.0,
+          "high": 202500.0,
+          "low": 190000.0,
+          "close": 191200.0,
+          "volume": 574029,
+          "amount": null,
+          "change_pct": -5.81
+        },
+        {
+          "date": "2026-10-23",
+          "open": 187000.0,
+          "high": 191100.0,
+          "low": 182100.0,
+          "close": 188500.0,
+          "volume": 655464,
+          "amount": null,
+          "change_pct": -1.41
+        },
+        {
+          "date": "2026-10-26",
+          "open": 185600.0,
+          "high": 191000.0,
+          "low": 182000.0,
+          "close": 184700.0,
+          "volume": 467899,
+          "amount": null,
+          "change_pct": -2.02
+        },
+        {
+          "date": "2026-10-27",
+          "open": 192100.0,
+          "high": 196000.0,
+          "low": 189000.0,
+          "close": 193600.0,
+          "volume": 656744,
+          "amount": null,
+          "change_pct": 4.82
+        },
+        {
+          "date": "2026-10-28",
+          "open": 197200.0,
+          "high": 206000.0,
+          "low": 195300.0,
+          "close": 205500.0,
+          "volume": 466142,
+          "amount": null,
+          "change_pct": 6.15
+        },
+        {
+          "date": "2026-10-29",
+          "open": 201000.0,
+          "high": 202500.0,
+          "low": 189700.0,
+          "close": 194600.0,
+          "volume": 600574,
+          "amount": null,
+          "change_pct": -5.3
+        },
+        {
+          "date": "2026-10-30",
+          "open": 188700.0,
+          "high": 191100.0,
+          "low": 181100.0,
+          "close": 181300.0,
+          "volume": 939379,
+          "amount": null,
+          "change_pct": -6.83
+        },
+        {
+          "date": "2026-11-02",
+          "open": 178500.0,
+          "high": 193500.0,
+          "low": 178400.0,
+          "close": 192100.0,
+          "volume": 662243,
+          "amount": null,
+          "change_pct": 5.96
+        },
+        {
+          "date": "2026-11-03",
+          "open": 186300.0,
+          "high": 186300.0,
+          "low": 178600.0,
+          "close": 183300.0,
+          "volume": 532629,
+          "amount": null,
+          "change_pct": -4.58
+        },
+        {
+          "date": "2026-11-04",
+          "open": 185400.0,
+          "high": 191000.0,
+          "low": 177100.0,
+          "close": 187100.0,
+          "volume": 790336,
+          "amount": null,
+          "change_pct": 2.07
+        },
+        {
+          "date": "2026-11-05",
+          "open": 179000.0,
+          "high": 179100.0,
+          "low": 166900.0,
+          "close": 168100.0,
+          "volume": 772326,
+          "amount": null,
+          "change_pct": -10.15
+        },
+        {
+          "date": "2026-11-06",
+          "open": 148000.0,
+          "high": 166100.0,
+          "low": 148000.0,
+          "close": 163300.0,
+          "volume": 1279037,
+          "amount": null,
+          "change_pct": -2.86
+        },
+        {
+          "date": "2026-11-09",
+          "open": 156000.0,
+          "high": 169100.0,
+          "low": 155000.0,
+          "close": 157500.0,
+          "volume": 574067,
+          "amount": null,
+          "change_pct": -3.55
+        },
+        {
+          "date": "2026-11-10",
+          "open": 170100.0,
+          "high": 174400.0,
+          "low": 167500.0,
+          "close": 173400.0,
+          "volume": 510369,
+          "amount": null,
+          "change_pct": 10.1
+        }
+      ],
+      "fetched_at": "2026-11-10T06:51:03+00:00",
+      "source_id": "naver.stock"
+    },
+    "foreign_net_buy": null,
+    "institution_net_buy": null,
+    "generated_at": "2026-11-10T06:51:03+00:00",
+    "source_id": "naver.stock"
+  },
+  "price_data": {
+    "recent_bars": [
+      {
+        "date": "2026-09-28",
+        "open": 240500.0,
+        "high": 245000.0,
+        "low": 232000.0,
+        "close": 233000.0,
+        "volume": 347448,
+        "amount": null,
+        "change_pct": -4.12
+      },
+      {
+        "date": "2026-09-29",
+        "open": 235000.0,
+        "high": 252000.0,
+        "low": 235000.0,
+        "close": 252000.0,
+        "volume": 744200,
+        "amount": null,
+        "change_pct": 8.15
+      },
+      {
+        "date": "2026-09-30",
+        "open": 250000.0,
+        "high": 258500.0,
+        "low": 247000.0,
+        "close": 258000.0,
+        "volume": 455440,
+        "amount": null,
+        "change_pct": 2.38
+      },
+      {
+        "date": "2026-10-01",
+        "open": 256500.0,
+        "high": 269500.0,
+        "low": 254000.0,
+        "close": 268000.0,
+        "volume": 669156,
+        "amount": null,
+        "change_pct": 3.88
+      },
+      {
+        "date": "2026-10-02",
+        "open": 274500.0,
+        "high": 281000.0,
+        "low": 267500.0,
+        "close": 272000.0,
+        "volume": 659070,
+        "amount": null,
+        "change_pct": 1.49
+      },
+      {
+        "date": "2026-10-06",
+        "open": 280000.0,
+        "high": 281500.0,
+        "low": 273000.0,
+        "close": 279000.0,
+        "volume": 488567,
+        "amount": null,
+        "change_pct": 2.57
+      },
+      {
+        "date": "2026-10-07",
+        "open": 273500.0,
+        "high": 275000.0,
+        "low": 262000.0,
+        "close": 264000.0,
+        "volume": 605179,
+        "amount": null,
+        "change_pct": -5.38
+      },
+      {
+        "date": "2026-10-08",
+        "open": 267500.0,
+        "high": 274000.0,
+        "low": 261000.0,
+        "close": 263000.0,
+        "volume": 1038513,
+        "amount": null,
+        "change_pct": -0.38
+      },
+      {
+        "date": "2026-10-12",
+        "open": 259500.0,
+        "high": 262000.0,
+        "low": 246500.0,
+        "close": 248000.0,
+        "volume": 594690,
+        "amount": null,
+        "change_pct": -5.7
+      },
+      {
+        "date": "2026-10-13",
+        "open": 235000.0,
+        "high": 237000.0,
+        "low": 216000.0,
+        "close": 230000.0,
+        "volume": 951531,
+        "amount": null,
+        "change_pct": -7.26
+      },
+      {
+        "date": "2026-10-14",
+        "open": 227500.0,
+        "high": 231500.0,
+        "low": 213500.0,
+        "close": 217500.0,
+        "volume": 654465,
+        "amount": null,
+        "change_pct": -5.43
+      },
+      {
+        "date": "2026-10-15",
+        "open": 202000.0,
+        "high": 205000.0,
+        "low": 186600.0,
+        "close": 186700.0,
+        "volume": 1311257,
+        "amount": null,
+        "change_pct": -14.16
+      },
+      {
+        "date": "2026-10-16",
+        "open": 198200.0,
+        "high": 211500.0,
+        "low": 190800.0,
+        "close": 210500.0,
+        "volume": 675737,
+        "amount": null,
+        "change_pct": 12.75
+      },
+      {
+        "date": "2026-10-19",
+        "open": 199100.0,
+        "high": 218500.0,
+        "low": 197400.0,
+        "close": 216500.0,
+        "volume": 620262,
+        "amount": null,
+        "change_pct": 2.85
+      },
+      {
+        "date": "2026-10-20",
+        "open": 211000.0,
+        "high": 211000.0,
+        "low": 195700.0,
+        "close": 196000.0,
+        "volume": 536545,
+        "amount": null,
+        "change_pct": -9.47
+      },
+      {
+        "date": "2026-10-21",
+        "open": 205000.0,
+        "high": 207000.0,
+        "low": 197700.0,
+        "close": 203000.0,
+        "volume": 523927,
+        "amount": null,
+        "change_pct": 3.57
+      },
+      {
+        "date": "2026-10-22",
+        "open": 199600.0,
+        "high": 202500.0,
+        "low": 190000.0,
+        "close": 191200.0,
+        "volume": 574029,
+        "amount": null,
+        "change_pct": -5.81
+      },
+      {
+        "date": "2026-10-23",
+        "open": 187000.0,
+        "high": 191100.0,
+        "low": 182100.0,
+        "close": 188500.0,
+        "volume": 655464,
+        "amount": null,
+        "change_pct": -1.41
+      },
+      {
+        "date": "2026-10-26",
+        "open": 185600.0,
+        "high": 191000.0,
+        "low": 182000.0,
+        "close": 184700.0,
+        "volume": 467899,
+        "amount": null,
+        "change_pct": -2.02
+      },
+      {
+        "date": "2026-10-27",
+        "open": 192100.0,
+        "high": 196000.0,
+        "low": 189000.0,
+        "close": 193600.0,
+        "volume": 656744,
+        "amount": null,
+        "change_pct": 4.82
+      },
+      {
+        "date": "2026-10-28",
+        "open": 197200.0,
+        "high": 206000.0,
+        "low": 195300.0,
+        "close": 205500.0,
+        "volume": 466142,
+        "amount": null,
+        "change_pct": 6.15
+      },
+      {
+        "date": "2026-10-29",
+        "open": 201000.0,
+        "high": 202500.0,
+        "low": 189700.0,
+        "close": 194600.0,
+        "volume": 600574,
+        "amount": null,
+        "change_pct": -5.3
+      },
+      {
+        "date": "2026-10-30",
+        "open": 188700.0,
+        "high": 191100.0,
+        "low": 181100.0,
+        "close": 181300.0,
+        "volume": 939379,
+        "amount": null,
+        "change_pct": -6.83
+      },
+      {
+        "date": "2026-11-02",
+        "open": 178500.0,
+        "high": 193500.0,
+        "low": 178400.0,
+        "close": 192100.0,
+        "volume": 662243,
+        "amount": null,
+        "change_pct": 5.96
+      },
+      {
+        "date": "2026-11-03",
+        "open": 186300.0,
+        "high": 186300.0,
+        "low": 178600.0,
+        "close": 183300.0,
+        "volume": 532629,
+        "amount": null,
+        "change_pct": -4.58
+      },
+      {
+        "date": "2026-11-04",
+        "open": 185400.0,
+        "high": 191000.0,
+        "low": 177100.0,
+        "close": 187100.0,
+        "volume": 790336,
+        "amount": null,
+        "change_pct": 2.07
+      },
+      {
+        "date": "2026-11-05",
+        "open": 179000.0,
+        "high": 179100.0,
+        "low": 166900.0,
+        "close": 168100.0,
+        "volume": 772326,
+        "amount": null,
+        "change_pct": -10.15
+      },
+      {
+        "date": "2026-11-06",
+        "open": 148000.0,
+        "high": 166100.0,
+        "low": 148000.0,
+        "close": 163300.0,
+        "volume": 1279037,
+        "amount": null,
+        "change_pct": -2.86
+      },
+      {
+        "date": "2026-11-09",
+        "open": 156000.0,
+        "high": 169100.0,
+        "low": 155000.0,
+        "close": 157500.0,
+        "volume": 574067,
+        "amount": null,
+        "change_pct": -3.55
+      },
+      {
+        "date": "2026-11-10",
+        "open": 170100.0,
+        "high": 174400.0,
+        "low": 167500.0,
+        "close": 173400.0,
+        "volume": 510369,
+        "amount": null,
+        "change_pct": 10.1
+      }
+    ],
+    "latest_change_pct": 0.10095238095238095,
+    "avg_volume_20d": 712229.65,
+    "gain_5d": -5.4,
+    "gain_20d": -24.61,
+    "gain_60d": -18.59
+  },
+  "volume_data": {
+    "latest_volume": 510369,
+    "avg_volume": 712229.65,
+    "volume_ratio": 0.716579266252114,
+    "latest_amount": null
+  },
+  "financial_data": {},
+  "disclosures": [],
+  "news": [
+    {
+      "title": "[ET특징주] 한미반도체, 500억 규모 스페이스X 주식 취득 결정에… 주가 10%↑ - 전자신문",
+      "published_at": "Fri, 12 Jun 2026 07:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5WUng1cjVZcDM4ZzJkc0dIUV9RdXN2OE1HeEdVdVFLSHNTSWY2bUx2T2VweHhQWjh5NFZ1djZ4bk4yX2hwYmNFX3h3aHlPQQ?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:16+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "한미반도체 주가, 오늘 급등한 이유는? - Investing.com 한국어",
+      "published_at": "Fri, 12 Jun 2026 07:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1QaUFWdDBQTGdIelRxS3NmeG9ZT1NJNmJYNDg0WE44U0FydHA5OGI1TkJrSUhTeFVZX1V1YmEtUnBHUm1mbmJTZzNVYUZHRmc5TUY1bUJBbEs0ZFJlM1pCUjNLWktEWElZektrZDZrV3RPakZiR3FR?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:16+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "\"한미반도체, 강한 이익 성장 전망…목표주가 상향”[클릭 e종목] - 아시아경제",
+      "published_at": "Fri, 22 May 2026 07:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1NRjAxQlRJbnhQWU9nUWZIaEttcTd5NjBPYmdJRXJyZ09mVHdmbTNTWXBnZDF4VVJveWpJdW83Sm5HcEluNExsNXBaTDNmQURDNEJYMVBzYnF3aFJhQk00TA?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:16+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "한미반도체, 3분기 영업이익 908억…3년 연속 최대 매출 전망 - 한국경제",
+      "published_at": "Fri, 30 Oct 2026 02:06:51 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wbmhvN0hhWi1UYXZrUFZzdHVMdE91bmN4Sm9nYXI4bWlmZ2M4LVBnUmE1blF4ZkRpekdHd29RcjNqcERwcTQwczRnX3lOeFd5OFotSTlGbWlxUQ?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:17+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "한미반도체, 3분기 영업익 908억원… 전년比 34%↑ - Chosunbiz",
+      "published_at": "Fri, 30 Oct 2026 07:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPU3k1UGRLWWdmUlFBOXZZRVExbE5nSVpUX192S3FvXzRWYWdpQ3FVX0VRNTFUTE93TW1KQm82QWU3Vm84Umo0bVpDdHhuUGNfWjZoRkVGSmlXRFBWQWQ1OS1BdUdHa0dZN0RMTEFJS0g1NEtzTndJVVIyWUotQmZ4RFJR0gGWAUFVX3lxTE9LYnV6Z1VKVnF2NEdibXhNOTVFTHhKUUhBM1FtVGxXdXgzMzBYWGZxM0lWSU1NYWdINWZsdFVJRC1vMk1VYVYwcThrMXdlZEF3NGotZEhvQktKUzlNaWd3R0pycmItS3RQOEFWQzdyLXMzdk56Zl9GRXpaZFJSSnNXNzZheTVqbDgzQVZPN0YwWmxUTXFiQQ?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:17+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "반도체 질주에… 장비도 연간 실적 청신호 - 파이낸셜뉴스",
+      "published_at": "Mon, 09 Nov 2026 09:14:15 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE4wYVBDS2NKSUthOVA4SUZrYTlHOVFVR0VuSkJQa2JRMmxhdDBETTZXOW83UllaWHVOT0FqcVo3NjRScmRVRXJSV2JZYjFLZUx2MXJJRFBJMzdmUQ?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:17+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "곽동신 한미반도체 회장, HBM 장비 혁신 주도⋯3년 연속 매출 신기록 가시권 [CEO 탐구생활] - 이투데이",
+      "published_at": "Mon, 09 Nov 2026 20:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1oUjZYcEl4UnBUbVBuUnVpWG1jTFc0UXh0Z04yOEFRcms4QTZyUFBRaHNxXzlhR1ZLbGdnNjZDUllUY1hhdnZtOGwwS3N0bjN4YTZkMA?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:17+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "'곽신'으로 예술 경계 허문 곽동신…한미반도체 브랜드 혁신 이끈다 [CEO 탐구생활] - 이투데이",
+      "published_at": "Mon, 09 Nov 2026 20:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE15UkZGbTJxYUhPdVFuSlFtTE80V2dGQzhEWWRDVElhM19ISnB1UWdaN2hGMk9BMzg4YllmT0xiMHd1TS1vSXRkdHJfTVl4SjJfdTZnag?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:17+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "천당과 지옥 오간 한미반도체 주가…현 시점 전략 짜보니 - 한국경제",
+      "published_at": "Mon, 14 Sep 2026 07:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1ONnkteGpNWFRzSzE2ZzFrakRqbEpGLVVfNXNwd0pFV0FkN3luU1BnbXF6cmZJSUd6TFlEeUpHbXp0WnlIazRnRmFhMzJnV2dkdGR2ak55cXFFdw?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:16+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "HBM 넘어 시스템반도체로…한미반도체, AI 장비 영토 확장 - 비즈워치",
+      "published_at": "Sat, 26 Sep 2026 07:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1ZbDlRNlg0dktEQmxYMHpfajBYU1hUZFRYS2hFalFFTENXS1p1QzF6RlFWdW5LWnZGbGJmTzNZSmpHVmVLRTh5a1FtcTk5M1paUGdzV1dVRUJoTlM0QUdSUlNSRjJCWWFuYkFzTQ?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:17+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "한미반도체 폭등 맞힌 ‘주식 타짜’ “다음 텐배거는 이 종목” - 중앙일보",
+      "published_at": "Sun, 04 Oct 2026 07:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9EOWVoa1VNTmFMY1hKQS1heWdvN2FQdTlxWnVna0cyYVBMbk9vRElDS2dfWEJSb0R0eC1xM2M1Zy1FZDdWZ0lFWUJ4dHZ2ckRlSnkySk5R?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:16+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "한미·한화, HBM TC본더 특허 맞소송···검사·평탄화 기술 공방 - 시사저널e",
+      "published_at": "Thu, 10 Sep 2026 07:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5xdUdzc1ZySkxpTVpDZEhyTzJKTEhfYWFGSE52dWJmS2hoT1MwalFnbDQ0WFFMRUdzdmZrVXdIMUVVRXkzZDBCenpYVHYxY1ByWlZBN0VhRXRPVjdiNE85YTRxNklrYTdGb1IzX0UyWjJIQdIBdkFVX3lxTE9jaGxKSDR1UlZSNjZMcy1MT29QanMxZEZHRXN1UzRtcl9Vd2tVQ3FTc2RRNGJuNDF0R2JURWdfOHZ0THQtRWctZVZLMFk5enhTa0xtQ0g1MVpab0JwSTlPcFRBLVpVazU4LWxOclcyUlFiM19aV0E?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:17+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "한미반도체, 마이크론 '최우수 공급업체상' 2년 연속 수상 - 연합뉴스",
+      "published_at": "Thu, 22 Oct 2026 07:00:00 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9wWEZiUVBVd1dReURxU3I0S3pUNXZzQ3EwbHdUSVQ5NU80bm9IU1djOVB0RHMwODl0TnNDXzctdTBJLWpramJVTEF1endUNEVkRFVLVktBa0hPVjDSAWBBVV95cUxQLUxuaFNOeTFBclZaNTZ4RVlKN3RTZFlURmFoMEFKRlRGTTc1bllxaDFZOWYzY2tuOW1TUGw1ay02blRkV05ldHhZcllXSkpkVEhEV3M1NmVBRDlpY0FIZ2g?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:17+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "한미반도체 주가 22만5000원으로 하락…개인 5거래일 연속 매수, 프로그램은 6거래일 매도 - CBC뉴스",
+      "published_at": "Tue, 03 Nov 2026 14:34:38 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFA0Nzlxdm15UkxtTU1EN0tyWGRFYVdzLTFjMlZpbVpnazR5bU1ZUXJhZXhDaXdSc3pzNy1rREdxZlN0T0ZCeUdSb3V6alVSSjF5VlU2V1BZSkhORTBwZFdoZ1VfWQ?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:16+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    },
+    {
+      "title": "한미반도체 주가 상승 중 - 아시아뉴스통신",
+      "published_at": "Tue, 10 Nov 2026 00:33:58 GMT",
+      "source": "Google News",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBJeWdlNWppUHR2SEw3UU1adllMSUwwZ0dsQmNMakoxV1NDR2FOZGNUUERyRVlRYXB6SG1TeVNRSm1hV2ZzR2k2THB5YjUxZVdTMHZyVHhTYkpheFJpZnlLZVc4Tmt1NXV3T3Fhamg1aG1MS0Ja?oc=5",
+      "summary": "",
+      "entities": [],
+      "keywords": [],
+      "raw": {},
+      "collected_at": "2026-11-10T06:51:16+00:00",
+      "source_id": "google.news",
+      "original_id": ""
+    }
+  ],
+  "news_clusters": [
+    {
+      "cluster_id": "242f7f833f1b",
+      "headline": "[ET특징주] 한미반도체, 500억 규모 스페이스X 주식 취득 결정에… 주가 10%↑ - 전자신문",
+      "items": [
+        {
+          "title": "[ET특징주] 한미반도체, 500억 규모 스페이스X 주식 취득 결정에… 주가 10%↑ - 전자신문",
+          "published_at": "Fri, 12 Jun 2026 07:00:00 GMT",
+          "source": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5WUng1cjVZcDM4ZzJkc0dIUV9RdXN2OE1HeEdVdVFLSHNTSWY2bUx2T2VweHhQWjh5NFZ1djZ4bk4yX2hwYmNFX3h3aHlPQQ?oc=5",
+          "summary": "",
+          "entities": [],
+          "keywords": [],
+          "raw": {},
+          "collected_at": "2026-11-10T06:51:16+00:00",
+          "source_id": "google.news",
+          "original_id": ""
+        }
+      ],
+      "source_count": 1,
+      "first_published": "Fri, 12 Jun 2026 07:00:00 GMT",
+      "last_published": "Fri, 12 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "cluster_id": "12aa9318f65c",
+      "headline": "한미반도체 주가, 오늘 급등한 이유는? - Investing.com 한국어",
+      "items": [
+        {
+          "title": "한미반도체 주가, 오늘 급등한 이유는? - Investing.com 한국어",
+          "published_at": "Fri, 12 Jun 2026 07:00:00 GMT",
+          "source": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1QaUFWdDBQTGdIelRxS3NmeG9ZT1NJNmJYNDg0WE44U0FydHA5OGI1TkJrSUhTeFVZX1V1YmEtUnBHUm1mbmJTZzNVYUZHRmc5TUY1bUJBbEs0ZFJlM1pCUjNLWktEWElZektrZDZrV3RPakZiR3FR?oc=5",
+          "summary": "",
+          "entities": [],
+          "keywords": [],
+          "raw": {},
+          "collected_at": "2026-11-10T06:51:16+00:00",
+          "source_id": "google.news",
+          "original_id": ""
+        }
+      ],
+      "source_count": 1,
+      "first_published": "Fri, 12 Jun 2026 07:00:00 GMT",
+      "last_published": "Fri, 12 Jun 2026 07:00:00 GMT"
+    },
+    {
+      "cluster_id": "7059f5605986",
+      "headline": "\"한미반도체, 강한 이익 성장 전망…목표주가 상향”[클릭 e종목] - 아시아경제",
+      "items": [
+        {
+          "title": "\"한미반도체, 강한 이익 성장 전망…목표주가 상향”[클릭 e종목] - 아시아경제",
+          "published_at": "Fri, 22 May 2026 07:00:00 GMT",
+          "source": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1NRjAxQlRJbnhQWU9nUWZIaEttcTd5NjBPYmdJRXJyZ09mVHdmbTNTWXBnZDF4VVJveWpJdW83Sm5HcEluNExsNXBaTDNmQURDNEJYMVBzYnF3aFJhQk00TA?oc=5",
+          "summary": "",
+          "entities": [],
+          "keywords": [],
+          "raw": {},
+          "collected_at": "2026-11-10T06:51:16+00:00",
+          "source_id": "google.news",
+          "original_id": ""
+        }
+      ],
+      "source_count": 1,
+      "first_published": "Fri, 22 May 2026 07:00:00 GMT",
+      "last_published": "Fri, 22 May 2026 07:00:00 GMT"
+    },
+    {
+      "cluster_id": "c6c40ace8e2f",
+      "headline": "한미반도체, 3분기 영업이익 908억…3년 연속 최대 매출 전망 - 한국경제",
+      "items": [
+        {
+          "title": "한미반도체, 3분기 영업이익 908억…3년 연속 최대 매출 전망 - 한국경제",
+          "published_at": "Fri, 30 Oct 2026 02:06:51 GMT",
+          "source": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE0wbmhvN0hhWi1UYXZrUFZzdHVMdE91bmN4Sm9nYXI4bWlmZ2M4LVBnUmE1blF4ZkRpekdHd29RcjNqcERwcTQwczRnX3lOeFd5OFotSTlGbWlxUQ?oc=5",
+          "summary": "",
+          "entities": [],
+          "keywords": [],
+          "raw": {},
+          "collected_at": "2026-11-10T06:51:17+00:00",
+          "source_id": "google.news",
+          "original_id": ""
+        }
+      ],
+      "source_count": 1,
+      "first_published": "Fri, 30 Oct 2026 02:06:51 GMT",
+      "last_published": "Fri, 30 Oct 2026 02:06:51 GMT"
+    },
+    {
+      "cluster_id": "8624bfab89f2",
+      "headline": "한미반도체, 3분기 영업익 908억원… 전년比 34%↑ - Chosunbiz",
+      "items": [
+        {
+          "title": "한미반도체, 3분기 영업익 908억원… 전년比 34%↑ - Chosunbiz",
+          "published_at": "Fri, 30 Oct 2026 07:00:00 GMT",
+          "source": "Google News",
+          "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPU3k1UGRLWWdmUlFBOXZZRVExbE5nSVpUX192S3FvXzRWYWdpQ3FVX0VRNTFUTE93TW1KQm82QWU3Vm84Umo0bVpDdHhuUGNfWjZoRkVGSmlXRFBWQWQ1OS1BdUdHa0dZN0RMTEFJS0g1NEtzTndJVVIyWUotQmZ4RFJR0gGWAUFVX3lxTE9LYnV6Z1VKVnF2NEdibXhNOTVFTHhKUUhBM1FtVGxXdXgzMzBYWGZxM0lWSU1NYWdINWZsdFVJRC1vMk1VYVYwcThrMXdlZEF3NGotZEhvQktKUzlNaWd3R0pycmItS3RQOEFWQzdyLXMzdk56Zl9GRXpaZFJSSnNXNzZheTVqbDgzQVZPN0YwWmxUTXFiQQ?oc=5",
+          "summary": "",
+          "entities": [],
+          "keywords": [],
+          "raw": {},
+          "collected_at": "2026-11-10T06:51:17+00:00",
+          "source_id": "google.news",
+          "original_id": ""
+        }
+      ],
+      "source_count": 1,
+      "first_published": "Fri, 30 Oct 2026 07:00:00 GMT",
+      "last_published": "Fri, 30 Oct 2026 07:00:00 GMT"
+    }
+  ],
+  "industry_data": {},
+  "related_entities": [
+    {
+      "name": "삼성전자",
+      "ticker": "005930",
+      "entity_type": "corp",
+      "extra": {}
+    },
+    {
+      "name": "SK하이닉스",
+      "ticker": "000660",
+      "entity_type": "corp",
+      "extra": {}
+    },
+    {
+      "name": "LG에너지솔루션",
+      "ticker": "373220",
+      "entity_type": "corp",
+      "extra": {}
+    },
+    {
+      "name": "삼성바이오로직스",
+      "ticker": "207940",
+      "entity_type": "corp",
+      "extra": {}
+    },
+    {
+      "name": "현대차",
+      "ticker": "005380",
+      "entity_type": "corp",
+      "extra": {}
+    }
+  ],
+  "historical_cases": [],
+  "sources": [
+    {
+      "source_id": "naver.stock",
+      "name": "가격/거래량 데이터",
+      "type": "stock_price",
+      "url": "https://finance.naver.com/item/main.naver?code=042700",
+      "published_at": null,
+      "accessed_at": "2026-11-10T06:51:16+00:00",
+      "original_id": null
+    },
+    {
+      "source_id": "google.news",
+      "name": "Google News",
+      "type": "news",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5WUng1cjVZcDM4ZzJkc0dIUV9RdXN2OE1HeEdVdVFLSHNTSWY2bUx2T2VweHhQWjh5NFZ1djZ4bk4yX2hwYmNFX3h3aHlPQQ?oc=5",
+      "published_at": "Fri, 12 Jun 2026 07:00:00 GMT",
+      "accessed_at": "2026-11-10T06:51:17+00:00",
+      "original_id": null
+    }
+  ],
+  "built_at": "2026-11-10T06:51:16+00:00",
+  "status": "built"
+}

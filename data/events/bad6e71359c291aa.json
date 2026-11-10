@@ -1,0 +1,32 @@
+{
+  "event_id": "bad6e71359c291aa",
+  "event_type": "news_event",
+  "entity": {
+    "name": "시큐리타이즈, 리버 원 인수…6조 달",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-10T06:51:08+00:00",
+  "event_date": "Tue, 10 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 시큐리타이즈, 리버 원 인수…6조 달러 담보금융 시장 진출 - 뉴스1",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE11X2FYZW5kTG5WZnlsUkJkYzdZQkMyM2ZBYmUxaVhSUkplc005UlpyRHB4TWpHZUlMYUFVcjZTdmFnTWs1YmZJb1ltR2NEaDFfemZHcldMVzJ5OGlnV2FRTTRPemh2QQ?oc=5",
+    "title": "시큐리타이즈, 리버 원 인수…6조 달러 담보금융 시장 진출 - 뉴스1"
+  },
+  "summary": "뉴스: 시큐리타이즈, 리버 원 인수…6조 달러 담보금융 시장 진출 - 뉴스1"
+}

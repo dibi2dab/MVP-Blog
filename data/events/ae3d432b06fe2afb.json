@@ -1,0 +1,32 @@
+{
+  "event_id": "ae3d432b06fe2afb",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] 동원파츠, 코스닥 상장 첫",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-10T06:51:08+00:00",
+  "event_date": "Tue, 10 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] 동원파츠, 코스닥 상장 첫날 10%대 상승(종합) - 연합뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1rT2pXR0MyaGxxWjduMl9FWkg2TVJUXzU3aTk2elg1bnZ2ZTl5UGVfeVlrYTZwSUdMWFYzeWdxUGxtclUxS0lXUUZmLXdpbXQxZlFJMkJBQ251RmfSAWBBVV95cUxQZUs3TWVXeHJMbGd6dm5KU2pwZVBEU1RqVGtJNEJFY2dNMGxHU2ZpdzZkUGdzWmJrbmkyQUU1Qm9fdGpQeFZjSGZCOEZKN2NXOWR5cG5GMmNMcjdfcU9BTEo?oc=5",
+    "title": "[특징주] 동원파츠, 코스닥 상장 첫날 10%대 상승(종합) - 연합뉴스"
+  },
+  "summary": "뉴스: [특징주] 동원파츠, 코스닥 상장 첫날 10%대 상승(종합) - 연합뉴스"
+}

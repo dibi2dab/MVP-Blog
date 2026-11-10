@@ -1,0 +1,32 @@
+{
+  "event_id": "287140bf246e53aa",
+  "event_type": "news_event",
+  "entity": {
+    "name": "국민 6명 중 1명은 삼성전자 주주?",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-10T06:51:08+00:00",
+  "event_date": "Mon, 09 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 국민 6명 중 1명은 삼성전자 주주?…상장사 70%는 ‘썰렁’ - 경기일보",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1BQWdNdldjTEN5d0RFZS0wdzRmeklfb1ctcGVTLUJsZ0dwWHB2cW42NmlFWFhRYm1oQVU1cFRleXgzR0RTSGhmSWJrM09qcVVTb0c5UDAtSkxZalE?oc=5",
+    "title": "국민 6명 중 1명은 삼성전자 주주?…상장사 70%는 ‘썰렁’ - 경기일보"
+  },
+  "summary": "뉴스: 국민 6명 중 1명은 삼성전자 주주?…상장사 70%는 ‘썰렁’ - 경기일보"
+}
