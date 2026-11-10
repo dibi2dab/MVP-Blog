@@ -1,0 +1,524 @@
+{
+  "article_id": "crystal-patreon-membership",
+  "blog": "crystal",
+  "title": "Patreon 멤버십 구독 수익, 30명이면 월 얼마가 남을까",
+  "seo_title": "Patreon 멤버십 구독 수익, 30명이면 월 얼마가 남을까",
+  "slug": "crystal-patreon-membership-멤버십-구독",
+  "meta_description": "Patreon 멤버십 구독을 월 5,000원, 구독자 30명으로 가정할 때 10% 수수료를 반영한 실제 수익과 초기 비용, 시간당 순수익, 손익분기를 계산했습니다.",
+  "primary_keyword": "멤버십 구독",
+  "secondary_keywords": [
+    "Patreon 수수료",
+    "구독 수익",
+    "크리에이터 수익"
+  ],
+  "category": "디지털 상품",
+  "tags": [
+    "Patreon",
+    "멤버십",
+    "구독 수익",
+    "디지털 상품"
+  ],
+  "body_markdown": "Patreon 멤버십 구독 수익은 구독자 수와 수수료율에 따라 달라집니다. 월 5,000원 멤버십과 구독자 30명을 기준으로 실제로 남는 금액을 계산했습니다 [S1].\n\n구독형 수익은 매달 반복되는 현금흐름을 만들 수 있지만, 플랫폼 수수료와 이탈률을 반영하지 않으면 순이익을 과대평가하기 쉽습니다.\n\n## 수익 구조 요약\n\n| 항목 | 값 | 기준 |\n| --- | ---: | --- |\n| 초기 투자 | 50,000원 | 카탈로그에 기록된 시작 비용 |\n| 월 예상 매출 | 135,000원 | 입력한 방문자·판매량·단가 기준 |\n| 월 운영 비용 | 0원 | 고정비와 단위당 변동비 합계 |\n| 월 예상 순이익 | 135,000원 | 매출에서 운영 비용을 뺀 값 |\n| 손익분기 도달 기간 | 0.4개월 | 초기 투자 회수에 걸리는 기간 |\n| 시간당 순수익 | 16,875원 | 월 순이익을 투입 시간으로 나눈 값 |\n| ROI | 270.0% | 월 순이익을 초기 투자로 나눈 비율 |\n\n## 구독 수익과 이탈 위험\n\n구독 매출은 가입자 수와 월 회비의 곱입니다. 신규 가입이 멈추면 매출도 멈추고, 해지가 늘면 기존 매출이 줄어듭니다. 결제 수수료와 환불은 실제 입금액을 추가로 줄입니다.\n\n초기 투자는 50,000원입니다. 월 순이익이 유지된다는 전제에서만 표의 손익분기 기간이 성립하며, 매출이 줄거나 비용이 늘면 회수 기간은 그만큼 길어집니다.\n\n월 순이익이 플러스로 계산됐더라도 세금, 환불, 본인이 정하지 않은 비용은 포함되지 않았습니다. 실제 입금액은 정산 주기와 수수료 구조를 한 번 더 확인해야 합니다.\n\n## 수익 변동과 운영 부담\n\n이 수익 구조에서 먼저 봐야 할 것은 수익이 흔들릴 때의 영향과 운영에 드는 시간입니다.\n\n구독자 이탈과 신규 유입에 따라 월 수익이 변동하며, 플랫폼 수수료 정책도 바뀔 수 있습니다.\n\n매달 회원 전용 콘텐츠를 꾸준히 제공해야 하므로 기획과 제작 시간이 반복적으로 필요합니다.\n\n구독자는 반복 수익을 만들 수 있으나, 콘텐츠 품질과 커뮤니티 관리가 유지되지 않으면 이탈이 늘어납니다.\n\n## 시나리오 분석\n\n입력값을 보수적·기준·적극적으로 바꾼 조건별 계산입니다. 미래 예측이 아니라 조건이 달라질 때 결과가 어떻게 움직이는지 보여줍니다.\n\n| 시나리오 | 가정 | 월 매출 | 월 비용 | 월 순이익 | 시간당 순수익 | ROI |\n| --- | --- | --- | --- | --- | --- | --- |\n| 보수적 | 기준 처리량의 0.50배, 고정비 0원 유지 | 67,500원 | 0원 | 67,500원 | 8,438원 | 135.0% |\n| 기준 | 기준 처리량의 1.00배, 고정비 0원 유지 | 135,000원 | 0원 | 135,000원 | 16,875원 | 270.0% |\n| 적극적 | 기준 처리량의 1.50배, 고정비 0원 유지 | 202,500원 | 0원 | 202,500원 | 25,312원 | 405.0% |\n\n## 공식 자료와 편집상 가정\n\n공식 자료에서 확인한 값과, 자료가 없어 설정한 가정을 구분했습니다. 가정은 실제 결과와 다를 수 있습니다.\n\n| 구분 | 항목 | 값 | 근거 |\n| --- | --- | ---: | --- |\n| 편집상 가정 | 단위당 판매가 | 4500원 | 공식 자료 없음 |\n| 편집상 가정 | 월 판매·구독 수량 | 30건 | 공식 자료 없음 |\n| 편집상 가정 | 월 투입 시간 | 8.0시간 | 공식 자료 없음 |\n| 편집상 가정 | Patreon 수수료 반영 후 단가 | 4,500원 | 편집상 가정 — 월 5,000원에서 공식 10% 수수료를 제외 |\n| 편집상 가정 | 결제 처리 수수료 | 계산에서 제외 | 공식 자료 없음 |\n| 편집상 가정 | 구독자 이탈률 | 계산에서 제외 | 공식 자료 없음 |\n\n## 시작 전 확인할 점\n\n- Patreon 요금제와 수수료율을 공식 가격표에서 확인했는가\n- 매달 제공할 회원 전용 콘텐츠를 계획했는가\n- 구독자 이탈률과 환불 정책을 확인했는가\n- 콘텐츠 제작에 들어가는 월 시간을 확보할 수 있는가\n- 구독자 수가 목표에 못 미칠 때 중단할 기준을 정했는가\n\n## 이 계산의 한계\n\n- Patreon 수수료는 요금제와 결제 방식에 따라 달라질 수 있으므로 공식 가격표를 다시 확인해야 합니다.\n- 월 30명 구독자는 실제 성과가 아니라 계산을 위한 편집상 가정입니다.\n\n이 글의 수치는 명시한 가정에 따른 계산 결과이며, 특정 수익을 보장하지 않습니다.\n",
+  "body_with_sources": "Patreon 멤버십 구독 수익은 구독자 수와 수수료율에 따라 달라집니다. 월 5,000원 멤버십과 구독자 30명을 기준으로 실제로 남는 금액을 계산했습니다 [S1].\n\n구독형 수익은 매달 반복되는 현금흐름을 만들 수 있지만, 플랫폼 수수료와 이탈률을 반영하지 않으면 순이익을 과대평가하기 쉽습니다.\n\n## 수익 구조 요약\n\n| 항목 | 값 | 기준 |\n| --- | ---: | --- |\n| 초기 투자 | 50,000원 | 카탈로그에 기록된 시작 비용 |\n| 월 예상 매출 | 135,000원 | 입력한 방문자·판매량·단가 기준 |\n| 월 운영 비용 | 0원 | 고정비와 단위당 변동비 합계 |\n| 월 예상 순이익 | 135,000원 | 매출에서 운영 비용을 뺀 값 |\n| 손익분기 도달 기간 | 0.4개월 | 초기 투자 회수에 걸리는 기간 |\n| 시간당 순수익 | 16,875원 | 월 순이익을 투입 시간으로 나눈 값 |\n| ROI | 270.0% | 월 순이익을 초기 투자로 나눈 비율 |\n\n## 구독 수익과 이탈 위험\n\n구독 매출은 가입자 수와 월 회비의 곱입니다. 신규 가입이 멈추면 매출도 멈추고, 해지가 늘면 기존 매출이 줄어듭니다. 결제 수수료와 환불은 실제 입금액을 추가로 줄입니다.\n\n초기 투자는 50,000원입니다. 월 순이익이 유지된다는 전제에서만 표의 손익분기 기간이 성립하며, 매출이 줄거나 비용이 늘면 회수 기간은 그만큼 길어집니다.\n\n월 순이익이 플러스로 계산됐더라도 세금, 환불, 본인이 정하지 않은 비용은 포함되지 않았습니다. 실제 입금액은 정산 주기와 수수료 구조를 한 번 더 확인해야 합니다.\n\n## 수익 변동과 운영 부담\n\n이 수익 구조에서 먼저 봐야 할 것은 수익이 흔들릴 때의 영향과 운영에 드는 시간입니다.\n\n구독자 이탈과 신규 유입에 따라 월 수익이 변동하며, 플랫폼 수수료 정책도 바뀔 수 있습니다.\n\n매달 회원 전용 콘텐츠를 꾸준히 제공해야 하므로 기획과 제작 시간이 반복적으로 필요합니다.\n\n구독자는 반복 수익을 만들 수 있으나, 콘텐츠 품질과 커뮤니티 관리가 유지되지 않으면 이탈이 늘어납니다.\n\n## 시나리오 분석\n\n입력값을 보수적·기준·적극적으로 바꾼 조건별 계산입니다. 미래 예측이 아니라 조건이 달라질 때 결과가 어떻게 움직이는지 보여줍니다.\n\n| 시나리오 | 가정 | 월 매출 | 월 비용 | 월 순이익 | 시간당 순수익 | ROI |\n| --- | --- | --- | --- | --- | --- | --- |\n| 보수적 | 기준 처리량의 0.50배, 고정비 0원 유지 | 67,500원 | 0원 | 67,500원 | 8,438원 | 135.0% |\n| 기준 | 기준 처리량의 1.00배, 고정비 0원 유지 | 135,000원 | 0원 | 135,000원 | 16,875원 | 270.0% |\n| 적극적 | 기준 처리량의 1.50배, 고정비 0원 유지 | 202,500원 | 0원 | 202,500원 | 25,312원 | 405.0% |\n\n## 공식 자료와 편집상 가정\n\n공식 자료에서 확인한 값과, 자료가 없어 설정한 가정을 구분했습니다. 가정은 실제 결과와 다를 수 있습니다.\n\n| 구분 | 항목 | 값 | 근거 |\n| --- | --- | ---: | --- |\n| 편집상 가정 | 단위당 판매가 | 4500원 | 공식 자료 없음 |\n| 편집상 가정 | 월 판매·구독 수량 | 30건 | 공식 자료 없음 |\n| 편집상 가정 | 월 투입 시간 | 8.0시간 | 공식 자료 없음 |\n| 편집상 가정 | Patreon 수수료 반영 후 단가 | 4,500원 | 편집상 가정 — 월 5,000원에서 공식 10% 수수료를 제외 |\n| 편집상 가정 | 결제 처리 수수료 | 계산에서 제외 | 공식 자료 없음 |\n| 편집상 가정 | 구독자 이탈률 | 계산에서 제외 | 공식 자료 없음 |\n\n## 시작 전 확인할 점\n\n- Patreon 요금제와 수수료율을 공식 가격표에서 확인했는가\n- 매달 제공할 회원 전용 콘텐츠를 계획했는가\n- 구독자 이탈률과 환불 정책을 확인했는가\n- 콘텐츠 제작에 들어가는 월 시간을 확보할 수 있는가\n- 구독자 수가 목표에 못 미칠 때 중단할 기준을 정했는가\n\n## 이 계산의 한계\n\n- Patreon 수수료는 요금제와 결제 방식에 따라 달라질 수 있으므로 공식 가격표를 다시 확인해야 합니다.\n- 월 30명 구독자는 실제 성과가 아니라 계산을 위한 편집상 가정입니다.\n\n이 글의 수치는 명시한 가정에 따른 계산 결과이며, 특정 수익을 보장하지 않습니다.\n\n\n## 출처\n\n- [S1] [Patreon pricing](https://www.patreon.com/pricing) — Patreon 공식 (2026-11-07)\n- [S2] [Creator fees](https://support.patreon.com/hc/en-us/articles/11111747095181) — Patreon 공식 도움말 (2026-11-07)\n- [S3] [Patreon 공식 홈페이지](https://www.patreon.com/) — Patreon 공식 (2026-11-07)\n",
+  "analysis": {
+    "framework": "CPPI",
+    "framework_name": "Crystal Practical Profitability Index (CPPI)",
+    "purpose": "온라인 수익 모델의 수익성, 비용 효율, 시간 효율, 실행 가능성, 위험 관리를 같은 기준으로 비교한다.",
+    "formula": "CPPI = (Revenue Potential x 0.25) + (Cost Efficiency x 0.20) + (Time Efficiency x 0.20) + (Execution Feasibility x 0.20) + (Risk Management x 0.15)",
+    "dimensions": [
+      {
+        "name": "Revenue Potential",
+        "score": 5.16,
+        "weight": 0.25,
+        "rationale": "예상 매출 0.3, 예상 순이익 5.2, 투자수익률(ROI) 10.0",
+        "unavailable": false,
+        "mapped_items": [
+          "expected_revenue",
+          "expected_net_profit",
+          "roi"
+        ]
+      },
+      {
+        "name": "Cost Efficiency",
+        "score": 9.97,
+        "weight": 0.2,
+        "rationale": "초기 투자 비용 9.9, 월간 운영 비용 10.0, 손익분기점 10.0",
+        "unavailable": false,
+        "mapped_items": [
+          "initial_investment",
+          "monthly_operating_cost",
+          "break_even"
+        ]
+      },
+      {
+        "name": "Time Efficiency",
+        "score": 3.38,
+        "weight": 0.2,
+        "rationale": "시간당 순수익 3.4",
+        "unavailable": false,
+        "mapped_items": [
+          "hourly_net_profit"
+        ]
+      },
+      {
+        "name": "Execution Feasibility",
+        "score": 5.0,
+        "weight": 0.2,
+        "rationale": "운영 난이도 5.0",
+        "unavailable": false,
+        "mapped_items": [
+          "operational_difficulty"
+        ]
+      },
+      {
+        "name": "Risk Management",
+        "score": 5.0,
+        "weight": 0.15,
+        "rationale": "수익 변동 위험 3.0, 장기 지속 가능성 7.0",
+        "unavailable": false,
+        "mapped_items": [
+          "revenue_variability",
+          "long_term_sustainability"
+        ]
+      }
+    ],
+    "evaluation_items": [
+      {
+        "key": "initial_investment",
+        "name": "초기 투자 비용",
+        "value": 50000.0,
+        "display": "50,000원",
+        "unit": "원",
+        "score": 9.9,
+        "basis": "초기 투자 비용이 낮을수록 높은 점수(0원=10, 500만원 이상=0).",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "monthly_operating_cost",
+        "name": "월간 운영 비용",
+        "value": 0.0,
+        "display": "0원",
+        "unit": "원",
+        "score": 10.0,
+        "basis": "월 운영 비용이 낮을수록 높은 점수(0원=10, 100만원 이상=0).",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "expected_revenue",
+        "name": "예상 매출",
+        "value": 135000.0,
+        "display": "135,000원",
+        "unit": "원",
+        "score": 0.27,
+        "basis": "월 매출이 클수록 높은 점수(0원=0, 500만원 이상=10).",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "expected_net_profit",
+        "name": "예상 순이익",
+        "value": 135000.0,
+        "display": "135,000원",
+        "unit": "원",
+        "score": 5.22,
+        "basis": "월 순이익이 0 이하이면 0, 300만원 이상이면 10.",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "break_even",
+        "name": "손익분기점",
+        "value": 0.37037037037037035,
+        "display": "0.4개월",
+        "unit": "개월",
+        "score": 10.0,
+        "basis": "손익분기 도달 기간이 짧을수록 높은 점수(1개월=10, 24개월=0).",
+        "assumption": false,
+        "source_ids": []
+      },
+      {
+        "key": "hourly_net_profit",
+        "name": "시간당 순수익",
+        "value": 16875.0,
+        "display": "16,875원",
+        "unit": "원/시간",
+        "score": 3.38,
+        "basis": "시간당 순수익이 클수록 높은 점수(0원=0, 5만원 이상=10).",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "roi",
+        "name": "투자수익률(ROI)",
+        "value": 270.0,
+        "display": "270.0%",
+        "unit": "%",
+        "score": 10.0,
+        "basis": "ROI가 높을수록 높은 점수(0%=0, 100% 이상=10).",
+        "assumption": false,
+        "source_ids": []
+      },
+      {
+        "key": "revenue_variability",
+        "name": "수익 변동 위험",
+        "value": 7.0,
+        "display": "7.0 / 10",
+        "unit": "점",
+        "score": 3.0,
+        "basis": "구독자 이탈과 신규 유입에 따라 월 수익이 변동하며, 플랫폼 수수료 정책도 바뀔 수 있습니다.",
+        "assumption": false,
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "key": "operational_difficulty",
+        "name": "운영 난이도",
+        "value": 5.0,
+        "display": "5.0 / 10",
+        "unit": "점",
+        "score": 5.0,
+        "basis": "매달 회원 전용 콘텐츠를 꾸준히 제공해야 하므로 기획과 제작 시간이 반복적으로 필요합니다.",
+        "assumption": false,
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "key": "long_term_sustainability",
+        "name": "장기 지속 가능성",
+        "value": 7.0,
+        "display": "7.0 / 10",
+        "unit": "점",
+        "score": 7.0,
+        "basis": "구독자는 반복 수익을 만들 수 있으나, 콘텐츠 품질과 커뮤니티 관리가 유지되지 않으면 이탈이 늘어납니다.",
+        "assumption": false,
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "key": "monthly_revenue",
+        "name": "월 예상 매출",
+        "value": 135000.0,
+        "display": "135,000원",
+        "unit": "원",
+        "formula": "월 매출 = 단가 × 월 구독자 수",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "monthly_operating_cost",
+        "name": "월 운영 비용",
+        "value": 0.0,
+        "display": "0원",
+        "unit": "원",
+        "formula": "월 운영 비용 = 고정비 + 단위당 변동비 × 월 처리량",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "monthly_net_profit",
+        "name": "월 예상 순이익",
+        "value": 135000.0,
+        "display": "135,000원",
+        "unit": "원",
+        "formula": "순이익 = 월 매출 - 월 운영 비용",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "annual_net_profit",
+        "name": "연간 예상 순이익",
+        "value": 1620000.0,
+        "display": "1,620,000원",
+        "unit": "원",
+        "formula": "연간 순이익 = 월 순이익 × 12",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "initial_investment",
+        "name": "초기 투자 비용",
+        "value": 50000.0,
+        "display": "50,000원",
+        "unit": "원",
+        "formula": "카탈로그에 기록된 초기 투자 비용",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "roi",
+        "name": "투자수익률(ROI)",
+        "value": 270.0,
+        "display": "270.0%",
+        "unit": "%",
+        "formula": "ROI = 월 순이익 / 초기 투자 비용 × 100",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "hourly_net_profit",
+        "name": "시간당 순수익",
+        "value": 16875.0,
+        "display": "16,875원",
+        "unit": "원/시간",
+        "formula": "시간당 순수익 = 월 순이익 / 월 투입 시간",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "break_even_units",
+        "name": "손익분기 처리량",
+        "value": 0.0,
+        "display": "0.0구독자",
+        "unit": "구독자",
+        "formula": "손익분기 처리량 = 고정비 / (단위당 판매가 - 단위당 변동비)",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "break_even_months",
+        "name": "손익분기 도달 기간",
+        "value": 0.37037037037037035,
+        "display": "0.4개월",
+        "unit": "개월",
+        "formula": "손익분기 도달 기간 = 초기 투자 비용 / 월 순이익",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      }
+    ],
+    "inputs": {
+      "사업 유형": "subscription",
+      "price_per_unit_krw": 4500,
+      "units_per_month": 30,
+      "monthly_hours": 8.0,
+      "initial_investment_krw": 50000.0,
+      "fixed_monthly_krw": 0.0,
+      "variable_cost_per_unit_krw": 0.0
+    },
+    "assumptions": [
+      {
+        "name": "단위당 판매가",
+        "value": "4500",
+        "unit": "원",
+        "basis": "편집상 가정",
+        "source_ids": []
+      },
+      {
+        "name": "월 판매·구독 수량",
+        "value": "30",
+        "unit": "건",
+        "basis": "편집상 가정",
+        "source_ids": []
+      },
+      {
+        "name": "월 투입 시간",
+        "value": "8.0",
+        "unit": "시간",
+        "basis": "편집상 가정",
+        "source_ids": []
+      },
+      {
+        "name": "Patreon 수수료 반영 후 단가",
+        "value": "4,500",
+        "unit": "원",
+        "basis": "편집상 가정 — 월 5,000원에서 공식 10% 수수료를 제외",
+        "source_ids": []
+      },
+      {
+        "name": "결제 처리 수수료",
+        "value": "계산에서 제외",
+        "unit": "",
+        "basis": "편집상 가정",
+        "source_ids": []
+      },
+      {
+        "name": "구독자 이탈률",
+        "value": "계산에서 제외",
+        "unit": "",
+        "basis": "편집상 가정",
+        "source_ids": []
+      }
+    ],
+    "data_sources": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "steps": [
+      "월 매출 = 단가 × 월 구독자 수.",
+      "월 예상 매출 = 135,000원.",
+      "월 운영 비용 = 0원.",
+      "월 예상 순이익 = 135,000원 - 0원 = 135,000원.",
+      "ROI = 월 순이익 135,000원 / 초기 투자 50,000원 × 100 = 270.0%.",
+      "시간당 순수익 = 월 순이익 135,000원 / 월 투입 시간 8.0시간 = 16,875원.",
+      "손익분기 처리량 = 고정비 / 단위당 공헌이익 = 0.0구독자.",
+      "손익분기 도달 기간 = 초기 투자 / 월 순이익 = 0.4개월.",
+      "각 항목을 0~10점으로 정규화한 뒤 CPPI 가중치로 종합한다."
+    ],
+    "result": 5.71,
+    "interpretation": "Patreon 멤버십 구독 수익의 CPPI는 5.71/10으로, 일부 조건이 맞아야 수익성이 나오는 편으로 해석됩니다. 이 점수는 공개 자료와 명시된 가정으로 계산한 편집상 의사결정 지표이며, 실제 수익을 보장하지 않습니다.",
+    "limitations": [
+      "Patreon 수수료는 요금제와 결제 방식에 따라 달라질 수 있으므로 공식 가격표를 다시 확인해야 합니다.",
+      "월 30명 구독자는 실제 성과가 아니라 계산을 위한 편집상 가정입니다.",
+      "실제 수익은 방문자 수, 광고 단가, 수수료 변화에 따라 계산 결과와 달라질 수 있습니다.",
+      "가격, 수수료, 광고 단가는 변경될 수 있으므로 의사결정 전 최신 자료를 다시 확인해야 합니다."
+    ],
+    "scenario_analysis": [
+      {
+        "scenario": "conservative",
+        "assumptions": "기준 처리량의 0.50배, 고정비 0원 유지",
+        "monthly_revenue": 67500.0,
+        "monthly_cost": 0.0,
+        "monthly_net_profit": 67500.0,
+        "hourly_net_profit": 8437.5,
+        "roi_percent": 135.0,
+        "result": "월 순이익 67,500원, 시간당 8,438원"
+      },
+      {
+        "scenario": "base",
+        "assumptions": "기준 처리량의 1.00배, 고정비 0원 유지",
+        "monthly_revenue": 135000.0,
+        "monthly_cost": 0.0,
+        "monthly_net_profit": 135000.0,
+        "hourly_net_profit": 16875.0,
+        "roi_percent": 270.0,
+        "result": "월 순이익 135,000원, 시간당 16,875원"
+      },
+      {
+        "scenario": "optimistic",
+        "assumptions": "기준 처리량의 1.50배, 고정비 0원 유지",
+        "monthly_revenue": 202500.0,
+        "monthly_cost": 0.0,
+        "monthly_net_profit": 202500.0,
+        "hourly_net_profit": 25312.5,
+        "roi_percent": 405.0,
+        "result": "월 순이익 202,500원, 시간당 25,312원"
+      }
+    ],
+    "comparison": [],
+    "mapping": {
+      "Revenue Potential": [
+        "expected_revenue",
+        "expected_net_profit",
+        "roi"
+      ],
+      "Cost Efficiency": [
+        "initial_investment",
+        "monthly_operating_cost",
+        "break_even"
+      ],
+      "Time Efficiency": [
+        "hourly_net_profit"
+      ],
+      "Execution Feasibility": [
+        "operational_difficulty"
+      ],
+      "Risk Management": [
+        "revenue_variability",
+        "long_term_sustainability"
+      ]
+    },
+    "warnings": [],
+    "subject": "Patreon 멤버십 구독 수익"
+  },
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "Patreon pricing",
+      "url": "https://www.patreon.com/pricing",
+      "publisher": "Patreon 공식",
+      "publisher_url": "",
+      "published_at": "",
+      "retrieved_at": "2026-11-07",
+      "query": "",
+      "snippet": ""
+    },
+    {
+      "source_id": "S2",
+      "title": "Creator fees",
+      "url": "https://support.patreon.com/hc/en-us/articles/11111747095181",
+      "publisher": "Patreon 공식 도움말",
+      "publisher_url": "",
+      "published_at": "",
+      "retrieved_at": "2026-11-07",
+      "query": "",
+      "snippet": ""
+    },
+    {
+      "source_id": "S3",
+      "title": "Patreon 공식 홈페이지",
+      "url": "https://www.patreon.com/",
+      "publisher": "Patreon 공식",
+      "publisher_url": "",
+      "published_at": "",
+      "retrieved_at": "2026-11-07",
+      "query": "",
+      "snippet": ""
+    }
+  ],
+  "topic": {
+    "topic": "Patreon 멤버십 구독 수익, 30명이면 월 얼마가 남을까",
+    "search_intent": "Patreon 멤버십 구독 수익은 구독자 수와 수수료율에 따라 달라집니다. 월 5,000원 멤버십과 구독자 30명을 기준으로 실제로 남는 금액을 계산했습니다.",
+    "angle": "구독형 수익은 매달 반복되는 현금흐름을 만들 수 있지만, 플랫폼 수수료와 이탈률을 반영하지 않으면 순이익을 과대평가하기 쉽습니다.",
+    "why_now": "구독형 수익은 매달 반복되는 현금흐름을 만들 수 있지만, 플랫폼 수수료와 이탈률을 반영하지 않으면 순이익을 과대평가하기 쉽습니다.",
+    "source_ids": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "primary_keyword": "멤버십 구독",
+    "category": "디지털 상품",
+    "catalog_id": "patreon-membership"
+  },
+  "quality": {
+    "scores": {
+      "factual_accuracy": 25.0,
+      "originality": 17.0,
+      "search_intent": 18.0,
+      "source_quality": 15.0,
+      "readability": 10.0,
+      "seo_quality": 10.0
+    },
+    "total": 95.0,
+    "critical_failures": [],
+    "warnings": [],
+    "notes": [
+      "카탈로그 입력값으로 핵심 수치를 다시 계산해 대조했습니다.",
+      "독자 분석 점수: 17.0/20 (계산 9개, 시나리오 3개)."
+    ]
+  },
+  "decision": "PUBLISH",
+  "decision_reason": "품질 점수 95.0점 (기준 85점 이상).",
+  "status": "published",
+  "catalog_id": "patreon-membership",
+  "created_at": "2026-11-10T08:05:54+00:00",
+  "published_at": "2026-11-10T17:07:56+09:00",
+  "published_url": "https://rumbell.tistory.com/entry/Patreon-%EB%A9%A4%EB%B2%84%EC%8B%AD-%EA%B5%AC%EB%8F%85-%EC%88%98%EC%9D%B5-30%EB%AA%85%EC%9D%B4%EB%A9%B4-%EC%9B%94-%EC%96%BC%EB%A7%88%EA%B0%80-%EB%82%A8%EC%9D%84%EA%B9%8C",
+  "failure_reason": ""
+}
