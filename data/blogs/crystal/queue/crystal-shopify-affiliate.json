@@ -1,0 +1,533 @@
+{
+  "article_id": "crystal-shopify-affiliate",
+  "blog": "crystal",
+  "title": "Shopify 제휴 마케팅, 클릭 1,000회로 월 얼마 벌 수 있을까",
+  "seo_title": "Shopify 제휴 마케팅, 클릭 1,000회로 월 얼마 벌 수 있을까",
+  "slug": "crystal-shopify-affiliate-제휴-마케팅",
+  "meta_description": "Shopify 제휴 마케팅에서 월 클릭 1,000회와 전환율 0.5%, 건당 25달러 수수료를 가정해 예상 수수료 수익과 시간당 수익, 손익분기를 계산했습니다.",
+  "primary_keyword": "제휴 마케팅",
+  "secondary_keywords": [
+    "Shopify 제휴",
+    "제휴 수수료",
+    "전환율"
+  ],
+  "category": "제휴 마케팅",
+  "tags": [
+    "Shopify",
+    "제휴 마케팅",
+    "온라인 수익",
+    "전환율"
+  ],
+  "body_markdown": "Shopify 제휴 마케팅 수익은 클릭 수와 전환율, 지역별 수수료 밴드에 따라 달라집니다. 한국 기준 25달러 수수료를 원화로 환산해 월 수익을 계산했습니다 [S1].\n\n제휴 수수료는 국가와 프로그램 조건에 따라 다르게 적용될 수 있어, 타 국가의 수수료를 그대로 적용하면 수익을 크게 오해할 수 있습니다.\n\n## 수익 구조 요약\n\n| 항목 | 값 | 기준 |\n| --- | ---: | --- |\n| 초기 투자 | 0원 | 카탈로그에 기록된 시작 비용 |\n| 월 예상 매출 | 175,000원 | 입력한 방문자·판매량·단가 기준 |\n| 월 운영 비용 | 0원 | 고정비와 단위당 변동비 합계 |\n| 월 예상 순이익 | 175,000원 | 매출에서 운영 비용을 뺀 값 |\n| 손익분기 도달 기간 | 0.0개월 | 초기 투자 회수에 걸리는 기간 |\n| 시간당 순수익 | 17,500원 | 월 순이익을 투입 시간으로 나눈 값 |\n| ROI | 계산 불가 | 월 순이익을 초기 투자로 나눈 비율 |\n\n## 제휴 수수료가 남는 조건\n\n제휴 수익은 클릭 수, 전환율, 건당 수수료의 곱으로 계산됩니다. 전환율이 조금만 떨어져도 수익은 비례 이상으로 줄 수 있고, 제휴 조건이 바뀌면 같은 클릭에서도 수익이 달라집니다.\n\n초기 투자가 0원으로 기록되어 ROI를 정의하지 않았습니다. 실제로는 도구, 도메인, 콘텐츠 제작 시간 같은 비용이 발생할 수 있습니다.\n\n월 순이익이 플러스로 계산됐더라도 세금, 환불, 본인이 정하지 않은 비용은 포함되지 않았습니다. 실제 입금액은 정산 주기와 수수료 구조를 한 번 더 확인해야 합니다.\n\n## 수익 변동과 운영 부담\n\n이 수익 구조에서 먼저 봐야 할 것은 수익이 흔들릴 때의 영향과 운영에 드는 시간입니다.\n\n클릭 수와 전환율이 모두 변동성이 크고, 제휴 프로그램 정책과 수수료 밴드도 바뀔 수 있습니다.\n\n콘텐츠와 링크 운영은 비교적 단순하지만, 전환율을 높이기 위한 지속적인 실험과 추적이 필요합니다.\n\n제휴 프로그램이 유지되는 동안에는 반복 수익이 가능하지만, 프로그램 종료나 수수료 변경에 취약합니다.\n\n## 시나리오 분석\n\n입력값을 보수적·기준·적극적으로 바꾼 조건별 계산입니다. 미래 예측이 아니라 조건이 달라질 때 결과가 어떻게 움직이는지 보여줍니다.\n\n| 시나리오 | 가정 | 월 매출 | 월 비용 | 월 순이익 | 시간당 순수익 |\n| --- | --- | --- | --- | --- | --- |\n| 보수적 | 기준 처리량의 0.50배, 고정비 0원 유지 | 87,500원 | 0원 | 87,500원 | 8,750원 |\n| 기준 | 기준 처리량의 1.00배, 고정비 0원 유지 | 175,000원 | 0원 | 175,000원 | 17,500원 |\n| 적극적 | 기준 처리량의 1.50배, 고정비 0원 유지 | 262,500원 | 0원 | 262,500원 | 26,250원 |\n\n## 공식 자료와 편집상 가정\n\n공식 자료에서 확인한 값과, 자료가 없어 설정한 가정을 구분했습니다. 가정은 실제 결과와 다를 수 있습니다.\n\n| 구분 | 항목 | 값 | 근거 |\n| --- | --- | ---: | --- |\n| 편집상 가정 | 월 클릭 수 | 1000회 | 공식 자료 없음 |\n| 편집상 가정 | 전환율 | 0.01비율 | 공식 자료 없음 |\n| 편집상 가정 | 건당 수수료 | 35000원 | 공식 자료 없음 |\n| 편집상 가정 | 월 투입 시간 | 10.0시간 | 공식 자료 없음 |\n| 공식 자료 | 한국 제휴 수수료 | 25USD/전환 | 공식 자료 [S2] |\n| 편집상 가정 | 환율 | 1,400원/달러 | 공식 자료 없음 |\n| 편집상 가정 | 세금과 광고비 | 계산에서 제외 | 공식 자료 없음 |\n\n## 시작 전 확인할 점\n\n- 한국 기준 제휴 수수료와 지급 조건을 공식 페이지에서 확인했는가\n- 전환 추적과 쿠키 기간을 확인했는가\n- 콘텐츠 제작과 링크 관리에 드는 시간을 계산했는가\n- 제휴 프로그램이 종료될 경우의 대안을 준비했는가\n- 광고비를 집행할 경우 손익분기 클릭 수를 계산했는가\n\n## 이 계산의 한계\n\n- 제휴 수수료 밴드는 국가와 프로그램 조건에 따라 다르며, 25달러는 한국 기준 공식 안내를 원화로 환산한 값입니다.\n- 클릭 1,000회와 전환율 0.5%는 실제 성과가 아니라 계산을 위한 편집상 가정입니다.\n\n이 글의 수치는 명시한 가정에 따른 계산 결과이며, 특정 수익을 보장하지 않습니다.\n",
+  "body_with_sources": "Shopify 제휴 마케팅 수익은 클릭 수와 전환율, 지역별 수수료 밴드에 따라 달라집니다. 한국 기준 25달러 수수료를 원화로 환산해 월 수익을 계산했습니다 [S1].\n\n제휴 수수료는 국가와 프로그램 조건에 따라 다르게 적용될 수 있어, 타 국가의 수수료를 그대로 적용하면 수익을 크게 오해할 수 있습니다.\n\n## 수익 구조 요약\n\n| 항목 | 값 | 기준 |\n| --- | ---: | --- |\n| 초기 투자 | 0원 | 카탈로그에 기록된 시작 비용 |\n| 월 예상 매출 | 175,000원 | 입력한 방문자·판매량·단가 기준 |\n| 월 운영 비용 | 0원 | 고정비와 단위당 변동비 합계 |\n| 월 예상 순이익 | 175,000원 | 매출에서 운영 비용을 뺀 값 |\n| 손익분기 도달 기간 | 0.0개월 | 초기 투자 회수에 걸리는 기간 |\n| 시간당 순수익 | 17,500원 | 월 순이익을 투입 시간으로 나눈 값 |\n| ROI | 계산 불가 | 월 순이익을 초기 투자로 나눈 비율 |\n\n## 제휴 수수료가 남는 조건\n\n제휴 수익은 클릭 수, 전환율, 건당 수수료의 곱으로 계산됩니다. 전환율이 조금만 떨어져도 수익은 비례 이상으로 줄 수 있고, 제휴 조건이 바뀌면 같은 클릭에서도 수익이 달라집니다.\n\n초기 투자가 0원으로 기록되어 ROI를 정의하지 않았습니다. 실제로는 도구, 도메인, 콘텐츠 제작 시간 같은 비용이 발생할 수 있습니다.\n\n월 순이익이 플러스로 계산됐더라도 세금, 환불, 본인이 정하지 않은 비용은 포함되지 않았습니다. 실제 입금액은 정산 주기와 수수료 구조를 한 번 더 확인해야 합니다.\n\n## 수익 변동과 운영 부담\n\n이 수익 구조에서 먼저 봐야 할 것은 수익이 흔들릴 때의 영향과 운영에 드는 시간입니다.\n\n클릭 수와 전환율이 모두 변동성이 크고, 제휴 프로그램 정책과 수수료 밴드도 바뀔 수 있습니다.\n\n콘텐츠와 링크 운영은 비교적 단순하지만, 전환율을 높이기 위한 지속적인 실험과 추적이 필요합니다.\n\n제휴 프로그램이 유지되는 동안에는 반복 수익이 가능하지만, 프로그램 종료나 수수료 변경에 취약합니다.\n\n## 시나리오 분석\n\n입력값을 보수적·기준·적극적으로 바꾼 조건별 계산입니다. 미래 예측이 아니라 조건이 달라질 때 결과가 어떻게 움직이는지 보여줍니다.\n\n| 시나리오 | 가정 | 월 매출 | 월 비용 | 월 순이익 | 시간당 순수익 |\n| --- | --- | --- | --- | --- | --- |\n| 보수적 | 기준 처리량의 0.50배, 고정비 0원 유지 | 87,500원 | 0원 | 87,500원 | 8,750원 |\n| 기준 | 기준 처리량의 1.00배, 고정비 0원 유지 | 175,000원 | 0원 | 175,000원 | 17,500원 |\n| 적극적 | 기준 처리량의 1.50배, 고정비 0원 유지 | 262,500원 | 0원 | 262,500원 | 26,250원 |\n\n## 공식 자료와 편집상 가정\n\n공식 자료에서 확인한 값과, 자료가 없어 설정한 가정을 구분했습니다. 가정은 실제 결과와 다를 수 있습니다.\n\n| 구분 | 항목 | 값 | 근거 |\n| --- | --- | ---: | --- |\n| 편집상 가정 | 월 클릭 수 | 1000회 | 공식 자료 없음 |\n| 편집상 가정 | 전환율 | 0.01비율 | 공식 자료 없음 |\n| 편집상 가정 | 건당 수수료 | 35000원 | 공식 자료 없음 |\n| 편집상 가정 | 월 투입 시간 | 10.0시간 | 공식 자료 없음 |\n| 공식 자료 | 한국 제휴 수수료 | 25USD/전환 | 공식 자료 [S2] |\n| 편집상 가정 | 환율 | 1,400원/달러 | 공식 자료 없음 |\n| 편집상 가정 | 세금과 광고비 | 계산에서 제외 | 공식 자료 없음 |\n\n## 시작 전 확인할 점\n\n- 한국 기준 제휴 수수료와 지급 조건을 공식 페이지에서 확인했는가\n- 전환 추적과 쿠키 기간을 확인했는가\n- 콘텐츠 제작과 링크 관리에 드는 시간을 계산했는가\n- 제휴 프로그램이 종료될 경우의 대안을 준비했는가\n- 광고비를 집행할 경우 손익분기 클릭 수를 계산했는가\n\n## 이 계산의 한계\n\n- 제휴 수수료 밴드는 국가와 프로그램 조건에 따라 다르며, 25달러는 한국 기준 공식 안내를 원화로 환산한 값입니다.\n- 클릭 1,000회와 전환율 0.5%는 실제 성과가 아니라 계산을 위한 편집상 가정입니다.\n\n이 글의 수치는 명시한 가정에 따른 계산 결과이며, 특정 수익을 보장하지 않습니다.\n\n\n## 출처\n\n- [S1] [Shopify Affiliate Program](https://www.shopify.com/affiliates) — Shopify 공식 (2026-11-07)\n- [S2] [Shopify Affiliate earnings](https://www.shopify.com/affiliates/earnings) — Shopify 공식 (2026-11-07)\n- [S3] [About Shopify](https://www.shopify.com/about) — Shopify 공식 (2026-11-07)\n",
+  "analysis": {
+    "framework": "CPPI",
+    "framework_name": "Crystal Practical Profitability Index (CPPI)",
+    "purpose": "온라인 수익 모델의 수익성, 비용 효율, 시간 효율, 실행 가능성, 위험 관리를 같은 기준으로 비교한다.",
+    "formula": "CPPI = (Revenue Potential x 0.25) + (Cost Efficiency x 0.20) + (Time Efficiency x 0.20) + (Execution Feasibility x 0.20) + (Risk Management x 0.15)",
+    "dimensions": [
+      {
+        "name": "Revenue Potential",
+        "score": 2.82,
+        "weight": 0.25,
+        "rationale": "예상 매출 0.3, 예상 순이익 5.3",
+        "unavailable": false,
+        "mapped_items": [
+          "expected_revenue",
+          "expected_net_profit",
+          "roi"
+        ]
+      },
+      {
+        "name": "Cost Efficiency",
+        "score": 10.0,
+        "weight": 0.2,
+        "rationale": "초기 투자 비용 10.0, 월간 운영 비용 10.0, 손익분기점 10.0",
+        "unavailable": false,
+        "mapped_items": [
+          "initial_investment",
+          "monthly_operating_cost",
+          "break_even"
+        ]
+      },
+      {
+        "name": "Time Efficiency",
+        "score": 3.5,
+        "weight": 0.2,
+        "rationale": "시간당 순수익 3.5",
+        "unavailable": false,
+        "mapped_items": [
+          "hourly_net_profit"
+        ]
+      },
+      {
+        "name": "Execution Feasibility",
+        "score": 4.0,
+        "weight": 0.2,
+        "rationale": "운영 난이도 4.0",
+        "unavailable": false,
+        "mapped_items": [
+          "operational_difficulty"
+        ]
+      },
+      {
+        "name": "Risk Management",
+        "score": 4.0,
+        "weight": 0.15,
+        "rationale": "수익 변동 위험 2.0, 장기 지속 가능성 6.0",
+        "unavailable": false,
+        "mapped_items": [
+          "revenue_variability",
+          "long_term_sustainability"
+        ]
+      }
+    ],
+    "evaluation_items": [
+      {
+        "key": "initial_investment",
+        "name": "초기 투자 비용",
+        "value": 0.0,
+        "display": "0원",
+        "unit": "원",
+        "score": 10.0,
+        "basis": "초기 투자 비용이 낮을수록 높은 점수(0원=10, 500만원 이상=0).",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "monthly_operating_cost",
+        "name": "월간 운영 비용",
+        "value": 0.0,
+        "display": "0원",
+        "unit": "원",
+        "score": 10.0,
+        "basis": "월 운영 비용이 낮을수록 높은 점수(0원=10, 100만원 이상=0).",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "expected_revenue",
+        "name": "예상 매출",
+        "value": 175000.0,
+        "display": "175,000원",
+        "unit": "원",
+        "score": 0.35,
+        "basis": "월 매출이 클수록 높은 점수(0원=0, 500만원 이상=10).",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "expected_net_profit",
+        "name": "예상 순이익",
+        "value": 175000.0,
+        "display": "175,000원",
+        "unit": "원",
+        "score": 5.29,
+        "basis": "월 순이익이 0 이하이면 0, 300만원 이상이면 10.",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "break_even",
+        "name": "손익분기점",
+        "value": 0.0,
+        "display": "0.0개월",
+        "unit": "개월",
+        "score": 10.0,
+        "basis": "손익분기 도달 기간이 짧을수록 높은 점수(1개월=10, 24개월=0).",
+        "assumption": false,
+        "source_ids": []
+      },
+      {
+        "key": "hourly_net_profit",
+        "name": "시간당 순수익",
+        "value": 17500.0,
+        "display": "17,500원",
+        "unit": "원/시간",
+        "score": 3.5,
+        "basis": "시간당 순수익이 클수록 높은 점수(0원=0, 5만원 이상=10).",
+        "assumption": true,
+        "source_ids": []
+      },
+      {
+        "key": "roi",
+        "name": "투자수익률(ROI)",
+        "value": null,
+        "display": "계산 불가",
+        "unit": "%",
+        "score": null,
+        "basis": "ROI가 높을수록 높은 점수(0%=0, 100% 이상=10).",
+        "assumption": false,
+        "source_ids": []
+      },
+      {
+        "key": "revenue_variability",
+        "name": "수익 변동 위험",
+        "value": 8.0,
+        "display": "8.0 / 10",
+        "unit": "점",
+        "score": 2.0,
+        "basis": "클릭 수와 전환율이 모두 변동성이 크고, 제휴 프로그램 정책과 수수료 밴드도 바뀔 수 있습니다.",
+        "assumption": false,
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      },
+      {
+        "key": "operational_difficulty",
+        "name": "운영 난이도",
+        "value": 6.0,
+        "display": "6.0 / 10",
+        "unit": "점",
+        "score": 4.0,
+        "basis": "콘텐츠와 링크 운영은 비교적 단순하지만, 전환율을 높이기 위한 지속적인 실험과 추적이 필요합니다.",
+        "assumption": false,
+        "source_ids": [
+          "S1"
+        ]
+      },
+      {
+        "key": "long_term_sustainability",
+        "name": "장기 지속 가능성",
+        "value": 6.0,
+        "display": "6.0 / 10",
+        "unit": "점",
+        "score": 6.0,
+        "basis": "제휴 프로그램이 유지되는 동안에는 반복 수익이 가능하지만, 프로그램 종료나 수수료 변경에 취약합니다.",
+        "assumption": false,
+        "source_ids": [
+          "S1",
+          "S2"
+        ]
+      }
+    ],
+    "metrics": [
+      {
+        "key": "monthly_revenue",
+        "name": "월 예상 매출",
+        "value": 175000.0,
+        "display": "175,000원",
+        "unit": "원",
+        "formula": "월 매출 = 월 클릭 수 × 전환율 × 건당 수수료",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "monthly_operating_cost",
+        "name": "월 운영 비용",
+        "value": 0.0,
+        "display": "0원",
+        "unit": "원",
+        "formula": "월 운영 비용 = 고정비 + 단위당 변동비 × 월 처리량",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "monthly_net_profit",
+        "name": "월 예상 순이익",
+        "value": 175000.0,
+        "display": "175,000원",
+        "unit": "원",
+        "formula": "순이익 = 월 매출 - 월 운영 비용",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "annual_net_profit",
+        "name": "연간 예상 순이익",
+        "value": 2100000.0,
+        "display": "2,100,000원",
+        "unit": "원",
+        "formula": "연간 순이익 = 월 순이익 × 12",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "initial_investment",
+        "name": "초기 투자 비용",
+        "value": 0.0,
+        "display": "0원",
+        "unit": "원",
+        "formula": "카탈로그에 기록된 초기 투자 비용",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "roi",
+        "name": "투자수익률(ROI)",
+        "value": null,
+        "display": "계산 불가",
+        "unit": "%",
+        "formula": "ROI = 월 순이익 / 초기 투자 비용 × 100",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": "초기 투자 비용이 0이어서 ROI를 정의할 수 없습니다."
+      },
+      {
+        "key": "hourly_net_profit",
+        "name": "시간당 순수익",
+        "value": 17500.0,
+        "display": "17,500원",
+        "unit": "원/시간",
+        "formula": "시간당 순수익 = 월 순이익 / 월 투입 시간",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "break_even_units",
+        "name": "손익분기 처리량",
+        "value": 0.0,
+        "display": "0.0클릭",
+        "unit": "클릭",
+        "formula": "손익분기 처리량 = 고정비 / (단위당 판매가 - 단위당 변동비)",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      },
+      {
+        "key": "break_even_months",
+        "name": "손익분기 도달 기간",
+        "value": 0.0,
+        "display": "0.0개월",
+        "unit": "개월",
+        "formula": "손익분기 도달 기간 = 초기 투자 비용 / 월 순이익",
+        "inputs": {},
+        "assumption": true,
+        "source_ids": [],
+        "unavailable_reason": ""
+      }
+    ],
+    "inputs": {
+      "사업 유형": "affiliate",
+      "monthly_clicks": 1000,
+      "conversion_rate": 0.005,
+      "commission_krw": 35000,
+      "monthly_hours": 10.0,
+      "initial_investment_krw": 0.0,
+      "fixed_monthly_krw": 0.0,
+      "variable_cost_per_unit_krw": 0.0
+    },
+    "assumptions": [
+      {
+        "name": "월 클릭 수",
+        "value": "1000",
+        "unit": "회",
+        "basis": "편집상 가정",
+        "source_ids": []
+      },
+      {
+        "name": "전환율",
+        "value": "0.01",
+        "unit": "비율",
+        "basis": "편집상 가정",
+        "source_ids": []
+      },
+      {
+        "name": "건당 수수료",
+        "value": "35000",
+        "unit": "원",
+        "basis": "편집상 가정",
+        "source_ids": []
+      },
+      {
+        "name": "월 투입 시간",
+        "value": "10.0",
+        "unit": "시간",
+        "basis": "편집상 가정",
+        "source_ids": []
+      },
+      {
+        "name": "한국 제휴 수수료",
+        "value": "25",
+        "unit": "USD/전환",
+        "basis": "공식 자료",
+        "source_ids": [
+          "S2"
+        ]
+      },
+      {
+        "name": "환율",
+        "value": "1,400",
+        "unit": "원/달러",
+        "basis": "편집상 가정",
+        "source_ids": []
+      },
+      {
+        "name": "세금과 광고비",
+        "value": "계산에서 제외",
+        "unit": "",
+        "basis": "편집상 가정",
+        "source_ids": []
+      }
+    ],
+    "data_sources": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "steps": [
+      "월 매출 = 월 클릭 수 × 전환율 × 건당 수수료.",
+      "월 예상 매출 = 175,000원.",
+      "월 운영 비용 = 0원.",
+      "월 예상 순이익 = 175,000원 - 0원 = 175,000원.",
+      "시간당 순수익 = 월 순이익 175,000원 / 월 투입 시간 10.0시간 = 17,500원.",
+      "손익분기 처리량 = 고정비 / 단위당 공헌이익 = 0.0클릭.",
+      "손익분기 도달 기간 = 초기 투자 / 월 순이익 = 0.0개월.",
+      "각 항목을 0~10점으로 정규화한 뒤 CPPI 가중치로 종합한다."
+    ],
+    "result": 4.8,
+    "interpretation": "Shopify 제휴 마케팅 수익의 CPPI는 4.80/10으로, 비용·위험 부담이 커 신중한 검토가 필요한 편으로 해석됩니다. 이 점수는 공개 자료와 명시된 가정으로 계산한 편집상 의사결정 지표이며, 실제 수익을 보장하지 않습니다.",
+    "limitations": [
+      "제휴 수수료 밴드는 국가와 프로그램 조건에 따라 다르며, 25달러는 한국 기준 공식 안내를 원화로 환산한 값입니다.",
+      "클릭 1,000회와 전환율 0.5%는 실제 성과가 아니라 계산을 위한 편집상 가정입니다.",
+      "실제 수익은 방문자 수, 광고 단가, 수수료 변화에 따라 계산 결과와 달라질 수 있습니다.",
+      "가격, 수수료, 광고 단가는 변경될 수 있으므로 의사결정 전 최신 자료를 다시 확인해야 합니다."
+    ],
+    "scenario_analysis": [
+      {
+        "scenario": "conservative",
+        "assumptions": "기준 처리량의 0.50배, 고정비 0원 유지",
+        "monthly_revenue": 87500.0,
+        "monthly_cost": 0.0,
+        "monthly_net_profit": 87500.0,
+        "hourly_net_profit": 8750.0,
+        "roi_percent": null,
+        "result": "월 순이익 87,500원, 시간당 8,750원"
+      },
+      {
+        "scenario": "base",
+        "assumptions": "기준 처리량의 1.00배, 고정비 0원 유지",
+        "monthly_revenue": 175000.0,
+        "monthly_cost": 0.0,
+        "monthly_net_profit": 175000.0,
+        "hourly_net_profit": 17500.0,
+        "roi_percent": null,
+        "result": "월 순이익 175,000원, 시간당 17,500원"
+      },
+      {
+        "scenario": "optimistic",
+        "assumptions": "기준 처리량의 1.50배, 고정비 0원 유지",
+        "monthly_revenue": 262500.0,
+        "monthly_cost": 0.0,
+        "monthly_net_profit": 262500.0,
+        "hourly_net_profit": 26250.0,
+        "roi_percent": null,
+        "result": "월 순이익 262,500원, 시간당 26,250원"
+      }
+    ],
+    "comparison": [],
+    "mapping": {
+      "Revenue Potential": [
+        "expected_revenue",
+        "expected_net_profit",
+        "roi"
+      ],
+      "Cost Efficiency": [
+        "initial_investment",
+        "monthly_operating_cost",
+        "break_even"
+      ],
+      "Time Efficiency": [
+        "hourly_net_profit"
+      ],
+      "Execution Feasibility": [
+        "operational_difficulty"
+      ],
+      "Risk Management": [
+        "revenue_variability",
+        "long_term_sustainability"
+      ]
+    },
+    "warnings": [],
+    "subject": "Shopify 제휴 마케팅 수익"
+  },
+  "sources": [
+    {
+      "source_id": "S1",
+      "title": "Shopify Affiliate Program",
+      "url": "https://www.shopify.com/affiliates",
+      "publisher": "Shopify 공식",
+      "publisher_url": "",
+      "published_at": "",
+      "retrieved_at": "2026-11-07",
+      "query": "",
+      "snippet": ""
+    },
+    {
+      "source_id": "S2",
+      "title": "Shopify Affiliate earnings",
+      "url": "https://www.shopify.com/affiliates/earnings",
+      "publisher": "Shopify 공식",
+      "publisher_url": "",
+      "published_at": "",
+      "retrieved_at": "2026-11-07",
+      "query": "",
+      "snippet": ""
+    },
+    {
+      "source_id": "S3",
+      "title": "About Shopify",
+      "url": "https://www.shopify.com/about",
+      "publisher": "Shopify 공식",
+      "publisher_url": "",
+      "published_at": "",
+      "retrieved_at": "2026-11-07",
+      "query": "",
+      "snippet": ""
+    }
+  ],
+  "topic": {
+    "topic": "Shopify 제휴 마케팅, 클릭 1,000회로 월 얼마 벌 수 있을까",
+    "search_intent": "Shopify 제휴 마케팅 수익은 클릭 수와 전환율, 지역별 수수료 밴드에 따라 달라집니다. 한국 기준 25달러 수수료를 원화로 환산해 월 수익을 계산했습니다.",
+    "angle": "제휴 수수료는 국가와 프로그램 조건에 따라 다르게 적용될 수 있어, 타 국가의 수수료를 그대로 적용하면 수익을 크게 오해할 수 있습니다.",
+    "why_now": "제휴 수수료는 국가와 프로그램 조건에 따라 다르게 적용될 수 있어, 타 국가의 수수료를 그대로 적용하면 수익을 크게 오해할 수 있습니다.",
+    "source_ids": [
+      "S1",
+      "S2",
+      "S3"
+    ],
+    "primary_keyword": "제휴 마케팅",
+    "category": "제휴 마케팅",
+    "catalog_id": "shopify-affiliate"
+  },
+  "quality": {
+    "scores": {
+      "factual_accuracy": 25.0,
+      "originality": 17.0,
+      "search_intent": 18.0,
+      "source_quality": 15.0,
+      "readability": 10.0,
+      "seo_quality": 10.0
+    },
+    "total": 95.0,
+    "critical_failures": [],
+    "warnings": [],
+    "notes": [
+      "카탈로그 입력값으로 핵심 수치를 다시 계산해 대조했습니다.",
+      "독자 분석 점수: 17.0/20 (계산 8개, 시나리오 3개)."
+    ]
+  },
+  "decision": "PUBLISH",
+  "decision_reason": "품질 점수 95.0점 (기준 85점 이상).",
+  "status": "published",
+  "catalog_id": "shopify-affiliate",
+  "created_at": "2026-11-11T07:36:06+00:00",
+  "published_at": "2026-11-11T16:38:05+09:00",
+  "published_url": "https://rumbell.tistory.com/entry/Shopify-%EC%A0%9C%ED%9C%B4-%EB%A7%88%EC%BC%80%ED%8C%85-%ED%81%B4%EB%A6%AD-1000%ED%9A%8C%EB%A1%9C-%EC%9B%94-%EC%96%BC%EB%A7%88-%EB%B2%8C-%EC%88%98-%EC%9E%88%EC%9D%84%EA%B9%8C",
+  "failure_reason": ""
+}
