@@ -1,0 +1,32 @@
+{
+  "event_id": "accf69ce52f02fe7",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오, 유증 우리사주·구주주 청",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-11T05:39:33+00:00",
+  "event_date": "Wed, 11 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오, 유증 우리사주·구주주 청약률 96.83%…2.6조 M&A 조달 순항 - KB ",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE80d0x0b1UtQU5qY1V1OGctNTJUUTVpQjdCdmhpc0t1ZUZ4c0ctaGNVcWdieVl3LVVZbk9Cc3duX3BuNWZxUVlIc3lsVmEydWFma3A5WnJhYWFOMWlkOVJXS1pTaTFybHd4RVZfeDd5SzE3UQ?oc=5",
+    "title": "삼성바이오, 유증 우리사주·구주주 청약률 96.83%…2.6조 M&A 조달 순항 - KB Think"
+  },
+  "summary": "뉴스: 삼성바이오, 유증 우리사주·구주주 청약률 96.83%…2.6조 M&A 조달 순항 - KB Think"
+}

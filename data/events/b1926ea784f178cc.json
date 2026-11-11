@@ -1,0 +1,32 @@
+{
+  "event_id": "b1926ea784f178cc",
+  "event_type": "news_event",
+  "entity": {
+    "name": "바로팜, 코스닥 상장 첫 날 22%대",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-11T05:39:33+00:00",
+  "event_date": "Wed, 11 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 바로팜, 코스닥 상장 첫 날 22%대 급락 - 머니투데이 - 머니투데이",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBpU0x6SXZyd2szS0VZSTQ3em5Wc2xkTjlma05aVGJ3MW93Q1QxdW9CUnY5UnF3Zy1zbmhaY3lETzUyaS10by1ZYzRrU0tlWnM3WlZyaTY2UktyM0t1Q2UzMDRiSXVTS0pS0gFuQVVfeXFMT3RnbHh1MVZuSlJpVWgzWjdFVkRScDNEOUV5b1h0ZWpKWElWN0d4eGN4MGxtQUhTcU5aaXZQcGh6bUNoVzhBQlJwREhmMTZJSWdHVUNtUlBCUWVSbUpXemlSbkZRa25QSXpFT3o3SWc?oc=5",
+    "title": "바로팜, 코스닥 상장 첫 날 22%대 급락 - 머니투데이 - 머니투데이"
+  },
+  "summary": "뉴스: 바로팜, 코스닥 상장 첫 날 22%대 급락 - 머니투데이 - 머니투데이"
+}

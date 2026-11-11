@@ -1,0 +1,32 @@
+{
+  "event_id": "d9326169ee676f0c",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스 \"﻿유상증자 청약률 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-11T05:39:33+00:00",
+  "event_date": "Wed, 11 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스 \"﻿유상증자 청약률 96.8%…﻿폴리펩타이드그룹 인수에 활용\" - 포인트데",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE81b1dPVGVhZ0hlODhCQWFuUlNod0dMTEZxenJHT254OUhPZnd1UDByOGs4Mmh1RXR1Z1RzckRWalFZQVhvaDZJUnVubnBFZXRXeWVLbUNlR1hUcF9yS05MN2NWWERRUDF0SjRKcUlsUHE?oc=5",
+    "title": "삼성바이오로직스 \"﻿유상증자 청약률 96.8%…﻿폴리펩타이드그룹 인수에 활용\" - 포인트데일리"
+  },
+  "summary": "뉴스: 삼성바이오로직스 \"﻿유상증자 청약률 96.8%…﻿폴리펩타이드그룹 인수에 활용\" - 포인트데일리"
+}

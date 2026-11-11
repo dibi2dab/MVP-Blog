@@ -1,0 +1,32 @@
+{
+  "event_id": "99c0d7117e16bce5",
+  "event_type": "news_event",
+  "entity": {
+    "name": "“현대차 주가, ‘이 곳’ 때문에 더",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-11T05:39:33+00:00",
+  "event_date": "Thu, 19 Ma",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: “현대차 주가, ‘이 곳’ 때문에 더 가겠네”…보스턴다이내믹스 가치 인수때보다 24배↑ -",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE9JeDQ0aUxPaGpqTDlPckFMMnVmSXNhNmtiY0RwX3FDeW5rbVJlNDJkUFB0YkhrbW16UUZTdUNwR2EzanktRGdWQl9XOXlVVEVB?oc=5",
+    "title": "“현대차 주가, ‘이 곳’ 때문에 더 가겠네”…보스턴다이내믹스 가치 인수때보다 24배↑ - 문화일보"
+  },
+  "summary": "뉴스: “현대차 주가, ‘이 곳’ 때문에 더 가겠네”…보스턴다이내믹스 가치 인수때보다 24배↑ - 문화일보"
+}

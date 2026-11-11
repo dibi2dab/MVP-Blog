@@ -1,0 +1,32 @@
+{
+  "event_id": "94f9a19db022a4e6",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[단독] 日 포스타전기, 코스닥 상장",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-11T05:39:33+00:00",
+  "event_date": "Tue, 10 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [단독] 日 포스타전기, 코스닥 상장사 '에스텍' 공개매수 후 상폐 추진 - 블로터",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE8zNjdvSVNoc0VGZzRyNVVGRDF0bHhFMDUtcDNzT1FRWTJGWVhDNU93YVVUX1RkTlBBRHVLbDN6N214LU5rbVMybDFVUFlCbmhrZkhlTjd2OFNLNjdOQXBybXZvbWZhd0Z00gFsQVVfeXFMTmp4OE16OE15bDI5MWtVRjdMU0RqMWp1ajZZZ1FVbFZHMG1XOVlWUnJ2TDgtVWZtWlp3TURUaEtXTFNpZm5RdFZjZkpXR3ZVSk16UGdvazFTZExoM0ItRkNOczRtSkdDQldMV0d5?oc=5",
+    "title": "[단독] 日 포스타전기, 코스닥 상장사 '에스텍' 공개매수 후 상폐 추진 - 블로터"
+  },
+  "summary": "뉴스: [단독] 日 포스타전기, 코스닥 상장사 '에스텍' 공개매수 후 상폐 추진 - 블로터"
+}

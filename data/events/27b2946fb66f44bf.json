@@ -1,0 +1,31 @@
+{
+  "event_id": "27b2946fb66f44bf",
+  "event_type": "stock_surge",
+  "entity": {
+    "name": "삼성SDI",
+    "ticker": "006400",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-11T05:39:33+00:00",
+  "event_date": "2026-11-11",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_up_5",
+      "label": "주가 +5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": 0.062360801781737196,
+    "volume_ratio": 0.6272981246264259,
+    "latest_amount": null
+  },
+  "summary": "삼성SDI 주가 변동 0.062360801781737196% / 거래량 비율 0.6272981246264259"
+}

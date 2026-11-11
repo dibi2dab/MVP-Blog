@@ -1,0 +1,32 @@
+{
+  "event_id": "59b0249500aebc35",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스, 폴리펩타이드 인수자",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-11T05:39:33+00:00",
+  "event_date": "Wed, 11 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스, 폴리펩타이드 인수자금 확보 막바지···청약률 96.8% - 스마트비즈",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1NejQ2TjhMdy1BN0hJRUhGaG5PcUlXYWxsMDRuWTdSaWlYeUdXTm9tSnZDMlFfUDVUV2l3N2traWdFQ0NzZ1RQc3BEeFEwS2dDT1o1TlRRTHBxUmw1bks3ekpQNjc1clExdjE3bg?oc=5",
+    "title": "삼성바이오로직스, 폴리펩타이드 인수자금 확보 막바지···청약률 96.8% - 스마트비즈"
+  },
+  "summary": "뉴스: 삼성바이오로직스, 폴리펩타이드 인수자금 확보 막바지···청약률 96.8% - 스마트비즈"
+}

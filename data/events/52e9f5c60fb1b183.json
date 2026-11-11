@@ -1,0 +1,32 @@
+{
+  "event_id": "52e9f5c60fb1b183",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스 거래량 57,126주",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-11T05:39:33+00:00",
+  "event_date": "Tue, 10 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스 거래량 57,126주…수주잔고와 생산능력 확대 점검 - 잡포스트",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFAwZ0VUaEtNWGxoQ2xFQWg5RzB0amdCZHBmZ2pQX2RxNUdSWjM1ZXVQM0c5VElJQldLVGg3ZXdGbEJfeGV1TW5PZV9IakJ6eUQtOG0wUkFBMTN0U2F3aTllY1c5aktFdFY0OVZEeGdB0gFyQVVfeXFMTWFoRzdFRDEyY2VCY242bkdkMVFFQmlyc3pzNjBhV1dIVzc0N1M5aGNxM1g5Y3hCVzVPem5XbERFQmVUYTF3X1VhTTFWTEJObmVhRU8tYkVBZEhPTzFzUkZ6TEw0Q1A1bG8wX0V3QkxMNDl3?oc=5",
+    "title": "삼성바이오로직스 거래량 57,126주…수주잔고와 생산능력 확대 점검 - 잡포스트"
+  },
+  "summary": "뉴스: 삼성바이오로직스 거래량 57,126주…수주잔고와 생산능력 확대 점검 - 잡포스트"
+}
