@@ -1,0 +1,43 @@
+{
+  "event_id": "a56a57498e6d82fc",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "NAVER",
+    "ticker": "035420",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-12T06:45:22+00:00",
+  "event_date": "2026-11-12",
+  "event_score": 7,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    },
+    {
+      "code": "volume_100",
+      "label": "거래량 평균 대비 100% 이상",
+      "score_contribution": 2,
+      "detail": ""
+    },
+    {
+      "code": "gap_down",
+      "label": "갭 하락 (시가 급락)",
+      "score_contribution": 2,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "published",
+  "evidence": {
+    "latest_change_pct": -0.070076726342711,
+    "volume_ratio": 2.010378051832706,
+    "latest_amount": null
+  },
+  "summary": "NAVER 주가 변동 -0.070076726342711% / 거래량 비율 2.010378051832706"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "ee18fd95ff92706a",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] 넥스아이, 코스닥 상장 첫",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-12T06:45:22+00:00",
+  "event_date": "Thu, 12 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] 넥스아이, 코스닥 상장 첫날 25%대 급락 - 에너지경제신문",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9ZRHpyU1A1b2l6LVJpRFNGeVM1TXJZUWRfN0JhVUJ0elFtNjZjTWNPVkV0cmlXeC1aMkJPVGpNRFlnUW9JWDB3WUIwSmJDM2tiTUFoTnJoLV8tV1U?oc=5",
+    "title": "[특징주] 넥스아이, 코스닥 상장 첫날 25%대 급락 - 에너지경제신문"
+  },
+  "summary": "뉴스: [특징주] 넥스아이, 코스닥 상장 첫날 25%대 급락 - 에너지경제신문"
+}

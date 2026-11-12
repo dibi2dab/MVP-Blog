@@ -1,0 +1,32 @@
+{
+  "event_id": "6a4a794c47b337cc",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[숏폼] 바로팜, 코스닥 상장… 전국",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-12T06:45:22+00:00",
+  "event_date": "Wed, 11 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [숏폼] 바로팜, 코스닥 상장… 전국 약국 90% 품은 성장세 - 히트뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5nZlVtYTdlTUpvV1RPZVJUUmhPaFc1bVFtR2pCUzBjb0ZnMWlZcEd2bEI3eUdnc0Fla0E0NUtPQVFRY0NNZjZ3MUVyNjBxRFk2dHRmOVZoZmY0T3hhX2dMbTVwOVFkbXg4eGVR?oc=5",
+    "title": "[숏폼] 바로팜, 코스닥 상장… 전국 약국 90% 품은 성장세 - 히트뉴스"
+  },
+  "summary": "뉴스: [숏폼] 바로팜, 코스닥 상장… 전국 약국 90% 품은 성장세 - 히트뉴스"
+}

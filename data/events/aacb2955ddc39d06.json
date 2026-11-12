@@ -1,0 +1,32 @@
+{
+  "event_id": "aacb2955ddc39d06",
+  "event_type": "news_event",
+  "entity": {
+    "name": "넥스아이, 코스닥 상장 첫날 14%대",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-12T06:45:22+00:00",
+  "event_date": "Thu, 12 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 넥스아이, 코스닥 상장 첫날 14%대 급락 - 한국경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE85aTdySjBSNFNUbTBfUXlEajVCYXRZRTBRdmcxNlE3bENEdVZ0UzRic3ptSlRSV0EzZ0R0aFNYc1BuM0djOHp3SERpXzRKekcyaEh4NmRfdWczQQ?oc=5",
+    "title": "넥스아이, 코스닥 상장 첫날 14%대 급락 - 한국경제"
+  },
+  "summary": "뉴스: 넥스아이, 코스닥 상장 첫날 14%대 급락 - 한국경제"
+}

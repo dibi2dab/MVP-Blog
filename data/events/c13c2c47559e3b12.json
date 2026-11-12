@@ -1,0 +1,32 @@
+{
+  "event_id": "c13c2c47559e3b12",
+  "event_type": "news_event",
+  "entity": {
+    "name": "제이앤티지, 코스닥 상장 철회 - 디",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-12T06:45:22+00:00",
+  "event_date": "Wed, 11 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 제이앤티지, 코스닥 상장 철회 - 디일렉",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE10OHpIdlI2d3c5WlVYOVNncHc5YXlUc1BhQi1mMFl4a0hoUGxrei1WWENYV2phVVFLU2pPVHpYY1RFb0d1Y0lsZ1NjczRrS0EzMW9DWkp6VWRjSlFiRi1XX2doM3p5dw?oc=5",
+    "title": "제이앤티지, 코스닥 상장 철회 - 디일렉"
+  },
+  "summary": "뉴스: 제이앤티지, 코스닥 상장 철회 - 디일렉"
+}

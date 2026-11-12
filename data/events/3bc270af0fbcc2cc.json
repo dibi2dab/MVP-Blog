@@ -1,0 +1,32 @@
+{
+  "event_id": "3bc270af0fbcc2cc",
+  "event_type": "news_event",
+  "entity": {
+    "name": "씨앤엠, 코스닥 상장 철회 - 디일렉",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-12T06:45:22+00:00",
+  "event_date": "Wed, 11 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 씨앤엠, 코스닥 상장 철회 - 디일렉",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE10NG10WlpLcS02Sy12MFBuRmNrN2s2QnNqb2xRTjZ3TFRzdTJfOWczVkN4d0FtdUVtcnNYcVU4SS1QZXZXdmVwZ2dIYVlFSEJ3bmtnWEVpb2pIRGl5NW5JcHJKVXJRUQ?oc=5",
+    "title": "씨앤엠, 코스닥 상장 철회 - 디일렉"
+  },
+  "summary": "뉴스: 씨앤엠, 코스닥 상장 철회 - 디일렉"
+}

@@ -1,0 +1,37 @@
+{
+  "event_id": "c6697616eb49dbe1",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "엔씨소프트",
+    "ticker": "036570",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-12T06:45:22+00:00",
+  "event_date": "2026-11-12",
+  "event_score": 7,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    },
+    {
+      "code": "volume_300",
+      "label": "거래량 평균 대비 300% 이상",
+      "score_contribution": 4,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "published",
+  "evidence": {
+    "latest_change_pct": -0.09403341288782817,
+    "volume_ratio": 4.307954918865496,
+    "latest_amount": null
+  },
+  "summary": "엔씨소프트 주가 변동 -0.09403341288782817% / 거래량 비율 4.307954918865496"
+}

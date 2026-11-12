@@ -1,0 +1,32 @@
+{
+  "event_id": "753dd40ecc8e5457",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] 바로팜, 코스닥 시장 상장",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-12T06:45:22+00:00",
+  "event_date": "Wed, 11 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] 바로팜, 코스닥 시장 상장 첫날 28% 하락(종합) - 연합뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE9OTjQ4SU9IV2J4eDc3YWNVUFd6MXFhN29Eekhfc1ByYUlMVTFiM093ck5DbnhIS0I2ZU1Qbi1Za0x4dVI4M0hlY1BNQ3FzdnAtNmdyWlo3Qi14MjDSAWBBVV95cUxOak1sb3JsVkFlN1FmOG55SzdjTTRtRGFHeTNjX0M0RTc5UkFXeDdLOTZmSHkzVy1lQml3bXBnMUd3WXVvZ3NmRzM2NHpSNTdyd1pOdVZKcTgyVHlpZ3JHVDE?oc=5",
+    "title": "[특징주] 바로팜, 코스닥 시장 상장 첫날 28% 하락(종합) - 연합뉴스"
+  },
+  "summary": "뉴스: [특징주] 바로팜, 코스닥 시장 상장 첫날 28% 하락(종합) - 연합뉴스"
+}
