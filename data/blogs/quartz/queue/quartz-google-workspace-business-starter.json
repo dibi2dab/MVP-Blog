@@ -549,7 +549,7 @@
   "decision_reason": "품질 점수 100.0점 (기준 85점 이상).",
   "status": "failed",
   "catalog_id": "google-workspace-business-starter",
-  "created_at": "2026-11-11T07:36:31+00:00",
+  "created_at": "2026-11-12T08:03:12+00:00",
   "published_at": null,
   "published_url": null,
   "failure_reason": "[태그 입력] 단계 실패 — locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#tagText')\n"
