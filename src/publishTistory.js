@@ -238,12 +238,12 @@ async function clearExistingTags(page) {
 /** 태그를 입력한다. 태그는 발행의 필수 조건이 아니므로 실패해도 예외를 던지지 않는다. */
 async function applyTags(page, tags) {
   const wanted = [...new Set(tags.map((tag) => String(tag).trim()).filter(Boolean))].slice(0, 10);
-  if (wanted.length === 0) return { added: 0 };
 
   const removed = await clearExistingTags(page);
   if (removed > 0) {
-    console.warn(`[tistory] 임시저장 태그 ${removed}개를 지우고 새 태그를 입력합니다.`);
+    console.warn(`[tistory] 임시저장 태그 ${removed}개를 지웠습니다.`);
   }
+  if (wanted.length === 0) return { added: 0 };
 
   const input = page.locator(SELECTORS.tagInput).first();
   if (!(await input.isVisible().catch(() => false))) {
@@ -408,12 +408,11 @@ export async function publishTistory({
       }
     });
 
-    if (tags.length > 0) {
-      // 태그는 본문 발행의 필수 조건이 아니다. 실패해도 발행을 계속한다.
-      await step('태그 입력', () => applyTags(page, tags)).catch((err) => {
-        console.warn(`[tistory] 태그 없이 발행을 계속합니다: ${err.message}`);
-      });
-    }
+    // 태그는 본문 발행의 필수 조건이 아니다. 실패해도 발행을 계속한다.
+    // 태그가 없는 글이라도 임시저장으로 복원된 이전 글의 태그는 지운다.
+    await step('태그 입력', () => applyTags(page, tags)).catch((err) => {
+      console.warn(`[tistory] 태그 없이 발행을 계속합니다: ${err.message}`);
+    });
 
     // 임시저장 복원이 늦게 일어나 제목/본문을 덮어쓰는 경우를 발행 직전에 바로잡는다.
     await step('본문 재동기화', async () => {

@@ -196,8 +196,8 @@ class TistoryPublisher(BasePublisher):
             raw_cat = article.category if article.category in self.settings.content.categories else ""
             category = self.settings.tistory.category_map.get(raw_cat, raw_cat)
             adapter.set_category(category)
-            if article.tags:
-                adapter.set_tags(article.tags)
+            # 태그가 없어도 임시저장으로 복원된 이전 글의 태그를 지우기 위해 항상 호출한다.
+            adapter.set_tags(article.tags or [])
             adapter.set_visibility(article.visibility or self.settings.tistory.default_visibility)
             candidates = self._entry_slug_candidates(article)
             return adapter.publish(self.settings.tistory.publish_delay_seconds, expect_url_slugs=candidates)
