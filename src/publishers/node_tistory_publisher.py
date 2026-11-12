@@ -226,6 +226,12 @@ class NodeTistoryPublisher(BasePublisher):
             except OSError:
                 pass
 
+        stderr = (proc.stderr or "").strip()
+        # 발행 중 Node 쪽 경고(임시저장 태그 정리 등)는 성공 시에도 남겨 디버깅에 쓴다.
+        for line in stderr.splitlines():
+            if line.startswith("[tistory]"):
+                logger.warning(line)
+
         for line in reversed((proc.stdout or "").splitlines()):
             if _RESULT_SENTINEL in line:
                 raw = line.split(_RESULT_SENTINEL, 1)[1].strip()
@@ -234,7 +240,6 @@ class NodeTistoryPublisher(BasePublisher):
                 except json.JSONDecodeError:
                     break
 
-        stderr = (proc.stderr or "").strip()
         logger.warning("[tistory-node] no result sentinel (exit=%s): %s", proc.returncode, stderr[-800:])
         return {
             "ok": False,
