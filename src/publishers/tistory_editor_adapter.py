@@ -313,13 +313,25 @@ class TistoryEditorAdapter:
         # 임시저장 복원으로 이전 글 태그가 남아 최대 개수(10개)에 도달하면
         # 입력창 자체가 사라진다. 먼저 기존 태그를 지워 입력창을 되살린다.
         try:
-            chip_selector = self.sel.get("TAG_CHIP_DELETE", "") or ".editor_tag .txt_tag a.btn_delete"
+            chip_selector = self.sel.get("TAG_CHIP", "") or ".editor_tag .txt_tag"
+            remove_selector = self.sel.get("TAG_CHIP_DELETE", "") or ".editor_tag .txt_tag a.btn_delete"
             chips = self.page.locator(chip_selector)
+            remove = self.page.locator(remove_selector)
+            previous = remove.count()
             for _ in range(20):
-                if chips.count() == 0:
+                if previous == 0:
                     break
-                chips.first.click(timeout=2000)
-                self.page.wait_for_timeout(120)
+                try:
+                    chips.first.hover(timeout=1500)
+                    remove.first.click(timeout=2000)
+                except Exception:
+                    # CSS로 숨겨진 삭제 버튼은 DOM 클릭으로 처리한다.
+                    remove.first.evaluate("el => el.click()")
+                self.page.wait_for_timeout(150)
+                current = remove.count()
+                if current >= previous:
+                    break
+                previous = current
         except Exception as exc:
             logger.warning("[tistory] 기존 태그 정리 실패: %s", exc)
 

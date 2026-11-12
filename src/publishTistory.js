@@ -15,6 +15,7 @@ export const SELECTORS = {
   titleInput: '#post-title-inp',
   tinymceEditorId: 'editor-tistory',
   tagInput: '#tagText',
+  tagChip: '.editor_tag .txt_tag',
   tagChipDelete: '.editor_tag .txt_tag a.btn_delete',
   categoryButton: '#category-btn',
   completeButton: '#publish-layer-btn',
@@ -220,17 +221,31 @@ async function setTitle(page, title) {
  * 타임아웃되므로, 먼저 기존 태그를 지워 입력창을 되살린다.
  */
 async function clearExistingTags(page) {
-  const chip = page.locator(SELECTORS.tagChipDelete);
+  const chip = page.locator(SELECTORS.tagChip);
+  const remove = page.locator(SELECTORS.tagChipDelete);
   let removed = 0;
-  for (let attempt = 0; attempt < 20; attempt += 1) {
-    if ((await chip.count().catch(() => 0)) === 0) break;
+  let previous = await remove.count().catch(() => 0);
+  for (let attempt = 0; attempt < 20 && previous > 0; attempt += 1) {
     try {
-      await chip.first().click({ timeout: 2000 });
-      removed += 1;
-      await page.waitForTimeout(120);
+      // 삭제 버튼은 보통 태그에 마우스를 올렸을 때만 보인다.
+      await chip.first().hover({ timeout: 1500 }).catch(() => {});
+      await remove.first().click({ timeout: 2000 });
     } catch {
-      break;
+      // CSS로 숨겨진 경우 실제 클릭 대신 DOM 클릭으로 React 핸들러를 호출한다.
+      const clicked = await remove
+        .first()
+        .evaluate((el) => {
+          el.click();
+          return true;
+        })
+        .catch(() => false);
+      if (!clicked) break;
     }
+    await page.waitForTimeout(150);
+    const current = await remove.count().catch(() => 0);
+    if (current >= previous) break; // 클릭이 실제로 태그를 지우지 못했다.
+    removed += previous - current;
+    previous = current;
   }
   return removed;
 }
