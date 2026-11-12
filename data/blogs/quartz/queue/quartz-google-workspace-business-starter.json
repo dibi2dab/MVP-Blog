@@ -547,10 +547,10 @@
   },
   "decision": "PUBLISH",
   "decision_reason": "품질 점수 100.0점 (기준 85점 이상).",
-  "status": "failed",
+  "status": "published",
   "catalog_id": "google-workspace-business-starter",
-  "created_at": "2026-11-12T08:03:12+00:00",
-  "published_at": null,
-  "published_url": null,
-  "failure_reason": "[태그 입력] 단계 실패 — locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator('#tagText')\n"
+  "created_at": "2026-11-12T15:16:55+00:00",
+  "published_at": "2026-11-13T00:18:51+09:00",
+  "published_url": "https://quar1z.tistory.com/4",
+  "failure_reason": ""
 }
