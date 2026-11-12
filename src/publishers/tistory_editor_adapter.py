@@ -310,7 +310,23 @@ class TistoryEditorAdapter:
 
     # ---------------------------------------------------------------- 태그
     def set_tags(self, tags: list[str]) -> None:
-        tag_input = self._require("TAG_INPUT")
+        # 임시저장 복원으로 이전 글 태그가 남아 최대 개수(10개)에 도달하면
+        # 입력창 자체가 사라진다. 먼저 기존 태그를 지워 입력창을 되살린다.
+        try:
+            chip_selector = self.sel.get("TAG_CHIP_DELETE", "") or ".editor_tag .txt_tag a.btn_delete"
+            chips = self.page.locator(chip_selector)
+            for _ in range(20):
+                if chips.count() == 0:
+                    break
+                chips.first.click(timeout=2000)
+                self.page.wait_for_timeout(120)
+        except Exception as exc:
+            logger.warning("[tistory] 기존 태그 정리 실패: %s", exc)
+
+        tag_input = self._candidate("TAG_INPUT")
+        if tag_input is None:
+            logger.warning("[tistory] 태그 입력창을 찾지 못해 태그 없이 발행합니다")
+            return
         for tag in tags[:10]:
             tag_input.click()
             tag_input.fill("")

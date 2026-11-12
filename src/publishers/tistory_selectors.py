@@ -26,6 +26,8 @@ DEFAULT_SELECTORS: dict[str, str] = {
     "CATEGORY_DROPDOWN": 'button#category-btn, [data-role="category"], button:has-text("카테고리"), .category-dropdown',
     # 태그 입력 (새 에디터: input#tagText)
     "TAG_INPUT": 'input#tagText, input[name="tag"], input.editor-tag, input[placeholder*="태그"]',
+    # 복원된 임시저장 글의 기존 태그 삭제 버튼
+    "TAG_CHIP_DELETE": ".editor_tag .txt_tag a.btn_delete",
     # 공개 설정 (새 에디터: publish 레이어 내 radio/버튼)
     "VISIBILITY_SELECT": 'select[name="visibility"], select.visibility',
     "VISIBILITY_RADIO": 'input.form-radio[name="basicSet"], input[name="visibility"], input[data-name="visibility"]',

@@ -15,6 +15,7 @@ export const SELECTORS = {
   titleInput: '#post-title-inp',
   tinymceEditorId: 'editor-tistory',
   tagInput: '#tagText',
+  tagChipDelete: '.editor_tag .txt_tag a.btn_delete',
   categoryButton: '#category-btn',
   completeButton: '#publish-layer-btn',
   publicVisibilityRadio: '#open20',
@@ -211,6 +212,64 @@ async function setTitle(page, title) {
   return false;
 }
 
+/**
+ * 임시저장 복원으로 남아 있는 태그를 지운다.
+ *
+ * 티스토리 에디터는 태그가 10개(최대)가 되면 입력창(#tagText)을 렌더링하지 않는다.
+ * 이전 글의 태그가 복원된 상태에서 새 태그를 입력하려 하면 locator.click 이
+ * 타임아웃되므로, 먼저 기존 태그를 지워 입력창을 되살린다.
+ */
+async function clearExistingTags(page) {
+  const chip = page.locator(SELECTORS.tagChipDelete);
+  let removed = 0;
+  for (let attempt = 0; attempt < 20; attempt += 1) {
+    if ((await chip.count().catch(() => 0)) === 0) break;
+    try {
+      await chip.first().click({ timeout: 2000 });
+      removed += 1;
+      await page.waitForTimeout(120);
+    } catch {
+      break;
+    }
+  }
+  return removed;
+}
+
+/** 태그를 입력한다. 태그는 발행의 필수 조건이 아니므로 실패해도 예외를 던지지 않는다. */
+async function applyTags(page, tags) {
+  const wanted = [...new Set(tags.map((tag) => String(tag).trim()).filter(Boolean))].slice(0, 10);
+  if (wanted.length === 0) return { added: 0 };
+
+  const removed = await clearExistingTags(page);
+  if (removed > 0) {
+    console.warn(`[tistory] 임시저장 태그 ${removed}개를 지우고 새 태그를 입력합니다.`);
+  }
+
+  const input = page.locator(SELECTORS.tagInput).first();
+  if (!(await input.isVisible().catch(() => false))) {
+    await input.waitFor({ state: 'visible', timeout: 5000 }).catch(() => {});
+  }
+  if (!(await input.isVisible().catch(() => false))) {
+    console.warn('[tistory] 태그 입력창을 찾지 못해 태그 없이 발행합니다.');
+    return { added: 0 };
+  }
+
+  let added = 0;
+  for (const tag of wanted) {
+    try {
+      await input.click({ timeout: 5000 });
+      await page.keyboard.type(tag, { delay: 30 });
+      await page.keyboard.press('Enter');
+      await page.waitForTimeout(150);
+      added += 1;
+    } catch (err) {
+      console.warn(`[tistory] 태그 "${tag}" 입력 실패: ${err.message}`);
+      break;
+    }
+  }
+  return { added };
+}
+
 async function saveErrorArtifacts(page, payload, config = tistoryConfig) {
   try {
     const dir = config.paths.artifactDir;
@@ -350,13 +409,9 @@ export async function publishTistory({
     });
 
     if (tags.length > 0) {
-      await step('태그 입력', async () => {
-        for (const tag of tags.slice(0, 10)) {
-          await page.locator(SELECTORS.tagInput).click();
-          await page.keyboard.type(tag, { delay: 30 });
-          await page.keyboard.press('Enter');
-          await page.waitForTimeout(150);
-        }
+      // 태그는 본문 발행의 필수 조건이 아니다. 실패해도 발행을 계속한다.
+      await step('태그 입력', () => applyTags(page, tags)).catch((err) => {
+        console.warn(`[tistory] 태그 없이 발행을 계속합니다: ${err.message}`);
       });
     }
 
