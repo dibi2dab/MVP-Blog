@@ -29,6 +29,10 @@ on:
         description: "Generate and validate without publishing"
         type: boolean
         default: false
+      force:
+        description: "Ignore the per-blog daily limit (catch-up run)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -48,6 +52,7 @@ jobs:
 
     env:
       BLOG: ${{ matrix.blog }}
+      FORCE: ${{ github.event.inputs.force || 'false' }}
 
     steps:
       - name: Decide whether this matrix leg should run
@@ -81,7 +86,12 @@ jobs:
 
       - name: Generate articles
         if: steps.gate.outputs.run == 'true'
-        run: python -m src.editorial.cli generate --blog "$BLOG"
+        run: |
+          args=(--blog "$BLOG")
+          if [ "${FORCE}" = "true" ]; then
+            args+=(--force)
+          fi
+          python -m src.editorial.cli generate "${args[@]}"
 
       - name: Upload generated queue
         if: steps.gate.outputs.run == 'true' && always()
@@ -103,6 +113,7 @@ jobs:
     env:
       BLOG: ${{ matrix.blog }}
       DRY_RUN: ${{ github.event.inputs.dry_run || 'false' }}
+      FORCE: ${{ github.event.inputs.force || 'false' }}
 
       # Blog-specific secrets. Empty values fall back to TISTORY_* in code.
       CRYSTAL_BLOG_NAME: ${{ secrets.CRYSTAL_BLOG_NAME }}
@@ -206,6 +217,9 @@ jobs:
           args=(--blog "$BLOG")
           if [ "${DRY_RUN}" = "true" ]; then
             args+=(--dry-run)
+          fi
+          if [ "${FORCE}" = "true" ]; then
+            args+=(--force)
           fi
           python -m src.editorial.cli publish "${args[@]}"
 
