@@ -1,0 +1,32 @@
+{
+  "event_id": "a9434b874f673aad",
+  "event_type": "news_event",
+  "entity": {
+    "name": "’젠슨황 사퇴’에도 코스피 상승…코스",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: ’젠슨황 사퇴’에도 코스피 상승…코스닥 3% 강세 - 연합뉴스TV",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9ndi1IbnowMk1KQ25uTDhLT2JORkhnSjdGRkxXQ0pDYnlXSVF5SmV6Qmhsel9teEhueWVERGNHU0I5MVE0dzU5U1BRQzVlVmU5cjdBcGszc2FwU3lJck9sS1VqLUU0SFk?oc=5",
+    "title": "’젠슨황 사퇴’에도 코스피 상승…코스닥 3% 강세 - 연합뉴스TV"
+  },
+  "summary": "뉴스: ’젠슨황 사퇴’에도 코스피 상승…코스닥 3% 강세 - 연합뉴스TV"
+}

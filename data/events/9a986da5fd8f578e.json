@@ -1,0 +1,32 @@
+{
+  "event_id": "9a986da5fd8f578e",
+  "event_type": "news_event",
+  "entity": {
+    "name": "넥스아이, 코스닥 상장 첫날 \"주가 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Thu, 12 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 넥스아이, 코스닥 상장 첫날 \"주가 39% 하락\" - 바이오스펙테이터",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE9STE9GM2s0U1RVN1hIeUEzbE1LUDZmUkV3MGVMc2RUR2JZNWtMUnBma2VTanlyM1hyWDE3S08wZFREcFBXWkE2QnJpR010UktOVEtLMFFwQQ?oc=5",
+    "title": "넥스아이, 코스닥 상장 첫날 \"주가 39% 하락\" - 바이오스펙테이터"
+  },
+  "summary": "뉴스: 넥스아이, 코스닥 상장 첫날 \"주가 39% 하락\" - 바이오스펙테이터"
+}

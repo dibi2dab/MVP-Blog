@@ -1,0 +1,32 @@
+{
+  "event_id": "8647e8bdbb3d47fa",
+  "event_type": "news_event",
+  "entity": {
+    "name": "앤트로픽 IPO 상장일 및 주가 1편",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Thu, 12 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 앤트로픽 IPO 상장일 및 주가 1편 : 공모가와 기업가치 분석, 오픈AI와 차이점은? -",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPbnBSNDdWZmRoYV82d1oyelh1YWZmTUFZdFNBMkdOQmJic1dsNmYxdTcwSVZzd3JWWUJTU2tkX0FRc0NWRXFyc2Y0VldxVUZlelZuM19kbGQyZHVweEtWQmdiNjlsbUVmUEVTd3lLTDktNUFQbWQtVXVNWFp0QkxHU1V4dw?oc=5",
+    "title": "앤트로픽 IPO 상장일 및 주가 1편 : 공모가와 기업가치 분석, 오픈AI와 차이점은? - 네이버 프리미엄콘텐츠"
+  },
+  "summary": "뉴스: 앤트로픽 IPO 상장일 및 주가 1편 : 공모가와 기업가치 분석, 오픈AI와 차이점은? - 네이버 프리미엄콘텐츠"
+}

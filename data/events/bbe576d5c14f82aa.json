@@ -1,0 +1,32 @@
+{
+  "event_id": "bbe576d5c14f82aa",
+  "event_type": "news_event",
+  "entity": {
+    "name": "엔라이튼, 기술성평가 통과…내년 코스",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 엔라이튼, 기술성평가 통과…내년 코스닥 상장 예고 - 지디넷코리아",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1Xb2d5T0RjT1E2VVp1d1E3RWIxNEcxRExEd20xM2t6SWVPbGJSY3lHRElxQ21PT3ZXbHAzdEtXTktHeFdFSS1Gb0p6Ty1hVzFCOHpOcXRn?oc=5",
+    "title": "엔라이튼, 기술성평가 통과…내년 코스닥 상장 예고 - 지디넷코리아"
+  },
+  "summary": "뉴스: 엔라이튼, 기술성평가 통과…내년 코스닥 상장 예고 - 지디넷코리아"
+}

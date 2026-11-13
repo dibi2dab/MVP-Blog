@@ -1,0 +1,32 @@
+{
+  "event_id": "3177606da507b3e2",
+  "event_type": "news_event",
+  "entity": {
+    "name": "젠슨 황 사퇴 후폭풍…엔비디아 주가 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Thu, 12 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 젠슨 황 사퇴 후폭풍…엔비디아 주가 4.3% 하락, 삼성전자·SK하이닉스 향방은? - 세계",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9OV1pBekRITm1uM2N0U09CU0w2VUxOYk1DQkU1MTBwNjRhQk4zU3AxUVN3VWNoeDhtT3VnSzY4aUJwNWdKaUJYNkhsNXRYaEVJNG5EOTdVdzVjU1ZyMWJ3ZV9wbjVhTHdYdXNz0gFUQVVfeXFMUFNydEczT1FyejRIV09LTGE1TGVOLWU2Y2FvNk5uSkhMeExGcExYY0hwS1ZjUWlUQ2NsbW5EcFViVDY5bzBiRF9XT3FJdjdxUno5bnNw?oc=5",
+    "title": "젠슨 황 사퇴 후폭풍…엔비디아 주가 4.3% 하락, 삼성전자·SK하이닉스 향방은? - 세계일보"
+  },
+  "summary": "뉴스: 젠슨 황 사퇴 후폭풍…엔비디아 주가 4.3% 하락, 삼성전자·SK하이닉스 향방은? - 세계일보"
+}

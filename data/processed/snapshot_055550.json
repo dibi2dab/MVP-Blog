@@ -7,16 +7,6 @@
     "currency": "KRW",
     "bars": [
       {
-        "date": "2026-07-02",
-        "open": 95800.0,
-        "high": 105000.0,
-        "low": 94000.0,
-        "close": 102200.0,
-        "volume": 1842329,
-        "amount": null,
-        "change_pct": 6.02
-      },
-      {
         "date": "2026-07-03",
         "open": 104000.0,
         "high": 108000.0,
@@ -901,17 +891,27 @@
         "open": 86800.0,
         "high": 86800.0,
         "low": 84300.0,
-        "close": 85000.0,
-        "volume": 1215674,
+        "close": 85600.0,
+        "volume": 1316639,
         "amount": null,
-        "change_pct": -0.7
+        "change_pct": 0.0
+      },
+      {
+        "date": "2026-11-13",
+        "open": 85200.0,
+        "high": 90500.0,
+        "low": 85200.0,
+        "close": 89300.0,
+        "volume": 714626,
+        "amount": null,
+        "change_pct": 4.32
       }
     ],
-    "fetched_at": "2026-11-12T06:45:17+00:00",
+    "fetched_at": "2026-11-13T06:01:10+00:00",
     "source_id": "naver.stock"
   },
   "foreign_net_buy": null,
   "institution_net_buy": null,
-  "generated_at": "2026-11-12T06:45:17+00:00",
+  "generated_at": "2026-11-13T06:01:10+00:00",
   "source_id": "naver.stock"
 }

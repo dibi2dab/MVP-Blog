@@ -1,0 +1,32 @@
+{
+  "event_id": "638302b95c258dd6",
+  "event_type": "news_event",
+  "entity": {
+    "name": "상장 1년 뒤 주가 17% 하락…'I",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 상장 1년 뒤 주가 17% 하락…'IPO 회수처' 전락한 코스닥 - 연합인포맥스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9KY2I1WnBrSWtUaHROUTN2eVFUMU9lbjVDTE9HM29fMFlhQ1pMTUdZSFBQMmtJRGpkcld3eUZ4c2QtbllTdjZtc2JWbFFYLXZjTjI5UVplR2JoOUYzNzVjbUgzOTRlTnpDNmRZMDliNmc?oc=5",
+    "title": "상장 1년 뒤 주가 17% 하락…'IPO 회수처' 전락한 코스닥 - 연합인포맥스"
+  },
+  "summary": "뉴스: 상장 1년 뒤 주가 17% 하락…'IPO 회수처' 전락한 코스닥 - 연합인포맥스"
+}

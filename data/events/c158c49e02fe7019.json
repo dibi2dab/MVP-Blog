@@ -1,0 +1,32 @@
+{
+  "event_id": "c158c49e02fe7019",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스, 2.6조 유증 '러",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Thu, 12 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스, 2.6조 유증 '러프콜' 구주주 청약률 96.8% - 네이버 프리미엄콘텐",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOb0tpZDc2UWlHaXIzZnZTbWJNd3YxY1FvRnhHWkZzc2FWUkc4b09uRXItZWtvQXBiU1RuUVpmcGFlZFdNcVJXSkViczVMYmIzZUpzQ1h5bUlRWGRsbFJNTTBVMENRZ2wwcW4zSUdwbGt0ZlA1eE9Dbm5Pc2Ntby1Eaw?oc=5",
+    "title": "삼성바이오로직스, 2.6조 유증 '러프콜' 구주주 청약률 96.8% - 네이버 프리미엄콘텐츠"
+  },
+  "summary": "뉴스: 삼성바이오로직스, 2.6조 유증 '러프콜' 구주주 청약률 96.8% - 네이버 프리미엄콘텐츠"
+}

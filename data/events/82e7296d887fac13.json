@@ -1,0 +1,32 @@
+{
+  "event_id": "82e7296d887fac13",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] 넥스아이, 코스닥 시장 상",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Thu, 12 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] 넥스아이, 코스닥 시장 상장 첫날 약 40% 하락(종합) - 연합뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBsV0RZdFk4NzR2VS16eFpCOHRHNVhUalNQeExlYy04V3l3SjEyX2U0R0lrRlQzbXlZcE1aSDd2NkRWdFVMRHp4MXVVNVZZS2hhZ2F4NXdCYnU5MDTSAWBBVV95cUxPZlFmclFJcjQwc2FHQmF1bEtVZTlOU3p6YnZkdU4zeFIzLXZxNEdjSWlFbWdKRk9iLW5DLVp2akZydjZ3cS13SFF2ZHludGZpeVNJWjI3TVlFWkt5amFSNlU?oc=5",
+    "title": "[특징주] 넥스아이, 코스닥 시장 상장 첫날 약 40% 하락(종합) - 연합뉴스"
+  },
+  "summary": "뉴스: [특징주] 넥스아이, 코스닥 시장 상장 첫날 약 40% 하락(종합) - 연합뉴스"
+}

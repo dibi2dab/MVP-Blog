@@ -1,0 +1,32 @@
+{
+  "event_id": "84f845008db7664d",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥, 20년간 1353곳 상장·4",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥, 20년간 1353곳 상장·415곳 퇴출…임형준 \"퇴출 지연\" - 뉴스핌",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE8xZkpzNjk3YlZieTB6ZVE5N2YwdVRmaWlnRlUxMUhEblkwRzJRY0ZCV2xBQUZjS2VnTW9TYUxQbzVMZ3NhQjdFVzZ2RDZOeGU1UFMwcWY5WXJvc1h2?oc=5",
+    "title": "코스닥, 20년간 1353곳 상장·415곳 퇴출…임형준 \"퇴출 지연\" - 뉴스핌"
+  },
+  "summary": "뉴스: 코스닥, 20년간 1353곳 상장·415곳 퇴출…임형준 \"퇴출 지연\" - 뉴스핌"
+}

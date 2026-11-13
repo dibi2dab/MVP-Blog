@@ -1,0 +1,32 @@
+{
+  "event_id": "f8f10d2d57f14ad7",
+  "event_type": "news_event",
+  "entity": {
+    "name": "\"믿고 투자할 수 있는 시장\" 코스닥",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: \"믿고 투자할 수 있는 시장\" 코스닥 개혁 기대...상장사 4곳 중 3곳 상승 - 머니투데",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5MaWstY0RLRU9BaWx2eWQ0OFF6c214enE2TmIyNWpUSXdmYVhVVUc1MWJGU1BZZ2NPcm50LTdkSVRockZyVFhRQ2VENDNncFFjc05YVExhcHBpellURmRHUnJiTkNhOVJn0gFuQVVfeXFMUDc2YzBHR0tUMkZWc3ZEal9qOVNMcHZ3bWJQQlBGYWlLMnZoYWZvNVE1ZjdYYlphZlE2ZHpsQS03d2tINEJBVTlkNE1fRTQtWHpxcU85NkI1RGdxeDRjaUM0UDdzQmEzYmctN3RLLUE?oc=5",
+    "title": "\"믿고 투자할 수 있는 시장\" 코스닥 개혁 기대...상장사 4곳 중 3곳 상승 - 머니투데이 - 머니투데이"
+  },
+  "summary": "뉴스: \"믿고 투자할 수 있는 시장\" 코스닥 개혁 기대...상장사 4곳 중 3곳 상승 - 머니투데이 - 머니투데이"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "e47eedc0a554797b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "정은보 한국거래소 이사장 “코스닥 상",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-13T06:01:16+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 정은보 한국거래소 이사장 “코스닥 상장사, 연 1회 IR 의무화” - 전자신문",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5oSFR0V191Y0Z6WHdrVGI3T1FYZW12am1aRmt6OHNQcExwWldXZkhLYlUwR1pWVHhFb2l4b20za1ZRUUo5U05XUzY2WlBvUQ?oc=5",
+    "title": "정은보 한국거래소 이사장 “코스닥 상장사, 연 1회 IR 의무화” - 전자신문"
+  },
+  "summary": "뉴스: 정은보 한국거래소 이사장 “코스닥 상장사, 연 1회 IR 의무화” - 전자신문"
+}
