@@ -1,0 +1,32 @@
+{
+  "event_id": "7befbdc91ad74245",
+  "event_type": "news_event",
+  "entity": {
+    "name": "엔트로픽 주가 전망 2편 : 상장 및",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 엔트로픽 주가 전망 2편 : 상장 및 IPO 매매전략 및 투자방법, 언제 매수할까? - 네",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOTzZNdmY3WkttSTZLY0I3UGluNWlRWUJyWFd3LVVkbzhkZW0xYWNmQkJHR2YwRkJzOGIwa0tfZkNXcTg4alJmVWoyczU1M0JLWG5Kb2hUbGw1OGo2MHo2NldXRS1RUk12UEdTcDltQUhNZDV2VDV6MjhmMGJnQ3ZZQ1lISQ?oc=5",
+    "title": "엔트로픽 주가 전망 2편 : 상장 및 IPO 매매전략 및 투자방법, 언제 매수할까? - 네이버 프리미엄콘텐츠"
+  },
+  "summary": "뉴스: 엔트로픽 주가 전망 2편 : 상장 및 IPO 매매전략 및 투자방법, 언제 매수할까? - 네이버 프리미엄콘텐츠"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "d6852b4fd845f838",
+  "event_type": "news_event",
+  "entity": {
+    "name": "피터앤파트너스, 코스닥 상장사 맞춤형",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 피터앤파트너스, 코스닥 상장사 맞춤형 ‘IR 지원 사업’ 본격화 - 매일경제 마켓",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9zWjRqWWdHaC00bTFpZnI5YUhQV3hoamhNMEhQQU5ONDN3ODRGcmsxOWZYVVF5djJmSUtDcFNLZGQ3ZXZtUGFYWlJjRmk3a1RlYVE?oc=5",
+    "title": "피터앤파트너스, 코스닥 상장사 맞춤형 ‘IR 지원 사업’ 본격화 - 매일경제 마켓"
+  },
+  "summary": "뉴스: 피터앤파트너스, 코스닥 상장사 맞춤형 ‘IR 지원 사업’ 본격화 - 매일경제 마켓"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "c716c8e7fe016902",
+  "event_type": "news_event",
+  "entity": {
+    "name": "‘조선미녀’ 구다이글로벌, 코스피 상",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: ‘조선미녀’ 구다이글로벌, 코스피 상장 예비심사 청구 - Chosunbiz",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNU54MGFGRkZnMUFNVC1VeHEzSm1uYzFGMzY0amtQTmdYQ1RxLWg1QWVFaDNxdFFzeHlYbTloT1ZFNUlWc3BsYnFKWjFtc2YwNUpNOXN2aXh4UVljSnlIV1NNV2RiZkhISDVqdDdPQWxrWjI0ZE13dzJBajRwdmFUVFJnY0sxZXIy0gGcAUFVX3lxTFAydDhQbWcxQzZwbUVZNUVsalRmMnFOb2pSNHVINWtDa0ZSeU81eXBseGtHc0NMOGx5eUh1UzNrdWJRMmFfUzNSaktIOE5xN0dkR1laelFxQVh2ZjI0WHVLX2w5di16a1pRdFhhSmJCbnlVLUVNcFNFT1lfMlFubEhJOHQtM20taHVsNXN4Nmw3LVp0UE1PcG1UM1d3WQ?oc=5",
+    "title": "‘조선미녀’ 구다이글로벌, 코스피 상장 예비심사 청구 - Chosunbiz"
+  },
+  "summary": "뉴스: ‘조선미녀’ 구다이글로벌, 코스피 상장 예비심사 청구 - Chosunbiz"
+}

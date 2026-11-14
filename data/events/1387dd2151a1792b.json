@@ -1,0 +1,32 @@
+{
+  "event_id": "1387dd2151a1792b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "'10조 몸값' 구다이글로벌, 코스피",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: '10조 몸값' 구다이글로벌, 코스피 상장 첫발…일본 FI 정리가 관건 - 블로터",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9DM0tsa2FVRlItQ2lVWnZlUjY3ZVZrUnlkcVpKb1lPYVljLXFNb3Q3ZFJ1YmgyUHJOcktkZlZaQ2xWcjR2c1FVeGlid2NWWTU5cjVXTUcwelBzV3BkYk1tUldDR0NxX1lJ0gFsQVVfeXFMTU9iR1FacjFRcHY0d0lucUNiNWJkYjlrTU1vLTZNalpLcV9NLVFUc013R1g1ZTlYcl9HQUo5WlQ5Y1oyd2hBYzNRbDdodzdaV0c3UkVtOVlUOUlLWWVlY2puVUJPZ2Fxc2FCdE05?oc=5",
+    "title": "'10조 몸값' 구다이글로벌, 코스피 상장 첫발…일본 FI 정리가 관건 - 블로터"
+  },
+  "summary": "뉴스: '10조 몸값' 구다이글로벌, 코스피 상장 첫발…일본 FI 정리가 관건 - 블로터"
+}

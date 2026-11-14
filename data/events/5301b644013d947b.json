@@ -1,0 +1,32 @@
+{
+  "event_id": "5301b644013d947b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "닛케이 3707엔 반등 기세…앤스로픽",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Sat, 14 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 닛케이 3707엔 반등 기세…앤스로픽 상장이 AI주 가른다 - 글로벌이코노믹",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxObnQ0cWdncnVDaDFuXzdnQTdXcFNGMHR4TG83Y1J1N1lqRlFET0xKN1hrM3JWRUVpTWxkTnZRbDVYVVRyX1F5dHB3RTVvQlJZZWVicVRYVDlVU213VG05bG8tZjFtVVZqRkpVQ3l0d2RMekM3cFhXRlprY2FoeG92V2ZnNHhVSW93?oc=5",
+    "title": "닛케이 3707엔 반등 기세…앤스로픽 상장이 AI주 가른다 - 글로벌이코노믹"
+  },
+  "summary": "뉴스: 닛케이 3707엔 반등 기세…앤스로픽 상장이 AI주 가른다 - 글로벌이코노믹"
+}

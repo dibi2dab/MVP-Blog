@@ -7,7 +7,7 @@
     "entity_type": "corp",
     "extra": {}
   },
-  "detected_at": "2026-11-12T06:45:22+00:00",
+  "detected_at": "2026-11-14T05:51:09+00:00",
   "event_date": "Thu, 12 No",
   "event_score": 4,
   "evidence_score": 0,
@@ -15,7 +15,7 @@
   "reasons": [
     {
       "code": "news_high",
-      "label": "뉴스: 넥스아이, 코스닥 상장 첫날 25%대 급락 - 뉴시스",
+      "label": "뉴스: 넥스아이, 코스닥 상장 첫날 25%대 하락 - 머니투데이 - 머니투데이",
       "score_contribution": 4,
       "detail": "대형 이슈 키워드 감지"
     }
@@ -25,8 +25,8 @@
   ],
   "status": "rejected",
   "evidence": {
-    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBTX1BtY3M4ZnBCZmhUM2FkNXJkLVFCVE5YNW5CN3Y4UXdPYjZBbUkxQ3FMU3ZCUEZDYjRBSThlMUNPZnpPMFV3aG5zWHNyRGVmc2xnNW4zcXdtQXNpSmktMNIBeEFVX3lxTE1GcUhRb1RZN2loWkNmVEZRMU5USjktSnltQTlCU3dCMUZMaXhZSHV0WUN3dU1HSTdpckd4clByQTJhMDhrS1g3X1RhMFZsS3dmczE0RHB1YUx3UWNvMkZKVlNWVlVNcm5lQTFQajdndXJtcHBsWERucQ?oc=5",
-    "title": "넥스아이, 코스닥 상장 첫날 25%대 급락 - 뉴시스"
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1FeFMybzNQTXZYVkF6Y2RMV2lqZ01aY3k0aTB0RER2Um1ZLURUUmg4MmNhMkpVSDAxQ0pVeXBiRnhua28ycVRoakV6SFV3d0ljSjc5bTMzdnFWZ1g4S3pYdmJVMmVrb1l20gFuQVVfeXFMTlFtV2FEdDM0ZzdicGhic3BSS3lzUE5fNGk5S01HWFlvcVktQUwya0hZdEVRUnJCWGdtOXpEczZCOENsei1pbTBjVnhhb2w1SV82SThmdzFiUXlYa292U19SNzBkUEE4LVFkV1ZBS0E?oc=5",
+    "title": "넥스아이, 코스닥 상장 첫날 25%대 하락 - 머니투데이 - 머니투데이"
   },
-  "summary": "뉴스: 넥스아이, 코스닥 상장 첫날 25%대 급락 - 뉴시스"
+  "summary": "뉴스: 넥스아이, 코스닥 상장 첫날 25%대 하락 - 머니투데이 - 머니투데이"
 }

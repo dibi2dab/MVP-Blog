@@ -1,0 +1,32 @@
+{
+  "event_id": "48eff50cd5401278",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성전자 인수설에 美 모딘 주가 28",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성전자 인수설에 美 모딘 주가 28% 폭등…시총 72억 달러로 급증 - www.ebn.c",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9QTm11dHhHR1NSMVc3S01CTFZMZS1sQW5rS1VZblRubG1qYzFVdWt1X2l4dFoyWDFZYkFza0JtWDdNd1huTnM1NUtidHV3eWhDendsbDQ4SHhLMGp1ZlRuN0lvc1VJS3lN?oc=5",
+    "title": "삼성전자 인수설에 美 모딘 주가 28% 폭등…시총 72억 달러로 급증 - www.ebn.co.kr"
+  },
+  "summary": "뉴스: 삼성전자 인수설에 美 모딘 주가 28% 폭등…시총 72억 달러로 급증 - www.ebn.co.kr"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "a756f9f2fbbd1c27",
+  "event_type": "news_event",
+  "entity": {
+    "name": "영광와이케이엠씨 등 3곳 내주 코스닥",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Sat, 14 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 영광와이케이엠씨 등 3곳 내주 코스닥 상장…에스에프씨·유캐스트 청약 [투자360] - 헤럴",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5RdWNvR052ekREcXZPWWFPcFlUR2w0UEZlc1F2OTJzZUJuOWZFaEpnSXNjZDhUSHVzOC1kYnRTVUZXSVFlS0k3NWVUb0tZcW5EcFlnd0tB?oc=5",
+    "title": "영광와이케이엠씨 등 3곳 내주 코스닥 상장…에스에프씨·유캐스트 청약 [투자360] - 헤럴드경제"
+  },
+  "summary": "뉴스: 영광와이케이엠씨 등 3곳 내주 코스닥 상장…에스에프씨·유캐스트 청약 [투자360] - 헤럴드경제"
+}

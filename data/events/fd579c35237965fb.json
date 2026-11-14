@@ -1,0 +1,32 @@
+{
+  "event_id": "fd579c35237965fb",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스, 3조 유증 승부수…",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Mon, 31 Au",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스, 3조 유증 승부수…15조 투자 '실탄' 확보 - 메디파나뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE02V2d6UFBxTy05TGN6a2hqNXIwaEhOZ1ZtSzlQSmtBSVJ1S01pZlZKODV0ZHlFNmRpUXhFMFZGTG4teS16V2lpRzdnZnNRdnRwNzgxclBtaldDOHJ0ekJQRW9PNmtTZUxVTjBj?oc=5",
+    "title": "삼성바이오로직스, 3조 유증 승부수…15조 투자 '실탄' 확보 - 메디파나뉴스"
+  },
+  "summary": "뉴스: 삼성바이오로직스, 3조 유증 승부수…15조 투자 '실탄' 확보 - 메디파나뉴스"
+}

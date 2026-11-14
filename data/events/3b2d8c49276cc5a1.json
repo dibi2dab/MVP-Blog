@@ -1,0 +1,32 @@
+{
+  "event_id": "3b2d8c49276cc5a1",
+  "event_type": "news_event",
+  "entity": {
+    "name": "영광와이케이엠씨, 코스닥 신규 상장…",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Thu, 12 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 영광와이케이엠씨, 코스닥 신규 상장…16일 거래 개시 By EBN - Investing.c",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9JOGo1X1FueDkzTEtkMlZMdDZJVWtBSjZkTm5Na3p4M3lxYURHWGpZMjhVOWpUY1BLdXJfNnZoRk82MUFYaGJWLXJvcGVmdll5ei1YbVZrTm5tamR2MVRZN2lDcVMzSnBNYl80VVQwa1E?oc=5",
+    "title": "영광와이케이엠씨, 코스닥 신규 상장…16일 거래 개시 By EBN - Investing.com 한국어"
+  },
+  "summary": "뉴스: 영광와이케이엠씨, 코스닥 신규 상장…16일 거래 개시 By EBN - Investing.com 한국어"
+}

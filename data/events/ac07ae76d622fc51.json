@@ -1,0 +1,32 @@
+{
+  "event_id": "ac07ae76d622fc51",
+  "event_type": "news_event",
+  "entity": {
+    "name": "李 대통령 \"IR 안하는 상장사, 자",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-14T05:51:09+00:00",
+  "event_date": "Fri, 13 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 李 대통령 \"IR 안하는 상장사, 자격 의문\"…거래소 \"코스닥 연 1회 의무화 추진\" - ",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBVVnI1aG15T2c3cGNTYVVwSnFCOVk4N0tsNklidjF2Q3RrLUM0NkVSUVRjNzBpVkRxd1JjeHZKOFFIWnRpSVF4ZGtkWlFTTWNTUG42ckJpZ29GUQ?oc=5",
+    "title": "李 대통령 \"IR 안하는 상장사, 자격 의문\"…거래소 \"코스닥 연 1회 의무화 추진\" - 한국경제"
+  },
+  "summary": "뉴스: 李 대통령 \"IR 안하는 상장사, 자격 의문\"…거래소 \"코스닥 연 1회 의무화 추진\" - 한국경제"
+}
