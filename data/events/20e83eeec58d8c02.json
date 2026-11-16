@@ -1,0 +1,32 @@
+{
+  "event_id": "20e83eeec58d8c02",
+  "event_type": "news_event",
+  "entity": {
+    "name": "ADR 상장이 왜 주가 상승 요인이 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-16T05:51:21+00:00",
+  "event_date": "Mon, 06 Ap",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: ADR 상장이 왜 주가 상승 요인이 되는지 알아봐요 - 네이버페이 머니스토리",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE4tNlFGM1ZHUTFscDAzeEhyVzM4cXV4a0V2c1prWmNZYm9JZ3ltSU52dElkSjM5N2FjbnI1bXc5VFhWcnFRWmJ6ZFlzZDBWUHQtS0ZQQ1pRYmg?oc=5",
+    "title": "ADR 상장이 왜 주가 상승 요인이 되는지 알아봐요 - 네이버페이 머니스토리"
+  },
+  "summary": "뉴스: ADR 상장이 왜 주가 상승 요인이 되는지 알아봐요 - 네이버페이 머니스토리"
+}

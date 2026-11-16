@@ -1,0 +1,32 @@
+{
+  "event_id": "afbe51b09904f97b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스, 2.7조 유증에 1",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-16T05:51:21+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스, 2.7조 유증에 11.4조 몰려…역대 최대 - 데일리안",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNX2pyTVR6eUdXWVltUjVHa0tNbUV0Z0RWRUpwUVI3QVVRYlpWS240MklSRjJTb09TYUZQR2x3amhyV2JqRW5TTENIa0VYT09ieTJpQzBESDVvTDVuYzRUNzE2Wm5xa09IUWRBVGFad2NJTkk3dWRRQUphR2g3QkIyYXFGM3VvQzkwRjNaMlByWW5ERnhmRmlLYUNpaVBDNFh3Y3BtSi0tSG9pZDdRNHZjbVVfTFc2TTJuOVg4RnBmZk5qZTMzZXd2S2ljUjJLTGkxZDQtMzR5SHhobnhybXV6UkVwTjJ3WkI1dVo2OUdvVnJKNTV5alNMUQ?oc=5",
+    "title": "삼성바이오로직스, 2.7조 유증에 11.4조 몰려…역대 최대 - 데일리안"
+  },
+  "summary": "뉴스: 삼성바이오로직스, 2.7조 유증에 11.4조 몰려…역대 최대 - 데일리안"
+}

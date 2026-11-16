@@ -1,0 +1,32 @@
+{
+  "event_id": "f26d842b1b0e823b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "아산 '미래유니콘클럽 1기' 코스닥 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-16T05:51:21+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 아산 '미래유니콘클럽 1기' 코스닥 첫 상장…영광YKMC '쾌거' - 뉴시스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE40Mlg2WEsxRi1iOUZXdEVfQWlZMnBZYllwMzJtMHpGM3RpeDRMVnVRY1pIcVJtNnc2eV9fV2hRSTF6U2FURGQxUy1BSkJCQUV6bXBQa3RfeHd0YUdVSmVvctIBeEFVX3lxTFBPWFJoUHNOd2xRWW1QR01qVUlZdEVDRVEwelpNODRKNmFZSzRrQ2p1OEZXXzVOVVBKRkRoVnVZUGU2enF4aUNwc184b3hqUHFlYXdMUkY1b21adFNfMGkwekV6dldlMU10T2xaNVd0aHF3eGtTcXloTQ?oc=5",
+    "title": "아산 '미래유니콘클럽 1기' 코스닥 첫 상장…영광YKMC '쾌거' - 뉴시스"
+  },
+  "summary": "뉴스: 아산 '미래유니콘클럽 1기' 코스닥 첫 상장…영광YKMC '쾌거' - 뉴시스"
+}

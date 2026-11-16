@@ -1,0 +1,32 @@
+{
+  "event_id": "a621bfd53d80df6a",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 상장사 SGC E&C, 사우디",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-16T05:51:21+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 상장사 SGC E&C, 사우디 화학 설비 증설 공사 완료 - 더구루",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFB3bDZ3NGotNEtCTExxSFMxM1FzM0t0WDh2ejJPeXcyN1NNRldnSlZTemZjR3NwYzAtaHN2VHNJa2t2MTFCLVJBNG1uUlRHR2dUVHZLVXVfRUVVSTVFdm9mY3BBdw?oc=5",
+    "title": "코스닥 상장사 SGC E&C, 사우디 화학 설비 증설 공사 완료 - 더구루"
+  },
+  "summary": "뉴스: 코스닥 상장사 SGC E&C, 사우디 화학 설비 증설 공사 완료 - 더구루"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "aa4f429e9e429bb6",
+  "event_type": "news_event",
+  "entity": {
+    "name": "검색은 ‘위태’ 합병은 ‘하세월’..",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-16T05:51:21+00:00",
+  "event_date": "Fri, 14 Au",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 검색은 ‘위태’ 합병은 ‘하세월’...네이버 주가 어디로 - 매일경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1ZSmVHZWkyNVN0R1pvX0NFcnlPZ0lneE5taGRsa3huTkV6MTlEZFhiYi1qc1lMWGlxMFpLMmMta1lSaEtpcXNNbEVZNnRUZnBpbHdwYg?oc=5",
+    "title": "검색은 ‘위태’ 합병은 ‘하세월’...네이버 주가 어디로 - 매일경제"
+  },
+  "summary": "뉴스: 검색은 ‘위태’ 합병은 ‘하세월’...네이버 주가 어디로 - 매일경제"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "1d5bca6c6336699e",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스, 2조6650억 유증",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-16T05:51:21+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스, 2조6650억 유증 청약 마무리…일반공모 135.6대 1 - 파이낸셜포스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1zRGpQa2NSRFduVEltQ3dmeWt1NlRZeGZHYWZDSjVRQWpGU3QzYUhUV25XN0NGOUw1NW11SkhSQkxUcGN0MVY5Zng4dEJQSEZQM0plY2o0MmpIT05aV3BGTERXWTV4cXFNMloxdFp4NTQxMmVw?oc=5",
+    "title": "삼성바이오로직스, 2조6650억 유증 청약 마무리…일반공모 135.6대 1 - 파이낸셜포스트"
+  },
+  "summary": "뉴스: 삼성바이오로직스, 2조6650억 유증 청약 마무리…일반공모 135.6대 1 - 파이낸셜포스트"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "09ba07a34dbdcf36",
+  "event_type": "news_event",
+  "entity": {
+    "name": "에스에프씨·유캐스트 청약…코스닥 4곳",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-16T05:51:21+00:00",
+  "event_date": "Sun, 15 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 에스에프씨·유캐스트 청약…코스닥 4곳 상장 [이번주 증시 캘린더] - 서울경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE0yUTlXS3N2UDJwWlR0djdJazlOZG5Sck54T0VrZXV3ZkZfSlEzTlgtZnJNWVRtTmVUZVJOYWQydGw1Q1l4TS1GNHhlLU9odFF6ZmfSAVNBVV95cUxNTmNDdHhCNWk4NHVRSDhCeWc4Mk9SeklxM0JhVnhoSzVIR29nWnYtVVM2UWRJMVcxNUV0SG5tdlBvcXd2THVnR0xHTWF3Ymd3a05xRQ?oc=5",
+    "title": "에스에프씨·유캐스트 청약…코스닥 4곳 상장 [이번주 증시 캘린더] - 서울경제"
+  },
+  "summary": "뉴스: 에스에프씨·유캐스트 청약…코스닥 4곳 상장 [이번주 증시 캘린더] - 서울경제"
+}

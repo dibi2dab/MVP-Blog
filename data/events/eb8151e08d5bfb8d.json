@@ -1,0 +1,32 @@
+{
+  "event_id": "eb8151e08d5bfb8d",
+  "event_type": "news_event",
+  "entity": {
+    "name": "아산 유망기업 첫 코스닥 상장…공모자",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-16T05:51:21+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 아산 유망기업 첫 코스닥 상장…공모자금 150억 지역에 재투자 - 굿모닝충청",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1uRDZ4NS1scXlUMkk1UUZFdWVKNDM2OHM4VDhiTnFEQU00LVZITDluU0R2cTU2TmxTVUNNMkhPVlNFYWswMFJ6bXNVYkROckR1dlBNamtTVWRZbUNLN2JYeE5lTzlBb3VQSi1ORkZJOEFfZw?oc=5",
+    "title": "아산 유망기업 첫 코스닥 상장…공모자금 150억 지역에 재투자 - 굿모닝충청"
+  },
+  "summary": "뉴스: 아산 유망기업 첫 코스닥 상장…공모자금 150억 지역에 재투자 - 굿모닝충청"
+}

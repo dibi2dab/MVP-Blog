@@ -1,0 +1,32 @@
+{
+  "event_id": "d1455f2ab641684c",
+  "event_type": "news_event",
+  "entity": {
+    "name": "아산 ㈜영광와이케이엠씨, 16일 코스",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-16T05:51:21+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 아산 ㈜영광와이케이엠씨, 16일 코스닥 상장 - 중부매일",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE1NXzZ0Nkh2cU9MU3pNeElXNGctMkNLM09DMTBWNmlyQzQwNGl4M1ptZ1RyOVRpbFVNbGc3dXYtajQyNnU1SzY5V0tTZmZadkU1ekxCQzBuOGZuc0NvVUZuS1RmdWNHYTd6WnfSAW5BVV95cUxQUm1aT0xmd3BLU1BzeGFqZGlFS0JKeU9VZ3dSb2U5U01IVkthdXNNSzA2UnQ2eTVzR0FzNi02cThnTU02NGNQd2RCUXV6OHN3Tm9sbUIySVR1UzhPRHUxa09IZ1NmeDF4RENTc25rZw?oc=5",
+    "title": "아산 ㈜영광와이케이엠씨, 16일 코스닥 상장 - 중부매일"
+  },
+  "summary": "뉴스: 아산 ㈜영광와이케이엠씨, 16일 코스닥 상장 - 중부매일"
+}
