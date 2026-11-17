@@ -1,0 +1,32 @@
+{
+  "event_id": "3e108876ed1b6120",
+  "event_type": "news_event",
+  "entity": {
+    "name": "'대어' 앤트로픽 상장 임박…잔잔한 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-17T07:29:48+00:00",
+  "event_date": "Tue, 17 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: '대어' 앤트로픽 상장 임박…잔잔한 환시에 미칠 파장은 - KB Think",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFB6MDdRd2RDZWQ2Mi1UR2NWc2I2dE9jb283SUlVZnVUZ1Fpck1DcjlUNWkzX2g5ZnJ2aU1VT0JqcGVSb3BUUnVDQ3prNkUzYl9XSjc0R0tKTjNpQ0tLUndVTVE5SFVuU0FWczVQVU9QUDM4dw?oc=5",
+    "title": "'대어' 앤트로픽 상장 임박…잔잔한 환시에 미칠 파장은 - KB Think"
+  },
+  "summary": "뉴스: '대어' 앤트로픽 상장 임박…잔잔한 환시에 미칠 파장은 - KB Think"
+}

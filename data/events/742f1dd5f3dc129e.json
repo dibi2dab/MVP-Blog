@@ -1,0 +1,31 @@
+{
+  "event_id": "742f1dd5f3dc129e",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "고려아연",
+    "ticker": "010130",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-17T07:29:48+00:00",
+  "event_date": "2026-11-17",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "published",
+  "evidence": {
+    "latest_change_pct": -0.05,
+    "volume_ratio": 0.777897296417199,
+    "latest_amount": null
+  },
+  "summary": "고려아연 주가 변동 -0.05% / 거래량 비율 0.777897296417199"
+}

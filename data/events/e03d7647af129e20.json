@@ -1,0 +1,31 @@
+{
+  "event_id": "e03d7647af129e20",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "HD현대중공업",
+    "ticker": "329180",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-17T07:29:48+00:00",
+  "event_date": "2026-11-17",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": -0.05018587360594796,
+    "volume_ratio": 0.44040943554246603,
+    "latest_amount": null
+  },
+  "summary": "HD현대중공업 주가 변동 -0.05018587360594796% / 거래량 비율 0.44040943554246603"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "2e4562c28e7f107e",
+  "event_type": "news_event",
+  "entity": {
+    "name": "한투證 삼성바이오로직스, 인수 효과로",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-17T07:29:48+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 한투證 삼성바이오로직스, 인수 효과로 실적 확대 기대…목표가 195만원 - 아주경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5Bby14VHNrQjZTZGhEYVFqbEI2SGMwSkZtbkdiOE1rNG1EbVZUMVVVTjUyRDZhaFNKYjI1cWN6SWVwUUZsZS16c05RekFYd2ktNEZ3MkpZV09UUdIBWEFVX3lxTE5FSVBrRjNPcnRtVWx1RFVycmp1WDkyclJlLWhtV0pleGhVaHhWZzJQejFKSmIzcjJURDZCZTJva1kzNUxOLUpsRWtpQ3M0LUdDQ01lVVVIUzU?oc=5",
+    "title": "한투證 삼성바이오로직스, 인수 효과로 실적 확대 기대…목표가 195만원 - 아주경제"
+  },
+  "summary": "뉴스: 한투證 삼성바이오로직스, 인수 효과로 실적 확대 기대…목표가 195만원 - 아주경제"
+}

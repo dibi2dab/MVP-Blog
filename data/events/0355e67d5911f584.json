@@ -1,0 +1,32 @@
+{
+  "event_id": "0355e67d5911f584",
+  "event_type": "news_event",
+  "entity": {
+    "name": "영광와이케이엠씨 상장일 주가 급락 배",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-17T07:29:48+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 영광와이케이엠씨 상장일 주가 급락 배경과 앞으로 남은 15일·1개월 오버행 수급 분석 - ",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOX0xxWEk3NkdsSEIxMURUaF91d3VZalV1a080cnJIRC1pT2xjZDYtWUxyWm9kNTN0MXdxZ1g1MkNEQTFKWWhUOTlQc0xzTzZQbElfZ3h1ejJFTUlBemJESlNBUE1vN0szV2VKRGlhVVpWRDVFOGh3QTlZcUdmTGJBQnRQTQ?oc=5",
+    "title": "영광와이케이엠씨 상장일 주가 급락 배경과 앞으로 남은 15일·1개월 오버행 수급 분석 - 네이버 프리미엄콘텐츠"
+  },
+  "summary": "뉴스: 영광와이케이엠씨 상장일 주가 급락 배경과 앞으로 남은 15일·1개월 오버행 수급 분석 - 네이버 프리미엄콘텐츠"
+}

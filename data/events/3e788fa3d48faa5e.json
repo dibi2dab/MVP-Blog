@@ -1,0 +1,32 @@
+{
+  "event_id": "3e788fa3d48faa5e",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] LG화학 지분 매각 추진에",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-17T07:29:48+00:00",
+  "event_date": "Thu, 29 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] LG화학 지분 매각 추진에 LG에너지솔루션 6% 급락 - 뉴스핌",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE02YWdUUjA5MEkyaGpqNExjdUp3OHRmc005WTVPdXBHUlBQamNjNDlWN3NZZC05Q2VJNzY4YzFhUVZtSks5RHVUZDduSWZ1S1NuSmJUaEVGQ0RJWkpi?oc=5",
+    "title": "[특징주] LG화학 지분 매각 추진에 LG에너지솔루션 6% 급락 - 뉴스핌"
+  },
+  "summary": "뉴스: [특징주] LG화학 지분 매각 추진에 LG에너지솔루션 6% 급락 - 뉴스핌"
+}

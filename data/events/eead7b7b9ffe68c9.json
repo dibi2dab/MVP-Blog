@@ -1,0 +1,32 @@
+{
+  "event_id": "eead7b7b9ffe68c9",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오, 5공장 가동·PPGN 인",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-17T07:29:48+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오, 5공장 가동·PPGN 인수 효과 본격화…목표가 195만원 유지 - 파이낸셜뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBOZk9aRW9YaWN5QnZEdkRaOFl0eTYzNlNuUEVPOEtsQm42U3JmNkIxZVJNektHWXZ3Mk9WRXZhRUs1VVRLSDliY1AxZ29OYzIwaENKM21CMVNQZw?oc=5",
+    "title": "삼성바이오, 5공장 가동·PPGN 인수 효과 본격화…목표가 195만원 유지 - 파이낸셜뉴스"
+  },
+  "summary": "뉴스: 삼성바이오, 5공장 가동·PPGN 인수 효과 본격화…목표가 195만원 유지 - 파이낸셜뉴스"
+}
