@@ -1,0 +1,32 @@
+{
+  "event_id": "e805b822995c2553",
+  "event_type": "news_event",
+  "entity": {
+    "name": "5000선 무너진 코스피...증권가 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Tue, 17 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 5000선 무너진 코스피...증권가 \"부풀려진 엔비디아 리스크, 앤트로픽 상장으로 자금 쏠",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQdHlZNlVpelJTUncxdzFnc1pMdk9hdEd3NDY4clJvQmQyVEZKZjVGbUoyQ0lHYXBzc1FKTGUtLXowUndHeXFzMElnQVlOYW5rTU5qbHRmOVlUSVVHZVZ2eXVYeEpRSm1pdHVjR29WTHFzX3FjUGRuZWdDdDVCTEVONg?oc=5",
+    "title": "5000선 무너진 코스피...증권가 \"부풀려진 엔비디아 리스크, 앤트로픽 상장으로 자금 쏠림도\" - 조선일보"
+  },
+  "summary": "뉴스: 5000선 무너진 코스피...증권가 \"부풀려진 엔비디아 리스크, 앤트로픽 상장으로 자금 쏠림도\" - 조선일보"
+}

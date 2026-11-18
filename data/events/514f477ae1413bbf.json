@@ -1,0 +1,32 @@
+{
+  "event_id": "514f477ae1413bbf",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 상장 앞둔 아델 '병든 단백질",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 상장 앞둔 아델 '병든 단백질만 겨냥…기술이전 성과 이어갈 것' - 한국아이닷컴",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE9nNlVDckJRWnNuQ0pwWjV6NnNQQU9JN25BYmo0bTBLX1NKdWxCaVU0Qm5MNmNudWZWQVlXMGhJNm1OaXdiUkxDQlZCczhEYXdMWTZTY2liMzBKRENUSXE4MThpZXpvUlByLVFn0gFvQVVfeXFMTjZEd0pVcDlBRzBjUXgxaTcwR1V1NFM4OFptNXJEVmdWZHZCSDZJQmpIbmRXVnlHM3JFeXZjQ1haVFhyanc4dnRkZk1VQnZuZWdOWThQOHJGeEhnN2pfMnA0bE45WGJuRzdTU0FlSlJB?oc=5",
+    "title": "코스닥 상장 앞둔 아델 '병든 단백질만 겨냥…기술이전 성과 이어갈 것' - 한국아이닷컴"
+  },
+  "summary": "뉴스: 코스닥 상장 앞둔 아델 '병든 단백질만 겨냥…기술이전 성과 이어갈 것' - 한국아이닷컴"
+}

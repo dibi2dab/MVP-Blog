@@ -1,0 +1,32 @@
+{
+  "event_id": "0a21a451fccf2c6b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 상장사 3분기 1조2875억 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 상장사 3분기 1조2875억 순손실…10곳 중 6곳 적자 - Chosunbiz",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOOVphMEt1SFBRM0tfY25sV3pzS1FMckpLWlF3bnRKU3BkUjVCMkJwSTkwdHMyTkdKWmM3VFczQUZocTVoNGp5Z2RqZVpGckVYZjlFYTV3VjJzWWt6QkxBZV9RTkNxVFAtdXgwNjVyMWp6TzJGSkFQVE9ERWtSVEpfNXRRenRVaTdw0gGcAUFVX3lxTFBRbmhxRUpVSUxrNUtrT3lEMWRyd3RTODJwWjhneWpvTGJOQ05qNG1YdUVFVlUzQ1V3QXRPU3FfbWJHWGJ5bjFaY0QwTUp3UHU4Y2pfbGFSb3B5NlV1YXZPZFh5b1NjWTE5VXZtdHhjTE82S1NQOUZONzJoSzB5eDFYRlplZDBVSUE1bUh6RGU3SDhqcmc5WXRiQkcyUA?oc=5",
+    "title": "코스닥 상장사 3분기 1조2875억 순손실…10곳 중 6곳 적자 - Chosunbiz"
+  },
+  "summary": "뉴스: 코스닥 상장사 3분기 1조2875억 순손실…10곳 중 6곳 적자 - Chosunbiz"
+}

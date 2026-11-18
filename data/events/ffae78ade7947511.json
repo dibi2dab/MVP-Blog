@@ -1,0 +1,32 @@
+{
+  "event_id": "ffae78ade7947511",
+  "event_type": "news_event",
+  "entity": {
+    "name": "상장사 절반 이상 3분기 적자…석 달",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 상장사 절반 이상 3분기 적자…석 달 새 424곳 늘어 - KB Think",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE1tUWhueDlta0F3SWZhblMtbjI0SWV2TUlFVDhSM1NfaThTYk92WWJrU29uSkN0dXlQOXRuVVVKQjNQMldCZzByMFpTOHhmVHFoaGJRVE9reGROTFRlMFl3ZTdzM20wYjBDaEpUZ1ltM0hzQQ?oc=5",
+    "title": "상장사 절반 이상 3분기 적자…석 달 새 424곳 늘어 - KB Think"
+  },
+  "summary": "뉴스: 상장사 절반 이상 3분기 적자…석 달 새 424곳 늘어 - KB Think"
+}

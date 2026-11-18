@@ -1,0 +1,32 @@
+{
+  "event_id": "37868f6cd8483547",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 상장사 3분기 1.3조 순손실",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 상장사 3분기 1.3조 순손실 … 727곳 적자 '실적 쇼크' - 뉴데일리 경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5KdU9HX2FuVldINkNPYVFndVdPaU9EMFJ1U1daeDVjb2pxUlJWOHBsUXg1RmgxWUVXcmNScXhqQ1F5em8wRS16RGtMQTN6UUVJNmg2V0xZWDJmckRFSGVDbjlneXVBTkNXRjVaOW9IRFZTLW1MYVFRX0E0UdIBgAFBVV95cUxPQVRZOTlMZTk5aW5qVDFKNDVyaHduZ1otanZzaDUwT3JseGRtUXZvS2hTaEp4eENPQ1RMUmgyQUZleXRWNHdTeU1Cc2pwUjFmUUFRdC1QMmpCUmIzRFo5ekxjcDJDdXBjU21RNUFXX2owQnBvOTFsZG1XYVA5OFlLSQ?oc=5",
+    "title": "코스닥 상장사 3분기 1.3조 순손실 … 727곳 적자 '실적 쇼크' - 뉴데일리 경제"
+  },
+  "summary": "뉴스: 코스닥 상장사 3분기 1.3조 순손실 … 727곳 적자 '실적 쇼크' - 뉴데일리 경제"
+}

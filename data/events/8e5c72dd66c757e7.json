@@ -1,0 +1,32 @@
+{
+  "event_id": "8e5c72dd66c757e7",
+  "event_type": "news_event",
+  "entity": {
+    "name": "KDB생명 매각 7번째 무산…산업은행",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: KDB생명 매각 7번째 무산…산업은행·한국투자금융지주 협상 결렬 - 우리경제신문",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBzYm40T1dhVnlVOXdheWc5TmMzX1o0UVFpem5YdXNJc2NvVTdmeUpObG5mMlNXUXZtWG4yYV9uWUpJUDRuWXRKUVR2VW9RSkR6YWxfVGRCdTA?oc=5",
+    "title": "KDB생명 매각 7번째 무산…산업은행·한국투자금융지주 협상 결렬 - 우리경제신문"
+  },
+  "summary": "뉴스: KDB생명 매각 7번째 무산…산업은행·한국투자금융지주 협상 결렬 - 우리경제신문"
+}

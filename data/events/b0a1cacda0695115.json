@@ -1,0 +1,32 @@
+{
+  "event_id": "b0a1cacda0695115",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[엔비알모션] 엔비알모션 주가 전망,",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Thu, 16 Ap",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [엔비알모션] 엔비알모션 주가 전망, 수주잔고와 증설이 만드는 하반기 성장 시나리오(202",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQX1M2SUFzVDlNRE5FRlk3R1NNampnaXNzMUtQVG1TOFdvUmx0Wmd4UHlKcUhsa3hOdnVackwtWmFvc3JrbGt3YmlsM2Vnam5Kem5JOTdVS29lUE5wT1dabjVud0QxbzJwcWVDWklXeWMxRVlYdTV1cEpqRHdXcG9nVTJfSGdVa1B6?oc=5",
+    "title": "[엔비알모션] 엔비알모션 주가 전망, 수주잔고와 증설이 만드는 하반기 성장 시나리오(2025년_4Q) - 네이버 프리미엄콘텐츠"
+  },
+  "summary": "뉴스: [엔비알모션] 엔비알모션 주가 전망, 수주잔고와 증설이 만드는 하반기 성장 시나리오(2025년_4Q) - 네이버 프리미엄콘텐츠"
+}

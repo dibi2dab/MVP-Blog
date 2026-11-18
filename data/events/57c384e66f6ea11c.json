@@ -1,0 +1,32 @@
+{
+  "event_id": "57c384e66f6ea11c",
+  "event_type": "news_event",
+  "entity": {
+    "name": "에이엘로봇, 코스닥 상장 첫날 8%대",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 에이엘로봇, 코스닥 상장 첫날 8%대 하락 - 머니투데이 - 머니투데이",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB3N0x1OVR6V05jRkNSSG56YldZR212dEdpTjBhM0ZjcWJDcWpFQk12cnpGZklabmdqcWphWWNTMm5wVklKX1AxVXBqT3V6bnhuQjYxM181dm5lSWYweF8weUxXQkJqU1JiU1UtLWc4dTA5VVU1UEHSAXtBVV95cUxQVWxMdUd2UUJQa3ZxamhSNWNXUFlacnhnazNBOVlYLTJfTkUwUTdIc1U1NjBydmxWVHBqbVlaTS1CVnBaQUI2WXN4VG93YWNxOTN5UGxDdE5QT2FkbmZ5TWtfZWMyQ0NVQTZlcll4U2lOeDhfSVRwMW9Nblk?oc=5",
+    "title": "에이엘로봇, 코스닥 상장 첫날 8%대 하락 - 머니투데이 - 머니투데이"
+  },
+  "summary": "뉴스: 에이엘로봇, 코스닥 상장 첫날 8%대 하락 - 머니투데이 - 머니투데이"
+}

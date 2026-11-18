@@ -1,0 +1,32 @@
+{
+  "event_id": "a5f67f7fe48fbfe0",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[김형석의 프리Zoom] 삼성바이오 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Tue, 17 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [김형석의 프리Zoom] 삼성바이오 4년 만의 유증, 3.2%의 의미 - 블로터",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE53NVFaRGUybm9ueVR4c0c4eWxxdTNaZ2E0MnB3QnBTa3F0bjFSMDFJVnp0WXdMMGpmSFRuaDRDd185ZnRjbmd2SUJhQWhaa3JGSXFMa0dPZG1tWjJraW8zdGtQellnYjJT0gFsQVVfeXFMUGNUOUtoM3BaYlI3aTI4dnpEajlIejczQVAyYlZmT3VnX1YyMVgyV1hvOVZzbUlKaUlFeEVzcEtqYXFVSDQxa0RKX3NadER1ZXBuYjdDWGFVMlpQVHhuT3RpLTRjZmQ3NlA5VUxo?oc=5",
+    "title": "[김형석의 프리Zoom] 삼성바이오 4년 만의 유증, 3.2%의 의미 - 블로터"
+  },
+  "summary": "뉴스: [김형석의 프리Zoom] 삼성바이오 4년 만의 유증, 3.2%의 의미 - 블로터"
+}

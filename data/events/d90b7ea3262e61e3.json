@@ -1,0 +1,32 @@
+{
+  "event_id": "d90b7ea3262e61e3",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] 에이엘로봇, 코스닥 시장 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합) - 매일경제 마켓",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9veHNJSzdNckttM3FLdDNva3hpNUEtODFOZG5VeUtvdDZUTVg0RGJ2UXJ1cEJKUW1TbFUzTm11ZWFQQVBsaU1ENmVkRVI5SWhfZUE?oc=5",
+    "title": "[특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합) - 매일경제 마켓"
+  },
+  "summary": "뉴스: [특징주] 에이엘로봇, 코스닥 시장 상장 첫날 24% 하락(종합) - 매일경제 마켓"
+}

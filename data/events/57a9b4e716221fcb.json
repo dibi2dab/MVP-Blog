@@ -1,0 +1,32 @@
+{
+  "event_id": "57a9b4e716221fcb",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스피 상장사, 3분기 매출 ‘100",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스피 상장사, 3분기 매출 ‘1000조’·영업익 ‘250조’ 첫 돌파..‘삼전닉스 이끌어",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNR3F2MXdhd19Gai1LTXlCR0tRYzY4bjFaV2ZJWktlNWJnS2FHRjhrOVVFb2k4WGlUdHBQdlNvUFZiRWliS2UwM0kzZHhiN0tuV1pQb1MyV1ZjdkZac2F4V09XelR0RWVnSHY2Z29lRVFhMkRsb1ZKbXZrVkV4UDJpYg?oc=5",
+    "title": "코스피 상장사, 3분기 매출 ‘1000조’·영업익 ‘250조’ 첫 돌파..‘삼전닉스 이끌어’[코스피 결산] - 이데일리"
+  },
+  "summary": "뉴스: 코스피 상장사, 3분기 매출 ‘1000조’·영업익 ‘250조’ 첫 돌파..‘삼전닉스 이끌어’[코스피 결산] - 이데일리"
+}

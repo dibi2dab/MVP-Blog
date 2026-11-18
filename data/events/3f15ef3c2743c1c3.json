@@ -1,0 +1,32 @@
+{
+  "event_id": "3f15ef3c2743c1c3",
+  "event_type": "news_event",
+  "entity": {
+    "name": "아델, 코스닥 상장 앞두고 신약개발 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 아델, 코스닥 상장 앞두고 신약개발 확대…2027년 추가 기술이전 추진 - 전자신문",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5BM0U3dmhXTTBzcm41ZTQwTW9BZnJyQmpTSnZDb052OHlvTkxUN04xbnJtNWtjUWwtdldsRXoxQzE2ZDZ3ZzRYbkxwaDFWQQ?oc=5",
+    "title": "아델, 코스닥 상장 앞두고 신약개발 확대…2027년 추가 기술이전 추진 - 전자신문"
+  },
+  "summary": "뉴스: 아델, 코스닥 상장 앞두고 신약개발 확대…2027년 추가 기술이전 추진 - 전자신문"
+}

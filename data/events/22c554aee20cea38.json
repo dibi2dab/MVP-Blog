@@ -1,0 +1,32 @@
+{
+  "event_id": "22c554aee20cea38",
+  "event_type": "news_event",
+  "entity": {
+    "name": "옵토닉스 상장일 주가 급등락과 15일",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Tue, 17 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 옵토닉스 상장일 주가 급등락과 15일·1개월 오버행 수급 분석 - 네이버 프리미엄콘텐츠",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNcUlVWklWR2FtZTlRYThrSnctdmgwQW1KdUIzaHFMbnNDS1VuVldkQXdZeHZBNGFGdVI3T2hFbzZtUHQxQWtEenBUVnVQMnVUZTJPWXRJdGFKSmVvWXNLallMZzlFTzJYb3RQRVN3VTlIdHBXblZpU1hwQXhVUmNuYWotNA?oc=5",
+    "title": "옵토닉스 상장일 주가 급등락과 15일·1개월 오버행 수급 분석 - 네이버 프리미엄콘텐츠"
+  },
+  "summary": "뉴스: 옵토닉스 상장일 주가 급등락과 15일·1개월 오버행 수급 분석 - 네이버 프리미엄콘텐츠"
+}

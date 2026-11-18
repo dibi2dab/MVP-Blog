@@ -1,0 +1,32 @@
+{
+  "event_id": "1dc2cbda591fd8c3",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스피 상장사 3분기 영업이익 264",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스피 상장사 3분기 영업이익 264% 증가…삼전닉스가 견인 - 전자신문",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1uZVNCWEFvSVB2NDZhS0tzZmZuWXluSlBmcnNJNnhlcTB5Sll4WVBTNWVEMkJXdEl0bU9pbWlnWUdYR3VVX2Z4S0otYnN0QQ?oc=5",
+    "title": "코스피 상장사 3분기 영업이익 264% 증가…삼전닉스가 견인 - 전자신문"
+  },
+  "summary": "뉴스: 코스피 상장사 3분기 영업이익 264% 증가…삼전닉스가 견인 - 전자신문"
+}

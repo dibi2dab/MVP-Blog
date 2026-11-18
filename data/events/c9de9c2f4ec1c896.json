@@ -1,0 +1,32 @@
+{
+  "event_id": "c9de9c2f4ec1c896",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 상장사 3분기 누적 영업익 5",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 상장사 3분기 누적 영업익 50% 증가…분기 순이익은 적자전환 - 뉴스핌",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE40Q2ZtdXBjQXJKWGQ1Y05QTU51SHNZcG1VVXhRZFpHTEk5ajhmUUlpWHJtUHdxZ1lIWXdWT3pXMnRLTmJnZ2lZcXFlV0RSU3ZqU3hzSE9UVEU0ZXM4?oc=5",
+    "title": "코스닥 상장사 3분기 누적 영업익 50% 증가…분기 순이익은 적자전환 - 뉴스핌"
+  },
+  "summary": "뉴스: 코스닥 상장사 3분기 누적 영업익 50% 증가…분기 순이익은 적자전환 - 뉴스핌"
+}

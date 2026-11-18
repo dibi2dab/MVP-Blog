@@ -1,0 +1,32 @@
+{
+  "event_id": "510b7f56d4319eaa",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 상장 3곳 중 1곳은 한계기업",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Tue, 17 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 상장 3곳 중 1곳은 한계기업…부실 늘수록 우량기업도 ’저평가’ By EBN - I",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9BeVJnczg1bTZ1VnVyLXNwUkpkVzlSNERpMnVYZ01lWUhuaERmQ3dTMGh5TEl3UDYzUkxQUnJfSU8tR3hVWlg5SXFiMVBGNEJtZTVsUG9BQ0d4amxfTk1KUXduRVhnNmJpSW9RWFdnNXE?oc=5",
+    "title": "코스닥 상장 3곳 중 1곳은 한계기업…부실 늘수록 우량기업도 ’저평가’ By EBN - Investing.com 한국어"
+  },
+  "summary": "뉴스: 코스닥 상장 3곳 중 1곳은 한계기업…부실 늘수록 우량기업도 ’저평가’ By EBN - Investing.com 한국어"
+}

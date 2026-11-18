@@ -1,0 +1,32 @@
+{
+  "event_id": "4e0f31f3c0555463",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스피 5000선도 뚫렸다? 엔비디아",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Tue, 17 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스피 5000선도 뚫렸다? 엔비디아 실적부터 앤트로픽 상장까지 이번 주 ‘AI 빅위크’ ",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE9HcFZxcXFRSlpzdzBSYVRjcHFaU0VCc0FoNGI1bmpmX3Z3SlNsRHdKZU5PcC1nUGZBOFluQW5PRmstWENnakFITGlDNm1PSUxCcFpn?oc=5",
+    "title": "코스피 5000선도 뚫렸다? 엔비디아 실적부터 앤트로픽 상장까지 이번 주 ‘AI 빅위크’ 핵심 총정리 🎢 - 뉴닉"
+  },
+  "summary": "뉴스: 코스피 5000선도 뚫렸다? 엔비디아 실적부터 앤트로픽 상장까지 이번 주 ‘AI 빅위크’ 핵심 총정리 🎢 - 뉴닉"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "2a5fd576a8eb877d",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] 에이엘로봇, 코스닥 상장 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-18T06:57:33+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] 에이엘로봇, 코스닥 상장 첫날.. 4%대 '하락' - 글로벌이코노믹",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUVZuVHJhR1NZREpCSVg2dlRnR05ud2pDUEJLanpObElrdWNVeXJuR0lVYVhycHlBV005UGZCZEZzNDN3M3V4LW1DdzRMal9qVzItWGJWUF9QZi1PdXJyUzVZQU5YTmtKazViX2JSQ3FHTlFORUlfd1RkUENIS0N6SGs2TV8yQ3dq?oc=5",
+    "title": "[특징주] 에이엘로봇, 코스닥 상장 첫날.. 4%대 '하락' - 글로벌이코노믹"
+  },
+  "summary": "뉴스: [특징주] 에이엘로봇, 코스닥 상장 첫날.. 4%대 '하락' - 글로벌이코노믹"
+}
