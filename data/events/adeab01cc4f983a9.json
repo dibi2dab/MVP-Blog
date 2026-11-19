@@ -1,0 +1,32 @@
+{
+  "event_id": "adeab01cc4f983a9",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스피, 앤트로픽 상장·연준 빅스텝 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스피, 앤트로픽 상장·연준 빅스텝 우려에 1%대 하락 전환 - 서울경제TV",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFBmNjdQSXJNM3B0dzBBRWtzWDZ3LURuRlVnY3BWTkRuWE1EckZSRzlwMC1wX0RPMGpmUzNUeWlqajc4Q2MtNDg3VHlpNHhpbzRQbjhtYl85MjJ1cTMxdS1wU1dvRDM?oc=5",
+    "title": "코스피, 앤트로픽 상장·연준 빅스텝 우려에 1%대 하락 전환 - 서울경제TV"
+  },
+  "summary": "뉴스: 코스피, 앤트로픽 상장·연준 빅스텝 우려에 1%대 하락 전환 - 서울경제TV"
+}

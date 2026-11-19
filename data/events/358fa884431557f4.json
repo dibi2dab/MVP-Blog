@@ -1,0 +1,32 @@
+{
+  "event_id": "358fa884431557f4",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스피, 앤스로픽 상장 앞두고 500",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스피, 앤스로픽 상장 앞두고 5000선 등락...장중 한때 4960선까지 떨어져 - 조선",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOVG1mcDhoQlplc3RrdVE1ZjNuZk04anlsUFlYMnItTHN1bTBHbUY1VjVrQlAwUW8yNGJaNUptZnBqSVd5SF9qd1M0YXNvNXBGaDczeTVjRTl3NW13NUdKeEpUZkFtVGlUand3UkRWRk5GeEV3V3lCVHZYVG5pd0JIdA?oc=5",
+    "title": "코스피, 앤스로픽 상장 앞두고 5000선 등락...장중 한때 4960선까지 떨어져 - 조선일보"
+  },
+  "summary": "뉴스: 코스피, 앤스로픽 상장 앞두고 5000선 등락...장중 한때 4960선까지 떨어져 - 조선일보"
+}

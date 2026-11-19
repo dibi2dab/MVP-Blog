@@ -1,0 +1,32 @@
+{
+  "event_id": "60f251c18244781e",
+  "event_type": "news_event",
+  "entity": {
+    "name": "에이엘로봇, 상장 첫날 20% 넘게 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 에이엘로봇, 상장 첫날 20% 넘게 급락…현대차證·우리벤처 등 FI '비상' - 연합인포맥",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5Tam11ak9zQnFvWEJYM3d1bEkyNGVnc3RobVFEdE1GNmktUEIyaU5pQzQtSzJOeXJfWXBLNWg4VlV6cTNGR2JGSmRqaVNNSk5Cdy1mMU9LV1pHX1loc2Q5LThGVHpSNnEzNGcwdlo0X3M?oc=5",
+    "title": "에이엘로봇, 상장 첫날 20% 넘게 급락…현대차證·우리벤처 등 FI '비상' - 연합인포맥스"
+  },
+  "summary": "뉴스: 에이엘로봇, 상장 첫날 20% 넘게 급락…현대차證·우리벤처 등 FI '비상' - 연합인포맥스"
+}

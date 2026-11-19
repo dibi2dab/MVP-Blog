@@ -1,0 +1,32 @@
+{
+  "event_id": "004e1e07791e7dfa",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 상장사 64.7% \"기관투자자",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 상장사 64.7% \"기관투자자 유입 촉진 시급\" - 더트래커",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE9oaHN6VHFTTV90RXAxRlZvWHBocUVNSS1uMGZMNmt6RHVmVFBRbmRfVjNXbDFScGNWNEk0VXR6VGVrWDlQMEVLZGxaOHdUaGdBbVFsWTJZR2Q?oc=5",
+    "title": "코스닥 상장사 64.7% \"기관투자자 유입 촉진 시급\" - 더트래커"
+  },
+  "summary": "뉴스: 코스닥 상장사 64.7% \"기관투자자 유입 촉진 시급\" - 더트래커"
+}

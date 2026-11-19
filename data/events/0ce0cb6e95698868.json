@@ -1,0 +1,32 @@
+{
+  "event_id": "0ce0cb6e95698868",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[속보] 코스피, 앤트로픽 상장 앞두",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [속보] 코스피, 앤트로픽 상장 앞두고 0.45% 오른 5090.04 출발 - Chosun",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUlJZc2xOWVVJalFUSXFKUkdOcHpVRTBlOXhTNWliZko4Z2xJYnZNUnNkS2ItTnEtZW5aNEFRbDlYVEY2NkltTGgtekQzYlkxUksxMmdrSm9RM3pBZlhzd2U1T21wNTBGaVJhTmdYTWxkTDlreExVOHB1R0JIS1k4TEh6RTJMZG9X0gGcAUFVX3lxTE45dzFoUDBYdkJ2ZmZPODd1dTY5VmtmNkZvSWJHN1RETEhGbzNERkxSdFEzLTIzOVgxTldfX0I0NXI3WVdHSU55aUUtZ3pVR25xaUltenhPNjN1RDlXVEI5cU9XelpwdWJyOG9QZ1hyMUk2Ri1SY2dXdmV1TUZXTnBnLTBocGw0MllIcGhmMlF5WXlha240SVh3THYyUA?oc=5",
+    "title": "[속보] 코스피, 앤트로픽 상장 앞두고 0.45% 오른 5090.04 출발 - Chosunbiz"
+  },
+  "summary": "뉴스: [속보] 코스피, 앤트로픽 상장 앞두고 0.45% 오른 5090.04 출발 - Chosunbiz"
+}

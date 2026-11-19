@@ -1,0 +1,32 @@
+{
+  "event_id": "f5b23b1571a98f59",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스피, 앤트로픽 상장 앞두고 1%대",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스피, 앤트로픽 상장 앞두고 1%대↓…상승출발후 하락전환(종합) - 연합뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1OWGt4YzRHMVZtZFVfUG1yUXRuOTJVMXJXcWdEc01CaVVXcTlEamxySTFCTzF0b0RBRlktMnFfSUFBaWg4RXNYQWVBTXlremJwSjlqbDRZelNYa1nSAWBBVV95cUxQZTlYcjJkS3hPR2w3U0xlOThwN3BLNG16Rm51MGRYVFlGOEswY2xiaDRyMEFIRGNuQXN4T1R1VjFlUkhzbHJGamZ1MHFpaER0NXJDdDh2T1pwdU1rMXYyeUs?oc=5",
+    "title": "코스피, 앤트로픽 상장 앞두고 1%대↓…상승출발후 하락전환(종합) - 연합뉴스"
+  },
+  "summary": "뉴스: 코스피, 앤트로픽 상장 앞두고 1%대↓…상승출발후 하락전환(종합) - 연합뉴스"
+}

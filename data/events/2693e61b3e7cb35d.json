@@ -1,0 +1,32 @@
+{
+  "event_id": "2693e61b3e7cb35d",
+  "event_type": "news_event",
+  "entity": {
+    "name": "IBK기업은행 “비상장기업 81% 코",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: IBK기업은행 “비상장기업 81% 코스닥 상장 긍정적”…기업 성장 지원 확대 - 리드경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9Ra1dpbUpTYTdpUGQ5TDBRS1NhMUZ3d3U4Ry0yTDc4eUdaTkRTV2J4aXYwZmNGWlNQZmw4MGVOSlF4ZXFFMnJPODdlT3JKWUVYREY3bGRKb0Y5UHlYcG4yb01kNGlOaVdZYzZyTS03cUk?oc=5",
+    "title": "IBK기업은행 “비상장기업 81% 코스닥 상장 긍정적”…기업 성장 지원 확대 - 리드경제"
+  },
+  "summary": "뉴스: IBK기업은행 “비상장기업 81% 코스닥 상장 긍정적”…기업 성장 지원 확대 - 리드경제"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "6a91dd656da81eca",
+  "event_type": "news_event",
+  "entity": {
+    "name": "상장기업 64.7% \"코스닥시장 활성",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 상장기업 64.7% \"코스닥시장 활성화 정책 1순위, 기관투자자 유입 촉진\" - 한국NGO",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1JVngyNzZldXRQSVZnSDJlM1pTZmx5RVk1ODFLU1hBMElBWklieGp5UXhtOV9NeVZlSW1QdkhvSjZiTW5Oa1ZXaV90ZVFydkpILTA1WWlMSzV1eWJ6VHZ5c3pTeXU4OXJD?oc=5",
+    "title": "상장기업 64.7% \"코스닥시장 활성화 정책 1순위, 기관투자자 유입 촉진\" - 한국NGO신문"
+  },
+  "summary": "뉴스: 상장기업 64.7% \"코스닥시장 활성화 정책 1순위, 기관투자자 유입 촉진\" - 한국NGO신문"
+}

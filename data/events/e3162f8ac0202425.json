@@ -1,0 +1,32 @@
+{
+  "event_id": "e3162f8ac0202425",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 상장사들 \"부실기업 신속 퇴출",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 상장사들 \"부실기업 신속 퇴출 시급\" - 스마트투데이",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE5NSWdRVGFvNmZCRk0zNVA4Y2t2b3d1dmxnWm4tZzk0MHRPcDRxcXRGQnZra1J1YWk3V3ctOU16V1VXODJDV1daM1dJa1hGTDhTN0x4ZXJaQ1c0WkpWU0Nv?oc=5",
+    "title": "코스닥 상장사들 \"부실기업 신속 퇴출 시급\" - 스마트투데이"
+  },
+  "summary": "뉴스: 코스닥 상장사들 \"부실기업 신속 퇴출 시급\" - 스마트투데이"
+}

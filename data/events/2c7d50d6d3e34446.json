@@ -1,0 +1,32 @@
+{
+  "event_id": "2c7d50d6d3e34446",
+  "event_type": "news_event",
+  "entity": {
+    "name": "“코스닥 상장기업, ‘기관투자자 유입",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: “코스닥 상장기업, ‘기관투자자 유입 촉진’ ‘부실기업 신속 퇴출’ 필요에 공감” - 동아",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5ZdlVRakdqQko5XzRBckZ6SFU5YnJuUEdoMXhMYmFnYzNSQXFlYmF2NkVKNnYwank5SE5XQ3ZXMjg3WVp6TVE4azE2eTlNSlkyamRCQ01NckQybExPM0V6WWVLUlh6SW9GbmxJemQwRDZBQWNEaHfSAWZBVV95cUxOY1YwMnh5Sk9ZMWR2djN2RzNqbXRTMEpfWDRvdVo3Q1kzRG9MR21uX3ZKNklVamRZVEZTTGNlM2FJVUFSbnZmcmRMcmpHVl9nTzhxM01ZVy1yQVh6VERIWGV2RnlCS0E?oc=5",
+    "title": "“코스닥 상장기업, ‘기관투자자 유입 촉진’ ‘부실기업 신속 퇴출’ 필요에 공감” - 동아일보"
+  },
+  "summary": "뉴스: “코스닥 상장기업, ‘기관투자자 유입 촉진’ ‘부실기업 신속 퇴출’ 필요에 공감” - 동아일보"
+}

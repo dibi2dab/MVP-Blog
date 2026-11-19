@@ -1,0 +1,32 @@
+{
+  "event_id": "3ac78f7a39a499f7",
+  "event_type": "news_event",
+  "entity": {
+    "name": "‘해외송금 1호’ 이나인페이, 코스닥",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-19T06:53:40+00:00",
+  "event_date": "Wed, 18 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: ‘해외송금 1호’ 이나인페이, 코스닥 상장 본격화 - 매일경제 마켓",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE84cmxsdHBHdjJIR3h6czkyWU54aGNqdjYwcXJ1OVhTQXU4WjlGYTB2OWxJX19pdS1rS1ZVdGdtbFNWX2NTLWNZYnVYYTlGYTRmdnc?oc=5",
+    "title": "‘해외송금 1호’ 이나인페이, 코스닥 상장 본격화 - 매일경제 마켓"
+  },
+  "summary": "뉴스: ‘해외송금 1호’ 이나인페이, 코스닥 상장 본격화 - 매일경제 마켓"
+}
