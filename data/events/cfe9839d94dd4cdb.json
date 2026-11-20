@@ -1,0 +1,32 @@
+{
+  "event_id": "cfe9839d94dd4cdb",
+  "event_type": "news_event",
+  "entity": {
+    "name": "하나에어로, 코스닥 상장 첫날 70%",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 하나에어로, 코스닥 상장 첫날 70%대 급등 - 뉴시스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1qLVhJamM2Szk4N0doMVdtVjVEbkJjb2xOTXU5T2w3WjY4cGRQTFEybGMxZzVfcGJfLU5FY2JnTnZtMGl1UVpRLVhwYV9UeUdrM2k0ZHNOODhKOXlwb05McdIBeEFVX3lxTE41UUdPZ1hvb0JqanF6NGJrQmZULXZtNG5IUHFrN0ZPMFBNOW1yTXNIR2d4ZE9FVmM0UE0xcENtYjR3dHVDQ0t1TWMxZFlhaFgyZ04wYW9GeDFmRjFaTTMzNUdoU3lyLWgycU1GREFOdTJqSWRjWmNMcg?oc=5",
+    "title": "하나에어로, 코스닥 상장 첫날 70%대 급등 - 뉴시스"
+  },
+  "summary": "뉴스: 하나에어로, 코스닥 상장 첫날 70%대 급등 - 뉴시스"
+}

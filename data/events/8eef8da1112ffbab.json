@@ -1,0 +1,32 @@
+{
+  "event_id": "8eef8da1112ffbab",
+  "event_type": "news_event",
+  "entity": {
+    "name": "앤트로픽 상장 여파에 유동성 이탈…코",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 앤트로픽 상장 여파에 유동성 이탈…코스피 4% 급락 출발(상보) - 연합인포맥스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFAyMWxFYXVlNmNhbVJRbWpaZ3FUVjNVTkJQNmVraVBLMnRMUVJQZUVmUmZEX3FHYi1KTDVGY3dTYkFCWUpqY0FFR2ZRMWw1TDRDUTE3Q1l6TVhSUWRZM0JicWZYTDRFNUxuQmtnVUg0dFA?oc=5",
+    "title": "앤트로픽 상장 여파에 유동성 이탈…코스피 4% 급락 출발(상보) - 연합인포맥스"
+  },
+  "summary": "뉴스: 앤트로픽 상장 여파에 유동성 이탈…코스피 4% 급락 출발(상보) - 연합인포맥스"
+}

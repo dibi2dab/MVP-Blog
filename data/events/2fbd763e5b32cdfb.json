@@ -1,0 +1,32 @@
+{
+  "event_id": "2fbd763e5b32cdfb",
+  "event_type": "news_event",
+  "entity": {
+    "name": "아델, \"기관 수요예측 부진\" 코스닥",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 아델, \"기관 수요예측 부진\" 코스닥 상장철회 결정 - 바이오스펙테이터",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE5PUDNDSWI2bXFBQWNmd1A1Nm55V2VJUmVqSUtiNnJGMXJXRVpRX3BjLTZfVmpITVJOZHpOZXVfOHU4WFNtMkpRNFVlUDA0Y1JfNDgxbnNOQQ?oc=5",
+    "title": "아델, \"기관 수요예측 부진\" 코스닥 상장철회 결정 - 바이오스펙테이터"
+  },
+  "summary": "뉴스: 아델, \"기관 수요예측 부진\" 코스닥 상장철회 결정 - 바이오스펙테이터"
+}

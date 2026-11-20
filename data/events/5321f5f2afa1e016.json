@@ -1,0 +1,32 @@
+{
+  "event_id": "5321f5f2afa1e016",
+  "event_type": "news_event",
+  "entity": {
+    "name": "알츠하이머藥 개발하는 아델, 코스닥 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 알츠하이머藥 개발하는 아델, 코스닥 상장 철회 - Chosunbiz",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOS3M0SHZVWWFNa3VQelpnYzdNYlFCRzQwRUx5YVFyR2FSSUtTOUhfd1BVUHBQLXZVZ1RQMDJuOGE4bEIyY2RwSEh3cHEzbUVYR25DRkFnVkpqaTRIT2lUb3hrTmQxZVBZdTBPTjNqWmxUS3pHdVZxWmFzZnUtRENGemhSZHlXMFnSAZsBQVVfeXFMTUVKZkU5T2ZTOWJpc3doa3pDejZoSjBvcjBxenpKbDFwVnlfanlNTmVTd3NVRjgyTU9GQnFaRENHR0ZXSmo2OWtLLVF5b3ZwRE5ma3RxMXNxa0N5b1NjdjVRUE5vTDBMdEVOZnJINmtYWkY5cm96Sm4xRjczdkVhM3hOLWp3YUd0T0JvYlVtWEJGZERYMzJmS0tkelk?oc=5",
+    "title": "알츠하이머藥 개발하는 아델, 코스닥 상장 철회 - Chosunbiz"
+  },
+  "summary": "뉴스: 알츠하이머藥 개발하는 아델, 코스닥 상장 철회 - Chosunbiz"
+}

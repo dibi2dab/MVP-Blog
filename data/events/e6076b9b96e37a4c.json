@@ -1,0 +1,32 @@
+{
+  "event_id": "e6076b9b96e37a4c",
+  "event_type": "news_event",
+  "entity": {
+    "name": "앤트로픽 상장에도 미 증시↓...코스",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 앤트로픽 상장에도 미 증시↓...코스피도 약세 개장 - YTN",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE0xXzVURFQ1RXFxMERhbm9ZRUVCUmxrUEFlQjNXOVhQZ21Nb3RsNEJaRUw2Y2oySTkydGNPU3dGaVB6ZzdpR0E3Z0trRDJ6UEZ1TGFjbk53aVRXaHR6US1Gc0RvcThSNWZ4VnBVeU9SRQ?oc=5",
+    "title": "앤트로픽 상장에도 미 증시↓...코스피도 약세 개장 - YTN"
+  },
+  "summary": "뉴스: 앤트로픽 상장에도 미 증시↓...코스피도 약세 개장 - YTN"
+}

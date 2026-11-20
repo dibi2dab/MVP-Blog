@@ -1,0 +1,32 @@
+{
+  "event_id": "dbaa61a3865e2542",
+  "event_type": "news_event",
+  "entity": {
+    "name": "\"시총 낮다고 코스닥 퇴출?\" 벤처업",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: \"시총 낮다고 코스닥 퇴출?\" 벤처업계, 상장폐지 기준 손질 촉구 - 파이낸셜뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9BNzF4YVAxdV84dGVudmFKeWpBdUdGQWVfOXlFTXNUbFBnc2Z1Y2R3UTZxaW11MUJ2cjhvODFPcEtlSkpQbGFpWlZoeFNfX01FeVlzOVJvalpaZw?oc=5",
+    "title": "\"시총 낮다고 코스닥 퇴출?\" 벤처업계, 상장폐지 기준 손질 촉구 - 파이낸셜뉴스"
+  },
+  "summary": "뉴스: \"시총 낮다고 코스닥 퇴출?\" 벤처업계, 상장폐지 기준 손질 촉구 - 파이낸셜뉴스"
+}

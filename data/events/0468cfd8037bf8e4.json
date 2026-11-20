@@ -1,0 +1,32 @@
+{
+  "event_id": "0468cfd8037bf8e4",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스피 5000선 또 반납...美 앤",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스피 5000선 또 반납...美 앤트로픽 상장 후 기술주 '썰물' - 머니투데이 - 머니",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE4wTy11N09abDViVmtZeDBuNWwxMS1tbnhRVVVnSHZ1N2NnbDZidGI4Wl8xTi1xZ3dGNmVPUHNUblplRWZLcVg4d3VBVHV0dE92V3ZiVzY2SFh0QTdmdUN5c1dSbVo4TUUz0gFuQVVfeXFMT3YzZzhJbWZqS3BXakdOeGs2MmJmaUxGVXNfVkJGZWlkLU5lbE04SDZVZ1B1NWtpdG52SDRJMFBFZC1jSjBMTkIxbGJPa21ZTnZldXhjRXZvNUl3SmFMN2ZUUmduUm91bl9sQ213Z2c?oc=5",
+    "title": "코스피 5000선 또 반납...美 앤트로픽 상장 후 기술주 '썰물' - 머니투데이 - 머니투데이"
+  },
+  "summary": "뉴스: 코스피 5000선 또 반납...美 앤트로픽 상장 후 기술주 '썰물' - 머니투데이 - 머니투데이"
+}

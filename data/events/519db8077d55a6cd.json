@@ -1,0 +1,32 @@
+{
+  "event_id": "519db8077d55a6cd",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[ET특징주] 하나에어로, 코스닥 상",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [ET특징주] 하나에어로, 코스닥 상장 첫날 74% 상승 - 전자신문",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBPQTZJQVBXU1RxX3dKLV9jVzJlVUl3RFVacTJQdmI1NHplNU5hSVRaRk9UU216T29PX2w5RDY1QnAxX01GeE42aGZwSUIzZw?oc=5",
+    "title": "[ET특징주] 하나에어로, 코스닥 상장 첫날 74% 상승 - 전자신문"
+  },
+  "summary": "뉴스: [ET특징주] 하나에어로, 코스닥 상장 첫날 74% 상승 - 전자신문"
+}

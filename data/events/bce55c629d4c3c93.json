@@ -1,0 +1,32 @@
+{
+  "event_id": "bce55c629d4c3c93",
+  "event_type": "news_event",
+  "entity": {
+    "name": "'SM엔터 주가조작' 혐의 카카오 김",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 'SM엔터 주가조작' 혐의 카카오 김범수 2심도 무죄...검찰 상고 여부 관심 - 포커스타",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5FRlpFV0UtOXpUMFFIVmZDLUUtTGhyZ1Z0TWg0N09wc1c1MUhtT1lVd284ZWRiQlh1Y1lxaXBFYm85djg2RnVuRUxNMlJhOWt4NFhUeVNZT2U?oc=5",
+    "title": "'SM엔터 주가조작' 혐의 카카오 김범수 2심도 무죄...검찰 상고 여부 관심 - 포커스타임즈"
+  },
+  "summary": "뉴스: 'SM엔터 주가조작' 혐의 카카오 김범수 2심도 무죄...검찰 상고 여부 관심 - 포커스타임즈"
+}

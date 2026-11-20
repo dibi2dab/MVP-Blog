@@ -1,0 +1,32 @@
+{
+  "event_id": "ec112c74d3023b7b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "앤트로픽 상장에도 美 증시 급락하자…",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 앤트로픽 상장에도 美 증시 급락하자…코스피 3%대 하락세 - Chosunbiz",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcHdrdGpMR1VMN0ZMVUtHbGN4ajk2bXl3YkliZ05obnpCVHlvSUZQbE5yTExROVppQU53WW5lV2RPT0VNcTVKWFJWQ3VqNjBzUU9hVV9PZTNLenBZMVRrRjE4bklIeER0VUxOZHYyUGhiVUxBcjNhNWlBQWVsZUdJYUxNT0ltX3JS0gGcAUFVX3lxTE9TWXRzelNDZjNvZ29yQUxORHNaLWhCWGxyeUZBeDBTZEZMR1k4Yzg0aTVUZWhiS1BDc0FhZTVwcHdmSzlFdHBFU0ZiMGRxbEN1ZjV4Tk1LLTM1TmllSjg4NXl5X3hHUDVlUDdxNGt5Vk8yS1ZHYkUzeDlRTTE4MHhrYUZ2YVgyeU5YQnF0T054RzF5ZzFjWG41Z2hYWQ?oc=5",
+    "title": "앤트로픽 상장에도 美 증시 급락하자…코스피 3%대 하락세 - Chosunbiz"
+  },
+  "summary": "뉴스: 앤트로픽 상장에도 美 증시 급락하자…코스피 3%대 하락세 - Chosunbiz"
+}

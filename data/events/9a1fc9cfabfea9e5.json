@@ -1,0 +1,32 @@
+{
+  "event_id": "9a1fc9cfabfea9e5",
+  "event_type": "news_event",
+  "entity": {
+    "name": "'특수 정밀화학 소재 제조사' 피지티",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Thu, 19 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: '특수 정밀화학 소재 제조사' 피지티, 코스닥 상장예심 통과 - 연합뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE4zWVdkUGhTUU5BQy13eFhpejJBRXoyaWl5d2pISHBvRmxFUHNfblJ4VS03c0sxdFJUWGlrVGdvTzFDdEZIZlpVS2hSYWk0eXVlRTZqeHE2c2d3VGfSAWBBVV95cUxOcGx5QWpBT0VVMVZzaGJwTFNZTk5MY0YyYVJEcVhGMDV6TjduazR4ZmpTR1c0WFRRQmR0SXBoSE9oOUdBa0VCUFFNU1l3Y1g1Wkd2NjhOUFlBaXlmUTBjTjk?oc=5",
+    "title": "'특수 정밀화학 소재 제조사' 피지티, 코스닥 상장예심 통과 - 연합뉴스"
+  },
+  "summary": "뉴스: '특수 정밀화학 소재 제조사' 피지티, 코스닥 상장예심 통과 - 연합뉴스"
+}

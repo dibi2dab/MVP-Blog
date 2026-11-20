@@ -1,0 +1,32 @@
+{
+  "event_id": "2df81cae5c702484",
+  "event_type": "news_event",
+  "entity": {
+    "name": "아델, 기관 수요예측 부진에 코스닥 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-20T06:44:33+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 아델, 기관 수요예측 부진에 코스닥 상장 철회 - 팜이데일리",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1CM2F2cTd5aTl0ejRwSUxPdkdsRnMtUkE2dzFKcTcyazFBU01GM1Ffb3ctNU9vYjNrOS04eGJVRVVNa2JfSDd4aGI1Ny1EQ2xWSDZySElfb1FodEhieF9KaWJXbzNBU0o4UDBiSlVR?oc=5",
+    "title": "아델, 기관 수요예측 부진에 코스닥 상장 철회 - 팜이데일리"
+  },
+  "summary": "뉴스: 아델, 기관 수요예측 부진에 코스닥 상장 철회 - 팜이데일리"
+}
