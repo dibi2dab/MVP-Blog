@@ -7,7 +7,7 @@
     "entity_type": "corp",
     "extra": {}
   },
-  "detected_at": "2026-11-20T06:44:33+00:00",
+  "detected_at": "2026-11-21T06:35:52+00:00",
   "event_date": "Fri, 20 No",
   "event_score": 4,
   "evidence_score": 0,
@@ -15,7 +15,7 @@
   "reasons": [
     {
       "code": "news_high",
-      "label": "뉴스: 하나에어로다이내믹스 주가 코스닥 상장 첫날 장중 60%대 상승 - 비즈니스포스트",
+      "label": "뉴스: 하나에어로다이내믹스 주가 코스닥 상장 첫날 장중 공모가보다 60%대 상승 - 비즈니스포스트",
       "score_contribution": 4,
       "detail": "대형 이슈 키워드 감지"
     }
@@ -26,7 +26,7 @@
   "status": "rejected",
   "evidence": {
     "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9tYldQd09ySHpRbnN5S0lSV0ZhSWtYVXhkWjI4UV80TDhkX01USWgyS3pvX1dFS3kwUjhGcVctczRPdEg2Rmw1TE9rclgyVWZuWkQtb2dFNlotNzVPZ2VjNWNSVUd5RTdjaHlSUzRyb3Y1Z0E?oc=5",
-    "title": "하나에어로다이내믹스 주가 코스닥 상장 첫날 장중 60%대 상승 - 비즈니스포스트"
+    "title": "하나에어로다이내믹스 주가 코스닥 상장 첫날 장중 공모가보다 60%대 상승 - 비즈니스포스트"
   },
-  "summary": "뉴스: 하나에어로다이내믹스 주가 코스닥 상장 첫날 장중 60%대 상승 - 비즈니스포스트"
+  "summary": "뉴스: 하나에어로다이내믹스 주가 코스닥 상장 첫날 장중 공모가보다 60%대 상승 - 비즈니스포스트"
 }

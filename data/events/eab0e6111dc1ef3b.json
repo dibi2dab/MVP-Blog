@@ -1,0 +1,37 @@
+{
+  "event_id": "eab0e6111dc1ef3b",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "현대차",
+    "ticker": "005380",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "2026-11-20",
+  "event_score": 5,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    },
+    {
+      "code": "gap_down",
+      "label": "갭 하락 (시가 급락)",
+      "score_contribution": 2,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": -0.05420560747663551,
+    "volume_ratio": 0.6162776518101724,
+    "latest_amount": null
+  },
+  "summary": "현대차 주가 변동 -0.05420560747663551% / 거래량 비율 0.6162776518101724"
+}

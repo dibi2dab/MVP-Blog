@@ -1,0 +1,32 @@
+{
+  "event_id": "a20a2605f1079258",
+  "event_type": "news_event",
+  "entity": {
+    "name": "연기금 돈만 넣으면 되나…코스닥 상장",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "Sat, 21 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 연기금 돈만 넣으면 되나…코스닥 상장사 절반 “우리도 분석 좀” - 쿠키뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE45TVVaaEpQZU1RbjJWa3liTXZVaUhKOVpaVXd1U0ttZjA0UThackw1M3ZBeWZoZ0tCTlJNc0dxQUNjMFl1akdXUVJ4LTBjNFd4aG9mZkZkeTNfSlJSRjhTMHVhOA?oc=5",
+    "title": "연기금 돈만 넣으면 되나…코스닥 상장사 절반 “우리도 분석 좀” - 쿠키뉴스"
+  },
+  "summary": "뉴스: 연기금 돈만 넣으면 되나…코스닥 상장사 절반 “우리도 분석 좀” - 쿠키뉴스"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "086624f6be498a15",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[AI 머니게임의 덫①] 화려한 상장",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "Sat, 21 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [AI 머니게임의 덫①] 화려한 상장, 불안한 돈줄…순환금융에 기댄 AI 제국 - 대한데일",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE04Ri1yWUJMcjlpMUxuOE9XRWxrekd2Q0tFZzc2OFpEYzVZUHJSbk5ZSG95eEpubFV3TzJzdW01MDc5NzhiSTVRZTJtTERRZVhXWWJVSkhpQ1BkRFVEUmhoS19xLW91ZVk0dUhV?oc=5",
+    "title": "[AI 머니게임의 덫①] 화려한 상장, 불안한 돈줄…순환금융에 기댄 AI 제국 - 대한데일리"
+  },
+  "summary": "뉴스: [AI 머니게임의 덫①] 화려한 상장, 불안한 돈줄…순환금융에 기댄 AI 제국 - 대한데일리"
+}

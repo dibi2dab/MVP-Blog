@@ -1,0 +1,32 @@
+{
+  "event_id": "0b0cfee7a4b2f5ee",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[AI 머니게임의 덫②] 이익 증명 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "Sat, 21 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [AI 머니게임의 덫②] 이익 증명 전에 몰린 돈…AI 상장 열풍의 이면 - 대한데일리",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFB6ZEUwQ2haU085azlvRHU5ekt3STB0a05pcTBSSzRTTDA2b1V0MnoxczhzSVA1VnJXb2pweVNfWkZPUWN5MUpUOFg4dmlKQ2pKVS1ScGZqaUk4dGhkajUtR2VmWDVhUWF0UTdR?oc=5",
+    "title": "[AI 머니게임의 덫②] 이익 증명 전에 몰린 돈…AI 상장 열풍의 이면 - 대한데일리"
+  },
+  "summary": "뉴스: [AI 머니게임의 덫②] 이익 증명 전에 몰린 돈…AI 상장 열풍의 이면 - 대한데일리"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "cdf8a57db11577bb",
+  "event_type": "news_event",
+  "entity": {
+    "name": "'의료용 기기 제조업' 엠비디, 코스",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: '의료용 기기 제조업' 엠비디, 코스닥 신규상장…24일 첫 거래 - 연합뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE11dW01aDJqLV9xRXp1ei1iX2NGcDl6T0NWWGtVN1RJTElaQVNrdGtGTU9wVjcxYkM4WlhOMm00S2RoX05DbGcxRXNHQjdGRXFCampxZDViaGhPaXfSAWBBVV95cUxPRHNKNkthMnZTZjFmazZvVW5lVXZqNjRObjEtUmc4N2Jzd0RZdkRMWk1TZGV5OVB2akhrN1BWS2VHeGpSZmIyN3pxaFAybUctNHB4SEtremdHcXdRZEpldnM?oc=5",
+    "title": "'의료용 기기 제조업' 엠비디, 코스닥 신규상장…24일 첫 거래 - 연합뉴스"
+  },
+  "summary": "뉴스: '의료용 기기 제조업' 엠비디, 코스닥 신규상장…24일 첫 거래 - 연합뉴스"
+}

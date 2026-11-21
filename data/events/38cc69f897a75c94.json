@@ -1,0 +1,32 @@
+{
+  "event_id": "38cc69f897a75c94",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥, 좀비기업 내보내야 산다…상장",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥, 좀비기업 내보내야 산다…상장사 63% 퇴출 찬성 - 데일리안",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiogJBVV95cUxNa0JSRmVrV0tVN3puaEhzbVlpbkxHcDljV0VfRHZVZ3FFR3VKTHRUT0tsZjB5bWs2SG5hTFFCWmNIbkZJWE5hT3Q0alBnUF9zUTR5cTJHaHF3NlY2YUVPVEk0aWFwb1cxZ3RORWlzYS1fN2RLSDdsMzMxYW9kZlBFLWJXVkxnQjFDcVI2c3BvV204V3I4N0taTm96WExsczQyV2VudGJTS3JiTXNGVXN5WTN0aHpkZjZCaU9QMktLNmJrM0lXTmlaMTExRXhOWGVMRWFJZDBudkdLekU4SXp4M2xiQU9SUFhjSzZILXpnMUV5NFV2UzV0U3BTMy1zV2pkbXhvUXpiLWZOVDdFWnFaQTJiaHZxNEl6ZVdYd2hCQUkxZw?oc=5",
+    "title": "코스닥, 좀비기업 내보내야 산다…상장사 63% 퇴출 찬성 - 데일리안"
+  },
+  "summary": "뉴스: 코스닥, 좀비기업 내보내야 산다…상장사 63% 퇴출 찬성 - 데일리안"
+}

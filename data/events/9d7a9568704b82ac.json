@@ -1,0 +1,32 @@
+{
+  "event_id": "9d7a9568704b82ac",
+  "event_type": "news_event",
+  "entity": {
+    "name": "벤처협, 코스닥 활성화 입법방안 심포",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 벤처협, 코스닥 활성화 입법방안 심포지엄 개최…상장폐지·세그먼트 논의 - 와우테일",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9hbjdST2thVmpnR0NZdjg2cHlUaFdMMDBzQ0tyUjkwRmpWQldPVHlObFB5R3hjNnRVbjNCaE5WSEg1WW4wOGlfcHRjczJwaVU?oc=5",
+    "title": "벤처협, 코스닥 활성화 입법방안 심포지엄 개최…상장폐지·세그먼트 논의 - 와우테일"
+  },
+  "summary": "뉴스: 벤처협, 코스닥 활성화 입법방안 심포지엄 개최…상장폐지·세그먼트 논의 - 와우테일"
+}

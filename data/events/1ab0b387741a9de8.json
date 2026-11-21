@@ -1,0 +1,32 @@
+{
+  "event_id": "1ab0b387741a9de8",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] LG에너지솔루션, 최대주주",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "Thu, 29 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] LG에너지솔루션, 최대주주 지분 매각에 8% 하락 - Chosunbiz",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYWJtTVllREpCTXJyUzk3TktBYmUxcnJFcXdpQTdpalh5WmlNdUo1M3JWYnNNR0x0YW9NbXljbnM1aUVSU19xZDNNZDRRVGFuc0ZHcERCUjh4bi00OU8zWmlPemJTb1pEMkUtcHpyNmZ4TDVMZ1VfS0JmaElGclItTUlYd3JQWEJ60gGcAUFVX3lxTE0wa2d6aTF4ZGNveElpdWFyQXJoOXVObGlMUjYxOTN4SWJHSVp0MTYxanRpQU44ZFZ6a3hHSGtiQzNnbGNZUEZFaURPWWdhMjJxY0I1YjBPMGlFdUEwVVl3TDE1eDJWdWRxT1V4Zk0ydkZvYjliSmtDcG5qS2tydm15Y2hGYXlJdk9nc1ZUZzYyWlRfQ0dSZEt3OW92aw?oc=5",
+    "title": "[특징주] LG에너지솔루션, 최대주주 지분 매각에 8% 하락 - Chosunbiz"
+  },
+  "summary": "뉴스: [특징주] LG에너지솔루션, 최대주주 지분 매각에 8% 하락 - Chosunbiz"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "c988fba8b9cd677c",
+  "event_type": "news_event",
+  "entity": {
+    "name": "아델, 코스닥 상장 결국 철회…수요예",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "Fri, 20 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 아델, 코스닥 상장 결국 철회…수요예측 문턱 못 넘었다 - 파이낸셜뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5pc0FQQTFtNHdBX0hhUkNCM3hzR3hVS0JGNmNtbTZiNklkTHZaX1gwb2QxRXB4amZxSXhPc04wdjB5OTdqWERVM2paUkVsX1g3UndNcG84UjVyUQ?oc=5",
+    "title": "아델, 코스닥 상장 결국 철회…수요예측 문턱 못 넘었다 - 파이낸셜뉴스"
+  },
+  "summary": "뉴스: 아델, 코스닥 상장 결국 철회…수요예측 문턱 못 넘었다 - 파이낸셜뉴스"
+}

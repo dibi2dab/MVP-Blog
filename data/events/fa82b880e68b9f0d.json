@@ -1,0 +1,32 @@
+{
+  "event_id": "fa82b880e68b9f0d",
+  "event_type": "news_event",
+  "entity": {
+    "name": "3D 세포배양 기업 엠비디, 24일 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-21T06:35:52+00:00",
+  "event_date": "Sat, 21 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 3D 세포배양 기업 엠비디, 24일 코스닥 상장 - 코리아리포트",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFB4c2FwRVNLNkV2dXhjS25ad1VIN1pGek9zNnZaTDVhcnFiYURSRTJNX19lNnZqelpiQXA1dzBkd1czcmNweXZrQTNUYk5zRlZtUGJpRzUzTjlmeGducVlSaE1DcFdwYk13SXNrbnRvYmU?oc=5",
+    "title": "3D 세포배양 기업 엠비디, 24일 코스닥 상장 - 코리아리포트"
+  },
+  "summary": "뉴스: 3D 세포배양 기업 엠비디, 24일 코스닥 상장 - 코리아리포트"
+}
