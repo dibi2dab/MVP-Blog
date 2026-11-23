@@ -1,0 +1,32 @@
+{
+  "event_id": "3c892430e7a6e68d",
+  "event_type": "news_event",
+  "entity": {
+    "name": "연구소기업 큐어버스 '230억 투자유",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-23T06:56:02+00:00",
+  "event_date": "Mon, 23 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 연구소기업 큐어버스 '230억 투자유치'…코스닥 상장 추진 - 뉴시스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBvQlpwSWdHWFEtVXRoVmVXbm92cUdLY2hXVGtySUl1a1pkMHpzRXhJZng0NkhZMHAzOFRkVGxDX1IwV1VlZll3N1ZjWFpON2trRnhtejZtaGZlQUp2ODMxcdIBeEFVX3lxTE9fV1hmVmJpYUJ1TU84WllWMGVDQm1mNlpiYnlhb1pyOWhHa1ZDYTY5YkY5UEZUN2hsZ1hpS0g0UWJ2QlhzY2xvdEd0RnhtNEpwd3NmcERlWmltS0ZlSjZsV3FCSTNqSl9zbHJUMXBNNmREZVo0dHVyWQ?oc=5",
+    "title": "연구소기업 큐어버스 '230억 투자유치'…코스닥 상장 추진 - 뉴시스"
+  },
+  "summary": "뉴스: 연구소기업 큐어버스 '230억 투자유치'…코스닥 상장 추진 - 뉴시스"
+}

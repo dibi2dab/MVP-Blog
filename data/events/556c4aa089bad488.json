@@ -1,0 +1,32 @@
+{
+  "event_id": "556c4aa089bad488",
+  "event_type": "news_event",
+  "entity": {
+    "name": "‘모빌리티 상장 갈등’ 카카오, TP",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-23T06:56:02+00:00",
+  "event_date": "Mon, 23 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: ‘모빌리티 상장 갈등’ 카카오, TPG와 1.5조원 국제중재 분쟁 휘말려 - 한겨레",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE51SnhIU1RJNFZsTTYzWVJiZG5wU21qUW9UZUFjQnozRVNIOTNzeHVJUUI2NWVzeEl2RjFKN0lBVmdTeWtKTUR2Xy15THdYc3hlTHRDbHdTN2k4aDJhM05TMg?oc=5",
+    "title": "‘모빌리티 상장 갈등’ 카카오, TPG와 1.5조원 국제중재 분쟁 휘말려 - 한겨레"
+  },
+  "summary": "뉴스: ‘모빌리티 상장 갈등’ 카카오, TPG와 1.5조원 국제중재 분쟁 휘말려 - 한겨레"
+}

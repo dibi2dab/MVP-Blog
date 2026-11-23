@@ -1,0 +1,32 @@
+{
+  "event_id": "c5c5f4cc1155403c",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 상장폐지 기준 논의…재무건전성",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-23T06:56:02+00:00",
+  "event_date": "Mon, 23 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 상장폐지 기준 논의…재무건전성·사업 지속 가능성 반영 제안 - 중앙일보",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5ZVXc2QlhsdW1kYnBFWmt2VjRMMkllU3QxVHdMb2FkeHdnSmZfT2F1aHVHcDJTZGM1cVEwLW1qcTUxZVR1d2hEekc3RGNKOTdocHB6bDJR?oc=5",
+    "title": "코스닥 상장폐지 기준 논의…재무건전성·사업 지속 가능성 반영 제안 - 중앙일보"
+  },
+  "summary": "뉴스: 코스닥 상장폐지 기준 논의…재무건전성·사업 지속 가능성 반영 제안 - 중앙일보"
+}

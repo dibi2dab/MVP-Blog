@@ -1,0 +1,32 @@
+{
+  "event_id": "74936259a7b764ca",
+  "event_type": "news_event",
+  "entity": {
+    "name": "브리즈바이오, 코스닥 상장예심 청구.",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-23T06:56:02+00:00",
+  "event_date": "Sun, 22 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 브리즈바이오, 코스닥 상장예심 청구..\"HNP 전달기술\" - 바이오스펙테이터",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE1IZ056bjAwdjdpRTNlMzJBQmJmRm0td3BZaFFBTjB5TXFYYUlWTjVjeFhYWnRheUdjMERfbmxxaTZwbWVwc2ZOa2Q4dGF5cmlFS005ZDJjRQ?oc=5",
+    "title": "브리즈바이오, 코스닥 상장예심 청구..\"HNP 전달기술\" - 바이오스펙테이터"
+  },
+  "summary": "뉴스: 브리즈바이오, 코스닥 상장예심 청구..\"HNP 전달기술\" - 바이오스펙테이터"
+}

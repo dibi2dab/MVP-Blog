@@ -1,0 +1,43 @@
+{
+  "event_id": "e7fea7aa75c610ab",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "SK텔레콤",
+    "ticker": "017670",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-23T06:56:02+00:00",
+  "event_date": "2026-11-23",
+  "event_score": 6,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    },
+    {
+      "code": "volume_50",
+      "label": "거래량 평균 대비 50% 이상",
+      "score_contribution": 1,
+      "detail": ""
+    },
+    {
+      "code": "gap_down",
+      "label": "갭 하락 (시가 급락)",
+      "score_contribution": 2,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": -0.06647398843930635,
+    "volume_ratio": 1.7261135772382252,
+    "latest_amount": null
+  },
+  "summary": "SK텔레콤 주가 변동 -0.06647398843930635% / 거래량 비율 1.7261135772382252"
+}

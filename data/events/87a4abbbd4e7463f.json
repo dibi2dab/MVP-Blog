@@ -1,0 +1,32 @@
+{
+  "event_id": "87a4abbbd4e7463f",
+  "event_type": "news_event",
+  "entity": {
+    "name": "“코스닥 상장 준비 돕는다”…기보, ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-23T06:56:02+00:00",
+  "event_date": "Mon, 23 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: “코스닥 상장 준비 돕는다”…기보, 투자기업 18곳 지원 - 서울경제TV",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE9TNGR5UVJ4Y0dPYTdfWWxPaDNubWxXaUFwbnRNWDZGNUxuekdCMnpwaEdnY3ZPUW83b3dIVXdyUnEtMlFFLV9yeThoTFpJY1QtQkt5bDVQQzhTWG8wQm0zNUdLRVU?oc=5",
+    "title": "“코스닥 상장 준비 돕는다”…기보, 투자기업 18곳 지원 - 서울경제TV"
+  },
+  "summary": "뉴스: “코스닥 상장 준비 돕는다”…기보, 투자기업 18곳 지원 - 서울경제TV"
+}
