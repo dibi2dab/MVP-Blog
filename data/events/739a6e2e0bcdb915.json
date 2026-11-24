@@ -1,0 +1,31 @@
+{
+  "event_id": "739a6e2e0bcdb915",
+  "event_type": "stock_surge",
+  "entity": {
+    "name": "기아",
+    "ticker": "000270",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-24T09:22:40+00:00",
+  "event_date": "2026-11-24",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_up_5",
+      "label": "주가 +5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "published",
+  "evidence": {
+    "latest_change_pct": 0.08083140877598152,
+    "volume_ratio": 1.1638535004577168,
+    "latest_amount": null
+  },
+  "summary": "기아 주가 변동 0.08083140877598152% / 거래량 비율 1.1638535004577168"
+}

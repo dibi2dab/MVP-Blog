@@ -1,0 +1,32 @@
+{
+  "event_id": "c02bbf27cc8f9e78",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[ET특징주] 엠비디, 코스닥 상장 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-24T09:22:40+00:00",
+  "event_date": "Tue, 24 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [ET특징주] 엠비디, 코스닥 상장 첫날 주가 27% 급락 - 전자신문",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1jZUlwN0lRWGJHYU5BRHBSVGFpdHAwZTlUUklPNDUwNjNFLVRtN1ZvTDRRMVBkelAyRGxmU3lCcmxsdy1fYXFYYTlROUZwQQ?oc=5",
+    "title": "[ET특징주] 엠비디, 코스닥 상장 첫날 주가 27% 급락 - 전자신문"
+  },
+  "summary": "뉴스: [ET특징주] 엠비디, 코스닥 상장 첫날 주가 27% 급락 - 전자신문"
+}

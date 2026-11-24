@@ -1,0 +1,32 @@
+{
+  "event_id": "519a75281c49e2fe",
+  "event_type": "news_event",
+  "entity": {
+    "name": "LG화학, 자회사 LG엔솔 지분 매각",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-24T09:22:40+00:00",
+  "event_date": "Wed, 28 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: LG화학, 자회사 LG엔솔 지분 매각해 2.5조원 확보 - 조선일보",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQbjZNSmRPYlNjUHdUQUdsN1E2cUg3dU9rNU5Da19DWEpYbWxLRXNHalhXTTFEOTUxbkN2N3d5WmZCM3V3QmtxTzctN0JaYzRLZnZHcHd5cmlKOEtmLXVuQzlpRDVSaHlOV1M1d19xYVNJLU5ZaHZwalRkTmdZMnhlWTYxLU5oTW5KVk1YTEhSYw?oc=5",
+    "title": "LG화학, 자회사 LG엔솔 지분 매각해 2.5조원 확보 - 조선일보"
+  },
+  "summary": "뉴스: LG화학, 자회사 LG엔솔 지분 매각해 2.5조원 확보 - 조선일보"
+}

@@ -1,0 +1,31 @@
+{
+  "event_id": "53a03f0336e2713f",
+  "event_type": "stock_surge",
+  "entity": {
+    "name": "포스코퓨처엠",
+    "ticker": "003670",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-24T09:22:40+00:00",
+  "event_date": "2026-11-24",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_up_5",
+      "label": "주가 +5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": 0.08420365535248042,
+    "volume_ratio": 1.0373614805894171,
+    "latest_amount": null
+  },
+  "summary": "포스코퓨처엠 주가 변동 0.08420365535248042% / 거래량 비율 1.0373614805894171"
+}

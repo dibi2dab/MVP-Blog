@@ -1,0 +1,31 @@
+{
+  "event_id": "263597e996831624",
+  "event_type": "stock_surge",
+  "entity": {
+    "name": "현대차",
+    "ticker": "005380",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-24T09:22:40+00:00",
+  "event_date": "2026-11-24",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_up_5",
+      "label": "주가 +5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": 0.07243460764587525,
+    "volume_ratio": 1.3514560606679737,
+    "latest_amount": null
+  },
+  "summary": "현대차 주가 변동 0.07243460764587525% / 거래량 비율 1.3514560606679737"
+}

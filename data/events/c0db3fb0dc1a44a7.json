@@ -1,0 +1,32 @@
+{
+  "event_id": "c0db3fb0dc1a44a7",
+  "event_type": "news_event",
+  "entity": {
+    "name": "엔키화이트햇, 코스닥 상장 후 ‘오펜",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-24T09:22:40+00:00",
+  "event_date": "Tue, 24 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 엔키화이트햇, 코스닥 상장 후 ‘오펜’ 중심 사업 공략 가속…\"글로벌 기업으로 도약할 것\"",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5jWFdjbkFFWWE2SjJ2WXhKTkRXUkFrdml1alpfSXA1M3JjVkZnTS1OQTQzRkltRGtxTjJ6WDE2M3o4eGJYWEVxd1RSZGtiS1RfNHZ6R3hfNkg5QlVzbmZYTExBaVJpc1hy?oc=5",
+    "title": "엔키화이트햇, 코스닥 상장 후 ‘오펜’ 중심 사업 공략 가속…\"글로벌 기업으로 도약할 것\" - 테크월드"
+  },
+  "summary": "뉴스: 엔키화이트햇, 코스닥 상장 후 ‘오펜’ 중심 사업 공략 가속…\"글로벌 기업으로 도약할 것\" - 테크월드"
+}

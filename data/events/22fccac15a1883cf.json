@@ -1,0 +1,32 @@
+{
+  "event_id": "22fccac15a1883cf",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스 0.78% 상승…증설",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-24T09:22:40+00:00",
+  "event_date": "Tue, 24 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스 0.78% 상승…증설과 수주잔고 점검 - 잡포스트",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTFBzMW56ZnhJYmhTYWRMbE1qU2VteWdZbVlzWDRkbXlHVWhhS1gtcURVWl83Nk5LekhnRGU3eG1Ud0xnLU5uNnkybkFsVVViT3g1Z0lhZndDSHd3T044cDFxbV9TVlh1U3FwRFE3MTBn0gFyQVVfeXFMTzRHTnhxOFZlSDVkRndnc0w3aG1EdmNSa0k5Ujk1dHpqUElYOHNSWXBiMHRhRU83M2pfQjdub29zeVpXLURJT1pUSlJ5ZDZMeGdUY1JWUkxFeHJTWlRLdkN2SzFnc1pnTm1Vc3cyQTZacHNn?oc=5",
+    "title": "삼성바이오로직스 0.78% 상승…증설과 수주잔고 점검 - 잡포스트"
+  },
+  "summary": "뉴스: 삼성바이오로직스 0.78% 상승…증설과 수주잔고 점검 - 잡포스트"
+}

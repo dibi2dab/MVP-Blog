@@ -1,0 +1,32 @@
+{
+  "event_id": "2c8c2d3bd872f270",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[특징주] 엠비디, 코스닥 상장 첫날",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-24T09:22:40+00:00",
+  "event_date": "Tue, 24 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [특징주] 엠비디, 코스닥 상장 첫날 15% 급락 - Chosunbiz",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPdTdzOVNrS1F3MTZRUlIyVmFxQ3VDR1ZvS1N5YVljdDNBLW52LVJLZG55eHBwSTdubVNsaGkxdmx5YmxEMk1QRnBrbTNuN05wenpselZ2eGRLQ1Q5RG9Ua1lqUkJGSlprRkx6bWRhemExaDcxOHpMQXlLTFZyZGtiSXdsa0c2ZGVK0gGcAUFVX3lxTE9XbzBIdGUyWUkzWlUwcHd1OThpX3k2ZVN5NURaMU9zdU03SkZXMWd2YlNhdzlPUWlGRGRuZlNFTHFvOG16eVo0aEs1QUlvS0hsVThuWE0tRVpxSkdsMXgzY3h0RUU0N0JGZmdfck5va0tpTVJoTy1xajJULWNFcG82MkNWODhRb05odmVZcTRVeUNvSVN4aWRXY0ZCNQ?oc=5",
+    "title": "[특징주] 엠비디, 코스닥 상장 첫날 15% 급락 - Chosunbiz"
+  },
+  "summary": "뉴스: [특징주] 엠비디, 코스닥 상장 첫날 15% 급락 - Chosunbiz"
+}

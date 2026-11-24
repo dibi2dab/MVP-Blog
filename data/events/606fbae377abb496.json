@@ -1,0 +1,43 @@
+{
+  "event_id": "606fbae377abb496",
+  "event_type": "stock_surge",
+  "entity": {
+    "name": "LG전자",
+    "ticker": "066570",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-24T09:22:40+00:00",
+  "event_date": "2026-11-24",
+  "event_score": 9,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_up_10",
+      "label": "주가 +10% 이상",
+      "score_contribution": 5,
+      "detail": ""
+    },
+    {
+      "code": "volume_100",
+      "label": "거래량 평균 대비 100% 이상",
+      "score_contribution": 2,
+      "detail": ""
+    },
+    {
+      "code": "gap_up",
+      "label": "갭 상승 (시가 급등)",
+      "score_contribution": 2,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": 0.11270983213429256,
+    "volume_ratio": 2.1233076493427845,
+    "latest_amount": null
+  },
+  "summary": "LG전자 주가 변동 0.11270983213429256% / 거래량 비율 2.1233076493427845"
+}
