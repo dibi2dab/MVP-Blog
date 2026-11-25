@@ -1,0 +1,32 @@
+{
+  "event_id": "802af2516b39abef",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 '먹튀상장' 늘어날까 … 李 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 '먹튀상장' 늘어날까 … 李 \"기술특례 확대\"에 시장 '반신반의' - 뉴데일리 경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1HUE1pUWtlNk9rbFZjbS15UTVVaTRINFRDN0ZGbDJJempkdV9USXJVT2pJS0d2THRHSW1nODV0MC0yMmZzSHdtcThfYXlYelpLWWQyRHUzVGFMOFRBYlBQMm1DTW5sckx1MnFVbkVuRXZkNC10SVdqanl1Y9IBgAFBVV95cUxNT3dOX2FKRk9UaUQtY2FZdGd2WnQ2c2pXeURGTWdGZFZHc2Q1V2J6Q3A5V25iQXdiamdRblItc0xPUXpMZFNvcXF1d2lLTno3OE1kVEdCOEtjNlZzNDJCWG96cjBMYlU2d2FweHBwNm8yTlYzZ0dsY1Q0WjNBR3BGWQ?oc=5",
+    "title": "코스닥 '먹튀상장' 늘어날까 … 李 \"기술특례 확대\"에 시장 '반신반의' - 뉴데일리 경제"
+  },
+  "summary": "뉴스: 코스닥 '먹튀상장' 늘어날까 … 李 \"기술특례 확대\"에 시장 '반신반의' - 뉴데일리 경제"
+}

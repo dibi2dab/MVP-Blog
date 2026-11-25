@@ -1,0 +1,32 @@
+{
+  "event_id": "7cd0dd3bea416191",
+  "event_type": "news_event",
+  "entity": {
+    "name": "같은 2.5조에 주식은 141만주 더",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 같은 2.5조에 주식은 141만주 더… LG화학, 엔솔 지분 매각 조건 확정 - 콕스뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9iREpUaEI5SXhpYUFZaVEwbHRoTzNkMzdQUW1wN1FMTi1mdy1KT0J4Q04zS2lUeUdGNGR3SGJ0TnZVbHZHcE13Rng0RkozVTNvdzFGVXp6LUh3VWlBMTN2YWFiYzdLcFF4V1E?oc=5",
+    "title": "같은 2.5조에 주식은 141만주 더… LG화학, 엔솔 지분 매각 조건 확정 - 콕스뉴스"
+  },
+  "summary": "뉴스: 같은 2.5조에 주식은 141만주 더… LG화학, 엔솔 지분 매각 조건 확정 - 콕스뉴스"
+}

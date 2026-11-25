@@ -1,0 +1,31 @@
+{
+  "event_id": "55f68b8f7ecf8316",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "SK하이닉스",
+    "ticker": "000660",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "2026-11-25",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": -0.07906558849955077,
+    "volume_ratio": 0.9186881305657509,
+    "latest_amount": null
+  },
+  "summary": "SK하이닉스 주가 변동 -0.07906558849955077% / 거래량 비율 0.9186881305657509"
+}

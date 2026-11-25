@@ -1,0 +1,32 @@
+{
+  "event_id": "bba702954417b272",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[시큐리티 포커스] 엔키화이트햇 코스",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Tue, 24 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [시큐리티 포커스] 엔키화이트햇 코스닥 상장 출사표·이글루코퍼레이션 'IDC' 개최·인포시",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE1WaE54Zi1hOEtTZ3lNaVNoODRYMkcxQ1IweW5pMi1HMUM1ZkZKVUVyTGJTSVlTSGMxY0c5R3pYcTNiZW9tSmdaOFZxSk9MYVowLTJGcWJmc210UzN1MUwxR0VTcU1VNnVxNVFIcFUwb9IBc0FVX3lxTE02S19ONjlqd180SUg4eEdlM1dqWHR3NEs3MWJoSzd1NVQzd0U1UjA1VHRvSVdaeEk2VlN1Ty1TWE01Ni1TbnVyMk92OHNJTnlNU09RX3pNMF9iY1JoOEpUVlJaQXljMkhyOUVvV2ZxbTN4R0U?oc=5",
+    "title": "[시큐리티 포커스] 엔키화이트햇 코스닥 상장 출사표·이글루코퍼레이션 'IDC' 개최·인포시즈 AI 침입 탐지 논문 - 뉴스웍스"
+  },
+  "summary": "뉴스: [시큐리티 포커스] 엔키화이트햇 코스닥 상장 출사표·이글루코퍼레이션 'IDC' 개최·인포시즈 AI 침입 탐지 논문 - 뉴스웍스"
+}

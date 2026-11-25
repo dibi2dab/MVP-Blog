@@ -1,0 +1,32 @@
+{
+  "event_id": "f056c94331289e85",
+  "event_type": "news_event",
+  "entity": {
+    "name": "LG화학, LG엔솔 지분 매각 수조원",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Tue, 24 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: LG화학, LG엔솔 지분 매각 수조원 조달에도 재무 개선 '지지부진' - KB Think",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE9iY08zRDR1cWNTSVB0N09oN2JzOWdJWWl0V1BlQk01MGVidFYzdXVZckl2SEN4dHVnUlozVGFZa2hieGs5Ul81M0FscVFtNXB6N3NRc0lkdkFTMnluR0Rxc0R4Qk4yd040eGx1VjRjcy0wZw?oc=5",
+    "title": "LG화학, LG엔솔 지분 매각 수조원 조달에도 재무 개선 '지지부진' - KB Think"
+  },
+  "summary": "뉴스: LG화학, LG엔솔 지분 매각 수조원 조달에도 재무 개선 '지지부진' - KB Think"
+}

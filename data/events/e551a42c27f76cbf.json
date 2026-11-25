@@ -1,0 +1,32 @@
+{
+  "event_id": "e551a42c27f76cbf",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[단독] 금융사 50% \"가상자산거래",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [단독] 금융사 50% \"가상자산거래소 인수 의향 있다\" - 한국경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE9kRUhQWm9hdVQ1dXc1RFhmaVV4LUFtN29FdXg5TDhpYU50UjFXMS1Yc24xQ05sY0lkMXVCam1sZ0RYa2NpdWxuQlFYTGJ4ZFZOVm1JQ0tLbExlUQ?oc=5",
+    "title": "[단독] 금융사 50% \"가상자산거래소 인수 의향 있다\" - 한국경제"
+  },
+  "summary": "뉴스: [단독] 금융사 50% \"가상자산거래소 인수 의향 있다\" - 한국경제"
+}

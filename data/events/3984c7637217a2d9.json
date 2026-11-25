@@ -1,0 +1,32 @@
+{
+  "event_id": "3984c7637217a2d9",
+  "event_type": "news_event",
+  "entity": {
+    "name": "범한메카텍 코스닥 상장 공모 속도 -",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 범한메카텍 코스닥 상장 공모 속도 - 경남도민일보",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBpNk9FcFluMXBNdTUzUGVMd0dNR25aa3REMnBzMlZ2cmJQb0xhRTdkSXlTTlNSLVpYQWNfLXFrSUpOb1FIZG5rQWJVMnFzb3RVdUNucGZxS05CMmpMZlg2UFZvYnFqc2lJb1E?oc=5",
+    "title": "범한메카텍 코스닥 상장 공모 속도 - 경남도민일보"
+  },
+  "summary": "뉴스: 범한메카텍 코스닥 상장 공모 속도 - 경남도민일보"
+}

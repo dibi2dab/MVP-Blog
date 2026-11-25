@@ -1,0 +1,32 @@
+{
+  "event_id": "c9cf6b2a4cb38cac",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[리포트] 코스닥 도전 ANH스트럭쳐",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [리포트] 코스닥 도전 ANH스트럭쳐 \"올해 수주 2천억 돌파, 내년 흑자전환\" - 팍스경",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTFAzOWhWYVZCeThuZmlBbWJETVBKT3RTZE5lVS1QQjdOeUF4Rm5iRHlsRUh3V0tZWHJQTVhNXzlMME1RTG9xVThrWjhYLXVnNDcydFM3X0FhUkxoYUVBM0hRekFmSm9TeWc?oc=5",
+    "title": "[리포트] 코스닥 도전 ANH스트럭쳐 \"올해 수주 2천억 돌파, 내년 흑자전환\" - 팍스경제TV"
+  },
+  "summary": "뉴스: [리포트] 코스닥 도전 ANH스트럭쳐 \"올해 수주 2천억 돌파, 내년 흑자전환\" - 팍스경제TV"
+}

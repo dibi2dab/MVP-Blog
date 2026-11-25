@@ -1,0 +1,32 @@
+{
+  "event_id": "87ba9114c592c176",
+  "event_type": "news_event",
+  "entity": {
+    "name": "엔키화이트햇, 12월 11일 코스닥 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Tue, 24 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 엔키화이트햇, 12월 11일 코스닥 상장 “오펜시브 AI로 금융·공공 잡는다” - 보안뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5qaFY3ZW03Q2I5cVhFZWhzV0VCSVBOYkJ1S0t5VEk4VUhVbmdMVjJzN2dPbjVUa1dxbmYzMmF5RFNIZ0RTWnRSUlZ3ajhNMExscW5qZ0poV1FTVUxaNWxnMC15Vk02QWIyc0FV?oc=5",
+    "title": "엔키화이트햇, 12월 11일 코스닥 상장 “오펜시브 AI로 금융·공공 잡는다” - 보안뉴스"
+  },
+  "summary": "뉴스: 엔키화이트햇, 12월 11일 코스닥 상장 “오펜시브 AI로 금융·공공 잡는다” - 보안뉴스"
+}

@@ -1,0 +1,31 @@
+{
+  "event_id": "f142b4f56b2a27ef",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "한미반도체",
+    "ticker": "042700",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "2026-11-25",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": -0.06161745827984596,
+    "volume_ratio": 0.8360712763816931,
+    "latest_amount": null
+  },
+  "summary": "한미반도체 주가 변동 -0.06161745827984596% / 거래량 비율 0.8360712763816931"
+}

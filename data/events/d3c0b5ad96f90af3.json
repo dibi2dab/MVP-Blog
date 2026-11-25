@@ -1,0 +1,32 @@
+{
+  "event_id": "d3c0b5ad96f90af3",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스, 2.7조 유증 청약",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Mon, 16 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스, 2.7조 유증 청약 마무리…11.4조 몰렸다 - 전자신문",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTFBydkZ1alQ3THcxX29pdmlDUTRlV2lvMlI1NnFiY0lhbTlsaE55WTM1Z1Z0dGhpeHJ2UWoxdXU0THVQeG81Y0NZczg3SlhJUQ?oc=5",
+    "title": "삼성바이오로직스, 2.7조 유증 청약 마무리…11.4조 몰렸다 - 전자신문"
+  },
+  "summary": "뉴스: 삼성바이오로직스, 2.7조 유증 청약 마무리…11.4조 몰렸다 - 전자신문"
+}

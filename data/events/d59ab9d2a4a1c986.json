@@ -1,0 +1,32 @@
+{
+  "event_id": "d59ab9d2a4a1c986",
+  "event_type": "news_event",
+  "entity": {
+    "name": "범한메카텍, 코스닥 상장 본격화…12",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 범한메카텍, 코스닥 상장 본격화…12월 공모 추진 - 아시아경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE1RR1ZVQ0RnRDdwQ2lJbjhuY0RyX2tLZk5sb3pyZG12T204MFdsY2dEUEtXUkM5ZTBydVFZQldRNEU5d2lLT3BlUHBiLW9rOFZ2QlE2a1RhM2N6Y2p6Zy10Vg?oc=5",
+    "title": "범한메카텍, 코스닥 상장 본격화…12월 공모 추진 - 아시아경제"
+  },
+  "summary": "뉴스: 범한메카텍, 코스닥 상장 본격화…12월 공모 추진 - 아시아경제"
+}

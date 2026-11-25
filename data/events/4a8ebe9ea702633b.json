@@ -1,0 +1,32 @@
+{
+  "event_id": "4a8ebe9ea702633b",
+  "event_type": "news_event",
+  "entity": {
+    "name": "코스닥 흔들리자 지역상장사도 ‘온도차",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Tue, 24 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 코스닥 흔들리자 지역상장사도 ‘온도차’…공시로 본 시장 변화 [경기·인천 코스닥을 묻다②]",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1EbTMyOG1VOUpDNV9tODlVaHNZdnprcW11SnVicmdHc1ExVkxjQlk4WFQ3MWtnSnh2SVdhUWdhQXlraXVUYlhtUjRBSWJ6NzZCeWlER1dEaHNsdHM?oc=5",
+    "title": "코스닥 흔들리자 지역상장사도 ‘온도차’…공시로 본 시장 변화 [경기·인천 코스닥을 묻다②] - 경기일보"
+  },
+  "summary": "뉴스: 코스닥 흔들리자 지역상장사도 ‘온도차’…공시로 본 시장 변화 [경기·인천 코스닥을 묻다②] - 경기일보"
+}

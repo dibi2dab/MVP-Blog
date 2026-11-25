@@ -1,0 +1,32 @@
+{
+  "event_id": "77be6268c04199d0",
+  "event_type": "news_event",
+  "entity": {
+    "name": "큐어버스, 230억 투자유치···내년",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Mon, 23 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 큐어버스, 230억 투자유치···내년 코스닥 상장 추진 - 헬로디디",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE5sdXJlMTNvVWt3UWplVGxXNWxHaEFpa2wtOHgtbElwcmpJN1hJMzJRTS1GSV9ORFpUOUNEaXB3OFU3TGJ3aHVNLTlmaGxrT1hSSUt3VDFscXB5VW5nVFc2LXVNVFFIVjJPZXc?oc=5",
+    "title": "큐어버스, 230억 투자유치···내년 코스닥 상장 추진 - 헬로디디"
+  },
+  "summary": "뉴스: 큐어버스, 230억 투자유치···내년 코스닥 상장 추진 - 헬로디디"
+}

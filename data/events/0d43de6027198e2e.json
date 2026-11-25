@@ -1,0 +1,32 @@
+{
+  "event_id": "0d43de6027198e2e",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오 유증 막판 신주인수권 반등",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Fri, 30 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오 유증 막판 신주인수권 반등…청약보다 본주 매수가 나은 셈법 - 인베스트조선",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxQVlFyTXlmQktfX2ttMnZ4RUF1anl3NHJQLWZfTzlLR1BKa2pVR2NvR1FKNm9XNC12YWNfb0ZXUkNKbFl2TDMxNUt0eUJGbElxMndBUW0zQlp3UzZDYVFnZlRMempRaXJMcWFmNXcxcnhOYUxWTlJuLUd0bG15dnR5ZjJJMA?oc=5",
+    "title": "삼성바이오 유증 막판 신주인수권 반등…청약보다 본주 매수가 나은 셈법 - 인베스트조선"
+  },
+  "summary": "뉴스: 삼성바이오 유증 막판 신주인수권 반등…청약보다 본주 매수가 나은 셈법 - 인베스트조선"
+}

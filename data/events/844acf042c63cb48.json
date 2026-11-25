@@ -1,0 +1,32 @@
+{
+  "event_id": "844acf042c63cb48",
+  "event_type": "news_event",
+  "entity": {
+    "name": "엠비디(498150), 코스닥 상장 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "Tue, 24 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 엠비디(498150), 코스닥 상장 첫날 전일 대비 39.57% 하락해 4,230원 마감 ",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1oWGtIaUF1ODdDekhDdU40RHNYWmFkZ3Z1WDF1RnNWU3JybENqUDBkU29QcEt1UDBheUJjSWJpalIxNHlmTm9PWGk4dS1JSXR3RFBMbG5IZmFOODhZVVczNXBR?oc=5",
+    "title": "엠비디(498150), 코스닥 상장 첫날 전일 대비 39.57% 하락해 4,230원 마감 - 시사매거진"
+  },
+  "summary": "뉴스: 엠비디(498150), 코스닥 상장 첫날 전일 대비 39.57% 하락해 4,230원 마감 - 시사매거진"
+}

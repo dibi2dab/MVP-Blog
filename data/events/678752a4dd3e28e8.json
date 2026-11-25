@@ -1,0 +1,31 @@
+{
+  "event_id": "678752a4dd3e28e8",
+  "event_type": "stock_crash",
+  "entity": {
+    "name": "삼성전자우",
+    "ticker": "005935",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-25T07:55:42+00:00",
+  "event_date": "2026-11-25",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_down_5",
+      "label": "주가 -5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": -0.08689655172413793,
+    "volume_ratio": 1.0335009386699217,
+    "latest_amount": null
+  },
+  "summary": "삼성전자우 주가 변동 -0.08689655172413793% / 거래량 비율 1.0335009386699217"
+}
