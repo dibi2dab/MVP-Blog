@@ -1,0 +1,32 @@
+{
+  "event_id": "50e91ed37c08ae29",
+  "event_type": "news_event",
+  "entity": {
+    "name": "'5G 특화망' 유캐스트, 코스닥 신",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-26T07:47:16+00:00",
+  "event_date": "Thu, 26 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: '5G 특화망' 유캐스트, 코스닥 신규 상장…30일 첫 거래 - 연합뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE8xMzY3dnVNVHFtMnBvOHR1cWNLdjVDbXRrQzI0NUVoek5CNmVPRjJWUTNQYk1aZ2thUXlZNlJ4OW1oX1dZNDYwTXhyeXVBZkpGSV9XS3FUUHFwdEHSAWBBVV95cUxPSlNyTlZ5UWdycTRobWlzZE9OZERjTkUtWFJzWVg1VEcwWjVxMWVBSmZTSTFDYUlHNXZHTGN5NHgzeVJqbDlHamJYYkp6Nk01THk0eWNqUmxtTWdvQTB0Y3g?oc=5",
+    "title": "'5G 특화망' 유캐스트, 코스닥 신규 상장…30일 첫 거래 - 연합뉴스"
+  },
+  "summary": "뉴스: '5G 특화망' 유캐스트, 코스닥 신규 상장…30일 첫 거래 - 연합뉴스"
+}

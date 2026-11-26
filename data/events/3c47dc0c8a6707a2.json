@@ -1,0 +1,32 @@
+{
+  "event_id": "3c47dc0c8a6707a2",
+  "event_type": "news_event",
+  "entity": {
+    "name": "증선위, 미공개중요정보 이용 코스닥 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-26T07:47:16+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 증선위, 미공개중요정보 이용 코스닥 상장사 임직원 등 중수청 통보 - 글로벌이코노믹",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPc0tSVFJPdlFqajhBRXBvUk1EbkVneko2cTFGMHc0S3VaZVprZ2pSVU05VmNEaGJBT0xOX2tFTHJtajFOZHBaSUxwejhScExtS19WakZpdUdacm4zdU51NWdqWHotMmQ4WkZPWDUxQ2J0VWROeWlUaXNXUnJhN3VRMFBoT1c?oc=5",
+    "title": "증선위, 미공개중요정보 이용 코스닥 상장사 임직원 등 중수청 통보 - 글로벌이코노믹"
+  },
+  "summary": "뉴스: 증선위, 미공개중요정보 이용 코스닥 상장사 임직원 등 중수청 통보 - 글로벌이코노믹"
+}

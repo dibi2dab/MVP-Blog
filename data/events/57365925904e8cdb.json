@@ -1,0 +1,32 @@
+{
+  "event_id": "57365925904e8cdb",
+  "event_type": "news_event",
+  "entity": {
+    "name": "다음달 코스닥 상장…안현수 ANH스트",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-26T07:47:16+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 다음달 코스닥 상장…안현수 ANH스트럭쳐 대표 수익성 높이는 데 집중 - 아주경제",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5TbmdSN0p0cU5iaVB3WnIwbTVyeTNLWmFzdjZqaGN0SEdHVGhBSl9SUTlNcUxGLUozQy1YV3pBWGlJWU9MdUlnX0VHYlAybVd2SG5tUlg4WlZDUdIBWEFVX3lxTFBwOG93WGNXN2JnMm9PWkE3cWVfN1dHd1gtd3c0NjdxME5kTUtZM3hFQVhsVmVnWHRPc1pDRDFTVjZpWF9xNzZIUXk1bnZ5b3BHRnJod0VCVnA?oc=5",
+    "title": "다음달 코스닥 상장…안현수 ANH스트럭쳐 대표 수익성 높이는 데 집중 - 아주경제"
+  },
+  "summary": "뉴스: 다음달 코스닥 상장…안현수 ANH스트럭쳐 대표 수익성 높이는 데 집중 - 아주경제"
+}

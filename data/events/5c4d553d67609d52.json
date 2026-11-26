@@ -1,0 +1,32 @@
+{
+  "event_id": "5c4d553d67609d52",
+  "event_type": "news_event",
+  "entity": {
+    "name": "유캐스트, 코스닥 상장 앞서 국방통신",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-26T07:47:16+00:00",
+  "event_date": "Thu, 26 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 유캐스트, 코스닥 상장 앞서 국방통신 개발과제 4건 수주 - 테크월드",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE9DVHJmZEhpVUxlakNRZ2llNFpXT1NRTVV5YUwxNkF3eUdySE9iNjdLZHNwSkFrQWU3cVdDX0RKZkhjd3o3YW9YVTFiVGZma0xTR0ZqcHByOUVpWU9Hc0ZZQkxKOUdJeEh3?oc=5",
+    "title": "유캐스트, 코스닥 상장 앞서 국방통신 개발과제 4건 수주 - 테크월드"
+  },
+  "summary": "뉴스: 유캐스트, 코스닥 상장 앞서 국방통신 개발과제 4건 수주 - 테크월드"
+}

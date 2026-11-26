@@ -1,0 +1,32 @@
+{
+  "event_id": "112731665c12e8d5",
+  "event_type": "news_event",
+  "entity": {
+    "name": "FTC의 합병 승인으로 규제 불확실성",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-26T07:47:16+00:00",
+  "event_date": "Wed, 11 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: FTC의 합병 승인으로 규제 불확실성이 해소되면 네이버 주가에 도움이 될까요? - Trad",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxQMXBqZEw1OWpSUjR5M3h6eWhqbkJVMmRaRWZKUERDd2FYYzhORWZ4b0xZOWM0U2VVcW9XZ29SV1FoVGZ6Z3hPRUU5ZWNRQ2I1Q2F2RXRTY1QzVFhRZm9tS18xNGtDTm10dDNfS0E0TVc5UnJZZnp3Ty1LanZveXVpcjFDTGRCYkc1aE05RTZTMHpBemNf?oc=5",
+    "title": "FTC의 합병 승인으로 규제 불확실성이 해소되면 네이버 주가에 도움이 될까요? - Traders Union"
+  },
+  "summary": "뉴스: FTC의 합병 승인으로 규제 불확실성이 해소되면 네이버 주가에 도움이 될까요? - Traders Union"
+}

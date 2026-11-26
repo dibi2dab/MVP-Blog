@@ -1,0 +1,32 @@
+{
+  "event_id": "87f9612db916cd51",
+  "event_type": "news_event",
+  "entity": {
+    "name": "범한메카텍, 코스닥 상장 증권신고서 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-26T07:47:16+00:00",
+  "event_date": "Thu, 26 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 범한메카텍, 코스닥 상장 증권신고서 제출 - 뉴시스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBhOTdsUUdnYVFiWGlWSmVPbFZlcWJ0RjRkeDZjcmJWeURCUEVQcUh5ajVNaTJhOHhPUFdmekZwdy1hYnpmNDFEaUJCTUxqZ0R3a2xMQloxbDFfNTA4bjY5c9IBeEFVX3lxTFAxR1lNMnpWV3dKM2FwU1hpS004MjhjR0lET2Q1UUtSbHl0dmk0bkk1QjQyMDFVMDNSQmo1TGdLZUVpNG5qS2FPRTM4SFM4Ri1GTTh0N0Z6VExlZXJraDdKM3RhR1I0RXljLV8xZVlMWk5pNms2WWRwVQ?oc=5",
+    "title": "범한메카텍, 코스닥 상장 증권신고서 제출 - 뉴시스"
+  },
+  "summary": "뉴스: 범한메카텍, 코스닥 상장 증권신고서 제출 - 뉴시스"
+}

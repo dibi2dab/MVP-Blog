@@ -1,0 +1,32 @@
+{
+  "event_id": "7649614b72937155",
+  "event_type": "news_event",
+  "entity": {
+    "name": "아리바이오, AR1001 3상 성과 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-26T07:47:16+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 아리바이오, AR1001 3상 성과 발판 코스피 직상장 추진 - 히트뉴스",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5aclBjQW9CRllpWFNFV0pLblpyeGFBSWJsNGZQRnJ6VG42LWdGTE01MXhZaE1rSGxMN1F0a0tUeUphQkpHeGNfcE5UYkhwdWJ2M2dfMzFOemJ4S3BBLUJrUzRaVkFBLWRTa1cw?oc=5",
+    "title": "아리바이오, AR1001 3상 성과 발판 코스피 직상장 추진 - 히트뉴스"
+  },
+  "summary": "뉴스: 아리바이오, AR1001 3상 성과 발판 코스피 직상장 추진 - 히트뉴스"
+}

@@ -1,0 +1,32 @@
+{
+  "event_id": "0999afc616ad348c",
+  "event_type": "news_event",
+  "entity": {
+    "name": "아리바이오, 코스피 상장 추진…\"먹는",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-26T07:47:16+00:00",
+  "event_date": "Thu, 26 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 아리바이오, 코스피 상장 추진…\"먹는 치매약 상업화 집중\" - 머니투데이 - 머니투데이",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE9TVXQzUmR0eGFQRU5TWWNQd0hvelVzTFBaZWo4VmNKSjJrS2tjcXN3QTVRSlBSRlBNZjZaVU03ZEc1c25OczdHZW1VYUs2M1hjSXdMcUJ4OWdPZUMzMjRsTlJXWUIxd0xncFHSAW9BVV95cUxNc3BDN3FjWkpuM2xxSVI1VlhMY0hXb2hxWFJ6bUtPWDRnd0czckxoWkFCZFJXclZYa1RDUVZaZFlVa1ZodERYaDYtOEQ2QlBkVVRLdkNMc2VsWExyR09rRF94cnV6VThDYmJjYkVza1U?oc=5",
+    "title": "아리바이오, 코스피 상장 추진…\"먹는 치매약 상업화 집중\" - 머니투데이 - 머니투데이"
+  },
+  "summary": "뉴스: 아리바이오, 코스피 상장 추진…\"먹는 치매약 상업화 집중\" - 머니투데이 - 머니투데이"
+}
