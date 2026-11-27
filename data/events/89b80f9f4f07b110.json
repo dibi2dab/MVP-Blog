@@ -1,0 +1,31 @@
+{
+  "event_id": "89b80f9f4f07b110",
+  "event_type": "stock_surge",
+  "entity": {
+    "name": "LG화학",
+    "ticker": "051910",
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-27T07:46:41+00:00",
+  "event_date": "2026-11-27",
+  "event_score": 3,
+  "evidence_score": 3,
+  "publication_type": "B",
+  "reasons": [
+    {
+      "code": "price_up_5",
+      "label": "주가 +5% 이상",
+      "score_contribution": 3,
+      "detail": ""
+    }
+  ],
+  "related_sources": [],
+  "status": "verified",
+  "evidence": {
+    "latest_change_pct": 0.05048076923076923,
+    "volume_ratio": 0.5966782677650998,
+    "latest_amount": null
+  },
+  "summary": "LG화학 주가 변동 0.05048076923076923% / 거래량 비율 0.5966782677650998"
+}

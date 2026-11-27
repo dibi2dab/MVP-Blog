@@ -1,0 +1,32 @@
+{
+  "event_id": "16ea99ab6f97b1ad",
+  "event_type": "news_event",
+  "entity": {
+    "name": "[코스피 현미경 분석] 한온시스템, ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-27T07:46:41+00:00",
+  "event_date": "Wed, 25 No",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: [코스피 현미경 분석] 한온시스템, 현대차 EV 플랫폼 수주 등으로 주가 탄력? - 데일리",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBUeGxoSWhDcEJzNEE2cmMzQ1ItZW5XWTFtSEUzRHg2SE14N25SMHpNbHhWRms0dFhjQmxUdDg4UTQ2UXUtbENOc0RsRTVyQnRwSThpVEdPdEtHWDRxNXExWXNzbnNwblY3RW9FctIBb0FVX3lxTE1jNUFxV0pvbnNnRGRCU294UlJoa3J0Ni1zaUs2d2VISVRPejdmQmtGT1dJVHNmZDZ3VjUyRThmQ0JCcVFqb0xtU1EzUW0xRlBVUk81RE9GVGlmQTdNbUIzZGJhcjRDUG5pNUlPaXpCTQ?oc=5",
+    "title": "[코스피 현미경 분석] 한온시스템, 현대차 EV 플랫폼 수주 등으로 주가 탄력? - 데일리인베스트"
+  },
+  "summary": "뉴스: [코스피 현미경 분석] 한온시스템, 현대차 EV 플랫폼 수주 등으로 주가 탄력? - 데일리인베스트"
+}
