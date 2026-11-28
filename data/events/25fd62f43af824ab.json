@@ -1,0 +1,32 @@
+{
+  "event_id": "25fd62f43af824ab",
+  "event_type": "news_event",
+  "entity": {
+    "name": "삼성바이오로직스, 6공장 착공 놓고 ",
+    "ticker": null,
+    "entity_type": "corp",
+    "extra": {}
+  },
+  "detected_at": "2026-11-28T07:15:01+00:00",
+  "event_date": "Sat, 24 Oc",
+  "event_score": 4,
+  "evidence_score": 0,
+  "publication_type": "",
+  "reasons": [
+    {
+      "code": "news_high",
+      "label": "뉴스: 삼성바이오로직스, 6공장 착공 놓고 증권가 ‘설왕설래’…수주가 관건 - 에너지경제신문",
+      "score_contribution": 4,
+      "detail": "대형 이슈 키워드 감지"
+    }
+  ],
+  "related_sources": [
+    "google.news"
+  ],
+  "status": "rejected",
+  "evidence": {
+    "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFBBeGZFejRmNThYQXIzSWhYa3FsWkoxOElHY0dpWVR1aXhub0hGUXUzVk0yWlZWY1ZxUlZjdlh6YzFBRHFMc01aXzBXQ25SektEc2had3drUXBnNGs?oc=5",
+    "title": "삼성바이오로직스, 6공장 착공 놓고 증권가 ‘설왕설래’…수주가 관건 - 에너지경제신문"
+  },
+  "summary": "뉴스: 삼성바이오로직스, 6공장 착공 놓고 증권가 ‘설왕설래’…수주가 관건 - 에너지경제신문"
+}
